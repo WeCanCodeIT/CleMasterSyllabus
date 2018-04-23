@@ -1,0 +1,361 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Constructors - Methods for instance creation (instantiation)</title>
+
+		<meta name="description" content="- description not found -">
+		<meta name="author"      content="Your Name Here">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../shared/css/reveal.css">
+		<link rel="stylesheet" href="../../shared/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../shared/lib/css/zenburn.css">
+
+		<!-- WCCI style tweaks -->
+		<link rel="stylesheet" href="../../shared/css/wcci.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../shared/css/print/pdf.css' : '../../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="text-align: center">Constructors</h1>
+					<h3 style="text-align: center">Methods for instance creation (instantiation)</h3>
+					<div id="logo">
+						<img src="../../shared/images/wcci-logo.png">
+						<p style="font-size: smaller;">&copy; We Can Code IT, LLC</p>
+					</div>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_ -->
+<h1 id="lets-review-methods">Let’s review methods</h1>
+
+<p>Methods are messages that we send to objects. Let’s start our review with looking at a familiar method of the <code>String</code> class. When we want to compare a <code>String</code> with another, regardless of case, one of our approaches is to use the <code>toLowerCase</code> method.</p>
+
+<p>Let’s say that we have a <code>String</code> variable named <code>color</code>:</p>
+
+<pre><code class="language-java">if(color.toLowerCase().equals("the colour out of space")) {
+  System.out.println("That is truly a strange color.");
+}
+</code></pre>
+
+<p>Calling <code>color.toLowerCase()</code> is like saying, “Hey, <code>color</code>, can you give me a lowercase version of yourself?” Whether <code>color</code> holds the value <code>"Purple"</code>, <code>"purple"</code>, or <code>"PuRpLe"</code>, it will respond <code>"purple"</code>.</p>
+
+<p>We refer to a method’s response as it <em>returning</em> a value.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="break-it-down">Break It Down</h2>
+
+<p>Let’s look at the method declaration for <code>toLowerCase</code> (you can find this in the <code>String</code> class). (<em>This is followed by a code block containing the method body, but we’re leaving that out.</em>)</p>
+
+<pre><code class="language-java">public String toLowerCase()
+</code></pre>
+<div class="fragment">
+<p>The first part consists of one or more optional modifiers, something we'll go into later. <code>public</code> here indicates that the message can be seen everywhere:</p>
+<pre><code class="language-java hljs" data-noescape=""><mark>public</mark> String toLowerCase()</code></pre>
+</div>
+
+<div class="fragment">
+<p>The next part is the <em>return type</em>, indicating how the method will respond. This is like declaring a type for a variable. It can be one of the types that you would use to declare a variable or <code>void</code>, indicating that the method will not return a response.</p>
+<pre><code class="language-java hljs" data-noescape="">public <mark>String</mark> toLowerCase()</code></pre>
+</div>
+
+<div class="fragment">
+<p>Last but not least is the method's name, followed by any <em>method parameters</em> it accepts. This method does not accept parameters, so the parentheses are empty.</p>
+<pre><code class="language-java hljs" data-noescape="">public String <mark>toLowerCase()</mark></code></pre>
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="information-please">Information, Please</h2>
+
+<p>When a method needs additional information, we add <em>method parameters</em> to its definition.</p>
+
+<p>Remember the <code>split</code> method of <code>String</code>? We passed it a <code>String</code>, indicating what we wanted to use as a <em>delimiter</em> to split it:</p>
+
+<pre><code class="language-java">String str = "this, that, the other";
+String[] pieces = str.split(", ");
+System.out.println(pieces[1]); // prints "that"
+</code></pre>
+
+<p>This is the declaration of the <code>split</code> method. We say that it accepts a method parameter of type <code>String</code>, named <code>regex</code>:</p>
+
+<pre><code class="language-java hljs" data-noescape="">public String[] split(<mark>String regex</mark>)</code></pre>
+
+<p>If we didn’t pass it the <code>regex</code> parameter, how would it know where to split?</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="john-hancock">John Hancock</h2>
+
+<p>The combination of the method name and parameter types is called its <em>method signature</em>. This is how Java identifies which method we are calling. Also, the method signature allows Java to determine whether a method is redefining another method (called <em>overriding</em>):</p>
+
+<pre><code class="language-java hljs" data-noescape="">public String[] <mark>split(String regex)</mark></code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="talking-back">Talking Back</h2>
+
+<p>A method whose return type is anything other than <code>void</code> must <code>return</code> a response. We do this with the <code>return</code> statement.</p>
+
+<p>A <code>String</code> is an <em>abstraction</em> representing a sequence of characters, so it contains an <em>instance variable</em> containing those characters. Lets look at how its <code>isEmpty</code> method works. If we strip away from <code>String</code> everything not relevant to this slide, we’re left with something like this:</p>
+
+<pre><code class="language-java">public class String {
+  char[] value; // characters in the string
+
+  public boolean isEmpty() {
+    return value.length == 0;
+  }
+}
+</code></pre>
+
+<p>To determine whether it is empty, a <code>String</code> looks at <code>value</code> to determine whether its <code>length</code> is zero. <code>value.length == 0</code> returns a boolean value (true or false) based on this comparison. Note that <code>isEmpty</code>’s <em>return type</em> is <code>boolean</code>.</p>
+
+<p>This allows us to do:</p>
+
+<pre><code class="language-java">if(myString.isEmpty()) {
+  System.out.println("This string is empty!");
+}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="creating-an-object">Creating An Object</h1>
+
+<p>Object Oriented Programming is all about creating objects (instances of a class) and communicating with those objects (calling methods). Objects contain <em>instance variables</em> that contain the <em>state</em> of an object, describing the object’s attributes.</p>
+
+<p>Let’s say that we have a simple <code>Parrot</code> class that looks like this:</p>
+
+<pre><code class="language-java">public class Parrot {
+  String name;
+}
+</code></pre>
+
+<p>So, far when we have created an object and defined its state, we’ve done it something like this:</p>
+
+<pre><code class="language-java">Parrot myParrot = new Parrot();
+myParrot.name = "Dewd";
+</code></pre>
+
+<p>Here, we’ve created an <em>instance</em> of the <code>Parrot</code> class named <code>myParrot</code>. <code>myParrot</code> has an <em>instance variable</em> named <code>name</code> with the value <code>"Dewd"</code>.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="a-flock-of-parrots">A Flock of Parrots</h2>
+<div class="sidebar"><img src="./resources/parrots_of_telegraph_hill.jpg" style="height: 45rem" /></div>
+
+<p>San Francisco is just the right climate for parrots from Central/South America. Flocks of parrots that have escaped from owners or been let loose flock together on Telegraph Hill. Birds of a feather do truly flock together.</p>
+
+<p>I recommend tracking down a flock sometime. They’re wild (<em>err… feral</em>).</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="creating-lots-of-objects">Creating lots of objects</h2>
+
+<p>Let’s say we need to create a lot of parrots. There’s a flock. That wouldn’t be too difficult, given that our parrots only have a name right now, but if we started adding other attributes, this would become more and more difficult. We’re developers, not typists. Also, it would be easy to forget to assign one or more attributes. So we can make it easier and less error prone by creating a method to create <code>Parrot</code> instances.</p>
+
+<p>Here’s what we were doing before:</p>
+
+<pre><code class="language-java">Parrot myParrot = new Parrot();
+myParrot.name = "Dewd";
+</code></pre>
+
+<p>Here’s how we could create a method to do the same thing:</p>
+
+<pre><code class="language-java">public static Parrot createParrot(String parrotName) {
+  Parrot p = new Parrot();
+  p.name = parrotName;
+  return p;
+}
+</code></pre>
+
+<p>And here’s how we would call it:</p>
+
+<pre><code class="language-java">Parrot myParrot = createParrot("Dewd");
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="but-that-still-seems-like-a-lot-of-work">But that still seems like a lot of work?</h2>
+
+<p>Luckily, there’s a cleaner way. Remember that constructor we’ve been calling?</p>
+
+<pre><code class="language-java hljs" data-noescape="">Parrot p = new <mark>Parrot()</mark>;</code></pre>
+
+<p>We call this a <em>constructor</em> because it <em>constructs</em> an instance of the class.</p>
+
+<h3 id="but-theres-no-constructor-in-my-class">But there’s no constructor in my class!</h3>
+
+<p>This constructor is what is known as a <em>default constructor</em>. If we haven’t explicitly defined a constructor for our class, the compiler creates a constructor for us that doesn’t accept any arguments and does basic instance construction. That’s why we don’t see the constructor in our class.</p>
+
+<p>The constructor that the compiler nicely creates for us if we have not explicitly declared one looks like this:</p>
+
+<pre><code class="language-java">public Parrot() {
+}
+</code></pre>
+
+<p>Note that it has neither a return type nor a <code>return</code> statement. Also, its name is the same as the name of its class.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-have-the-technology">We have the technology</h2>
+
+<p>When we want to initialize attributes of an object, we create our own constructor that accepts parameters, just like methods that accept parameters.</p>
+
+<p>Remember our <code>createParrot</code> method?</p>
+
+<pre><code class="language-java">public static Parrot createParrot(String parrotName) {
+  Parrot p = new Parrot();
+  p.name = parrotName;
+  return p;
+}
+</code></pre>
+
+<p>We can (and should) move this work into the constructor for the class. Here is our <code>Parrot</code> class with an equivalent constructor:</p>
+
+<pre><code class="language-java">public class Parrot {
+
+  String name;
+
+  public Parrot(String parrotName) {
+    name = parrotName; // name refers to our instance variable
+  }
+}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-can-construct-it">We can construct it</h2>
+
+<p>Once we’ve created our constructor, instead of this:</p>
+
+<pre><code class="language-java">Parrot myParrot = createParrot("Dewd");
+</code></pre>
+
+<p>we can do this:</p>
+
+<pre><code class="language-java">Parrot myParrot = new Parrot("Dewd");
+</code></pre>
+
+<p>This is cleaner, more expressive, and moves the <em>responsibility</em> of construction to the <code>Parrot</code> class, where it belongs.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="now-write-this-method">Now write this method</h2>
+
+<p><img src="./resources/party-parrot.gif" alt="party parrot" /></p>
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="../../shared/lib/js/head.min.js"></script>
+		<script src="../../shared/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// I suspect there's a better way to do this...
+				width: 1920 * 0.8,
+				height: 1080,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../shared/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../shared/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../shared/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../shared/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

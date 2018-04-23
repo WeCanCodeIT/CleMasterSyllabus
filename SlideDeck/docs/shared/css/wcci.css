@@ -1,0 +1,91 @@
+:root {
+	--text-color: #eee;
+	--background-color: #2b2b2b;
+}
+
+div#logo {
+	text-align: center;
+}
+
+div#logo img {
+	background: none;
+	border: none;
+	box-shadow: unset;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+	text-transform: none;
+}
+
+.reveal h1 {
+	font-size: 10rem;
+}
+.reveal h2 {
+	font-size: 5.6rem;
+}
+.reveal h3 {
+	font-size: 3.2rem;
+}
+.reveal h4 {
+	font-size: 2.2rem;
+}
+
+code {
+	background: #3f3f3f;
+	color: #dcdcdc;
+}
+
+.reveal td code {
+	padding: 0;
+}
+
+.reveal pre code {
+	padding: 0.5rem 0.7rem;
+	font-size: 2rem;
+	line-height: 2.4rem; /* 1.2 * font-size */
+	max-height: none;
+}
+
+.reveal td, .reveal th {
+	font-size: 2rem;
+}
+
+.reveal .slides {
+	text-align: left;
+}
+
+.reveal mark, code .highlight {
+	box-shadow: 0 0 1rem 0.1rem gold;
+	padding-left: 0.3rem;
+	padding-right: 0.3rem;
+}
+
+/* think I like this? */
+.reveal mark {
+	background-color: unset;
+	color: unset;
+}
+
+.reveal pre {
+	margin-left: 1rem;
+}
+
+.reveal section div.sidebar {
+	float: right;
+	margin-left: 2rem;
+}
+
+.reveal sup {
+	font-size: 65%;
+	font-weight: bold;
+	color: orange;
+}
+
+.reveal q {
+	quotes: unset;
+}

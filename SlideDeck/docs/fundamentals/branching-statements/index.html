@@ -1,0 +1,297 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Branching - Control the flow!</title>
+
+		<meta name="description" content="- description not found -">
+		<meta name="author"      content="Your Name Here">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../shared/css/reveal.css">
+		<link rel="stylesheet" href="../../shared/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../shared/lib/css/zenburn.css">
+
+		<!-- WCCI style tweaks -->
+		<link rel="stylesheet" href="../../shared/css/wcci.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../shared/css/print/pdf.css' : '../../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="text-align: center">Branching</h1>
+					<h3 style="text-align: center">Control the flow!</h3>
+					<div id="logo">
+						<img src="../../shared/images/wcci-logo.png">
+						<p style="font-size: smaller;">&copy; We Can Code IT, LLC</p>
+					</div>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_ -->
+<h1 id="branching-statements">Branching statements</h1>
+
+<p>In addition to the decision making and looping statements, we have <em>branching</em> statements. These interrupt the normal top-to-bottom execution of our code. There are three: <code>break</code>, <code>continue</code>, and <code>return</code>.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="neither-pass-go-nor-collect-200">Neither Pass Go, Nor Collect $200</h2>
+
+<p>A <code>break</code> statement exits a loop (jumps to the code after its code block) immediately. What it says is <strong>“Stop doing that! Now!”</strong></p>
+
+<p>Here is an example of (bad) code that I saw in production. How could we write this using an equivalent <code>if</code> statement?</p>
+
+<pre><code class="language-C#">boolean shouldPrint = true;
+while(shouldPrint) {
+  Console.WriteLine("I should print!");
+  break;
+}
+</code></pre>
+
+<p>We cried, then laughed a bit, and dubbed it the “while/break” statement. (No, that shouldn’t be a thing.)</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="ummm-break-it-down">Ummm… <code>break</code> it down?</h2>
+
+<p><code>break</code> statements are not that common. In fact, they’re often a symptom of poorly designed code. An example of where you might use them is if you have a progam interacting with the user, and would like to abruptly exit, perhaps because of an error conditiion.</p>
+
+<p>Remember Fortune Teller? We might have done something like this (assuming we were asking the user questions inside a loop):</p>
+
+<pre><code class="language-C#">while(true) {
+  Console.WriteLine("What is your favorite color?"); 
+  String favoriteColor = Console.ReadLine();
+
+  if(favoriteColor == ("Blue. No yel-- Auuuuuuuugh!")) {
+    Console.WriteLine("You're just making Monty Python references.");
+    Console.WriteLine("Get out!");
+    break;
+  }
+
+  Console.WriteLine("Your favorite color is " + favoriteColor);
+}
+</code></pre>
+<p>Try it!
+Question time: Can you think of one type of flow control logic you may use which requires a break statement? Here is a hint. Its not the following: if, if/else, if/else if.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="continuing-with-continue">Continuing with… <code>continue</code></h2>
+
+<p>The second branching statement is <code>continue</code>. The <code>continue</code> statement is more common than the <code>break</code> statement.</p>
+
+<p>Continue skips the current iteration, jumping to the end of the loop.</p>
+
+<p>Let’s say we wanted to count from one to ten, skipping multiples of three:</p>
+
+<pre><code class="language-C#">for(int i = 1; i &lt;= 10; i++) {
+  if(i % 3 == 0) { // it's a multiple of three
+    continue;
+  }
+  Console.WriteLine("i is " + i);
+}
+</code></pre>
+
+<p>We <em>could</em> have done this with an <code>if/else</code> statement, but using <code>continue</code> skips our <code>println</code> just fine. Which one should you use? This depends on the situation. A <code>continue</code> may make the code clearer.</p>
+
+<p>How could we have changed our condition to make this code simpler and avoided using <code>continue</code>?</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="baby-come-back">Baby, Come Back!</h2>
+
+<p>The third branching statement, <code>return</code>, isn’t specific to loops. When we write our own methods, we’ll use this to exit a method and <em>return</em> execution to the point where another method called it.</p>
+
+<p>Try this:</p>
+<pre><code class="language-C#">class EvenOrOdd {
+
+  static void main(String[] args) {
+    Console.WriteLine("Message for 42: " + chooseMessage(42));
+    Console.WriteLine("Message for 23: " + chooseMessage(23));
+  }
+
+  public static String chooseMessage(int input) {
+    if(input % 2 == 0) {
+      return "Even Steven!";
+    }
+    return "You're odd!";
+  }
+}
+</code></pre>
+
+<p>Notice how using a return allows us to avoid using <code>else</code>-the method immediately <em>returns</em> (responds) and exits. More on this when we get to methods.</p>
+<div class="fragment">
+Question time: What will chooseMessage(81) return?
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="nested-loops">Nested Loops</h2>
+
+<p>It is not uncommon to place one loop inside another. Lets imagine a calendar if you will. Of course we know there are twelve months in a year. Each month has a specific number of days.
+If we needed to count every day in months 1 thru 12, we could use nested for-loops.</p>
+
+<p>Now lets code it!! We are going to assume every month has 30 days. We will create an outer loop and an inner loop.</p>
+
+<div class="fragment">
+Question time: Can someone tell me what the outer loop will represent? Months or Days?
+</div>
+<div class="fragment">
+Question time: What else must our logic inlude if we want to count the number of days?
+</div>
+<div class="fragment">
+Question time: Great we should use a variables. Now what type of variables should we use?
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="lets-see-how-this-works">Lets see how this works!!</h2>
+
+<pre><code class="language-C#">class Program
+    {
+        static void Main(string[] args)
+        {
+            int sum = 0;//This variable will keep track of the days 
+            int total = 0;//This variable will sum the days of each month and save that value
+            for(int months = 1; months &lt;= 12; months++)
+            {
+				}	
+                for(int days = 1; days &lt;= 30; days++)
+                {
+                    sum = days;
+                }
+                total = total + sum;
+            }
+            Console.WriteLine(total);
+        }
+    }
+</code></pre>
+<p>Now <em>that</em> is wizardy!</p>
+<div class="fragment">
+Question time: How many total times will the inner loop run? How many times will the outer loop run? Why?
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="making-it-pretty">Making It Pretty</h2>
+
+<p>Now lets do something cool. Lets use nested for loops to draw a half pyramid.
+We are going to use the Debugging tool in Visual Studio and walk through each step in the loop.</p>
+
+<pre><code class="language-C#">static void Main(string[] args)
+        {
+            int val = 5;//Equals the max number of columns and rows
+            int i, j, k;
+            for (i = 1; i &lt;= val; i++)//OuterLoop is the number of rows
+            {
+                for (k = 1; k &lt;= i; k++)//InnerLoop is the number of columns
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine("");
+            }
+            Console.ReadLine();
+        }
+</code></pre>
+<p>Visual Studio Debugger is a great tool.</p>
+
+<p>It can be used to understand the code you are writing, as well as troubleshoot the code you have written.</p>
+
+<p>Learning how to use Debugger would be time well spent.</p>
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="../../shared/lib/js/head.min.js"></script>
+		<script src="../../shared/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// I suspect there's a better way to do this...
+				width: 1920 * 0.8,
+				height: 1080,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../shared/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../shared/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../shared/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../shared/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

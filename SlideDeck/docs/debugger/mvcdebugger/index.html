@@ -1,0 +1,441 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Visual Studio Debugger - Why isn't my code working?</title>
+
+		<meta name="description" content="- description not found -">
+		<meta name="author"      content="Your Name Here">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../shared/css/reveal.css">
+		<link rel="stylesheet" href="../../shared/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../shared/lib/css/zenburn.css">
+
+		<!-- WCCI style tweaks -->
+		<link rel="stylesheet" href="../../shared/css/wcci.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../shared/css/print/pdf.css' : '../../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="text-align: center">Visual Studio Debugger</h1>
+					<h3 style="text-align: center">Why isn't my code working?</h3>
+					<div id="logo">
+						<img src="../../shared/images/wcci-logo.png">
+						<p style="font-size: smaller;">&copy; We Can Code IT, LLC</p>
+					</div>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_  -->
+
+<div float="right"><img src="./resources/Debugfirstslide.jpg" /></div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="life-is-good-until-its-not">Life is good until it’s not!!’</h2>
+
+<div float="right"><img src="./resources/programmer.jpg" /></div>
+<ul>
+  <li>
+    <p>Here is one propecy I will make which I can guarentee will come true.</p>
+  </li>
+  <li>
+    <p>You will one day feel exactly like this poor gentleman.</p>
+  </li>
+  <li>
+    <p>The life of a programmer is full of peaks and valleys!</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="you-need-tools-and-visual-studio-has-debugger">You need tools and Visual Studio has Debugger</h2>
+
+<ul>
+  <li>
+    <p>In this exercise we are going to learn how to use VS Debugger</p>
+  </li>
+  <li>
+    <p>We are going to perform the following Steps:</p>
+
+    <ul>
+      <li>
+        <p>Create a console application in Visual Studio</p>
+      </li>
+      <li>
+        <p>Write code to build a half pyramid using the  <mark>*</mark></p>
+      </li>
+      <li>
+        <p>Use Debugger to step through the code we have written</p>
+      </li>
+      <li>
+        <p>Observe the pyramid being built in the console, and understand the logical flow of the program.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="lets-get-into-it">Lets get into IT!</h2>
+
+<div class="sidebar">
+	<img alt="Example Console application" src="./resources/consoleAppCreate.png" />
+</div>
+
+<ul>
+  <li>
+    <p>Open Visual Studio. From the <em>File</em> Menu, select <em>New &gt; Project</em>.</p>
+  </li>
+  <li>
+    <p>Select <em>Conole Application</em> from the <em>New Project</em> Window. Specify a <em>Project name</em> of <em>DebugExample</em>.</p>
+  </li>
+  <li>
+    <p>Click the <em>Ok</em> button.</p>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<div float="right"><img src="./resources/nestedfor.png" /></div>
+
+<ul>
+  <li>
+    <p>Now lets put some code in our application</p>
+  </li>
+  <li>
+    <p>Our code will contain the following:</p>
+
+    <ul>
+      <li>
+        <p>Three variables</p>
+      </li>
+      <li>
+        <p>Two nested for loops</p>
+      </li>
+      <li>
+        <p>Two Console.WriteLine()</p>
+      </li>
+      <li>
+        <p>One Console.ReadLine()</p>
+      </li>
+    </ul>
+
+    <div class="fragment">
+  Question time: What is the function of the variables named <mark> i and k</mark>
+  </div>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<div float="right"><img src="./resources/forloopmenu.png" /></div>
+
+<ul>
+  <li>
+    <p>By default, when Visual Studio opens <mark>Debug</mark> is selected on the Standard toolbar.</p>
+  </li>
+  <li>
+    <p>Ensure <mark>Debug</mark> is selected in the Standard toolbar.</p>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<div float="right"><img src="./resources/forloopbreak.png" /></div>
+
+<ul>
+  <li>
+    <p>Now we want to select the logic or code we want to debug.</p>
+  </li>
+  <li>
+    <p>We do this by setting a <mark>code break</mark></p>
+  </li>
+  <li>
+    <p>Place the mouse pointer on the far left of the application window on the light blue column.</p>
+  </li>
+  <li>
+    <p>Find the number at the beginning of the code you want to debug and click the mouse.</p>
+  </li>
+  <li>
+    <p>For the purposes of our application, line <mark>15</mark> is the begining of the code were we want to place the code break.</p>
+  </li>
+  <li>
+    <p>The code break will be displayed by a red <mark>dot</mark> in the light blue column.</p>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<div float="right"><img src="./resources/forloopdebugstart.png" /></div>
+
+<ul>
+  <li>
+    <p>Now that we have our application ready to debug lets press <mark>Start</mark> on the Standard toolbar.</p>
+  </li>
+  <li>
+    <p>You will now notice the <mark>Start</mark> button has changed to now read <mark>Continue</mark>.</p>
+  </li>
+  <li>
+    <p>You will also notice a yellow <mark>arrow</mark> inside the red <mark>Code Break</mark>.</p>
+  </li>
+  <li>
+    <p>Lets debug!!</p>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<div float="right"><img src="./resources/forloopconsole.png" /></div>
+
+<ul>
+  <li>
+    <p>You may have noticed when we pressesd <mark>Start</mark>, a console window opened up automatically.</p>
+  </li>
+  <li>
+    <p>Lets adjust the our Visual Studio window and our console window so we can see both at the same time.</p>
+  </li>
+  <li>
+    <p>Having both open will allow us to see the operation and the results of our debugging in real time.</p>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<div float="right"><img src="./resources/step.png" /></div>
+
+<ul>
+  <li>
+    <p>If you look to the right of the Standard toolbar, you will now see <mark>four arrows</mark>.</p>
+  </li>
+  <li>
+    <p>The arrow we will use for our debugging will be the second arrow which points straight down.</p>
+  </li>
+  <li>
+    <p>If you hover over the arrow, you will see the arrow border turn yellow, and the lable <mark>Step into f11</mark> appear.</p>
+  </li>
+  <li>
+    <p>Although each arrow has a purpose, and with practice you can experiment with their functions, we will use the <mark>Step Into</mark> arrow.</p>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<div float="right"><img src="./resources/locals.png" /></div>
+
+<ul>
+  <li>
+    <p>Finally as part of the debug process, watching the values of all the variable can be extremely valuable.</p>
+  </li>
+  <li>
+    <p>To open the locals window, select the following:</p>
+
+    <ul>
+      <li>
+        <p>From the <mark>Standard toolbar</mark> select <mark>Debug</mark>.</p>
+      </li>
+      <li>
+        <p>From the drop down menu, select <mark>Windows</mark>.</p>
+      </li>
+      <li>
+        <p>From the <mark>Windows</mark> drop down menu select <mark>Locals</mark>.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<div float="right"><img src="./resources/locals3.png" /></div>
+
+<ul>
+  <li>You should screen should now look like the one shown here.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="now-its-your-turn-to-experiment">Now its your turn to experiment</h2>
+
+<ul>
+  <li>
+    <p>Using the <mark>Step Into</mark> arrow, step through the code.</p>
+  </li>
+  <li>
+    <p>Obvserve the following:</p>
+
+    <ul>
+      <li>
+        <p>Notice with each click of the <mark>Step Into arrow</mark> the <mark>yellow highlighted</mark> section of code changes.</p>
+      </li>
+      <li>
+        <p>Each changes reflects the code which is currently being processed.</p>
+      </li>
+      <li>
+        <p>Notice the <mark>yellow arrow</mark> changes lines after a line of code is processed.</p>
+      </li>
+      <li>
+        <p>Notice the <mark>variables</mark> in the locals window change throughout the debug process.</p>
+      </li>
+      <li>
+        <p>Finally notice the <mark>console window</mark> displays the output of the code.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<div float="right"><img src="./resources/appcomplete.png" /></div>
+
+<ul>
+  <li>
+    <p>Hopfully you have taken your time and stepped carefully and slowly through the entire debug session.</p>
+  </li>
+  <li>
+    <p>You will see, when complete, the screen shown above.</p>
+  </li>
+  <li>
+    <p>The debugging process has many uses, the least of which is debugging.</p>
+  </li>
+  <li>
+    <p>I challenge you to use debugging to help you understand how code logic works, and how code logic reacts.</p>
+  </li>
+  <li>
+    <p>Finally as part of the testing process, you can use debugging to ensure the logic you wrote will deleliver the results you expect.</p>
+  </li>
+</ul>
+
+<style type="text/css">
+.reveal section img.logo {
+	border: none;
+	background-color: rgba(255, 255, 255, 0.25);
+	padding: 1rem;
+}
+.reveal ol, .reveal dl, .reveal ul {
+	margin: 0 0 1rem 2rem;
+}
+</style>
+
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="../../shared/lib/js/head.min.js"></script>
+		<script src="../../shared/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// I suspect there's a better way to do this...
+				width: 1920 * 0.8,
+				height: 1080,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../shared/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../shared/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../shared/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../shared/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,360 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Dependency Injection - Don't call us, we'll call you</title>
+
+		<meta name="description" content="- description not found -">
+		<meta name="author"      content="Your Name Here">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../shared/css/reveal.css">
+		<link rel="stylesheet" href="../../shared/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../shared/lib/css/zenburn.css">
+
+		<!-- WCCI style tweaks -->
+		<link rel="stylesheet" href="../../shared/css/wcci.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../shared/css/print/pdf.css' : '../../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="text-align: center">Dependency Injection</h1>
+					<h3 style="text-align: center">Don't call us, we'll call you</h3>
+					<div id="logo">
+						<img src="../../shared/images/wcci-logo.png">
+						<p style="font-size: smaller;">&copy; We Can Code IT, LLC</p>
+					</div>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_ -->
+<h1 id="dependencies">Dependencies</h1>
+
+<p>A dependency is anything your code knows about. That could be another class, method, or interface. It could also be knowledge of how an object does something. We say that code with a lot of dependencies is <em>tightly coupled</em>, while code with minimal dependencies is <em>loosely coupled</em>.</p>
+
+<p>Code that is polymorphic and exhibits good encapsulation (clean code) is loosely coupled.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="what-does-that-mean">What does that mean?</h2>
+
+<p>Consider the method below from <code>BankingApp</code>. What are its dependencies?</p>
+
+<pre><code class="language-java">void printAccountBalances(PrintStream out) {
+	Collection&lt;Account&gt; accounts = new ArrayList&lt;&gt;();
+	accounts.add(new CheckingAccount());
+	accounts.add(new SavingsAccount());
+	accounts.add(new CreditAccount());
+	
+	for(Account a: accounts) {
+		out.println("Balance is " + a.balance());
+	}
+}	
+</code></pre>
+
+<p>Let’s take them in order.</p>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<h3 id="method-parameters">Method parameters</h3>
+
+<pre><code class="language-java" data-noescape="">void printAccountBalances(<mark>PrintStream</mark> out) {</code></pre>
+
+<p>Our method is dependent on <code>java.io.PrintStream</code>.</p>
+
+<p>It is also dependent on its <code>println(String)</code> method:</p>
+
+<pre><code class="language-java" data-noescape="">out.<mark>println("Balance is " + a.balance())</mark>;</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<h3 id="local-collection-variables">Local collection variables</h3>
+
+<p>Our method is dependent on <code>Collection</code> (and it being a parameterized type) and <code>ArrayList</code> (and its no-arg constructor):</p>
+
+<pre><code class="language-java" data-noescape=""><mark>Collection&lt;Account&gt;</mark> accounts = new <mark>ArrayList&lt;&gt;()</mark>;</code></pre>
+
+<p>It is also assumes that <code>Collection</code> <em>isA</em> (extends or implements) <code>Iterable</code>, to allow usage of the enhanced <code>for</code> loop:</p>
+
+<pre><code class="language-java">for(Account a: accounts) {
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<h3 id="account">Account</h3>
+
+<p>Our method depends on the existence of an <code>Account</code> type:</p>
+
+<pre><code class="language-java" data-noescape="">Collection&lt;<mark>Account</mark>&gt; accounts = new ArrayList&lt;&gt;();</code></pre>
+
+<p>Also, that it has a <code>balance</code> method that returns a value whose <code>toString()</code> method returns a <code>String</code> appropriate for display purposes:</p>
+
+<pre><code class="language-java" data-noescape="">out.println("Balance is " + <mark>a.balance()</mark>);</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<h3 id="types-of-accounts">Types of Accounts</h3>
+
+<p>Our method depends on their being three types of accounts, each of which <em>isA</em> <code>Account</code>: <code>CheckingAccount</code>, <code>SavingsAccount</code>, and <code>CreditAccount</code>. Also, that each has a default (no-argument) constructor:</p>
+
+<pre><code class="language-java" data-noescape="">Collection&lt;<mark>Account</mark>&gt; accounts = new ArrayList&lt;&gt;();
+accounts.add(new <mark>CheckingAccount()</mark>);
+accounts.add(new <mark>SavingsAccount()</mark>);
+accounts.add(new <mark>CreditAccount()</mark>);</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<h3 id="the-mostly-entire-list">The (mostly) entire list</h3>
+
+<p>To sum up, it is dependent on the following:</p>
+
+<ul>
+  <li><code>Account</code> and its <code>balance()</code> method</li>
+  <li><code>CheckingAccount</code> and its default (no-argument) constructor</li>
+  <li><code>SavingsAccount</code> and its default (no-argument) constructor</li>
+  <li><code>CreditAccount</code> and its default (no-argument) constructor</li>
+  <li><code>java.lang.Iterable</code></li>
+  <li><code>java.util.Collection&lt;E&gt;</code></li>
+  <li><code>java.util.ArrayList&lt;E&gt;</code></li>
+  <li><code>java.io.PrintStream</code> and its <code>println(String)</code> method</li>
+</ul>
+
+<p><em>Dependencies</em> are things that could change and break our code. Tightly coupled code (a lot of dependencies) is <em>fragile</em>.</p>
+
+<p>The collections classes and <code>PrintStream</code> are unlikely to change, so we’re a bit less worried about those dependencies</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="dependency-injection">Dependency Injection</h2>
+
+<p>A family of techniques used to implement <em>Inversion of Control</em>. The simplest of these are <em>constructor injection</em> and <em>direct instance variable injection</em> (aka field injection). <em>Setter injection</em> is also oft-used, but usually a code smell.</p>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<h3 id="constructor-injection">Constructor-injection</h3>
+
+<p>Let’s return to <code>BankingApp</code>. It has a lot of dependencies. We could use <em>constructor injection</em> to pass control of <code>Account</code> creation outside of our app. If we were using a framework (like Spring), we would allow the framework to <em>inject</em> our dependencies.</p>
+
+<p>First, we would give our app a constructor that accepts <code>Account</code>s and an instance variable to store them:</p>
+
+<pre><code class="language-java">private Collection&lt;Account&gt; accounts;
+
+public BankingApp(Collection&lt;Account&gt; accounts) {
+	this.accounts = accounts;
+}
+</code></pre>
+
+<p>Note that we have already eliminated the dependecy on <code>ArrayList</code>! We only know that we’re dealing with a <code>Collection</code>.</p>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<h3 id="our-new-improved-method">Our new improved method</h3>
+
+<pre><code class="language-java">void printAccountBalances(PrintStream out) {
+	for (Account a : accounts) {
+		out.println("Balance is " + a.balance());
+	}
+}
+</code></pre>
+
+<p>Now we have eliminated the dependecy on specific <code>Account</code> types as well as how they are constructed. Our method no longer <em>controls</em> how accounts are created or which accounts are created.</p>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<h3 id="our-leaner-and-meaner-list-of-dependencies">Our leaner and meaner list of dependencies</h3>
+
+<p>We still have several of our stable dependencies on core Java classes. Our acceptance of dependencies should vary inversely with how likely they are to change:</p>
+
+<ul>
+  <li><code>java.lang.Iterable</code></li>
+  <li><code>java.util.Collection&lt;E&gt;</code></li>
+  <li><code>java.io.PrintStream</code> and its <code>println(String)</code> method</li>
+</ul>
+
+<p>But our dependencies on application-specific classes have now been reduced to <code>Account</code> and its <code>balance()</code> method.</p>
+
+<p>In our simple example, we still rely on <code>balance()</code> returning something with a <code>toString()</code> method that renders a suitable <code>String</code> for display. In the real world, we would create another class responsible for converting balance to a <code>String</code>, so we would eliminate this dependency as well.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="inversion-of-control">Inversion of Control</h2>
+
+<p>Often expressed as the <a href="http://wiki.c2.com/?HollywoodPrinciple">Hollywood Principle</a>: “Don’t call us, we’ll call you.” (<em>That links to Ward Cunningham’s WikiWikiWeb. Not only is it the first wiki on the web, but he invented wikis!</em>)</p>
+
+<p>When using a framework (such as Spring <em>#foreshadowing</em>), we tell a framework about our classes, then give control of how our classes are assembled and invoked to that framework. We don’t explicitly call the framework anymore; the framework calls us.</p>
+
+<p>See Martin Fowler’s <a href="https://www.martinfowler.com/articles/injection.html">Inversion of Control Containers and the Dependency Injection pattern</a>.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="dependency-inversion-principle">Dependency inversion principle</h2>
+
+<p>The dependency inversion principle is the culmination of these tools and techniques. From the lips of our beloved Uncle Bob:</p>
+
+<blockquote>
+  <p>A. High level modules should not depend upon low level modules. Both should depend upon abstractions.</p>
+
+  <p>B. Abstractions should not depend upon details. Details should depend upon abstractions.</p>
+</blockquote>
+
+<p>Easier to say than do, to be sure!</p>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<h3 id="program-to-interfaces-not-implementations">Program to interfaces, not implementations</h3>
+
+<p><img src="./resources/abstractions-vs-details.png" style="max-height: 50rem;" /></p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="solid">SOLID</h2>
+
+<p>SOLID is an acronym introduced by Michael Feathers and promoted by Uncle Bob.</p>
+
+<p><strong>D</strong>ependency inversion is the <strong>D</strong> in SOLI<strong>D</strong>.</p>
+
+<p>SOLID is a mnemonic for a set of principles that represent an agile, clean object oriented development philosophy:</p>
+
+<ul>
+  <li><strong>S</strong>ingle responsibility principle</li>
+  <li><strong>O</strong>pen/closed principle</li>
+  <li><strong>L</strong>iskov substitution principle</li>
+  <li><strong>I</strong>nterface segregation principle</li>
+  <li><strong>D</strong>ependency inversion principle</li>
+</ul>
+
+<p>Remember, be <em>agile</em> or be <em>fragile</em>.</p>
+
+<style type="text/css">
+/* should we move this into the template, or will it break existing slides. Maybe those slides are wrong. */
+.reveal h3 {
+	font-size: 4.4rem;	
+}
+</style>
+
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="../../shared/lib/js/head.min.js"></script>
+		<script src="../../shared/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// I suspect there's a better way to do this...
+				width: 1920 * 0.8,
+				height: 1080,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../shared/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../shared/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../shared/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../shared/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,4 @@
+source 'https://rubygems.org'
+require 'rubygems'
+gem 'slideshow'
+gem 'liquid', '= 3.0.6'

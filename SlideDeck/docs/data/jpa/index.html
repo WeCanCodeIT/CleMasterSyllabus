@@ -1,0 +1,251 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Spring Data JPA - Accessing data through JPA</title>
+
+		<meta name="description" content="- description not found -">
+		<meta name="author"      content="Your Name Here">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../shared/css/reveal.css">
+		<link rel="stylesheet" href="../../shared/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../shared/lib/css/zenburn.css">
+
+		<!-- WCCI style tweaks -->
+		<link rel="stylesheet" href="../../shared/css/wcci.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../shared/css/print/pdf.css' : '../../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="text-align: center">Spring Data JPA</h1>
+					<h3 style="text-align: center">Accessing data through JPA</h3>
+					<div id="logo">
+						<img src="../../shared/images/wcci-logo.png">
+						<p style="font-size: smaller;">&copy; We Can Code IT, LLC</p>
+					</div>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_ -->
+<h2 id="there-are-standard-behaviors-in-a-typical-rest-api">There are standard behaviors in a typical REST API</h2>
+
+<ul>
+  <li>Get all resources</li>
+  <li>Get an individual resource</li>
+  <li>Create or add new resource</li>
+  <li>Update/change a resource</li>
+  <li>Delete a resource</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="what-is-jpa">What is JPA</h2>
+
+<ul>
+  <li>Java Persistence API
+    <ul>
+      <li>Allows for <strong>Object-Relational Mapping (ORM)</strong></li>
+    </ul>
+  </li>
+  <li>Most databases that you are accessing are SQL</li>
+  <li><strong>SQL</strong> is a Relational Database</li>
+  <li>A <strong>Relational Database</strong> contains tables and keys</li>
+  <li>ORM lets you map entity classes to SQL tables</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="the-entity-class">The Entity Class</h2>
+
+<ul>
+  <li>The class that needs mapped to the database</li>
+  <li>Think of the member variables (instance data) as the columns</li>
+  <li>Think of the objects (class instances) as the rows</li>
+</ul>
+
+<p>Example:</p>
+
+<pre><code>  @Entity
+  public class CourseTopic {
+  
+  @Id
+  @GeneratedValue
+  private String id;
+  private String name;
+  private String description;
+
+</code></pre>
+<ul>
+  <li>with the <strong>@Entity</strong> annotation JPA knows to create a table called CourseTopic with 3 columns: id, name and description</li>
+  <li><strong>@Id</strong> tells the database where the primary key is</li>
+  <li>The annotations affect what is directly underneath, therefore attaching @Id to the String id member</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="the-process">The Process</h2>
+
+<ul>
+  <li>Step 1: Entity Mapping</li>
+  <li>Step 2: Find the class to connect to the database and run commands to access, save and retrieve data
+    <ul>
+      <li>No matter what your entity is, the structure will remain very similar (Standard operations)</li>
+    </ul>
+  </li>
+  <li>Step 3: Determine the key (link) for your database using the @Id annotation</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="the-crudrepository">The CrudRepository</h2>
+
+<ul>
+  <li>Contains the logic for an entity class</li>
+  <li>Each Entity class can create its own repository to extend the CrudRepository</li>
+  <li>CrudRepository Generic Type</li>
+  <li>CrudRepository&lt;Entity Class, Type for Key&gt;
+    <ul>
+      <li><strong>public interface TopicRepository extends CrudRepository&lt;CourseTopic,Long&gt;</strong></li>
+    </ul>
+  </li>
+  <li>You will now have access to all methods that come out of the box with CrudRepository
+    <ul>
+      <li>These methods will update
+        <ul>
+          <li>Get all resources</li>
+          <li>Get an individual resource</li>
+          <li>Create or add new resource</li>
+          <li>Update/change a resource</li>
+          <li>Delete a resource</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="one-to-many">One to Many</h2>
+
+<ul>
+  <li><strong>@OneToMany</strong> (mapped by “instructor”)</li>
+  <li>one Instructor can be tied into multiple CourseTopics</li>
+  <li>A course is then tied to a particular topic</li>
+  <li><strong>mapped by</strong> is the owning side of a bi-directional relationship</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="many-to-one">Many to One</h2>
+
+<ul>
+  <li><strong>@ManyToOne</strong></li>
+  <li>There can be many courses tied to one instructor</li>
+</ul>
+
+<style type="text/css">
+.reveal section img.logo {
+	border: none;
+	background-color: rgba(255, 255, 255, 0.25);
+	padding: 1rem;
+}
+.reveal ol, .reveal dl, .reveal ul {
+	margin: 0 0 1rem 2rem;
+}
+</style>
+
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="../../shared/lib/js/head.min.js"></script>
+		<script src="../../shared/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// I suspect there's a better way to do this...
+				width: 1920 * 0.8,
+				height: 1080,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../shared/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../shared/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../shared/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../shared/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

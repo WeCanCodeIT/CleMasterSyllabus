@@ -1,0 +1,542 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Inheritance and Polymorphism - Two Important Principles of OOP</title>
+
+		<meta name="description" content="- description not found -">
+		<meta name="author"      content="Your Name Here">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../shared/css/reveal.css">
+		<link rel="stylesheet" href="../../shared/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../shared/lib/css/zenburn.css">
+
+		<!-- WCCI style tweaks -->
+		<link rel="stylesheet" href="../../shared/css/wcci.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../shared/css/print/pdf.css' : '../../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="text-align: center">Inheritance and Polymorphism</h1>
+					<h3 style="text-align: center">Two Important Principles of OOP</h3>
+					<div id="logo">
+						<img src="../../shared/images/wcci-logo.png">
+						<p style="font-size: smaller;">&copy; We Can Code IT, LLC</p>
+					</div>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_ -->
+<h2 id="topics">Topics</h2>
+
+<ul>
+  <li>What is Inheritance?</li>
+  <li>What is Polymorphism?</li>
+  <li>Why are these principles essential to Object-Oriented Programming?</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="inheritance">Inheritance</h2>
+<ul>
+  <li>In object-oriented programing, <strong>inheritance</strong> is a feature that demonstrates the “IS A” relationship between different classes.</li>
+  <li>For example, a TIGER is a CAT.</li>
+  <li>Inheritance allows a class to have the same states and behaviors as another class.</li>
+  <li>Inheritance also allows derived classes to customize that behavior for the sake of specificity.</li>
+  <li>For example, all cats EAT, but tigers EAT a certain way.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="example-of-a-base-class">Example of a Base Class</h2>
+
+<pre><code class="language-csharp">public class Shape
+{
+    private int sides;
+ 
+    public Shape()
+    {
+
+    }
+    public Shape(int sides)
+    {
+        this.sides = sides;
+    }
+ 
+    public int Sides
+    {
+        get { return this.sides; }
+        set { this.sides = value; }
+    }
+}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="derived-classes">Derived Classes</h2>
+
+<ul>
+  <li>A <strong>derived class</strong> (also called a <strong>child class</strong> or a <strong>subclass</strong>) is any class that inherits from another class.</li>
+  <li>To create a derived class, include a colon and the name of the base class.</li>
+</ul>
+
+<pre><code class="language-csharp">//Example:
+public class ChildClass : ParentClass
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="example-of-derived-class">Example of Derived Class</h2>
+
+<pre><code class="language-csharp">public class Rectangle : Shape
+{
+    private double area;
+ 
+    public Rectangle(double area)
+    {
+        this.area = area;
+    }
+ 
+    public double Area
+    {
+        get { return this.area; }
+        set { this.area = value; }
+    }
+}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="your-turn">Your Turn!</h2>
+
+<ul>
+  <li>What are some examples of base classes?</li>
+</ul>
+<div class="fragment">
+<li>What are some examples of classes that could be derived from those base classes?</li>
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="members-of-a-derived-class">Members of a Derived Class</h2>
+
+<ul>
+  <li>In OOP, the states and behaviors of a class are, all together, called the “members” of that class.</li>
+  <li>Let’s talk about what makes the members of a derived class different from the members of a base class.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="constructors">Constructors</h2>
+
+<ul>
+  <li>A derived class does NOT inherit the constructors of the base class.</li>
+  <li>However, the constructors of the base class can still be accessed using the “base” keyword.</li>
+</ul>
+
+<pre><code class="language-csharp">public ChildClass(int num) : base(“string”)
+{
+        // body of constructor
+}
+
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="base-constructor-example">Base Constructor Example</h2>
+
+<pre><code class="language-csharp">public class Rectangle : Shape
+{
+    private double area;
+ 
+    public Rectangle(double area) : base(4)
+    {
+        this.area = area;
+    }
+ 
+    public double Area
+    {
+        get { return this.area; }
+        set { this.area = value; }
+    }
+}
+</code></pre>
+<ul>
+  <li>By including the <code>base(4)</code>, the public <code>Shape(int sides)</code> is included and sets sides equal to 4.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="access-modifiers-in-derived-classes">Access Modifiers in Derived Classes</h2>
+
+<p>Let’s review access modifiers:</p>
+<div class="fragment">
+<code>public</code> - can be accessed from every class
+</div>
+<div class="fragment">
+<code>private</code> - can not be accessed from any other class (default for elements of a class)
+</div>
+<div class="fragment">
+<mark><code>protected</code> - can be accessed from its class and all descendent classes</mark>
+</div>
+<div class="fragment">
+<code>internal</code> - can only be accessed from the same assembly (default for classes) → More later.
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="access-modifiers-example">Access Modifiers Example</h2>
+
+<pre><code class="language-csharp">public class Rectangle : Shape
+{
+    private double area;
+ 
+    public Rectangle(int sides, double area)
+    {
+        this.Sides = sides;
+        this.area = area;
+    }
+ 
+    public double Area
+    {
+        get { return this.area; }
+        set { this.area = value; }
+    }
+}
+</code></pre>
+<p>QUESTION: Why do we have to use the property <code>Sides</code> in the <code>Rectangle</code> class?</p>
+<div class="fragment">ANSWER: The field <code>sides</code> is set to <code>private</code> in the <code>Shape</code> class.</div>
+<div class="fragment">QUESTION: What access modifier can be used so the field sides can be accessed by a child class?</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="practice">PRACTICE!!</h2>
+
+<p>In Visual Studio, open a new project and create a base class and 2 classes that are derived from that base class.</p>
+<div class="fragment">Add four fields to your base class.</div>
+<div class="fragment">Add two Properties to your class.</div>
+<div class="fragment">Add a constructor to your derived class that includes a call to your base class.</div>
+<div class="fragment">Add two methods to your derived classes.</div>
+<div class="fragment">Add a method to your base class and use it in both of your derived classes.</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="polymorphism">Polymorphism</h2>
+
+<ul>
+  <li><strong>Polymorphism</strong> is the ability to redefine methods for derived classes.</li>
+  <li>The Greek roots - “poly” for many and “morph” for form - tells us that this principle allows us to have one method take many forms.</li>
+  <li>In order to incorporate polymorphism in C#, we need to use the <code>virtual</code> and <code>override</code> keywords.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="virtual-keyword">“virtual” keyword</h2>
+
+<pre><code class="language-csharp">public virtual void Clean()
+{
+	// body of the method
+}
+</code></pre>
+<p>In order to give the derived classes permission to create their own version of a method, the keyword <code>virtual</code> must be included in the method declaration in the base class.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="example">Example</h2>
+
+<pre><code class="language-csharp">class Appliance
+{
+	public virtual void Clean()
+	{
+		// general cleaning instructions
+	}
+}
+
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="override-keyword">“override” keyword</h2>
+
+<pre><code class="language-csharp">public override void Clean()
+{
+	// body of the method
+}
+</code></pre>
+<p>When implementing a new version of the method in the derived class, add the keyword <code>override</code>.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="override-examples">Override Examples</h2>
+
+<pre><code class="language-csharp">class Dishwasher : Appliance
+{
+	public override void Clean()
+	{
+	   //specific instructions for how a dishwasher cleans
+	}
+}
+</code></pre>
+<pre><code class="language-csharp">class WashingMachine : Appliance
+{
+	public override void Clean()
+	{
+	   //specific instructions for how a washing machine cleans
+	}
+}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="practice-1">PRACTICE!!</h2>
+
+<ul>
+  <li>Create a new base class.</li>
+</ul>
+<div class="fragment"> - Create two derived classes. </div>
+<div class="fragment"> - Create a virtual method in the base class. </div>
+<div class="fragment"> - Create an override method in each derived class.</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="abstract-classes">Abstract Classes</h2>
+
+<ul>
+  <li>What is an abstract class?</li>
+</ul>
+<div class="fragment">
+- An abstract class should be used when instances will be created from derived classes only.
+</div>
+<div class="fragment">- An abstract class can not be instantiated.</div>
+<div class="fragment">- Abstract classes can have abstract, virtual, and normal methods.</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="abstract-keyword">“abstract” keyword</h2>
+
+<ul>
+  <li>Use the abstract keyword to denote a class or method that you do not want to be implemented.</li>
+</ul>
+<div class="fragment">Abstract methods can only be placed inside of abstract classes.</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="something-peculiar-about-abstract-classes">Something peculiar about Abstract classes</h2>
+
+<p>An abstract method <mark>does NOT</mark> need a body.</p>
+
+<p>In fact, abstract methods usually <mark>do NOT</mark> have a body.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="example-of-abstract-class">Example of Abstract Class</h2>
+
+<pre><code class="language-csharp">public abstract class Appliances
+{
+	public abstract void Clean();
+	// an abstract method does not 
+	// have a body
+}
+</code></pre>
+<p><mark>NOTE:</mark> An appliance is a good example of an abstract class, because you would never just create an “Appliance” object, you would create a type of appliance, like a “Toaster”.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="class-derived-from-abstract-class">Class Derived from Abstract Class</h2>
+
+<pre><code class="language-csharp">class Dishwasher : Appliances
+{
+	public override void Clean()
+	{
+	   //in the derived class, use the override keyword to rewrite
+	   //an abstract method from the base class  
+	}
+}
+</code></pre>
+<div class="fragment">Let me repeat that ... we use the OVERRIDE keyword in the derived class with abstract methods from the base class.</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="practice-2">PRACTICE!!</h2>
+
+<p>Create an abstract Furniture class.</p>
+<ul>
+  <li>Create fields and/or Properties in the Furniture class that relate to all furniture types.</li>
+  <li>Create an abstract method in your Furniture class.</li>
+  <li>Create three derived classes of types of furniture.</li>
+  <li>Each type of furniture should have three fields and/or Properties.</li>
+  <li>Each type of furniture should have its own, non-override method.</li>
+  <li>Each type of furniture should also have a method that overrides the abstract method in the Furniture class.</li>
+  <li>In your Program class, instantiate an object of each type of furniture.</li>
+  <li>Use all methods from all derived classes inside of your Program class.</li>
+</ul>
+
+<style type="text/css">
+/* should we move this into the template, or will it break existing slides. Maybe those slides are wrong. */
+.reveal h3 {
+	font-size: 4.4rem;	
+}
+</style>
+
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="../../shared/lib/js/head.min.js"></script>
+		<script src="../../shared/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// I suspect there's a better way to do this...
+				width: 1920 * 0.8,
+				height: 1080,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../shared/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../shared/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../shared/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../shared/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

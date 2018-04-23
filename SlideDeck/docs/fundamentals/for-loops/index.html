@@ -1,0 +1,609 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>For Loops - •••</title>
+
+		<meta name="description" content="- description not found -">
+		<meta name="author"      content="Your Name Here">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../shared/css/reveal.css">
+		<link rel="stylesheet" href="../../shared/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../shared/lib/css/zenburn.css">
+
+		<!-- WCCI style tweaks -->
+		<link rel="stylesheet" href="../../shared/css/wcci.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../shared/css/print/pdf.css' : '../../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="text-align: center">For Loops</h1>
+					<h3 style="text-align: center">•••</h3>
+					<div id="logo">
+						<img src="../../shared/images/wcci-logo.png">
+						<p style="font-size: smaller;">&copy; We Can Code IT, LLC</p>
+					</div>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_ -->
+<h2 id="the-wonderful-world-of-loops">The wonderful world of Loops</h2>
+
+<ul>
+  <li>
+    <p>In a prior lesson we covered <mark>while</mark> and <mark>do while</mark> loops.</p>
+  </li>
+  <li>
+    <p>We also discussed some of the situations in which we would use them.</p>
+  </li>
+  <li>
+    <p>Now we will discuss the <mark>for</mark> loop.</p>
+  </li>
+  <li>
+    <p>The <mark>for</mark> loop will be one of the most important tools C# has to offer.</p>
+  </li>
+  <li>
+    <p>We predominantly use a <mark>for</mark> loop when we are iterating through an array, list, dictionary, or other data structure.</p>
+  </li>
+  <li>
+    <p>The importance of the <mark>.Length</mark> property we learned about will become clear in this lesson.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="understanding-the-for-loop-structures">Understanding the for loop structures</h2>
+
+<ul>
+  <li>The <mark>for</mark> loop has four parts: <strong>Setup</strong>, <strong>Test Expression</strong>, <strong>Body</strong> and <strong>Increment</strong>.</li>
+</ul>
+
+<pre><code class="language-C#" data-noescape="">
+<mark>for</mark> <mark>(setup; test expression; increment)</mark> 
+{
+  <mark>body</mark>;	
+}</code></pre>
+
+<ul>
+  <li>
+    <p>As with the <mark>while</mark> loop, the <mark>for</mark> keyword tells the compiler to execute a for loop.</p>
+  </li>
+  <li>
+    <p>The setup involves <em>declaring</em> and <em>initializing</em> an <strong>increment variable</strong>. The letter <mark>i</mark> is most commonly used as the increment variable.</p>
+  </li>
+</ul>
+
+<pre><code class="language-C#" data-noescape="">
+for (<mark>int i = 0</mark>; test expression; increment) 
+{
+  body;	
+}</code></pre>
+
+<ul>
+  <li>In the parentheses we declare and intialize the increment variable.</li>
+</ul>
+
+<div class="fragment">
+Question time: Why is the increment variable initialized with a value of 0?
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="test-expression">Test expression</h2>
+
+<ul>
+  <li>The second part to our <mark>for</mark> structure is the <mark>test expression</mark>.</li>
+</ul>
+
+<pre><code class="language-C#" data-noescape="">for (int i = 0; <mark>test expression</mark>; increment) 
+{
+ body;	
+}</code></pre>
+
+<ul>
+  <li>
+    <p>Unlike a <code>while</code> or <code>do while</code> loop, which have an exit determined by a <code>bool</code> value, we employ a <mark>for</mark> loop <strong>when the amount of iterations is known</strong>.</p>
+  </li>
+  <li>
+    <p>The <mark>test expression</mark> is the conditional by which we test the iteration variable’s value.</p>
+  </li>
+  <li>
+    <p>For our purposes, we will use the length of the <code>foodList</code> array.</p>
+  </li>
+</ul>
+
+<pre><code class="language-C#" data-noescape="">for (int i = 0; <mark>i &lt; foodList.Length</mark>; increment) 
+{
+ body;	
+}</code></pre>
+
+<div class="fragment">
+Question time: How many times will our for loop iterate?
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="increment">Increment</h2>
+
+<ul>
+  <li>The third part of our <mark>for</mark> loop structure is the <mark>postfix increment</mark>.</li>
+</ul>
+
+<pre><code class="language-C#" data-noescape="">for (int i = 0; i &lt; foodList.Length;<mark>increment</mark>) 
+{
+ body;	
+}</code></pre>
+
+<ul>
+  <li>
+    <p>After each iteration of our <mark>for</mark> loop, the iteration variable is incremented.</p>
+  </li>
+  <li>
+    <p>We use the <mark>postfix increment</mark> operator to increment the iteration variable.</p>
+  </li>
+  <li>
+    <p>Please note you have flexibility when it comes to how you increment or decrement the iteration variable.</p>
+  </li>
+</ul>
+
+<pre><code class="language-C#" data-noescape="">for (int i = 0; i &lt; foodList.Length;<mark>i++</mark>) 
+{
+ body;	
+}</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="the-body">The body</h2>
+
+<ul>
+  <li>As with the <code>do while</code> and <code>while</code> loops, the code within the <mark>body</mark> of the for loop will execute as long as the test expression returns true.</li>
+</ul>
+
+<pre><code class="language-C#" data-noescape="">for (int i = 0; i &lt; foodList.Length; i++) 
+{
+ <mark>Console.WriteLine(i);</mark>	
+}</code></pre>
+
+<ul>
+  <li>In this example, we have inserted a <mark><code>Console.WriteLine()</code></mark> with the increment variable.</li>
+</ul>
+
+<div class="fragment">
+Question time: If we execute this code, what will the <code>Console.WriteLine(i)</code> return?
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="lets-experiment">Let’s experiment</h2>
+
+<ul>
+  <li>
+    <p>Volunteer time</p>
+  </li>
+  <li>
+    <p>Open your Hello World project.</p>
+  </li>
+  <li>
+    <p>Comment out the code contained in part thirteen.</p>
+  </li>
+  <li>
+    <p>Uncomment the line in your code which declares and intializes the <code>foodAmount</code> array.</p>
+  </li>
+</ul>
+
+<p>Add the following code to your Hello World project</p>
+<pre><code class="language-C#" data-noescape="">//Part fourteen for-loop examples
+for (int i = 0; i &lt; foodAmount.Length; i++) 
+{
+ Console.WriteLine(i);	
+}</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here">We should all be here</h2>
+
+<div class="img" float="right"><img src="./resources/for1.png" /></div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="loop-execution-in-depth">Loop execution in depth</h2>
+
+<ul>
+  <li>
+    <p>Before we execute our code, let me explain the process part by part.</p>
+  </li>
+  <li>
+    <p>When the compiler reaches the <code>for</code> keyword, the following will take place:</p>
+
+    <div class="fragment">
+  1. The iteration variable is declared and assigned a value of 0.
+  </div>
+
+    <div class="fragment">
+  2. The test expression is validated for true or false.
+  </div>
+
+    <div class="fragment">
+  3. If the expression is true, the code in the loop body will execute.
+  </div>
+
+    <div class="fragment">
+  4. Once the code in the body executes, the postfix increment will increment the iteration variable by 1.
+  </div>
+
+    <div class="fragment">
+  5. The test expression is validated for true or false.
+  </div>
+
+    <div class="fragment">
+  6. If the expression is true, the code in the loop body will execute.
+  </div>
+
+    <div class="fragment">
+  7. Once the code in the body executes, the postfix increment will increment the iteration variable by 1.
+  </div>
+  </li>
+</ul>
+
+<div class="fragment">
+Question time: What value must be returned for the loop iteration to complete?
+</div>
+<div class="fragment">
+Execute your code!!
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="for-loops-and-data-structures">For loops and data structures</h2>
+
+<ul>
+  <li>
+    <p>One of the many tasks we can perform with a for loop is iterating through a data structure.</p>
+  </li>
+  <li>
+    <p>We will focus primarily on the array, but almost any data structure could be used.</p>
+  </li>
+  <li>
+    <p>Let’s take our code from Hello World, and integrate a for loop as we did with the do and do while loops.</p>
+  </li>
+  <li>
+    <p>Volunteer time</p>
+  </li>
+  <li>
+    <p>Before we get started, comment out our last for loop example in part fourteen.</p>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>We are going to enter the values for the foodAmount array, then print them using a for loop.</p>
+  </li>
+  <li>
+    <p>Because we declared and initialized the foodAmount array with values, we will be replacing these values.</p>
+  </li>
+  <li>
+    <p>Knowing what we are entering values for would be helpful as well. Uncomment the code which declares and enters values for the <mark>foodList</mark> array.</p>
+  </li>
+</ul>
+
+<p>Add the following code to your Hello World project</p>
+<pre><code class="language-C#" data-noescape="">
+for (int i = 0; i &lt; foodAmount.Length; i++)
+{
+    Console.WriteLine("Enter a value for " + foodList[i]);
+    foodAmount[i] = int.Parse(Console.ReadLine());
+}</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="time-to-dive-deeper">Time to dive deeper</h2>
+
+<ul>
+  <li>
+    <p>When we use a <mark>for</mark> loop to iterate through an array, the iteration variable’s value is also the value of the array’s <strong>index</strong>.</p>
+  </li>
+  <li>
+    <p>When we reference the iteration variable, in our case <mark>i</mark>, we are referencing the array index.</p>
+  </li>
+  <li>
+    <p>Let’s carefully step through the array and understand the process.</p>
+  </li>
+</ul>
+
+<pre><code class="language-C#" data-noescape="">
+for (int i = 0; i &lt; foodAmount.Length; i++)
+{
+    Console.WriteLine("Enter a value for " + foodList[i]);
+    foodAmount[i] = int.Parse(Console.ReadLine());
+}</code></pre>
+
+<div class="fragment">
+- In the first iteration of our loop, the variable values are: <mark><code>i = 0</code></mark> and <mark><code>foodList[0] = Milk</code></mark>
+</div>
+
+<div class="fragment">
+- In the second iteration of our loop, the variable values are: <mark><code>i = 1</code></mark> and <mark><code>foodList[1] = Fruit</code></mark>
+</div>
+
+<div class="fragment">
+- In the third iteration of our loop, the variable values are: <mark><code>i = 2</code></mark> and <mark><code>foodList[2] = Meat</code></mark>
+</div>
+
+<div class="fragment">
+Question time: What is the value of <code>foodList[i]</code> when <code>i = 3</code> and when <code>i = 4</code>?
+</div>
+
+<div class="fragment">
+Question time: When <code>i = 3</code> and you enter a value via the console to the <code>foodAmount</code> array, what value are you overwriting?
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="lets-experiment-1">Let’s experiment</h2>
+
+<ul>
+  <li>Enter the following code into your Hello World program, then execute your program.</li>
+</ul>
+
+<pre><code class="language-C#" data-noescape="">
+for (int i = 0; i &lt; foodAmount.Length; i++)
+{
+    Console.WriteLine("Enter a value for " + foodList[i]);
+    foodAmount[i] = int.Parse(Console.ReadLine());
+}</code></pre>
+
+<div class="fragment">
+We should all be here.
+</div>
+
+<div class="fragment">
+<div class="img" float="right"><img src="./resources/for2.png" /></div>
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="nested-for-loop">Nested for loop</h2>
+
+<ul>
+  <li>
+    <p>One of the most powerful applications of the <mark>for loop</mark> is the implementation of <mark>nesting</mark>.</p>
+  </li>
+  <li>
+    <p><mark>Nested for loops</mark> are used in a wide range of applications, e.g. searching, sorting, and comparing data.</p>
+  </li>
+  <li>
+    <p>Although the nested for loop can be essential in many applications, its use decreases the efficiency of your program.</p>
+  </li>
+  <li>
+    <p>Let’s walk through an example of a nested for loop.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="step-by-step">Step by step</h2>
+
+<ul>
+  <li>
+    <p>In the following example of a nested for loop, we are going to construct a half pyramid.</p>
+  </li>
+  <li>
+    <p>Lets define the first two lines of our code:</p>
+
+    <ul>
+      <li><mark><code>int size = 5;</code></mark> defines the maximum height and width of our pyramid.</li>
+    </ul>
+
+    <div class="fragment">
+  - Question time: What is the purpose of declaring the <mark>int i, j;</mark> variables?
+  </div>
+  </li>
+</ul>
+
+<pre><code class="language-C#" data-noescape="">int size = 5;    //Equals the max number of columns and rows
+int i, j;
+for (i = 0; i &lt;= size; i++)
+{
+    for (j = 0; j &lt; i; j++)
+    {
+        Console.Write("*");
+    }
+    Console.WriteLine("");
+}
+Console.ReadLine();
+</code></pre>
+
+<p><a href="https://youtu.be/k7aBHls-ZzU">Nested for loop demonstration</a></p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="some-useful-ideas">Some useful ideas</h2>
+
+<ul>
+  <li>
+    <p>Another useful application of a for loop is performing math calculations.</p>
+  </li>
+  <li>
+    <p>Let’s look at how we can easily perform many math functions.</p>
+  </li>
+</ul>
+
+<pre><code class="language-C#" data-noescape="">int sum = 1;
+for (int i = 0; i &lt;= 10; i++)
+{
+    sum = sum + 1;   
+}
+Console.WriteLine(sum);
+</code></pre>
+
+<pre><code class="language-C#" data-noescape="">
+int sum = 1;
+for (int i = 0; i &lt;= 10; i++)
+{
+    sum = sum * 3;   
+}
+Console.WriteLine(sum);
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>Take note of the <mark>+=</mark> and <mark>*=</mark> operators.</p>
+  </li>
+  <li>
+    <p>These are a shortcut for <mark>sum = sum + 3</mark> and <mark>sum = sum * 3</mark></p>
+  </li>
+</ul>
+<pre><code class="language-C#" data-noescape="">for (int i = 0; i &lt;= 10; i++)
+{
+    sum *= 3;
+}
+Console.WriteLine(sum);
+
+for (int i = 0; i &lt;= 10; i++)
+{
+    sum += 3;
+}
+Console.WriteLine(sum);
+</code></pre>
+<style type="text/css">
+.img:hover  {
+        transform: scale(1.5);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+</style>
+
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="../../shared/lib/js/head.min.js"></script>
+		<script src="../../shared/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// I suspect there's a better way to do this...
+				width: 1920 * 0.8,
+				height: 1080,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../shared/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../shared/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../shared/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../shared/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

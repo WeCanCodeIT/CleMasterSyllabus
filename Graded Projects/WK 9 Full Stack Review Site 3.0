@@ -1,0 +1,38 @@
+
+### Reviews Iteration 3
+
+- Although you will not be directed to specific content on which to apply the following JavaScript, you MUST provide detailed documetation on the script you used and the locations it was used.
+
+- You MUST utilize JavaScript methods to accomplish the following tasks:
+
+- The website MUST allow the user to dynamically add content in your web application utilizing a JavaScript method, buttons and text fields 
+
+- The website MUST allow the user to dynamically remove content from your web application utilizing a JavaScript method, buttons and text fields 
+
+- The website MUST allow the user to dynamically show all reviews that belong to a particular item utilizing a JavaScript method, buttons and text fields 
+
+- The website MUST allow the user to dynamically enhance size and color of text on mouseover utilizing a JavaScript method, buttons and text fields 
+
+	- The text MUST return to its default size and color when a mouseover is not being performed.
+
+- The website MUST allow the user to navigate to another site utilizing a JavaScript method, buttons and text fields.
+
+	- The website MUST inform the user they are being directed to another site.
+
+	- The website MUST allow the user to cancel the action before it is perfomed.
+	
+	- If the user affirms the action, the website must open in another browser tab.
+
+- Add a copyright with date in the footer of your wesite.
+
+	- The website MUST dynamically replace the copyright and date text to "created by "Insert Your Name".
+
+	- You can choose to perfrom this action onhover or onclick.
+ 
+ - The website MUST implement an array utilizing Javascript.
+ 
+	- The website MUST provide feedback to the user based on the contents of the array.
+
+**Stretch task**:
+- Create a drop down menu
+

@@ -1,0 +1,603 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Introduction to SQL Queries - The Basics</title>
+
+		<meta name="description" content="- description not found -">
+		<meta name="author"      content="Your Name Here">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../shared/css/reveal.css">
+		<link rel="stylesheet" href="../../shared/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../shared/lib/css/zenburn.css">
+
+		<!-- WCCI style tweaks -->
+		<link rel="stylesheet" href="../../shared/css/wcci.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../shared/css/print/pdf.css' : '../../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="text-align: center">Introduction to SQL Queries</h1>
+					<h3 style="text-align: center">The Basics</h3>
+					<div id="logo">
+						<img src="../../shared/images/wcci-logo.png">
+						<p style="font-size: smaller;">&copy; We Can Code IT, LLC</p>
+					</div>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_ -->
+<h2 id="taking-off-the-seat-belt-writing-sql-queries-instead-of-using-the-editor">Taking off the seat belt. Writing SQL Queries instead of using the editor.</h2>
+
+<p>You’ve used SSMS previously to create databases for your MVC database first project. Let’s review how we created tables there, added keys, and even selected from the table. What’s going on? Behind the scenes of SSMS, which is a GUI for SQL Server (the db), SQL Queries are hard at work for you. It’s time to learn how to write them yourselves.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="sql-is-a-language">SQL is a language</h2>
+
+<p>SQL stands for Structured Query Language. It’s a language specific to getting information from databases like SQL Server. It’s pretty standard across relational DBs, so it is also used with MySQL, Oracle, and many more.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="what-are-queries">What are queries?</h2>
+
+<ul>
+  <li>
+    <p>A <strong>query</strong> is a question that is asked of a database.  This can include one table or many tables to find the answer.</p>
+  </li>
+  <li>
+    <p>We can create queries using SQL Server Management Studio (SSMS) and the <strong>Query Editor Window</strong>.</p>
+  </li>
+  <li>
+    <p>SSMS executes queries for each action it does, so when you’re clicking buttons and updating tables, you’re actually executing SQL queries in the background.  We are going to explain some of the queries that you will use most often when asking questions of databases.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="show-it">Show It</h2>
+
+<ul>
+  <li>Let’s practice creating a database by hand. First, open up SSMS and create a new database called QueryPractice.</li>
+  <li>
+    <p>To start a new query right click your new database and select “New Query”.</p>
+
+    <div float="right"><img src="./resources/ChangeDatabaseScreenShot.jpg" /></div>
+  </li>
+  <li>This opens a new Query Editor Window for us.</li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>We can change the database we are working with using the drop down in the top left.</li>
+</ul>
+<div float="right"><img src="./resources/ChangeDatabaseScreenShot.jpg" /></div>
+
+<p>Be sure your query editor window says QueryPractice.</p>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>We are able to enter our queries into this window. There are two way we can run our queries in this window.
+    <ul>
+      <li>Each time we hit the green “Execute” button, or we hit the F5 key it will run all SQL commands in our query window.</li>
+      <li>Another common way to execute queries is to select a line or lines that contain SQL commands and hit the green “Execute” button, or the F5 key. This will only run the selected lines. This can be useful if you have a number of different SQL commands, you don’t need to create a new query window for each new set of commands.
+        <ul>
+          <li>BUT, you need to be very careful to make sure you <em>ALWAYS</em> have something selected or else it will run every command in your query window.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Formatting SQL: SQL is non case-sensitive, but it’s convention to write all the the SQL specific keywords in all UPPERCASE. We can end our statements with a <strong>semicolon</strong> (;). They aren’t always required and our query will probably work without them, but it is the standard to include them. We can break our SQL into as many lines as we like - people like to format their SQL queries in different ways.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="queries">Queries</h2>
+
+<ul>
+  <li>We’ll be creating a database to help track the menu items in a restaurant.</li>
+  <li>Let’s start with a query to create a new table:</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="creating-a-table">Creating a table</h2>
+
+<pre><code class="language-SQL">CREATE TABLE MenuItem(
+    MenuItemID int IDENTITY(1,1) NOT NULL,
+    ItemName varchar(50) NOT NULL,
+    ItemDescription varchar(50) NULL,
+    Price float NULL,
+    CONSTRAINT PK_MenuID PRIMARY KEY CLUSTERED (MenuItemID)
+)
+</code></pre>
+<ul>
+  <li>
+    <p>You may notice the keywords <code>CONSTRAINT</code> and <code>CLUSTERED</code>, which may be new to you. A <code>CONSTRAINT</code> in SQL specifies certain properties that the database data must comply with, like a set of rules. The <code>CLUSTERED</code> keyword means the records in the table are physically stored in a sorted manner.</p>
+  </li>
+  <li>
+    <p>Before you run the preceding query, take some time to discuss the command with your neighbor. What looks the same? What looks different? Do you notice anything familiar?</p>
+  </li>
+  <li>
+    <p>Now, add the query into your query window and run. If everything ran successfully you should get the following message: <code>Command(s) completed successfully.</code></p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="insert">INSERT</h2>
+
+<ul>
+  <li>
+    <p>Now that we have a table, let’s insert some data into it. We can use the <code>INSERT</code> command to do that.</p>
+  </li>
+  <li>
+    <p>Before running the <code>INSERT</code> command take some time to review these commands. Take note at how we list each column we want to <em>insert</em> into, separated by commas. Then in the next section we list each of the values to be inserted into the columns.</p>
+  </li>
+</ul>
+
+<pre><code class="language-SQL">INSERT INTO MenuItem ([ItemName],[ItemDescription],[Price]) VALUES 
+	('Hamburger', 'Angus beef', 12.00);
+INSERT INTO MenuItem ([ItemName],[Price]) VALUES ('Salad', 7.00);
+INSERT INTO MenuItem ([ItemName],[ItemDescription],[Price]) VALUES 
+	('Cheese', 'Swiss', 5.00);
+INSERT INTO MenuItem ([ItemName],[ItemDescription],[Price]) VALUES 
+	('Hamburger', 'Black Bean Burger', 8.00);
+</code></pre>
+
+<ul>
+  <li>After performing the operation you should see the following message: <code>(1 row(s) affected)</code>, once per insert statement.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="select">SELECT</h2>
+
+<ul>
+  <li>Now that we have some info in the database how do we view it? Let’s start with the following <code>SELECT</code> statement</li>
+</ul>
+
+<pre><code class="language-SQL">SELECT * FROM MenuItem;
+</code></pre>
+
+<ul>
+  <li>It starts out with the <code>SELECT</code> keyword. The next part is the asterisk (*), this means we will pull back <em>all</em> columns for the table. Which table exactly? The <code>FROM</code> keyword is what we use to designate which table we’re selecting from. And <code>FROM</code> is followed with the table we’re selecting from. In this case its our <code>MenuItem</code> table.</li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>How else can we select things? If we don’t need all columns, we can specify exactly which columns we want to pull information from. Here is how we select just the <code>ItemName</code> and the <code>Price</code> columns in the <code>MenuItem</code> table.</li>
+</ul>
+
+<pre><code class="language-SQL">SELECT ItemName, Price FROM MenuItem;
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="do-it">Do It</h2>
+
+<ul>
+  <li>There’s a lot more we can do with select statements. Work together through the following queries:</li>
+</ul>
+
+<pre><code class="language-SQL">--If we want to make sure we don't get any duplicates, we can use DISTINCT.
+SELECT DISTINCT ItemName FROM MenuItem;
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<pre><code class="language-SQL">--We can use COUNT to count the total number of records in a table.
+SELECT COUNT(ItemName) FROM MenuItem;
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<pre><code class="language-SQL">--We can use COUNT with DISTINCT to count unique values in a column.
+SELECT COUNT(DISTINCT ItemName) FROM MenuItem;
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<pre><code class="language-SQL">--We can use AVG to calculate the average value of a column.
+SELECT AVG(Price) FROM MenuItem;
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<pre><code class="language-SQL">--WHERE lets us further define what we're selecting.
+--We can use conditionals similar to an "if" statement in C#.
+SELECT * FROM MenuItem WHERE ItemName = 'Hamburger';
+SELECT * FROM MenuItem WHERE MenuItemID = 1;
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<pre><code class="language-SQL">--It's also fairly common to see a SQL statement split up
+--where each part is on a new line for readability.
+SELECT * 
+FROM MenuItem 
+WHERE ItemName = 'Hamburger';
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<pre><code class="language-SQL">--We can use WHERE to determine when things are not equal as well.
+--Both statements are equivalent, the second uses a SQL specific form.
+SELECT * FROM MenuItem WHERE ItemName != 'Hamburger';
+SELECT * FROM MenuItem WHERE ItemName &lt;&gt; 'Hamburger';
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<pre><code class="language-SQL">--We can compare using SELECT, just like in C#.
+SELECT * FROM MenuItem WHERE Price &gt; 7;
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<pre><code class="language-SQL">--We can use the keyword AND to indicate a range with which to compare.
+SELECT * FROM MenuItem WHERE Price BETWEEN 7 AND 9;
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<pre><code class="language-SQL">--We can use ORDER BY and ASC to order our results in ascending order.
+SELECT * FROM MenuItem ORDER BY Price ASC;
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<pre><code class="language-SQL">--We can also use ORDER BY and DESC to order our results in descending order.
+SELECT * FROM MenuItem ORDER BY Price DESC;
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="like">LIKE</h2>
+
+<ul>
+  <li>
+    <p>In SQL we might have a situation where we might want to search for something, but we don’t know exactly what we are looking for. We can use the keyword <code>LIKE</code> to include a <strong>wildcard character</strong> in our <code>WHERE</code> clauses. This allows us to match a partial string.</p>
+  </li>
+  <li>
+    <p>The wildcard character in SQL is the percentage sign (%). We can use it like in the following example.</p>
+  </li>
+</ul>
+
+<pre><code class="language-SQL">--Here we are using the LIKE and the wildcard character(%)
+--to match the remainder of a string.-
+SELECT * from MenuItem WHERE ItemName LIKE 'Ham%';
+
+
+--Finally, we can combine everything we've learned in a query like
+--the following. Have fun experimenting!
+SELECT AVG(Price) 
+FROM MenuItem
+WHERE ItemName LIKE 'Ham%';
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="update">UPDATE</h2>
+
+<ul>
+  <li>We’ve learned how to insert data. What if we want to update the values? We have a lot of different ways of performing updates. The following update will find all the Hamburgers and change their price to 14.0.</li>
+</ul>
+
+<p>One key to remember about updates is that you <em>almost always</em> want to have a <code>WHERE</code> to specify criteria in your <code>UPDATE</code> statement, otherwise you will update the <em>entire table</em>!</p>
+
+<pre><code class="language-SQL">UPDATE MenuItem  
+    SET Price = 14.0  
+    WHERE ItemName = 'Hamburger';
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="delete">DELETE</h2>
+
+<ul>
+  <li>
+    <p>We also have a <code>DELETE</code> keyword that removes data. We need to give it a condition - this is how it finds the data (rows) it should delete.</p>
+  </li>
+  <li>
+    <p>NOTE: Be very careful with the <code>DELETE</code> command. There is no <em>undo</em>, so once the data is gone, it’s gone! So just remember to double check before you delete, and don’t leave any extra <code>DELETE</code> commands in your query window.</p>
+  </li>
+</ul>
+
+<pre><code class="language-SQL">DELETE FROM MenuItem
+WHERE ItemName = 'Hamburger';
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="other-commands">Other commands</h2>
+
+<ul>
+  <li>There are many other SQL commands to learn, but these are the most common. There are resources at the end of this page that point towards places to learn more about SQL commands.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="relationships">Relationships</h2>
+
+<ul>
+  <li>
+    <p>We know that Microsoft SQL Server is a <em>relational</em> database. How can we define a foreign key relationship using SQL queries?</p>
+  </li>
+  <li>
+    <p>Before we begin we need to delete the table we’ve been using so far. Don’t worry, using SQL queries we can quickly, delete, recreate, and populate our databases and tables with information. To delete our table we can run the following command:</p>
+  </li>
+</ul>
+
+<pre><code class="language-SQL">DROP TABLE MenuItem;
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>Now let’s create two new tables with a foreign key relationship. Take some time to study the following example before proceeding.</li>
+</ul>
+
+<pre><code class="language-SQL">CREATE TABLE Category(
+	CategoryID int IDENTITY(1,1) NOT NULL,
+	Name varchar(50) NOT NULL,
+	CONSTRAINT PK_CategoryID PRIMARY KEY CLUSTERED (CategoryID)
+);
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<pre><code class="language-SQL">CREATE TABLE MenuItem(
+    MenuItemID int IDENTITY(1,1) NOT NULL,
+    ItemName varchar(50) NOT NULL,
+    ItemDescription varchar(50) NULL,
+    Price float NULL,
+    CategoryID int NOT NULL,
+    CONSTRAINT PK_MenuID PRIMARY KEY CLUSTERED (MenuItemID),
+    CONSTRAINT FK_PRODUCT foreign key (CategoryID) references 
+	   Category(CategoryID)
+);
+</code></pre>
+<ul>
+  <li>Can you see the relationship between the two tables?</li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>We’re almost ready to start using our new tables. Before we can use our <code>MenuItem</code> table, we need to add data into our <code>Category</code> table.</li>
+</ul>
+
+<pre><code class="language-SQL">INSERT INTO Category([Name]) VALUES ('Lunch');
+INSERT INTO Category ([Name]) VALUES ('Dinner');
+</code></pre>
+
+<ul>
+  <li>Now that we have at least one category, we can add new menu items. Can you tell what’s different with these <code>INSERT</code> statements?</li>
+</ul>
+
+<pre><code class="language-SQL">INSERT INTO MenuItem ([ItemName],[ItemDescription],[Price],[CategoryID]) 
+ VALUES ('Hamburger','Angus beef', 12.00,2);
+INSERT INTO MenuItem ([ItemName],[Price],[CategoryID]) VALUES ('Salad',7.00,1);
+INSERT INTO MenuItem ([ItemName],[Price],[CategoryID]) VALUES ('Salad',8.00,2);
+INSERT INTO MenuItem ([ItemName],[ItemDescription],[Price],[CategoryID]) 
+ VALUES ('Ham &amp; Cheese Sandwich','Black Forest Ham with Swiss Cheese',5.00,1);
+INSERT INTO MenuItem ([ItemName],[ItemDescription],[Price],[CategoryID]) 
+ VALUES ('Hamburger','Black Bean Burger', 8.00,2);
+INSERT INTO MenuItem ([ItemName],[ItemDescription],[Price],[CategoryID]) 
+ VALUES ('Turkey &amp; Cheese Sandwich','Smoked Turkey &amp; American Cheese',5.00,1);
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="do-it-1">Do It</h2>
+
+<ul>
+  <li>Practice using different SQL commands to insert, update, delete, and select rows from your table. Try calculating different values based on the information stored in your tables.</li>
+</ul>
+
+<style type="text/css">
+.reveal section img.logo {
+	border: none;
+	background-color: rgba(255, 255, 255, 0.25);
+	padding: 1rem;
+}
+.reveal ol, .reveal dl, .reveal ul {
+	margin: 0 0 1rem 2rem;
+}
+</style>
+
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="../../shared/lib/js/head.min.js"></script>
+		<script src="../../shared/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// I suspect there's a better way to do this...
+				width: 1920 * 0.8,
+				height: 1080,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../shared/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../shared/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../shared/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../shared/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

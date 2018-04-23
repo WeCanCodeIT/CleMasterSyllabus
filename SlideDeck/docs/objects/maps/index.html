@@ -1,0 +1,366 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Maps - Pairing Keys with Values</title>
+
+		<meta name="description" content="- description not found -">
+		<meta name="author"      content="Your Name Here">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../shared/css/reveal.css">
+		<link rel="stylesheet" href="../../shared/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../shared/lib/css/zenburn.css">
+
+		<!-- WCCI style tweaks -->
+		<link rel="stylesheet" href="../../shared/css/wcci.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../shared/css/print/pdf.css' : '../../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="text-align: center">Maps</h1>
+					<h3 style="text-align: center">Pairing Keys with Values</h3>
+					<div id="logo">
+						<img src="../../shared/images/wcci-logo.png">
+						<p style="font-size: smaller;">&copy; We Can Code IT, LLC</p>
+					</div>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_ -->
+<h1 id="what-is-it">What is it?</h1>
+
+<p>A map is a construct that allows us to pair keys and values. Maps are sometimes referred to as tables or dictionaries.</p>
+
+<p>Let’s say that I have the following student information:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Student ID</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>23A52</td>
+      <td>Harvey Dent</td>
+    </tr>
+    <tr>
+      <td>68Z29</td>
+      <td>Jessica Jones</td>
+    </tr>
+    <tr>
+      <td>57W85</td>
+      <td>J Jonah Jameson</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Each student will have a unique ID, but multiple students could have the same name.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="how-do-i">How Do I…?</h2>
+
+<p>Each student ID (<em>key</em>) corresponds to a student name (<em>value</em>). Each of these key/value pairs is known as a map <em>entry</em>. In Java, we can create a <code>Map</code> to hold these entries.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong><em>key</em><br />↓↓↓</strong><br />Student ID</th>
+      <th><strong><em>value</em><br />↓↓↓↓↓</strong><br />Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>23A52</td>
+      <td>Harvey Dent</td>
+    </tr>
+    <tr>
+      <td>68Z29</td>
+      <td>Jessica Jones</td>
+    </tr>
+    <tr>
+      <td>57W85</td>
+      <td>J Jonah Jameson</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code>Map</code> is a <em>parameterized type</em>, so we declare it thus, specifying the types for key and value:</p>
+
+<pre><code class="language-java">Map&lt;String, String&gt; students;
+</code></pre>
+
+<div class="fragment">
+<p>The first <em>type parameter</em> indicates the type of the key. Student IDs are <code>String</code>s.</p>
+<pre><code class="language-java hljs" data-noescape="">Map&lt;<mark>String</mark>, String&gt; students;</code></pre>
+</div>
+
+<div class="fragment">
+<p>The second indicates the type of the value. Student names are also <code>String</code>s.</p>
+<pre><code class="language-java hljs" data-noescape="">Map&lt;String, <mark>String</mark>&gt; students;</code></pre>
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="build-it">…build it?</h2>
+
+<p><code>Map</code> is an <em>interface</em>, an <em>abstract</em> type rather than a <em>concrete</em> type, so in order to <em>instantiate</em> (create) a map, we must call the constructor for a concrete type. The most common concrete <code>Map</code> is <code>HashMap</code>:</p>
+
+<pre><code class="language-java">Map&lt;String, String&gt; students = new HashMap&lt;String, String&gt;();
+</code></pre>
+
+<p>To add students, we use <code>put(key, value)</code>:</p>
+<pre><code class="language-java">students.put("23A52", "Harvey Dent");
+students.put("68Z29", "Jessica Jones");
+students.put("57W85", "J Jonah Jameson");
+</code></pre>
+
+<p>Let’s look at what we’ve got:</p>
+<pre><code class="language-java">System.out.println("The students are " + students);
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="what-is-it-good-for">What is it Good For?</h1>
+
+<p>We know that we could use an array or an <code>ArrayList</code> to hold collections of things, so why <code>Map</code>?</p>
+
+<p>Imagine we wanted to look up students by name from our example student information. First, we’d ened to create a class to hold student ID and name:</p>
+
+<pre><code class="language-java">public class Student {
+  String id;
+  String name;
+}
+</code></pre>
+
+<p>Assuming we have populated a collection of <code>Student</code> objects, to find a student by ID, we’d do something like this:</p>
+
+<pre><code class="language-java">for(Student current: students) {
+  if("23A52".equalsIgnoreCase(current.id)) {
+    System.out.println("Found the student!");
+    System.out.println("The student's name name is " + current.name);
+    break;
+  }
+}
+</code></pre>
+
+<p>Maps make this easier. Also, what if there were 20,000 students and the one we were looking for was 19,998th in our list? Maps also perform better for doing lookups like this.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="finding-our-student">Finding our Student</h2>
+
+<p><code>Map</code> defines a method called <code>get</code>. Given a key, the <code>get</code> method will return its value.</p>
+
+<p>Assuming we have populated a <code>Map</code> named <code>students</code> whose keys are IDs (<code>String</code>s) and whose values are student names (<code>String</code>s), finding a student by ID with a <code>Map</code> is simple:</p>
+
+<pre><code class="language-java">String studentName = students.get("23A52");
+System.out.println("Found the student!");
+System.out.println("The student's name name is " + studentName);
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="a-collection-ally">A Collection Ally</h1>
+
+<p>Maps are part of the JCF (<strong>J</strong>ava <strong>C</strong>ollections <strong>F</strong>ramework), but a <code>Map</code> is not a <code>Collection</code>.</p>
+
+<p>Remember the two types of <code>Collection</code> we have talked about?</p>
+
+<ul>
+  <li><code>List</code>: characterized by being <em>ordered</em>. May contain duplicate elements.</li>
+  <li><code>Set</code>: elements are <em>unordered</em>. Elements must be unique.</li>
+</ul>
+
+<p><code>Map</code> keys can not be duplicated and we don’t care about their order, so we use a <code>Set</code> to represent them.</p>
+
+<p><code>Map</code> values can be duplicated, but their order isn’t significant. They don’t fit our concepts of a <code>List</code> or a <code>Set</code>. For these, we use the parent of <code>List</code> and <code>Set</code>, <code>Collection</code>. A <code>Collection</code> promises to be no more than a collection of elements over which you can iterate.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="looking-at-keys">Looking at Keys</h2>
+
+<p>To look at a <code>Map</code>’s keys, we call its <code>keySet</code> method:</p>
+
+<pre><code class="language-java">Set&lt;String&gt; studentIds = students.keySet();
+System.out.println("The student IDs are " + studentIds);
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="looking-at-values">Looking at Values</h2>
+
+<p>To look at a <code>Map</code>’s values, we call its <code>values</code> (Surprise!) method:</p>
+
+<pre><code class="language-java">Collection&lt;String&gt; studentNames = students.values();
+System.out.println("The student names are " + studentNames);
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="looking-at-entries">Looking at Entries</h2>
+
+<p>If we want to iterate over all (or many) of the entries in a map, looking at both key and value, it is intuitive to do something like this:</p>
+
+<pre><code class="language-java">for(String id: students.keySet()) {
+  System.out.println("This student's name is " + students.get(id));
+}
+</code></pre>
+
+<p>The problem with this approach is that it will result in poor performance. (<strong>This is a common interview question.</strong>) This is because looking up the value for a key requires effort, and this code would look up the value for every key.</p>
+
+<p>If we want to iterate over all keys and values, we do something like this instead:</p>
+
+<pre><code class="language-java">for(Entry&lt;String, String&gt; entry: students.entrySet()) {
+  System.out.println("The student's id is " + entry.getKey());
+  System.out.println("The student's name is " + entry.getValue());
+}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="other-useful-map-methods">Other Useful <code>Map</code> Methods</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>method</th>
+      <th>what does it do?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>remove(<em>key</em>)</td>
+      <td>removes the entry associated with <em>key</em></td>
+    </tr>
+    <tr>
+      <td>containsKey(<em>key</em>)</td>
+      <td>returns true if this map contains the <em>key</em></td>
+    </tr>
+    <tr>
+      <td>containsValue(<em>value</em>)</td>
+      <td>returns true if this map contains the <em>value</em></td>
+    </tr>
+    <tr>
+      <td>size()</td>
+      <td>returns the number of entries in the map</td>
+    </tr>
+    <tr>
+      <td>isEmpty()</td>
+      <td>returns true if the map does not have any entries</td>
+    </tr>
+    <tr>
+      <td>clear()</td>
+      <td>removes all entries from the map</td>
+    </tr>
+  </tbody>
+</table>
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="../../shared/lib/js/head.min.js"></script>
+		<script src="../../shared/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// I suspect there's a better way to do this...
+				width: 1920 * 0.8,
+				height: 1080,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../shared/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../shared/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../shared/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../shared/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

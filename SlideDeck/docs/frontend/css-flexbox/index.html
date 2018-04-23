@@ -1,0 +1,1349 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>CSS Flexbox - Boxes that flex</title>
+
+		<meta name="description" content="- description not found -">
+		<meta name="author"      content="Your Name Here">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../shared/css/reveal.css">
+		<link rel="stylesheet" href="../../shared/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../shared/lib/css/zenburn.css">
+
+		<!-- WCCI style tweaks -->
+		<link rel="stylesheet" href="../../shared/css/wcci.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../shared/css/print/pdf.css' : '../../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="text-align: center">CSS Flexbox</h1>
+					<h3 style="text-align: center">Boxes that flex</h3>
+					<div id="logo">
+						<img src="../../shared/images/wcci-logo.png">
+						<p style="font-size: smaller;">&copy; We Can Code IT, LLC</p>
+					</div>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_ -->
+<h2 id="css-flexbox">CSS Flexbox</h2>
+
+<ul>
+  <li>
+    <p>The second layout tool in our CSS toolbox: Flexbox!</p>
+  </li>
+  <li>
+    <p>It is a great tool to couple with CSS Grid to make sure that your content will look good on any device with ease.</p>
+  </li>
+  <li>
+    <p>Flexbox is a very powerful tool and can actually be used to build out page layouts on its own.</p>
+  </li>
+  <li>
+    <p>Hopefully by the end, though, it will become clear when to use grid and when to use flexbox. Let’s get started.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="containers-again">Containers again!</h2>
+
+<ul>
+  <li>
+    <p>Rejoice! It’s our friend the container again!</p>
+  </li>
+  <li>
+    <p>This time we make it a flex container</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="lets-do-some-prep-work">Let’s do some prep work</h2>
+
+<ul>
+  <li>
+    <p>Add another HTML page to your SuperDopeWebSite.</p>
+  </li>
+  <li>
+    <p>Name your new HTML page <mark>flexEx</mark>.</p>
+  </li>
+  <li>
+    <p>Add another stylesheet to your SuperDopeWebSite.</p>
+  </li>
+  <li>
+    <p>Name your new stylesheet <mark>styleThree</mark>.</p>
+  </li>
+  <li>
+    <p>Link your styleThree file to your flexEx.html page</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here">We should all be here</h2>
+
+<ul>
+  <li>
+    <p>Close your gridEx.html and your styleTwo.css pages.</p>
+  </li>
+  <li>
+    <p>You should now have two tabs open</p>
+
+    <div float="right" class="img"><img src="./resources/flex1.png" /></div>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>Add the following to your flexEx.html page.</li>
+</ul>
+
+<pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
+    &lt;title&gt;Flexbox Example&lt;/title&gt;
+
+    &lt;link rel="stylesheet" href="./styleThree.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;!-- Again, your content goes here --&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+<ul>
+  <li>Add the following to your styleThree.css page.</li>
+</ul>
+
+<pre><code class="language-css">.container {
+    display: flex;
+}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="flex-container-and-flex-items">Flex Container and Flex Items</h2>
+
+<ul>
+  <li>There are two MAJOR pieces of vocabulary we need to understand before moving forward because we are going to reference them a lot.</li>
+</ul>
+
+<div class="fragment">
+    <h3>Flex Container</h3>
+
+    <p>The first thing we need if we are going to use flexbox is a flex container.</p>
+	<p>In our example, our flex container is the div with the class <code>container</code>.</p>
+	<p>This is a fairly common practice btw so get used to it and try to start using it on your own</p>
+	<p>Setting the display to flex lets your code know that anything inside of this containing element should be treated with flexbox rules</p>
+</div>
+
+<div class="fragment">
+    <h3>Flex Item</h3>
+
+    <p>Now where would we be without some content to manipulate with this amazing tool?</p>
+	<p>The direct children of the flex container are known as the flex items.</p>
+	<p>This is the content that we are actually going to be manipulating.</p>
+	<p>This is also why it's important to house your content in appropriate <code>section</code> tags.</p>
+	<p>We are going to be affecting almost every element in our code with CSS, so organize it.</p>
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="the-axes">The Axes</h2>
+
+<div float="right" class="img img-center"><img src="./resources/grid.gif" /></div>
+
+<ul>
+  <li>
+    <p>Flex item placement is based on two axes, the <strong>main-axis</strong> and the <strong>cross-axis</strong>.</p>
+  </li>
+  <li>
+    <p>The main-axis is the flex line that your content is placed on. By default, the main-axis goes from left to right.</p>
+  </li>
+  <li>
+    <p>The cross-axis is situated perpendicular to the main-axis.</p>
+
+    <ul>
+      <li>This axis is used to distribute your content in the opposite direction of your main-axis.</li>
+    </ul>
+  </li>
+  <li>
+    <p>These two axes work together as a sort of binary placement system.</p>
+  </li>
+  <li>
+    <p>Think (x, y) coordinates on a graph. But these coordinates can be dynamic. This is what makes flexbox so powerful.</p>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>Let’s get some content inside of our document to play with</p>
+  </li>
+  <li>
+    <p>Add the following code to your flexEx.html page.</p>
+  </li>
+</ul>
+
+<pre><code class="language-html">&lt;div class="container"&gt;
+    &lt;div class="flexItem flexItem--1"&gt;flex item 1&lt;/div&gt;
+    &lt;div class="flexItem flexItem--2"&gt;flex item 2&lt;/div&gt;
+    &lt;div class="flexItem flexItem--3"&gt;flex item 3&lt;/div&gt;
+    &lt;div class="flexItem flexItem--4"&gt;flex item 4&lt;/div&gt;
+    &lt;div class="flexItem flexItem--5"&gt;flex item 5&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<ul>
+  <li>Add the following code to your styleThree.css page.</li>
+</ul>
+
+<pre><code class="language-css">.container {
+    display: flex;
+    margin: 2rem auto;
+    padding: 11px;
+    max-width: 1000px;
+}
+.flexItem {
+    margin-left: 5px;
+    padding: 11px;
+}
+.flexItem:first-child {
+    margin: 0;
+}
+</code></pre>
+<ul>
+  <li>Select Save all then select Google Chrome.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-1">We should all be here</h2>
+
+<ul>
+  <li>Open Google Developer tools, and let’s look over what we have accomplished.</li>
+</ul>
+
+<p>-Container</p>
+
+<div float="right" class="img"><img src="./resources/flex2.png" /></div>
+
+<ul>
+  <li>
+    <p>Most left flex child</p>
+
+    <div float="right" class="img"><img src="./resources/flex3.png" /></div>
+  </li>
+  <li>
+    <p>Remaining flex children</p>
+
+    <div float="right" class="img"><img src="./resources/flex4.png" /></div>
+  </li>
+  <li>
+    <p>If we look at our box model in our Google Developers tools, we can validate our settings</p>
+  </li>
+  <li>
+    <p>Now let’s talk about the two types of flex containers setting: <code>flex</code> and <code>inline-flex</code>.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="flex">Flex</h2>
+
+<ul>
+  <li>
+    <p>The first thing to notice is that <code>display: flex;</code> renders your container as a block level element.</p>
+  </li>
+  <li>
+    <p>What do we mean when we say “block level element”?</p>
+  </li>
+  <li>
+    <p>Most of the time, this is going to be what you will want to do as you’ll want your container to fill the entirety of the space it occupies.</p>
+
+    <div float="right" class="img"><img src="./resources/flex.png" /></div>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="inline-flex">Inline-flex</h2>
+
+<ul>
+  <li>
+    <p>If, for some reason, you want your container to be viewed as an inline level element, you can use <code>display: inline-flex;</code> instead of just flex.</p>
+  </li>
+  <li>
+    <p>You’ll notice that our <code>auto</code> margins collapse when we do this because, as an inline level element, there is no extra space around our element.</p>
+
+    <div float="right" class="img"><img src="./resources/inline-flex.png" /></div>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="lets-dig-deeper">Let’s dig deeper</h2>
+
+<ul>
+  <li>
+    <p>Open Google Developer tools and select the container to view the box model.</p>
+  </li>
+  <li>
+    <p>Now make the following changes to your styleTwo.css</p>
+  </li>
+</ul>
+
+<pre><code class="language-CSS">.container {
+    display: inline-flex;
+    margin: 2rem auto;
+    padding: 11px;
+    max-width: 1000px;
+}
+</code></pre>
+<ul>
+  <li>
+    <p>Select Save all and refresh your website.</p>
+  </li>
+  <li>
+    <p>Open Google Developer tools and select the container to view the box model.</p>
+  </li>
+  <li>
+    <p>Set your <mark>display</mark> value to <mark>flex</mark>.</p>
+  </li>
+  <li>
+    <p>So in short, block-level boxes <em>stretch</em> horizontally to fill their containing block, whereas inline-level boxes <em>shrink</em> to fit their contents.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="flex-direction">Flex Direction</h2>
+
+<ul>
+  <li>
+    <p>One of the first advantages that you’ll notice about flexbox is the ability to change the flow of your content from horizontal to vertical.</p>
+  </li>
+  <li>
+    <p>Before flexbox this was not as easy as it may seem.</p>
+  </li>
+  <li>
+    <p>Sure, you could change the display of the elements to inline or block based on your needs, but this always came with unexpected consequences, e.g. things that needed to be worked around, unnecessary containers, etc.</p>
+  </li>
+  <li>
+    <p>Flexbox mitigates all of that nonsense for you.</p>
+  </li>
+  <li>
+    <p>All you need to do to change orientation in flexbox is to change one line of code: <code>flex-direction</code>.</p>
+  </li>
+  <li>
+    <p>Let’s see it in action.</p>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_   -->
+
+<ul>
+  <li>
+    <p>So let’s have a reminder of what we’re looking at currently:</p>
+
+    <div float="right" class="img"><img src="./resources/flex2.png" /></div>
+  </li>
+  <li>
+    <p>The default value of <code>flex direction</code> is <code>row</code>. There are three other options. Let’s check them out.</p>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>The next value to discuss is <code>row-reverse</code>.</p>
+  </li>
+  <li>
+    <p>Add the following code to your styleThree.css page.</p>
+  </li>
+</ul>
+
+<pre><code class="language-css" data-noescape="">
+.container {
+    display: flex;
+    <mark>flex-direction: row-reverse;</mark>
+    margin: 2rem auto;
+    padding: 11px;
+    max-width: 1000px;
+}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="which-gives-us">Which gives us:</h2>
+
+<div float="right" class="img"><img src="./resources/flex5.png" /></div>
+
+<ul>
+  <li>
+    <p>Notice how are items are placed right to left from the right side of the container.</p>
+  </li>
+  <li>
+    <p>Question time: Has the layout of our flex container changed?</p>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>Next we’re going to get into <code>column</code>.</p>
+  </li>
+  <li>
+    <p>Make the following changes to your styleThree.css page.</p>
+  </li>
+</ul>
+
+<pre><code class="language-css" data-noescape="">
+.container {
+    display: flex;
+    <mark>flex-direction: column;</mark>
+    margin: 2rem auto;
+    padding: 11px;
+    max-width: 1000px;
+}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="which-gives-us-1">Which gives us:</h2>
+
+<div float="right" class="img"><img src="./resources/flex6.png" /></div>
+
+<ul>
+  <li>
+    <p>Notice how are items are placed top to bottom from the left side of the container.</p>
+  </li>
+  <li>
+    <p>You’ll notice when we give our container <code>flex-direction: column</code> that our main-axis and cross-axis actually switch places.</p>
+  </li>
+  <li>
+    <p>This makes your content flow vertically beginning at the top</p>
+  </li>
+  <li>
+    <p>Question time: Why is Flex-item1 not inline with the rest of the items?</p>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>Finally, we’re going see what happens with <code>column-reverse</code>:</p>
+  </li>
+  <li>
+    <p>Make the following changes to your styleThree.css page.</p>
+  </li>
+</ul>
+
+<pre><code class="language-css" data-noescape="">
+.container {
+    display: flex;
+    <mark>flex-direction: column-reverse;</mark>
+    margin: 2rem auto;
+    padding: 11px;
+    max-width: 1000px;
+}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="which-gives-us-2">Which gives us:</h2>
+
+<div float="right" class="img"><img src="./resources/flex7.png" /></div>
+
+<ul>
+  <li>
+    <p>Notice how are items are placed bottom to top from the left side of the container.</p>
+  </li>
+  <li>
+    <p>This makes your content flow vertically beginning at the bottom</p>
+  </li>
+  <li>
+    <p>As you can see, flexbox has a wide range of options when it comes to the orientation of your content.</p>
+  </li>
+  <li>
+    <p>The power lies in how little code you have to write to get your content to behave this way.</p>
+  </li>
+  <li>
+    <p>Question time: What data structure does this remind you of?</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="flex-wrap">Flex Wrap</h2>
+
+<ul>
+  <li>
+    <p>One of the first issues to deal with is wrapping content.</p>
+  </li>
+  <li>
+    <p>You’ll notice if you compress your window, your flex items disappear.</p>
+  </li>
+  <li>
+    <p>We can fix this with another simple addition to our flexbox rules.</p>
+  </li>
+  <li>
+    <p>Make the following changes and add the following code to your styleThree.css</p>
+  </li>
+</ul>
+
+<pre><code class="language-css" data-noescape="">
+.container {
+    display: flex;
+    flex-direction: <mark>row;</mark>
+    <mark>flex-wrap: wrap;</mark>
+    margin: 2rem auto;
+    padding: 11px;
+    max-width: 1000px;
+}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="which-gives-us-3">Which gives us:</h2>
+
+<ul>
+  <li>
+    <p>Shrink and grow your flexEx.html page and watch how the flexitems react.</p>
+
+    <div float="right" class="img img-center"><img src="./resources/flex8.png" /></div>
+  </li>
+  <li>
+    <p>Now whenever our container is too narrow for our content to fit in one line, it will split into as many lines as it needs to display properly.</p>
+  </li>
+</ul>
+
+<div class="fragment">
+    <p>Other options are <code>nowrap</code> and <code>wrap-reverse</code>. Play around with both to see their functionality.</p>
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="order">Order</h2>
+
+<ul>
+  <li>
+    <p>Another really powerful aspect of flexbox is the <code>order</code> property.</p>
+  </li>
+  <li>
+    <p>It allows us to give numerical values to individual elements and change their order.</p>
+  </li>
+  <li>
+    <p>The default order value given to elements is 0.</p>
+  </li>
+  <li>
+    <p>This is why they’re placed in the order they appear in your HTML.</p>
+  </li>
+  <li>
+    <p>If we wanted to have <code>flex item 4</code> at the front, we can simply give it an order value less than 0.</p>
+  </li>
+  <li>
+    <p>Add the following code to your styleThree.css page.</p>
+  </li>
+</ul>
+
+<pre><code class="language-css">.flexItem--4 {
+    order: -1;
+}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="which-gives-us-4">Which gives us:</h2>
+
+<ul>
+  <li>
+    <p>Shrink and grow your flexEx.html page and watch how the flexitems react.</p>
+
+    <div float="right" class="img"><img src="./resources/flex9.png" /></div>
+  </li>
+  <li>
+    <p>Notice how <code>flex item 4</code> is now at the front of our list as opposed to the fourth slot, where it falls in our HTML layout:</p>
+  </li>
+</ul>
+
+<div class="fragment">
+    <p>This is super valuable because we can leave our HTML semantically marked up and order things how we want them using CSS. This is the way things should be.</p>
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="justify-content">Justify Content</h2>
+
+<ul>
+  <li>
+    <p>So what good is all of this without being able to distribute your content the way you want?</p>
+  </li>
+  <li>
+    <p>Exactly, worthless. So let’s jump into the magic of <code>justify-content</code>.</p>
+  </li>
+  <li>
+    <p>The default value of <code>justify-content</code> is <code>flex-start</code>.</p>
+  </li>
+  <li>
+    <p>Question time: Who can tell me what the default justification is for <code>justify-content</code>?</p>
+  </li>
+</ul>
+
+<div class="fragment">
+    <img src="./resources/flex.png" alt="flex-start" style="width: 70%;" />
+</div>
+
+<div class="fragment">
+    Notice how the content is flush with the left side or start of the container.
+</div>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>The next value for <code>justify-content</code> is similar to the first.</p>
+  </li>
+  <li>
+    <p>The value is <code>flex-end</code> and it does exactly what you’d expect:</p>
+  </li>
+  <li>
+    <p>Add the following code to your styleThree.css page.</p>
+  </li>
+</ul>
+
+<pre><code class="language-css" data-noescape="">
+.container {
+    display: flex;
+    <mark>justify-content: flex-end;</mark>
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 2rem auto;
+    padding: 11px;
+    max-width: 1000px;
+}
+</code></pre>
+
+<div class="fragment">
+  <div float="right" class="img"><img src="./resources/flex10.png" /></div>
+</div>
+
+<div class="fragment">
+    <p>All items are now aligned to the right side of the container.</p>
+</div>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>A really useful value for <code>justify-content</code> is <code>center</code>.</p>
+  </li>
+  <li>
+    <p>It’s not only one of the most used values for <code>justify-content</code> but one of the big reasons to use the property at all.</p>
+  </li>
+  <li>
+    <p>We’ll get to why this is such a powerful value in future slides.</p>
+  </li>
+  <li>
+    <p>Change the following value in your styleThree.css page.</p>
+  </li>
+</ul>
+
+<pre><code class="language-css" data-noescape="">
+.container {
+    display: flex;
+    <mark>justify-content: center;</mark>
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 2rem auto;
+    padding: 11px;
+    max-width: 1000px;
+}
+</code></pre>
+
+<div class="fragment">
+  <div float="right" class="img"><img src="./resources/flex11.png" /></div>
+</div>
+
+<div class="fragment">
+    <p>This takes all content that you have inside of your container and centers it for you. On it's own it looks like you could easily do this with <code>text-align: center;</code>, and you'd be right. The real power here comes from a pairing with another property.</p>
+</div>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>The next value we’re going to discuss is <code>space-between</code>.</p>
+  </li>
+  <li>
+    <p>This is a really interesting value because it’s functionality hasn’t even remotely existed in CSS until now.</p>
+  </li>
+  <li>
+    <p><code>space-between</code> takes all space remaining outside of your content and distributes it evenly between each element.</p>
+  </li>
+  <li>
+    <p>Change the following value in your styleThree.css page.</p>
+  </li>
+</ul>
+
+<pre><code class="language-css" data-noescape="">
+.container {
+    display: flex;
+    <mark>justify-content: space-between;</mark>
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 2rem auto;
+    padding: 11px;
+    max-width: 1000px;
+}
+</code></pre>
+
+<div class="fragment">
+  <div float="right" class="img"><img src="./resources/flex12.png" /></div>
+</div>
+
+<div class="fragment">
+    <p>This is really useful for distributing things like navigation items.</p>
+</div>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>The final value we’re going to talk about is <code>space-around</code>.</p>
+  </li>
+  <li>
+    <p>This value behaves similarly to <code>space-between</code> but instead places excess space on either side of each item.</p>
+  </li>
+  <li>
+    <p>Change the following value in your styleThree.css page.</p>
+  </li>
+</ul>
+
+<pre><code class="language-css" data-noescape="">
+.container {
+    display: flex;
+    <mark>justify-content: space-around;</mark>
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 2rem auto;
+    padding: 11px;
+    max-width: 1000px;
+}
+</code></pre>
+
+<div class="fragment">
+  <div float="right" class="img"><img src="./resources/flex13.png" /></div>
+</div>
+
+<div class="fragment">
+    <p>This is really useful for times that you need to distribute extra space evenly and not have the first or last item be flush to the side of your container.</p>
+</div>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>So to recap, all values for justify-content are:</li>
+</ul>
+
+<pre><code class="language-css">.some-containing-element {
+   justify-content: flex-start;
+   justify-content: flex-end;
+   justify-content: center; 
+   justify-content: space-between; 
+   justify-content: space-around;
+}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="align-items">Align Items</h2>
+
+<ul>
+  <li>
+    <p>This is where distributing items gets REALLY interesting (and way easier).</p>
+  </li>
+  <li>
+    <p>The <code>align-items</code> property is very similar to <code>justify-content</code> except it handles distribution of items along the cross-axis instead of the main-axis.</p>
+  </li>
+  <li>
+    <p>To see this in action, let’s add some height to our container and check out the default value, <code>stretch</code>:</p>
+  </li>
+</ul>
+
+<pre><code class="language-css" data-noescape="">
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    <mark>height: 20rem;</mark>
+    justify-content: space-around;
+    margin: 2rem auto;
+    padding: 11px;
+    max-width: 1000px;
+}
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>As its name implies, <code>stretch</code> stretches all elements to take up all space available on the cross axis:</p>
+  </li>
+  <li>
+    <p>I drew the black box in order to give you a frame of reference as to exactly what is happening.</p>
+  </li>
+</ul>
+
+<div class="fragment">
+  <div float="right" class="img"><img src="./resources/flex15.png" /></div>
+</div>
+
+<div class="fragment">
+    <p>Sometimes this is very useful, other times, it's a nuisance. Luckily we have other values to choose from.</p>
+</div>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>Our next stop on the <code>align-items</code> value trail is one we’ve seen already, <code>flex-start</code>!</p>
+  </li>
+  <li>
+    <p>It does a very similar job here.</p>
+  </li>
+  <li>
+    <p>Add the following code to your styleThree.css.</p>
+  </li>
+</ul>
+
+<pre><code class="language-css" data-noescape="">
+.container {
+    display: flex;
+    justify-content: space-around;
+    <mark>align-items: flex-start;</mark>
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 20rem;
+    margin: 2rem auto;
+    padding: 11px;
+    max-width: 1000px;
+}
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<div float="right" class="img"><img src="./resources/flex16.png" /></div>
+
+<div class="fragment">
+    <p>This is good for aligning everything to the top of your container.</p>
+</div>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>It would logically follow, then, that <code>align-items</code> also has a <code>flex-end</code> value.</p>
+  </li>
+  <li>
+    <p>It very does!</p>
+  </li>
+  <li>
+    <p>Add the following code to your styleThree.css.</p>
+  </li>
+</ul>
+
+<pre><code class="language-css" data-noescape="">
+.container {
+    display: flex;
+    justify-content: space-around;
+    <mark>align-items: flex-end;</mark>
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 20rem;
+    margin: 2rem auto;
+    padding: 11px;
+    max-width: 1000px;
+}
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<div float="right" class="img"><img src="./resources/flex17.png" /></div>
+
+<ul>
+  <li>Again, this performs very similarly to <code>flex-start</code> but aligns items to the bottom or end of the container.</li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>And now, the moment you’ve had no idea you’d been waiting for. <code>align-items</code> has a <code>center</code> value!</p>
+  </li>
+  <li>
+    <p>You should be freaking out about this but you probably have no idea the horrors that were trying to vertically center something without this amazing tool.</p>
+  </li>
+  <li>
+    <p>Add the following code to your styleThree.css.</p>
+  </li>
+</ul>
+
+<pre><code class="language-css" data-noescape="">
+.container {
+    display: flex;
+    justify-content: space-around;
+    <mark>align-items: center;</mark>
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 20rem;
+    margin: 2rem auto;
+    padding: 11px;
+    max-width: 1000px;
+}
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<div float="right" class="img"><img src="./resources/flex18.png" /></div>
+
+<ul>
+  <li>
+    <p>This is SO amazing.</p>
+  </li>
+  <li>
+    <p>Centering in CSS was truly the stuff of nightmares for the frontend developer until flexbox.</p>
+  </li>
+  <li>
+    <p>What’s even more amazing is when you pair it with <code>justify-content: center;</code>.</p>
+  </li>
+</ul>
+
+<p>Content.👏 Aligned.👏 To.👏 The.👏 Center.👏 Of.👏 A.👏 Container.👏</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="align-self">Align Self</h2>
+
+<ul>
+  <li>
+    <p>Related to <code>align-items</code> but not totally is a property that can go on individual items called <code>align-self</code>.</p>
+  </li>
+  <li>
+    <p>This allows you to have the functionality of <code>align-items</code> but with individual items. Let’s try is on item 2:</p>
+  </li>
+  <li>
+    <p>Add the following code to your styleThree.css page.</p>
+  </li>
+</ul>
+
+<pre><code class="language-css">.flexItem--2 {
+    align-self: stretch;
+}
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>This yields the result:</p>
+
+    <div float="right" class="img"><img src="./resources/flex19.png" /></div>
+  </li>
+  <li>
+    <p>This way you can pretty much put things where ever you want them to be.</p>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<p><img src="./resources/how-neat-is-that.gif" alt="super neat" style="width: 70%;" /></p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="flex-grow">Flex Grow</h2>
+
+<ul>
+  <li>
+    <p>There is a property on flex items called <code>flex-grow</code>.</p>
+  </li>
+  <li>
+    <p>This property has a default value of 0.</p>
+  </li>
+  <li>
+    <p>But when applied to items in your flex container, it makes each item take up a certain amount of remaining space in the container.</p>
+  </li>
+  <li>
+    <p>Let’s apply a value of 1 to all of our items and see how it goes.</p>
+  </li>
+  <li>
+    <p>Add the following code to your styleThree.css page.</p>
+  </li>
+</ul>
+
+<pre><code class="language-css" data-noescape="">.flexItem {
+    <mark>flex-grow: 1;</mark>
+    margin: 5px;
+    padding: 11px;
+}
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>Notice how all elements are taking up all available space (minus margins) in the container.</p>
+
+    <div float="right" class="img"><img src="./resources/flex20.png" /></div>
+  </li>
+  <li>
+    <p>Let’s change the <code>flex-grow</code> property of item 3 and see how it’s affected.</p>
+  </li>
+  <li>
+    <p>Add the following code to your styleThree.css page.</p>
+  </li>
+</ul>
+
+<pre><code class="language-css">.flexItem--3 {
+    flex-grow: 5;
+}
+</code></pre>
+
+<ul>
+  <li>Item 3 has a <code>flex-grow</code> value of 5 and the other 4 elements have a <code>flex-grow</code> value of one for a total of 9 units.</li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<p>Notice how item 3 appears larger now.</p>
+
+<div float="right" class="img"><img src="./resources/flex21.png" /></div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="flex-basis">Flex Basis</h2>
+
+<ul>
+  <li>
+    <p>Now on to <code>flex-basis</code>.</p>
+  </li>
+  <li>
+    <p>This allows each item with the property applied to maintain a specified width.</p>
+  </li>
+  <li>
+    <p>That is to say items cannot shrink smaller than their <code>flex-basis</code>.</p>
+  </li>
+  <li>
+    <p>Let’s apply this with a value of <code>350px</code> to item 4 and see the result.</p>
+  </li>
+</ul>
+
+<pre><code class="language-css" data-noescape="">.flexItem--4 {
+    order: -1;
+    <mark>flex-basis: 350px;</mark>
+}
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>Notice how when the container is compressed item four will not have a width lower than <code>350px</code></p>
+
+    <div float="right" class="img"><img src="./resources/flex22.png" /></div>
+    <div float="right" class="img"><img src="./resources/flex23.png" /></div>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="now-for-practice">Now For Practice!</h2>
+
+<p>Clone the repository found <a href="https://github.com/donhamiltoniii/flexbox-practice-exercise">here</a> and follow the instructions in the README.md to complete the assignment. When you finish up, take a look at <a href="http://flexboxzombies.com">Flexbox Zombies</a> for some in-depth practice with flexbox.</p>
+
+<h3 id="other-resources">Other Resources</h3>
+<ul>
+  <li><a href="https://medium.freecodecamp.org/the-ultimate-guide-to-flexbox-learning-through-examples-8c90248d4676">The Ultimate Guide to Flexbox - Learning Through Examples</a></li>
+  <li><a href="https://flexboxzombies.com/p/flexbox-zombies">Flexbox Zombies</a></li>
+  <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">A Complete Guide to Flexbox</a></li>
+</ul>
+
+<style type="text/css">
+.img:hover  {
+        transform: scale(1.5);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+.img-center {
+    display: block;
+    margin-left: 0px;
+    margin-right: auto;
+	width: 40%;
+}
+</style>
+
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="../../shared/lib/js/head.min.js"></script>
+		<script src="../../shared/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// I suspect there's a better way to do this...
+				width: 1920 * 0.8,
+				height: 1080,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../shared/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../shared/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../shared/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../shared/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

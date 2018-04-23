@@ -1,0 +1,283 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>OOP Core Concepts - Mmmmm… pie.</title>
+
+		<meta name="description" content="- description not found -">
+		<meta name="author"      content="Your Name Here">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../shared/css/reveal.css">
+		<link rel="stylesheet" href="../../shared/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../shared/lib/css/zenburn.css">
+
+		<!-- WCCI style tweaks -->
+		<link rel="stylesheet" href="../../shared/css/wcci.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../shared/css/print/pdf.css' : '../../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="text-align: center">OOP Core Concepts</h1>
+					<h3 style="text-align: center">Mmmmm… pie.</h3>
+					<div id="logo">
+						<img src="../../shared/images/wcci-logo.png">
+						<p style="font-size: smaller;">&copy; We Can Code IT, LLC</p>
+					</div>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_ -->
+<h1 id="a-pie">A PIE</h1>
+
+<p><img src="./resources/apple-pie.jpg" style="max-height: 50rem;" /></p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="what-does-it-stand-for">What does it stand for?</h1>
+
+<div style="font-size: larger;">
+<p><strong class="fragment" style="font-size: larger;">[ A ]</strong> <span class="fragment">bstraction</span></p>
+<p><strong class="fragment" style="font-size: larger;">[ P ]</strong> <span class="fragment">olymporphism</span></p>
+<p><strong class="fragment" style="font-size: larger;">[ I ]</strong> <span class="fragment">nheritance</span></p>
+<p><strong class="fragment" style="font-size: larger;">[ E ]</strong> <span class="fragment">ncapsulation</span></p>
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="abstraction">Abstraction</h1>
+
+<p>We create abstractions to simplify our program domain. They allow us to focus on the problem we are solving rather than getting lost in minute details. <em>You don’t need to know how every subsystem in your car works in order to drive, do you?</em></p>
+
+<p><strong>Think about writing code as the process of creating a language to describe a problem we’re solving. Abstractions are the building blocks of this language.</strong></p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="in-our-code">In our code</h2>
+
+<p>We are creating abstractions in the small whenever we:</p>
+
+<ul>
+  <li>name a variable</li>
+  <li>create (and name) a method</li>
+  <li>create (and name) a class</li>
+  <li>simplify an attribute by representing it as a number (<em>hunger</em>) or a label (“purple”)</li>
+</ul>
+
+<p>This is why naming is so important: we need to accurately convey the abstraction we’re describing to those that follow (as well as our later selves).</p>
+
+<p>We apply the other OO principles (PIE) to create meaningful and useful abstractions of more complex concepts.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="polymorphism">Polymorphism</h1>
+
+<blockquote>
+  <p>the quality or state of existing in or assuming different forms</p>
+</blockquote>
+
+<p>Polymorphism allows us to represent intent, but allow the implementation to vary as needed based on context.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="in-our-code-1">In our code</h2>
+
+<h3 id="method-overloading">Method overloading</h3>
+
+<p>A method with the same name that accepts different argument types. An overloaded method can have a different return type, but this is usually a <em>code smell</em> since its intent should be the same.</p>
+
+<p>Examples:</p>
+
+<ul>
+  <li><code>System.out</code>’s <code>println</code> methods (its type is <code>java.io.PrintStream</code>)</li>
+  <li><code>org.junit.Assert</code>’s numerous <code>assertEquals</code> methods</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="in-our-code-2">In our code</h2>
+
+<h3 id="method-overriding">Method overriding</h3>
+
+<p>A method that redefines a method from a superclass is said to <em>override</em> that method. A great example of this are the <code>toString</code>, <code>equals</code>, and <code>hashCode</code> methods from <code>java.lang.Object</code> that we have discussed. (Remember, <code>Object</code> is the superclass of all classes.)</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="superclasses-and-interfaces">Superclasses and interfaces</h2>
+
+<p>We also implement polymorphism by:</p>
+
+<ul>
+  <li>extending a parent class (a <code>String</code> isA <code>Object</code>)</li>
+  <li>implementing an interface (an <code>ArrayList</code> isA <code>List</code> isA <code>Collection</code> isA <code>Iterable</code>)</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="inheritance">Inheritance</h1>
+
+<p>Inheritance is the mechanism whereby a class <em>inherits</em> behavior from a superclass. We call this <em>extending</em> the superclass. Recall that all classes, whether we tell them to or not, implicitly extend <code>Object</code>.</p>
+
+<p>Sometimes we create types (classes) that only exist so that they may be extended. We use the keyword <code>abstract</code> to create these <em>abstract classes</em>, which may also declare <code>abstract</code> methods.</p>
+
+<p>The Java Collections Framework has several great examples of using inheritance and polymorphism: the <code>Collection</code>s, <code>List</code>s, and <code>Map</code>s that you know and love.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="in-our-code-3">In our code</h2>
+
+<p>Inheritance is what allows <code>String</code> concatenation to work without us doing anything extra (though perhaps it ain’t pretty). Like when we do this:</p>
+
+<pre><code class="language-java">VirtualPet pet = new VirtualPet();
+System.out.println("My pet is " + pet);
+</code></pre>
+
+<p>What happens behind the scenes is that the <code>toString()</code> method of <code>Object</code> (<code>VirtualPet</code>’s parent class) is being called. <code>VirtualPet</code> has <em>inherited</em> this method from its parent.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="encapsulation">Encapsulation</h1>
+
+<p>Encapsulation at its simplest is hiding away information that isn’t necessary to share. The more knowledge we have about an object, the more complex our problem solving becomes.</p>
+
+<p><em>Knowledge is power. Power corrupts.</em></p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="in-our-code-4">In our code</h2>
+
+<pre><code class="language-java">public class Circle {
+	private double radius;
+	public double getRadius() {
+		return radius;
+	}
+}
+</code></pre>
+
+<p>The <code>radius</code> instance variable above is private and exposed via an <em>accessor</em> method (<code>getRadius</code>). Not only does this avoid <code>radius</code> being manipulated externally and possibly resulting in an invalid state, but also gives us the flexibility to implement <code>getRadius</code> in a different way if necessary. The code that asks our <code>Circle</code> object for the radius doesn’t need to know <em>how</em> the radius is being determined.</p>
+
+<p>This is <em>encapsulation</em>. A more complex example of encapsulation would be an object responsible for calculating sales tax for a transaction. If the formula changes, yet it is encapsulated within the object, other objects requesting the tax calculation need not change. This would also likely involve polymorphism, since sales tax calculations vary by a number of factors, including location and product type.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="gratuitous-picture-of-pie">Gratuitous Picture of Pie</h1>
+
+<p><img src="./resources/apple-pie.jpg" style="max-height: 50rem;" /></p>
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="../../shared/lib/js/head.min.js"></script>
+		<script src="../../shared/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// I suspect there's a better way to do this...
+				width: 1920 * 0.8,
+				height: 1080,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../shared/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../shared/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../shared/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../shared/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

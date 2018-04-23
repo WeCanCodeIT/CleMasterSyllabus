@@ -1,0 +1,765 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Version Control - Git and GitHub</title>
+
+		<meta name="description" content="- description not found -">
+		<meta name="author"      content="Your Name Here">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../shared/css/reveal.css">
+		<link rel="stylesheet" href="../../shared/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../shared/lib/css/zenburn.css">
+
+		<!-- WCCI style tweaks -->
+		<link rel="stylesheet" href="../../shared/css/wcci.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../shared/css/print/pdf.css' : '../../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="text-align: center">Version Control</h1>
+					<h3 style="text-align: center">Git and GitHub</h3>
+					<div id="logo">
+						<img src="../../shared/images/wcci-logo.png">
+						<p style="font-size: smaller;">&copy; We Can Code IT, LLC</p>
+					</div>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_ -->
+<h2 id="git-and-github-process">Git and GitHub Process</h2>
+
+<div float="right"><img src="./resources/Git1.jpg" /></div>
+
+<ul>
+  <li>
+    <p>GitHub is a code hosting platform for version control and collaboration.</p>
+  </li>
+  <li>
+    <p>GitHub lets you and others work together on projects from anywhere.</p>
+  </li>
+  <li>
+    <p>Understanding the GitHub process and its effective use is critical.</p>
+  </li>
+  <li>
+    <p>In this lesson we will learn the GitHub and GitBash processes and the importance of version control.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="code-version-control">Code version control</h2>
+
+<div float="right" class="img" id="img-comic"><img src="./resources/Git2.png" /></div>
+
+<ul>
+  <li>
+    <p>When you are developing software, you will almost certainly be doing so as part of a team.</p>
+  </li>
+  <li>
+    <p>This means you may have two or more developers adding, deleting, creating, and editing a project at the same time.</p>
+  </li>
+  <li>
+    <p>On a small project you might be able to track and keep up with changes, but on a larger project - FORGET IT!</p>
+  </li>
+  <li>
+    <p>So let’s learn how to use GitHub and GitBash.</p>
+  </li>
+  <li>
+    <p>Volunteer time!!</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="github">GitHub</h2>
+
+<ul>
+  <li>
+    <p>To start the process of using GitHub, we must have an GitHub user account.</p>
+  </li>
+  <li>
+    <p>Open your Chrome browser, and navigate to <mark>https://github.com/</mark>.</p>
+  </li>
+</ul>
+
+<div float="right" class="img"><img src="./resources/Git3.png" /></div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="github-cont">GitHub cont.</h2>
+
+<ul>
+  <li>
+    <p>Here is an important point for you to consider when creating your account.</p>
+
+    <ul>
+      <li>
+        <p>This account will be part of your professional portfolio once you have graduated.</p>
+      </li>
+      <li>
+        <p>Select a username and email address that will be professional.</p>
+      </li>
+      <li>
+        <p>Potential employers WILL browse GitHub to review your work!!</p>
+      </li>
+      <li>
+        <p>You do not want your username and email to distract from your work in GitHub.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Once you have selected a professional <mark>username</mark> and <mark>email</mark>, enter a password.</p>
+  </li>
+  <li>
+    <p>Select <mark>Sign up for GitHub</mark> and your account will be created.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="github-cont-1">GitHub cont.</h2>
+
+<div float="right" class="img"><img src="./resources/Git4.png" /></div>
+
+<ul>
+  <li>
+    <p>It is not necessary at this time to pay for private repositories. You may choose to do so in the future.</p>
+  </li>
+  <li>
+    <p>Select <mark>continue</mark></p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="github-cont-2">GitHub cont.</h2>
+
+<div float="right" class="img"><img src="./resources/Git5.png" /></div>
+
+<ul>
+  <li>Choose the options that best describe you, then select <mark>continue</mark></li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here">We should all be here</h2>
+
+<div float="right" class="img"><img src="./resources/Git6.png" /></div>
+
+<ul>
+  <li>
+    <p>As our journey through this course continues, we will cover GitHub in greater detail.</p>
+  </li>
+  <li>
+    <p>Let’s move on to GitBash</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="gitbash">GitBash</h2>
+
+<div float="right" class="img"><img src="./resources/Git7.png" /></div>
+
+<ul>
+  <li>
+    <p>If you are using a WCCI laptop, you will notice an icon titled <mark>GitBash</mark>.</p>
+  </li>
+  <li>
+    <p>If you do not have an icon on your desktop then do the following:</p>
+
+    <ul>
+      <li>Select Start &gt; All Programs &gt; Git &gt; GitBash</li>
+    </ul>
+  </li>
+  <li>
+    <p>If you are not using a WCCI laptop, please go to <mark>https://git-scm.com/downloads</mark> and download and install the latest version of GitBash.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="gitbash-cont">GitBash cont.</h2>
+
+<div float="right" class="img"><img src="./resources/Git8.png" /></div>
+
+<ul>
+  <li>
+    <p>To navigate through GitBash, we use the DOS command line.</p>
+  </li>
+  <li>
+    <p>We want to navigate to the folder in Visual Studio where our <mark>HelloWorld</mark> program resides.</p>
+  </li>
+  <li>
+    <p>Type the following: <strong>cd documents &gt; cd Visual\ Studio\ 2017 &gt; cd Projects &gt; cd HelloWorld</strong></p>
+  </li>
+  <li>
+    <p>Shortcut: type a few letters of the desired directory and press <mark>Tab</mark> to automatically complete, e.g. <code>cd doc</code> + Tab</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="gitbash-cont-1">GitBash cont.</h2>
+
+<ul>
+  <li>
+    <p>We can now think of the <mark>HelloWorld</mark> directory as a <mark>local repository</mark>.</p>
+  </li>
+  <li>
+    <p>GitBash also thinks of the <mark>HelloWorld</mark> directory as a <mark>local repository</mark>.</p>
+  </li>
+  <li>
+    <p>When we set up a local repository for use with GitBash and GitHub, there are a few steps we need to perfom.</p>
+  </li>
+  <li>
+    <p>Volunteer time!!</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="gitbash-cont-2">GitBash cont.</h2>
+
+<div float="right" class="img"><img src="./resources/Git9.png" /></div>
+
+<ul>
+  <li>
+    <p>When we initially create a project or website in Visual Studio we must use GitBash to <mark>initialize</mark> the local repository.</p>
+  </li>
+  <li>
+    <p>We intialize the local project or website repository by executing the following command at the root of the local repository in GitBash: <mark>git init</mark>.</p>
+  </li>
+  <li>
+    <p>Next we must add a <mark>.gitignore</mark> file to the root of our local repository.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="gitbash-cont-3">GitBash cont.</h2>
+
+<div float="right" class="img"><img src="./resources/Git10.png" /></div>
+
+<ul>
+  <li>
+    <p>The purpose of the .gitignore file is to allow you to ignore files that you never want to commit into a repository (e.g… editor backup files, build products, or local configuration overrides).</p>
+  </li>
+  <li>
+    <p>You can generate a .gitignore file by browsing to <mark>https://www.gitignore.io/</mark></p>
+  </li>
+  <li>
+    <p>Enter <mark>VisualStudio</mark> into the text box and select <mark>Create</mark></p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="gitbash-cont-4">GitBash cont.</h2>
+
+<div float="right" class="img"><img src="./resources/Git11.png" /></div>
+
+<ul>
+  <li>
+    <p>Highlight and copy the entire contents of the web page that appears.</p>
+  </li>
+  <li>
+    <p>Go to your desktop, and create and open a new text file. Paste the contents of the .gitignore file into the new text file.</p>
+  </li>
+  <li>
+    <p>Save the file as <mark>.gitignore</mark>. Change <mark>file type</mark> to <mark>all files</mark>.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="gitbash-cont-5">GitBash cont.</h2>
+
+<div float="right" class="img"><img src="./resources/Git12.png" /></div>
+
+<ul>
+  <li>
+    <p>You will now see a document on your desktop with no name. Keep this copy for future projects.</p>
+  </li>
+  <li>
+    <p>Make a copy of this file, and place it in the root of your <mark>HelloWorld</mark> local repository.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="gitbash-cont-6">GitBash cont.</h2>
+
+<div float="right" class="img"><img src="./resources/Git13.png" /></div>
+
+<ul>
+  <li>We are now ready to carry on with preparing our local repository.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="gitbash-cont-7">GitBash cont.</h2>
+
+<div float="right" class="img"><img src="./resources/Git14.png" /></div>
+
+<ul>
+  <li>
+    <p>We now need to add all the files in the <mark>HelloWorld</mark> local repository to be processed.</p>
+  </li>
+  <li>
+    <p>We add the files to be processed by typing the following commands in GitBash: <mark>git add .</mark> and pressing <mark>enter</mark>.</p>
+  </li>
+  <li>
+    <p>Now let’s check the status of our <mark>git add .</mark> to see what files have been added</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="gitbash-cont-8">GitBash cont.</h2>
+
+<div float="right" class="img"><img src="./resources/Git15.png" /></div>
+
+<ul>
+  <li>
+    <p>You can see a number of files have been added for git processing including our <mark>.gitignore</mark>.</p>
+  </li>
+  <li>
+    <p>We will cover in future lessons what <mark>branches</mark> are and how we use them.</p>
+  </li>
+  <li>
+    <p>Now we need to link up our local repository with a GitHub repository.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="gitbashgithub-cont">GitBash/GitHub cont.</h2>
+
+<div float="right" class="img"><img src="./resources/Git16.png" /></div>
+
+<ul>
+  <li>
+    <p>In order to link up our local <mark>HelloWorld</mark> repository with GitHub, we must create a corresponding repository in GitHub.</p>
+  </li>
+  <li>
+    <p>Use Chrome to open your home page in the GitHub account we just created.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="gitbashgithub-cont-1">GitBash/GitHub cont.</h2>
+
+<div float="right" class="img"><img src="./resources/Git17.png" /></div>
+
+<ul>
+  <li>
+    <p>If you haven’t already, go to the email address you used to create your GitHub account, and verify your email address.</p>
+  </li>
+  <li>
+    <p>In the upper right hand corner of the page, you will see a <mark>+</mark>.</p>
+  </li>
+  <li>
+    <p>Select the <mark>+</mark> &gt; then select <mark>New Repository</mark>.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="gitbashgithub-cont-2">GitBash/GitHub cont.</h2>
+
+<div float="right" class="img"><img src="./resources/Git17.png" /></div>
+
+<ul>
+  <li>
+    <p>Give the new repository the same name as our local repository.</p>
+  </li>
+  <li>
+    <p>Although the description is optional, let’s enter the following: <mark> My first C# program</mark>.</p>
+  </li>
+  <li>
+    <p>Finally select <mark>Create Repository</mark>.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="gitbashgithub-cont-3">GitBash/GitHub cont.</h2>
+
+<div float="right" class="img"><img src="./resources/Git18.png" /></div>
+
+<ul>
+  <li>
+    <p>We are now ready to connect our local repository on our desktop with our new GitHub repository.</p>
+  </li>
+  <li>
+    <p>You will see three lines in the page I have highlighted above.</p>
+  </li>
+  <li>
+    <p>We now will enter each of those lines in our GitBash window.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="gitbashgithub-cont-4">GitBash/GitHub cont.</h2>
+
+<div float="right" class="img"><img src="./resources/Git19.png" /></div>
+
+<ul>
+  <li>
+    <p>Return to your GitBash window, and enter the following command: <code>git commit -m "Initial Commit"</code></p>
+  </li>
+  <li>
+    <p>The <mark>-m</mark> tells GitBash we are including a message in our commit.</p>
+  </li>
+  <li>
+    <p>When we <mark>commit</mark>, we are adding files to be tracked by GitBash and GitHub.</p>
+  </li>
+  <li>
+    <p>We will use this command every time we make changes. Including a message allows us to easily keep track in GitHub of changes in our program.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="gitbashgithub-cont-5">GitBash/GitHub cont.</h2>
+
+<div float="right" class="img"><img src="./resources/Git20.png" /></div>
+
+<ul>
+  <li>
+    <p>Press <mark>enter</mark>.</p>
+  </li>
+  <li>
+    <p>Now GitBash is set up to track the changes we make to our code.</p>
+  </li>
+  <li>
+    <p>Because we are the only ones who currently have acccess to the project, we need to <mark>push</mark> our code to the GitHub repository.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="gitbashgithub-cont-6">GitBash/GitHub cont.</h2>
+
+<div float="right" class="img"><img src="./resources/Git21.png" /></div>
+
+<ul>
+  <li>
+    <p>In your GitBash window, enter the following command: <code>git remote add origin https://github.com/WCCIStudent/HelloWorld.git</code> (where “WCCIStudent” is your GitHub username)</p>
+  </li>
+  <li>
+    <p>You can copy and paste this directly from GitHub to you GitBash window and press <mark>enter</mark>.</p>
+  </li>
+  <li>
+    <p>Now that we have set up a relationship between the local repository on your desktop and your GitHub repository, let’s do our first push.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="gitbashgithub-cont-7">GitBash/GitHub cont.</h2>
+
+<div float="right" class="img"><img src="./resources/Git22.png" /></div>
+
+<ul>
+  <li>
+    <p>In your GitBash window, enter the following command: <mark>git push -u origin master</mark></p>
+  </li>
+  <li>
+    <p>You can copy and paste this directly from GitHub to your GitBash window and press <mark>enter</mark>.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="gitbashgithub-cont-8">GitBash/GitHub cont.</h2>
+
+<div float="right" class="img"><img src="./resources/Git23.png" /></div>
+
+<ul>
+  <li>
+    <p>We have successfully pushed our local repository data to GitHub.</p>
+  </li>
+  <li>
+    <p>We can check our success by returning to our GitHub page and refreshing the page.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="gitbashgithub-cont-9">GitBash/GitHub cont.</h2>
+
+<div float="right" class="img"><img src="./resources/Git24.png" /></div>
+
+<ul>
+  <li>
+    <p>You will notice our page has changed. We now see our <mark>Program description</mark></p>
+  </li>
+  <li>
+    <p>We see our <mark>HelloWorld</mark> program directory, and our <mark>.gitignore</mark> and related files are present.</p>
+  </li>
+  <li>
+    <p>Above the <mark>Code</mark> tab you will notice the following link <mark>WCCIStudent/HelloWorld</mark>. Select <mark>WCCIStudent</mark></p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="gitbashgithub-highlights">GitBash/GitHub highlights</h2>
+
+<div float="right" class="img"><img src="./resources/Git25.png" /></div>
+
+<ul>
+  <li>
+    <p>This page is your main GitHub profile page. We will spend some time in a future lesson updating this page.</p>
+  </li>
+  <li>
+    <p>You will notice the <mark>Activity Grid</mark>, which at this point has one green square present.</p>
+  </li>
+  <li>
+    <p>This grid will show prospective employers how much time you have spend coding. We will work to fill this grid with green squares.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="in-conclusion">In conclusion</h2>
+
+<ul>
+  <li>
+    <p>We now have the foundation for saving our code and tracking code versions.</p>
+  </li>
+  <li>
+    <p>Going forward, we will create a new repository for every project or website we develop.</p>
+  </li>
+  <li>
+    <p>Likewise, we also have the tools which will allow others to collaborate with us on our programs.</p>
+  </li>
+  <li>
+    <p>GitHub and GitBash offer developers many other tools which we will discuss in future lessons.</p>
+  </li>
+  <li>
+    <p>Using GitHub and GitBash will become second nature, and you will shortly see the wide range of benefits these tools offer.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="git-guide---basic-commands">Git Guide - Basic Commands</h2>
+
+<pre><code>cd //navigates to desired directory
+
+git init //initializes a local repository in GitBash
+
+git add . //adds files to local repository
+
+git commit -m "[message]" //commits with specified message
+
+git push -u origin master //pushes local repository to GitHub
+</code></pre>
+
+<style type="text/css">
+.img:hover  {
+        transform: scale(1.5);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+#img-comic {
+    display: block;
+    margin-left: 0px;
+    margin-right: auto;
+	width: 40%;
+	}
+</style>
+
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="../../shared/lib/js/head.min.js"></script>
+		<script src="../../shared/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// I suspect there's a better way to do this...
+				width: 1920 * 0.8,
+				height: 1080,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../shared/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../shared/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../shared/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../shared/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

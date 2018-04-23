@@ -1,0 +1,472 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Branching and Merging - Git and GitHub</title>
+
+		<meta name="description" content="- description not found -">
+		<meta name="author"      content="Your Name Here">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../shared/css/reveal.css">
+		<link rel="stylesheet" href="../../shared/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../shared/lib/css/zenburn.css">
+
+		<!-- WCCI style tweaks -->
+		<link rel="stylesheet" href="../../shared/css/wcci.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../shared/css/print/pdf.css' : '../../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="text-align: center">Branching and Merging</h1>
+					<h3 style="text-align: center">Git and GitHub</h3>
+					<div id="logo">
+						<img src="../../shared/images/wcci-logo.png">
+						<p style="font-size: smaller;">&copy; We Can Code IT, LLC</p>
+					</div>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_ -->
+<h2 id="git-and-github-process">Git and GitHub Process</h2>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="git-commits">Git Commits</h2>
+
+<ul>
+  <li>Each time there’s a code change, we make a <strong>commit</strong>.</li>
+  <li>We can think of a straight line with many dots, each dot representing a commit.</li>
+  <li>Each commit keeps track of the author.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="benefits-of-git">Benefits of Git</h2>
+
+<ul>
+  <li>Allows us to collaborate/work with others.</li>
+  <li><code>master</code> is the default branch for any Git repository when it is created.</li>
+  <li>We have the ability to create other branches.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="creating-branches">Creating Branches</h2>
+
+<ul>
+  <li><code>testBranch1</code> or <code>featureBranch</code> as demonstrated in class.</li>
+  <li>Called branches because they look like branches on a tree. Difference is that they merge back in to master.</li>
+  <li>Branches create a copy and allow us to have a separate place to work on something.</li>
+  <li>Separate stream of development, separate commits, exist on their own.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="you-might-want-to-create-a-branch">You might want to create a branch…</h2>
+
+<ul>
+  <li>To test something that you’re not sure you want to have as a part of your program.</li>
+  <li>To work on a specific feature separate from the rest of the project before integrating it back in.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="merging">Merging</h2>
+
+<ul>
+  <li>Takes changes and deviations of new branch and merges it back into another branch (usually <code>master</code>)</li>
+  <li>Git merge takes what you have been working on separate from the project (i.e. the changes) and merges them into the branch.</li>
+  <li>Where does the merge take place?
+    <ul>
+      <li>One of the advantages of branching is that the rest of your team doesn’t have to stop the work they’re doing.</li>
+      <li>We don’t have to coordinate with anyone, we can make our separate branch, do our separate commits, they can do what they’re doing, and then when we’re ready, we can merge our changes back in.</li>
+    </ul>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>What do you do when two people on a team are working with the same section of code? How do the changes line up?
+    <ul>
+      <li>Git is really smart when it comes to merging sets of code. It can track when changes were made. Git does its best to merge things together.</li>
+      <li>Eventually, Git will run into some problems. It holds the separate parts of the code in separate places, and asks the developer to choose which changes she or he wants to include and which ones to not include. This is called resolving a <em>merge conflict</em>.</li>
+    </ul>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="best-practice">Best Practice</h2>
+
+<ul>
+  <li>Nobody should be doing all of their work in <code>master</code>. <code>master</code> should be reserved for working, clean, and tested code while all of the members of the team are doing their work in their separate branches.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="where-can-branches-be-created">Where Can Branches Be Created?</h2>
+
+<ul>
+  <li>Branches can be created directly off the master branch. They can also be created from existing branches.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="interesting-fact">Interesting Fact</h2>
+
+<ul>
+  <li>Some teams change the name of their <code>master</code> branch to something like <code>stable</code>. However, <code>master</code> is the convention, so changing it from the standard might not be the best idea.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="best-practice-1">Best Practice</h2>
+
+<ul>
+  <li>A <code>.gitignore</code> file goes a long way towards preventing merge conflicts!! <em>ALWAYS</em> include a <code>.gitignore</code>!</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="remember">Remember</h2>
+
+<ul>
+  <li>Include your <code>.gitignore</code> file in your project before initializing your Git repository.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="to-find-your-graph">To Find Your Graph</h2>
+
+<ul>
+  <li>In your Git repository on GitHub, click the Insights tab, then choose Network, and you can see the graph as it’s getting built.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="ways-to-create-a-branch">Ways to Create a Branch</h2>
+
+<ul>
+  <li>Easiest command is <code>git checkout -b branchName</code> where “branchName” is replaced by whatever you are naming your branch. (You decide on the name)
+    <ul>
+      <li>This command creates the branch and then switches you over to the new branch you’ve created.</li>
+      <li>Whenever you create a branch, it’s taking the most recent code and making a copy for that branch.</li>
+      <li>The branch starts from wherever you currently are when you create your branch.</li>
+    </ul>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="branch-naming">Branch Naming</h2>
+
+<ul>
+  <li>If it’s used for testing, call it <code>testBranch</code>.</li>
+  <li>If it’s used for building a feature, name the branch after that feature.</li>
+  <li>Give some intention to your branch names.</li>
+  <li>NO SPACES in your branch name.
+    <ul>
+      <li>When you have spaces in your branch name, some programs will not function correctly with the branch.</li>
+    </ul>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="knowing-what-branch-youre-in">Knowing what branch you’re in</h2>
+
+<ul>
+  <li>Git Bash will include the name of your branch in blue and in parentheses.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="pushing-your-branch-to-github">Pushing your branch to GitHub</h2>
+
+<ul>
+  <li>We’ve only ever previously done <code>git push origin master</code></li>
+  <li>With branches, we’ll do <code>git push origin branchName</code> where “branchName” is replaced by whatever your branch’s name is.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="to-switch-branches">To Switch Branches</h2>
+
+<ul>
+  <li><code>git checkout</code> is the code we use to switch from one branch to another. Example: <code>git checkout master</code> from <code>testBranch</code></li>
+  <li>When you switch a branch, Visual Studio will try to revert back your code to wherever the code was when the branch was intitiated.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="command-to-use-sparingly">Command to use sparingly</h2>
+
+<ul>
+  <li><code>git push origin --all</code> will push all of your branches to Github. Use sparingly because you don’t want to be pushing non-functional branches and you don’t want all of the members of your team to have to delete the bad branches.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="merge">Merge</h2>
+
+<ul>
+  <li>This is when we bring the changes back in.</li>
+  <li><strong>Important:</strong> You want to be in the branch where you want the changes and bring the changes in.
+    <ul>
+      <li>Example - Be in <code>master</code> and merge <code>testBranch</code> in.</li>
+      <li>Note - it is possible to do it backwards, so be mindful when doing merges.</li>
+    </ul>
+  </li>
+  <li>To merge, you are in the branch where you want the changes to end up, and type <code>git merge -m "Merge Message" branchName</code> into <code>master</code> where “Merge Message” is replaced by the message you want to include.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="when-it-goes-wrong">When It Goes Wrong</h2>
+
+<ul>
+  <li>Multiple members of a team working on the same section of code.</li>
+  <li>Visual Studio includes mark-up and options in your program, and the developer then chooses which section(s) of code is correct.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="cloning">Cloning</h2>
+
+<ul>
+  <li>Copy the HTTPS url from the green “Clone or download” button.</li>
+  <li>In Git Bash, type <code>git clone url</code> where URL is where you have pasted what you copied in the last step.</li>
+  <li>Make sure you have changed directories in Git Bash to where you want to clone the project. (Example: <code>~/source/repos</code>)</li>
+</ul>
+
+<p><strong>Git Cloning Exercise</strong></p>
+
+<p>For this exercise you will need at least two people, Person A and Person B. Changes should not be made in master directly, but rather, each person should make changes in a branch and merge them into master.</p>
+
+<ol>
+  <li>
+    <p>Have Person A create a new project, create a Git repository, and add a .gitignore file. Next, they should perform an initial commit and push the code to a new GitHub repository.</p>
+  </li>
+  <li>
+    <p>Person A should go into the Git repository’s “Settings” and add Person B as a collaborator under “Collaborators &amp; teams”. If there are more than two people, also add them at this point.</p>
+  </li>
+  <li>
+    <p>Person B (and Person C, etc.) should accept the invite via email (or via the sharable link from Person A).</p>
+  </li>
+</ol>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ol start="4">
+<li>Person B should copy the link under the green "Clone or download" button on the repository's main page. Person B should now run <code>git clone [url copied from the repository]</code></li>
+<br />
+Be sure to run the <code>git clone</code> command wherever you would like the folder to be created on your computer. For example, if you run the <code>git clone</code> command in the <code>~/source/repos/Projects</code> directory, the project folder would be created at <code>~/source/repos/Projects/[ProjectName]</code><br />
+<br />
+Ensure Person B navigates into the project directory by running the <code>cd</code> command. For example, if you ran your <code>git clone</code> command in the <code>~/source/repos/Projects</code> and your project was called <code>GitBranchTest</code>, you would then need to run <code>cd GitBranchTest</code> to navigate to the project directory.<br />
+<br />
+You can verify you are in the project directory if you see the branch name at the end of the directory name in the console like the following: <code>~/source/repos/Projects/GitBranchTest (master)</code>
+</ol>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ol start="5">    
+<li>Person B now needs to create a branch by running <code>git checkout -b [newBranchName]</code> Person B should make a few small changes, and commit those changes locally.</li>
+<br />
+    5a. (Optional) If Person B wants to add their changes to GitHub, they can run <code>git push origin [newBranchName]</code><br />
+<br />
+<li>Once Person B is done with their changes, they need to merge them back into <code>master</code>. First, they should checkout master with <code>git checkout master</code>. Then, to merge their changes into master, they should run <code>git merge -m "[merge message]" [newBranchName]</code></li>
+<br />
+    Remember, when we perform a merge, we are <i>merging</i> the changes into the branch we currently have checked out. You can kinda think about us <i>bringing</i> those changes into our currently checked out branch.
+</ol>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ol start="7">
+<li>With their changes merged in, Person B now needs to update origin. Before running a push, you should run a <code>git pull</code> to make sure you have the most recent code. Then you can update origin by running <code>git push origin master</code></li><br />
+
+<li>Person A now needs the most recent changes in master. First, they need to have the master branch checked out by running <code>git checkout master</code>. To get the most recent changes, they can run <code>git pull</code>. If there are more than 2 people working on the project, everyone can run this step now to ensure all are up-to-date.</li><br />
+
+<li>Person A can now repeat steps 5-6. If there are more than 2 people, have Person C repeat these steps afterwards as well.</li>
+</ol>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="additional">Additional:</h2>
+
+<p>You can repeat these steps, alternating who is creating a branch and adding changes until you feel comforatable with the process.</p>
+
+<p>You can also <em>reuse</em> any of the already created branches. You should first checkout the branch, make your changes, commit, and follow the same steps from there.</p>
+
+<p>You can use the “Network” graph under the “Insights” tab on the GitHub repository to help verify the state and relationship of the different branches.</p>
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="../../shared/lib/js/head.min.js"></script>
+		<script src="../../shared/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// I suspect there's a better way to do this...
+				width: 1920 * 0.8,
+				height: 1080,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../shared/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../shared/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../shared/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../shared/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

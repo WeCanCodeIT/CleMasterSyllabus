@@ -1,0 +1,1049 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Basic Types and Variables - •••</title>
+
+		<meta name="description" content="- description not found -">
+		<meta name="author"      content="Your Name Here">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../shared/css/reveal.css">
+		<link rel="stylesheet" href="../../shared/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../shared/lib/css/zenburn.css">
+
+		<!-- WCCI style tweaks -->
+		<link rel="stylesheet" href="../../shared/css/wcci.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../shared/css/print/pdf.css' : '../../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="text-align: center">Basic Types and Variables</h1>
+					<h3 style="text-align: center">•••</h3>
+					<div id="logo">
+						<img src="../../shared/images/wcci-logo.png">
+						<p style="font-size: smaller;">&copy; We Can Code IT, LLC</p>
+					</div>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_ -->
+<h2 id="lets-build-on-what-we-learned-yesterday">Let’s Build on what we learned yesterday</h2>
+
+<div float="right" class="img"><img src="./resources/var1.png" /></div>
+
+<ul>
+  <li>
+    <p>We have already started building our first application, so let’s open <mark>HelloWorld</mark> and build upon our success</p>
+  </li>
+  <li>
+    <p>Volunteer Time!!</p>
+  </li>
+  <li>
+    <p>Open Visual Studio</p>
+  </li>
+  <li>
+    <p>Select File &gt; Open &gt; Project Solution</p>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<div float="right" class="img"><img src="./resources/var2.png" /></div>
+
+<ul>
+  <li>Select HelloWorld &gt; Open</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here">We should all be here!!</h2>
+
+<div float="right" class="img"><img src="./resources/var3.png" /></div>
+
+<ul>
+  <li>Let’s review a few things before we begin</li>
+</ul>
+
+<div class="fragment">
+Question time: Where are classes defined in C#?
+</div>
+
+<div class="fragment">
+Question time: All C# programs must have what type of method?
+</div>
+
+<div class="fragment">
+Question time: What features indicate the beginning and ending of a segment of code, method, or class? 
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="its-a-value-based-proposition">It’s a Value-Based Proposition</h2>
+
+<p>We saw <em>literals</em> yesterday. In the statement:</p>
+
+<pre><code class="language-C#">Console.WriteLine("Hello World!");
+</code></pre>
+
+<p><code>"Hello World!"</code> is a string literal. It’s a string because it’s a sequence of characters surrounded by quotation marks. It’s a literal because it always has that value.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="lets-not-be-literal">Let’s Not Be Literal</h2>
+
+<ul>
+  <li>
+    <p>In contrast, we have <em>variables</em>. In C#, a variable’s <em>type</em> is defined, but its value can <em>vary</em> (thus the name).</p>
+  </li>
+  <li>
+    <p>Let’s experiment</p>
+  </li>
+  <li>
+    <p>In our code we have <code>Console.WriteLine("Hello World!");</code></p>
+  </li>
+  <li>
+    <p>Comment out any other code you may have</p>
+  </li>
+  <li>
+    <p>Lets declare a variable and assign it the value <mark>Hello World!</mark></p>
+  </li>
+  <li>
+    <p>Underneath <code>Console.WriteLine("Hello World");</code> let’s insert the following code:</p>
+  </li>
+</ul>
+
+<pre><code class="language-C# hljs">string message = "Hello World!";
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-1">We should all be here</h2>
+
+<div float="right" class="img"><img src="./resources/var4.png" /></div>
+
+<ul>
+  <li>
+    <p>You may see a green wavy line underneath the variable name <mark>message</mark></p>
+  </li>
+  <li>
+    <p>This line indicates we have created a variable that is not being used.</p>
+  </li>
+  <li>
+    <p>If you use your cursor and hover over the green line, Visual Studio will display a pop-up message.</p>
+  </li>
+  <li>
+    <p>This message will describe the purpose of the green line, and in some cases offer a solution if the problem requires attention.</p>
+  </li>
+  <li>
+    <p>We will discuss this tool Visual Studio provides for us at a later time.</p>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<div float="right" class="img"><img src="./resources/var5.png" /></div>
+
+<ul>
+  <li>
+    <p>So let’s discuss what we have done</p>
+  </li>
+  <li>
+    <p>We have declared a variable called <mark>message</mark></p>
+  </li>
+  <li>
+    <p>The operating system has reserved an empty space in memory for our <mark>message</mark> variable</p>
+  </li>
+  <li>
+    <p>Next we assigned our <mark><code>string message</code></mark> a value of <mark>Hello World!</mark></p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-2">We should all be here</h2>
+
+<div float="right" class="img"><img src="./resources/var6a.png" /></div>
+
+<ul>
+  <li>Volunteer Time!!</li>
+</ul>
+
+<div class="fragment">
+Question time: We named our string variable <mark>message</mark>. Do you think we could have used any name we wanted?
+</div>
+
+<div class="fragment">
+Question time: When we are creating variables, do you think using descriptive names would be important? If so, why?
+</div>
+
+<div class="fragment">
+- Now let's append our code so we send the <mark>Console.WriteLine()</mark> and the contents of <mark>message</mark> to the Visual Studio console.
+</div>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>Underneath <code>string message = "Hello World!";</code> let’s insert the following code:</li>
+</ul>
+
+<pre><code class="language-C# hljs">Console.WriteLine(message);
+</code></pre>
+
+<ul>
+  <li>Let’s see what our code should look like</li>
+</ul>
+
+<div class="fragment">
+
+Question time: What output to the console do you think this line of code will produce? If any?
+</div>
+
+<div class="fragment">
+    <div float="right" class="img"><img src="./resources/var7.png" /></div>
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="run-it">Run It!!</h2>
+
+<ul>
+  <li>
+    <p>If you will notice there is a small <mark>asterisk</mark> on the Program.cs page tab next to the words Program.cs.</p>
+  </li>
+  <li>
+    <p>This asterisk is there to remind you the page has not been saved.</p>
+  </li>
+  <li>
+    <p>Before we select Start, lets go ahead and select the <mark>Single Floppy Disk</mark> right above the Program.cs tab.</p>
+  </li>
+  <li>
+    <p>The asterisk is no longer there, so we can proceed.</p>
+  </li>
+  <li>
+    <p>Select Start</p>
+  </li>
+  <li>
+    <p>You should see a blank screen pop-up and disappear. This is the console. Press <mark>Ctrl F5</mark> and the console window will appear.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-3">We should all be here</h2>
+
+<div float="right" class="img"><img src="./resources/var8.png" /></div>
+
+<ul>
+  <li>
+    <p>Volunteer time!!</p>
+  </li>
+  <li>
+    <p>As we have just observed, variables allow us to store values.</p>
+  </li>
+  <li>
+    <p>We created a <code>string</code> variable, and assigned it a value of “Hello World!”.</p>
+  </li>
+</ul>
+
+<div class="fragment">
+Question time: Think about the name <mark>variable</mark>. What does the name imply?
+</div>
+
+<div class="fragment">
+It implies that the contents can vary. Let's use a cup as an example. We can create a cup (variable) and we can fill it with coffee (value) in the morning, then tea (value) at night.
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="variables-are-variable">Variables are variable</h2>
+
+<ul>
+  <li>
+    <p>So now that we know how flexible a variable can be, let’s do an experiment.</p>
+  </li>
+  <li>
+    <p>Let’s close our console window.</p>
+  </li>
+</ul>
+
+<div class="fragment">
+Question time: We want to give our string variable <mark>message</mark> a new value. Any ideas on how we accomplish this daunting task?
+</div>
+
+<div class="fragment">
+Let's give it a try. Underneath <code>Console.WriteLine(message);</code>, insert the following code:
+</div>
+
+<div class="fragment">
+<code>message = "I am Spartacus";</code>
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-4">We should all be here</h2>
+
+<div float="right" class="img"><img src="./resources/var9.png" /></div>
+
+<ul>
+  <li>Now let’s copy <mark><code>Console.WriteLine(message);</code></mark>, and paste it below</li>
+</ul>
+
+<p><mark><code>message = "I am Spartacus";</code></mark>.</p>
+
+<div class="fragment">
+Question time: What output to the console do you think this line of code will produce? If any?
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="very-important-information">Very important information</h2>
+
+<p>Question time: Why didn’t we type the following when changing the value of <mark>message</mark>:</p>
+
+<pre><code class="language-C# hljs">string message = "I am Spartacus";
+</code></pre>
+
+<div class="fragment">
+The first part of the command, on the left side of the <mark>=</mark> sign, <mark>string message</mark> <i>declares</i> a variable of type string, while the second part, on the right side of the <mark>=</mark> sign, <i>initializes</i> the variable with a value.
+</div>
+
+<div class="fragment">
+Once you declare a variable you cannot declare another variable with the same name. Using the type <code>string</code> tells Visual Studio you are declaring a new variable.
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="run-it-1">Run It!!</h2>
+
+<ul>
+  <li>
+    <p>Once again you will notice there is a small <mark>asterisk</mark> on the Program.cs page tab next to the words Program.cs.</p>
+  </li>
+  <li>
+    <p>Before we select Start, let’s go ahead and select the <mark>Single Floppy Disk</mark> right above the Program.cs tab.</p>
+  </li>
+  <li>
+    <p>The asterisk is no longer there, so we can proceed.</p>
+  </li>
+  <li>
+    <p>Select Start.</p>
+  </li>
+  <li>
+    <p>You should see a blank screen pop-up and disappear. This is the console. Press <mark>Ctrl F5</mark> and the console window will appear.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-5">We should all be here</h2>
+
+<div float="right" class="img"><img src="./resources/var10.png" /></div>
+
+<ul>
+  <li>
+    <p>Its time to understand why we received the results we see in the console.</p>
+  </li>
+  <li>
+    <p>Lets execute the program step by step the way Visual Studio does when you select Start.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="step-by-step">Step by step</h2>
+
+<ul>
+  <li>
+    <p>Visual Studio looks in the <mark>Program Class</mark> for the <mark>Main</mark> method.</p>
+
+    <ul>
+      <li>Visual Studio executes the code in the <mark>Main</mark> method from the top down.</li>
+    </ul>
+
+    <div class="fragment">
+  - Visual Studio executes <mark>Console.WriteLine("Hello World!")</mark>, and prints what to the console?
+  </div>
+
+    <div class="fragment">
+  - Visual Studio executes <mark>string message = "Hello World!";</mark>, and assigns what value to what variable?
+  </div>
+
+    <div class="fragment">
+  - Visual Studio executes <mark>Console.WriteLine(message);</mark>, and prints what value to the console?
+  </div>
+
+    <div class="fragment">
+  - Visual Studio executes <mark>message = "I am Spartacus";</mark>, and assigns what value to what variable?
+  </div>
+
+    <div class="fragment">
+  - Visual Studio executes <mark>Console.WriteLine(message);</mark>, and prints what value to the console?
+  </div>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="variable-naming-conventions">Variable Naming Conventions</h2>
+
+<ul>
+  <li>
+    <p>When we attended grade school, we learned the importance of correct punctuation, capitalization, and sentence structure.</p>
+  </li>
+  <li>
+    <p>We adhered to the standards we learned not because it was easier for us to write, but we learned it was important so other people can read what we wrote.</p>
+  </li>
+  <li>
+    <p>Coding is just another form of writing, and you will find it has its own standards on how it should be written.</p>
+  </li>
+  <li>
+    <p>As with writing a paper in school, we adhere to writing standards in coding for the benefit of those who may read the code we have written.</p>
+  </li>
+  <li>
+    <p>The first standards we will tackle are <mark>Naming Conventions</mark></p>
+  </li>
+  <li>
+    <p>We will talk about naming conventions quite a bit.</p>
+  </li>
+  <li>
+    <p>Let’s take a look at our code, and cover some of the naming standards we have already used but now we can give them a name.</p>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<pre><code class="language-C#" data-noescape="">namespace <mark>HelloWorld</mark>
+{
+    class <mark>Program</mark>
+    {
+        static void <mark>Main</mark>(string[] args)
+        {
+            Console.<mark>WriteLine</mark>("Hello World!");
+            string message = "Hello World!";
+            Console.<mark>WriteLine</mark>(message);
+            message = "I am Spartacus";
+            Console.<mark>WriteLine</mark>(message);
+        }
+    }
+}
+</code></pre>
+
+<ul>
+  <li>
+    <p>If you look at the highlighted text in our code, you will see they all have one thing in commom. Can anyone tell the class to what I am referring?</p>
+  </li>
+  <li>
+    <p>Each highlighted word starts with the first letter in that word capitalized.</p>
+  </li>
+  <li>
+    <p>If you look at the word <mark>WriteLine</mark>, you see it’s actually two words. You will also notice the first letter of each word is capitalized.</p>
+  </li>
+  <li>
+    <p>This naming convention is called <mark>PascalCase</mark>. Simply put, the first letter in each word is capitalized.</p>
+  </li>
+  <li>
+    <p>In C# we would use PascalCase when we name the following: Classes and Methods. We will talk more about these later.</p>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>To better understand our next naming convention, we need to make a few changes and additions to our code.</p>
+  </li>
+  <li>
+    <p>Volunteer time!!</p>
+  </li>
+  <li>
+    <p>Look at the code below, and make the following highlighted changes and additions</p>
+  </li>
+</ul>
+
+<pre><code class="language-C#" data-noescape="">namespace HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+            string <mark>messageOne</mark> = "Hello World!";
+            Console.WriteLine(<mark>messageOne</mark>);
+            <mark>string messageTwo</mark> = "I am Spartacus";
+            Console.WriteLine(<mark>messageTwo</mark>);
+        }
+    }
+}
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-6">We should all be here</h2>
+
+<div float="right" class="img"><img src="./resources/var11.png" /></div>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<pre><code class="language-C#" data-noescape="">namespace HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+            string <mark>messageOne</mark> = "Hello World!";
+            Console.WriteLine(<mark>messageOne</mark>);
+            string <mark>messageTwo</mark> = "I am Spartacus";
+            Console.WriteLine(<mark>messageTwo</mark>);
+        }
+    }
+}
+</code></pre>
+
+<ul>
+  <li>
+    <p>If you look at the highlighted text in our code, you will see they all have one thing in common. Can anyone tell the class to what I am referring?</p>
+  </li>
+  <li>
+    <p>Each highlighted word starts with the first letter in that word lowerCase and the beginning of the second word is upperCase.</p>
+  </li>
+  <li>
+    <p>This naming convention is called <mark>camelCase</mark>. As stated the first letter in the first word lowerCase and the beginning of the second word and every subsequent word in upperCase.</p>
+  </li>
+  <li>
+    <p>In C# we would use camelCase when we name the following: Variables and Method Arguments. We will talk more about these later.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="basic-data-types">Basic Data Types</h2>
+
+<ul>
+  <li>
+    <p>There are two kinds of basic data types in C#</p>
+  </li>
+  <li>
+    <p>We refer to these to basic data types as <mark>value types</mark> and <mark>reference types</mark>.</p>
+  </li>
+  <li>
+    <p>To better understand basic data types, we need to make a few changes and additions to our code.</p>
+  </li>
+  <li>
+    <p>Volunteer time!!</p>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>Look at the code below, and make the following highlighted changes and additions</li>
+</ul>
+
+<pre><code class="language-C#" data-noescape="">namespace HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string messageOne = "Hello World!";
+            string messageTwo = "I am Spartacus";
+            <mark>int age = 35;
+            double height = 72.50;
+            float weight = 210.0284606f;
+            bool isGodLike = true;
+            char gender = 'M';
+            Console.WriteLine(messageOne);
+            Console.WriteLine(messageTwo);
+            Console.WriteLine(age);
+            Console.WriteLine(height);
+            Console.WriteLine(weight);
+            Console.WriteLine(isGodLike);
+            Console.WriteLine(gender);</mark>
+        }
+    }
+}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-7">We should all be here</h2>
+
+<div float="right" class="img"><img src="./resources/var12.png" /></div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="value-type-variables">Value type variables</h2>
+
+<ul>
+  <li>
+    <p>Value type variables contain their data whereas variables of reference types store references to their data.</p>
+  </li>
+  <li>
+    <p>We have already seen value type variables in the code we have written.</p>
+  </li>
+  <li>
+    <p>The highlighted variables list below are examples of value type variables.</p>
+  </li>
+</ul>
+
+<pre><code class="language-C#" data-noescape="">
+        static void Main(string[] args)
+        {
+            string messageOne = "Hello World!";
+            string messageTwo = "I am Spartacus";
+            <mark>int age</mark> = 35;
+            <mark>double height</mark> = 72.50;
+            <mark>float weight</mark> = 210.0284606f;
+            <mark>bool isGodLike</mark> = true;
+            <mark>char gender</mark> = 'M';
+            Console.WriteLine(messageOne);
+            Console.WriteLine(messageTwo);
+            Console.WriteLine(age);
+            Console.WriteLine(height);
+            Console.WriteLine(weight);
+            Console.WriteLine(isGodLike);
+        }
+    }
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="integer-value-type-variable">Integer value type variable</h2>
+
+<ul>
+  <li>
+    <p>The value variable integer comes in five flavors, but we will focus on only three: <code>short</code>, <code>int</code> and <code>long</code>.</p>
+  </li>
+  <li>
+    <p>You might have guessed the name denotes the size of the integer. Your guess would be correct.</p>
+  </li>
+  <li>
+    <p>Integer (int) types are whole numbers, and have following sizes and value ranges:</p>
+
+    <ul>
+      <li>
+        <p><code>short</code>:	size = 2 bytes, value range = -32,768 to 32,767</p>
+      </li>
+      <li>
+        <p><code>int</code>:	size = 2 or 4 bytes, value range = -32,768 to 32,767 or -2,147,483,648 to 2,147,483,647</p>
+      </li>
+      <li>
+        <p><code>long</code>:	size = 4 bytes, value range = -2,147,483,648 to 2,147,483,647</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Integers should not be used for precise calculations or calculations that require a decimal point.</p>
+  </li>
+</ul>
+
+<div class="fragment">
+Question time: What situations when you are coding do you think an <code>int</code> would be the preferred data type?
+</div>
+
+<div class="fragment">
+Question time: Which of the following is not a <code>short</code>: 45, 32767, 8000, -32769
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="floating-value-type-variables">Floating value type variables</h2>
+
+<ul>
+  <li>
+    <p>The floating value type variable comes in three flavors, but we will focus on only two: <code>double</code> and <code>float</code>.</p>
+  </li>
+  <li>
+    <p>When your code needs to perform precision arithmetic, or your code requires using exponentially large numbers a floating value type variable is your data type.</p>
+  </li>
+  <li>
+    <p>Floating value type variables use decimal places and have the following sizes, value ranges and precision.</p>
+
+    <ul>
+      <li>
+        <p><code>float</code>:	size = 4 bytes, value range = 1.2E-38 to 3.4E+38, precision = 6 decimal places</p>
+      </li>
+      <li>
+        <p><code>double</code>:	size = 8 bytes, value range = 2.3E-308 to 1.7E+308, precision = 15 decimal places</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<pre><code class="language-C#" data-noescape="">
+        static void Main(string[] args)
+        {
+            string messageOne = "Hello World!";
+            string messageTwo = "I am Spartacus";
+            int age = 35;
+            <mark>double height</mark> = 72.50;
+            <mark>float weight</mark> = 210.0284606f;
+            bool isGodLike = true;
+            char gender = 'M';
+        }
+    }
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="booleans">Booleans</h2>
+
+<ul>
+  <li>A <code>bool</code> value type variable holds either the value <code>true</code> or <code>false</code>, which is represented by a ‘1’ for ‘true’ and ‘0’ for ‘false’.</li>
+</ul>
+
+<pre><code class="language-C#" data-noescape="">
+        static void Main(string[] args)
+        {
+            string messageOne = "Hello World!";
+            string messageTwo = "I am Spartacus";
+            int age = 35;
+            double height = 72.50;
+            float weight = 210.0284606f;
+            <mark>bool isGodLike</mark> = true;
+            char gender = 'M';
+        }
+    }
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="character-value-types">Character Value Types</h2>
+
+<ul>
+  <li>
+    <p>The <code>char</code> value type vairable holds individual characters.</p>
+  </li>
+  <li>
+    <p>We define <code>char</code> literals by using single apostrophes.</p>
+  </li>
+</ul>
+
+<pre><code class="language-C#" data-noescape="">
+        static void Main(string[] args)
+        {
+            string messageOne = "Hello World!";
+            string messageTwo = "I am Spartacus";
+            int age = 35;
+            double height = 72.50;
+            float weight = 210.0284606f;
+            bool isGodLike = true;
+            <mark>char gender</mark> = 'M';
+        }
+    }
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="string-reference-type">String Reference Type</h2>
+
+<ul>
+  <li>
+    <p>Strings are Reference Types.</p>
+  </li>
+  <li>
+    <p>We’ve seen examples of them.</p>
+  </li>
+  <li>
+    <p>We denote their values with quotation marks:</p>
+  </li>
+</ul>
+
+<pre><code class="language-C#" data-noescape="">
+        static void Main(string[] args)
+        {
+            <mark>string messageOne</mark> = "Hello World!";
+            <mark>string messageTwo</mark> = "I am Spartacus";
+            int age = 35;
+            double height = 72.50;
+            float weight = 210.0284606f;
+            bool isGodLike = true;
+            char gender = 'M';
+        }
+    }
+</code></pre>
+
+<div class="fragment">
+Question time: What is the difference between "a" and 'a'?
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-8">We should all be here!!</h2>
+
+<div float="right" class="img"><img src="./resources/var12.png" /></div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="run-it-2">Run It!!</h2>
+
+<ul>
+  <li>
+    <p>If you will notice there is a small <mark>asterisk</mark> on the Program.cs page tab next to the words Program.cs.</p>
+  </li>
+  <li>
+    <p>This asterisk is there to remind you the page has not been saved.</p>
+  </li>
+  <li>
+    <p>Before we select Start, lets go ahead and select the <mark>Single Floppy Disk</mark> right above the Program.cs tab.</p>
+  </li>
+  <li>
+    <p>The asterisk is no longer there, so we can proceed.</p>
+  </li>
+  <li>
+    <p>Select Start</p>
+  </li>
+  <li>
+    <p>You should see a blank screen pop-up and dissapear. This is the console. Press <mark>Ctrl F5</mark> and the console window will appear.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-9">We should all be here!!</h2>
+
+<div float="right" class="img"><img src="./resources/var13.png" /></div>
+
+<ul>
+  <li>Let’s talk about what we see.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="time-for-some-reflection">Time for some reflection</h2>
+
+<ul>
+  <li>
+    <p>Now that we have learned about Basic Types and Variables, let’s take a minute to answer any questions.</p>
+  </li>
+  <li>
+    <p>Let’s go ahead and save our project, as we will continue building our project throughout the week.</p>
+  </li>
+  <li>
+    <p>I hope you have followed along, and you have sucessfully finished the coding exercises throughout this lecture.</p>
+  </li>
+  <li>
+    <p>The project we are building will give you the experience and tools you need to sucessfully complete your weekend project.</p>
+  </li>
+  <li>
+    <p>If your code does not look and act like the code we have in the last slide, please get with one of your team mates and correct what issues you might have.</p>
+  </li>
+  <li>
+    <p>If you still have questions about anything we have covered, please do not hesitate to ask one of the WCCI instructors.</p>
+  </li>
+</ul>
+
+<style type="text/css">
+.img:hover  {
+        transform: scale(1.5);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+</style>
+
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="../../shared/lib/js/head.min.js"></script>
+		<script src="../../shared/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// I suspect there's a better way to do this...
+				width: 1920 * 0.8,
+				height: 1080,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../shared/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../shared/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../shared/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../shared/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

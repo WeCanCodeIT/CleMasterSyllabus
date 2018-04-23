@@ -1,0 +1,511 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Lists - Like Arrays, but Mutable!</title>
+
+		<meta name="description" content="- description not found -">
+		<meta name="author"      content="Your Name Here">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../shared/css/reveal.css">
+		<link rel="stylesheet" href="../../shared/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../shared/lib/css/zenburn.css">
+
+		<!-- WCCI style tweaks -->
+		<link rel="stylesheet" href="../../shared/css/wcci.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../shared/css/print/pdf.css' : '../../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="text-align: center">Lists</h1>
+					<h3 style="text-align: center">Like Arrays, but Mutable!</h3>
+					<div id="logo">
+						<img src="../../shared/images/wcci-logo.png">
+						<p style="font-size: smaller;">&copy; We Can Code IT, LLC</p>
+					</div>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_ -->
+<h1 id="data-collections">Data Collections</h1>
+
+<p>We have already seen one data collection type, an <code>array</code>. An <code>array</code> is a collection of values that have the same type, like <code>int</code> or <code>string</code>.</p>
+
+<p>There are several types of data collections in C#, many of which you will see during the upcoming weeks and even more during final projects.</p>
+
+<p>Today, we will be talking about <code>Lists</code>.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="arrays-are-fixed-size">Arrays are fixed size</h2>
+
+<p>We can’t change the size of an array once we’ve created it. It will never grow or shrink. This array will always have a <code>length</code> of three:</p>
+
+<p><code class="language-C#" data-noescape="">
+int[] myArray = {1, 2, 3};
+</code></p>
+
+<p>If I wanted to add an element to this array, I’d generally do something like this (but hopefully I’d use a loop):</p>
+
+<pre><code class="language-java">int[] oldArray = myArray;
+
+myArray = new int[4];
+for(int index = 0; index &lt; oldArray.length; index++) {
+  myArray[index] = oldArray[index];
+}
+myArray[3] = 42;
+</code></pre>
+
+<p>We are forced to create a new array and assigned it to our <code>myArray</code> variable. Imagine if we needed to insert a new element in the middle? <em>Yuck!</em></p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="arraylists-can-grow-and-shrink">ArrayLists can grow and shrink</h2>
+
+<p><code>ArrayList</code> is a standard class, so we create an <em>instance</em> of it just like any class we’d create:</p>
+<pre><code class="language-java">ArrayList&lt;String&gt; giantWords = new ArrayList&lt;String&gt;();
+giantWords.add("fee");
+giantWords.add("fie");
+giantWords.add("foe");
+System.out.println(giantWords);
+System.out.println("my list has " + giantWords.size() + " elements");
+
+giantWords.add("fum");
+System.out.println(giantWords);
+System.out.println("my list has " + giantWords.size() + " elements");
+</code></pre>
+
+<p>I’m not even forced to specify the size! The <code>size</code> method tells me how big my list currently is.</p>
+
+<p>If you run this code, you’ll also see that <code>ArrayList</code> also gives us a better <code>String</code> representation than arrays did. (It does this in its <code>toString</code> method. All classes have one.)</p>
+
+<p>Something there looks strange, though, eh?</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="parameterized-types">Parameterized Types</h2>
+
+<p>The syntax for our declaration and initialization probably looks a bit funky at first:</p>
+
+<pre><code class="language-java">ArrayList&lt;String&gt; giantWords = new ArrayList&lt;String&gt;();
+</code></pre>
+
+<p>One would read this as “an <code>ArrayList</code> of <code>Strings</code> named <code>myList</code>”.</p>
+
+<p><code>ArrayList</code> is a <em>parameterized type</em>. It requires us to specify a <em>type parameter</em>. Here, that type is <code>String</code>.</p>
+
+<p>What does this mean? When we declare an <code>ArrayList</code>, we also declare what type of things it will hold. We can only add <code>String</code>s to this <code>ArrayList</code>.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="primitives-except-when-they-aint">Primitives except when they ain’t</h2>
+
+<p>A limitation of these type parameters is that they can only be objects. We can’t put primitives like <code>int</code>s into an <code>ArrayList</code>. Wouldn’t get very far if we didn’t have a workaround, would we?</p>
+
+<p>For each of the primitive types, Java has a corresponding class to create full-fledged objects to represent that value. These are found in the <code>java.lang</code> package, like <code>String</code>, so we don’t need <code>import</code> statements for them:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>primitive</th>
+      <th>class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>boolean</td>
+      <td>Boolean</td>
+    </tr>
+    <tr>
+      <td>char</td>
+      <td>Character</td>
+    </tr>
+    <tr>
+      <td>int</td>
+      <td>Integer</td>
+    </tr>
+    <tr>
+      <td>long</td>
+      <td>Long</td>
+    </tr>
+    <tr>
+      <td>double</td>
+      <td>Double</td>
+    </tr>
+    <tr>
+      <td>short</td>
+      <td>Short</td>
+    </tr>
+    <tr>
+      <td>byte</td>
+      <td>Byte</td>
+    </tr>
+    <tr>
+      <td>double</td>
+      <td>Double</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td>Float</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Remember our naming conventions? Classes start with an uppercase letter.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="thats-starting-to-sound-ugly">That’s starting to sound ugly!</h2>
+
+<p>It’s not as bad as you may think. Java does something called <em>autoboxing</em> to automatically convert between primitives and objects, so I can do this:</p>
+
+<pre><code class="language-java">ArrayList&lt;Integer&gt; answers = new ArrayList&lt;Integer&gt;();
+int ultimateAnswer = 42;
+answers.add(ultimateAnswer);
+answers.add(86);
+
+System.out.println("The answers are: " + answers);
+
+Integer asIntegerObject = ultimateAnswer;
+System.out.println("The ultimate answer is " + asIntegerObject);
+</code></pre>
+
+<p>When you need an object, Java will “box” your primitive. When you need a primitive, Java will “unbox” your object.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="objects-like-any-other">Objects like any other</h2>
+
+<p>The way we use <code>ArrayList</code>s is the same as we would use any other class. We create an instance of it, then we call methods (send messages) to ask it to modify itself or give us information.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="how-big-is-it">How big is it?</h2>
+
+<p>We’ve already seen the <code>size</code> method in use. It corresponds to <code>length</code> for an array.</p>
+
+<p>To check whether an array is empty, we would compare its <code>length</code> to zero:</p>
+
+<pre><code class="language-java">if(myArray.length == 0) {
+  System.out.println("I'm empty!");
+}
+</code></pre>
+
+<p>We can ask an <code>ArrayList</code> whether it’s empty:</p>
+<pre><code>ArrayList&lt;Integer&gt; answers = new ArrayList&lt;Integer&gt;();
+System.out.println("Are you out of answers? " + answers.isEmpty());
+</code></pre>
+<p>Try adding something to yours and see how the response changes.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="do-you-have-one-of-these">Do you have one of these?</h2>
+
+<p>If we wanted to check whether an array contained an element, we would iterate over it, checking each element:</p>
+
+<pre><code class="language-java">String[] myTools = { "hammer", "shovel", "wrench" };
+for(String tool: myTools) {
+  if(tool.equals("hammer")) {
+    System.out.println("I have a hammer!");
+  }
+}
+</code></pre>
+
+<p><code>ArrayList</code> has a <code>contains</code> method for this:</p>
+
+<pre><code class="language-java">ArrayList&lt;String&gt; myTools = new ArrayList&lt;String&gt;();
+myTools.add("hammer");
+myTools.add("shovel");
+myTools.add("wrench");
+
+if(myTools.contains("hammer")) {
+  System.out.println("I have a hammer!");
+}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="where-is-it">Where is it?</h2>
+
+<p>If I want to know the index of an element in an array, it’s a bit painful:</p>
+
+<pre><code class="language-java">String[] myTools = { "hammer", "shovel", "wrench" };
+for(int index = 0; index &lt; myTools.length; index++) {
+  if(myTools[index].equals("shovel")) {
+	  System.out.println("Shovel is element " + index);
+  }
+}
+</code></pre>
+
+<p>With an <code>ArrayList</code>, we have the <code>indexOf</code> method:</p>
+
+<pre><code class="language-java">ArrayList&lt;String&gt; myTools = new ArrayList&lt;String&gt;();
+myTools.add("hammer");
+myTools.add("shovel");
+myTools.add("wrench");
+
+System.out.println("Shovel is element " + myTools.indexOf("shovel"));
+</code></pre>
+
+<p><em>Look, ma! No curly brackets!</em></p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="order-is-important">Order is important</h2>
+
+<p>Arrays remember the order in which you <code>add</code> elements. Other types of collections don’t care so much, but order is one of the intrinsic properties of a list. Try running this code, then changing the order of the <code>add</code> calls and running it again:</p>
+
+<pre><code class="language-java">ArrayList&lt;String&gt; giantWords = new ArrayList&lt;String&gt;();
+giantWords.add("fee");
+giantWords.add("fie");
+giantWords.add("foe");
+System.out.println(myList);
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="loopy-again">Loopy again</h2>
+
+<p>Like arrays, an <code>ArrayList</code> is <em>iterable</em>, so we can use the enhanced for loop with it:</p>
+<pre><code class="language-java">ArrayList&lt;String&gt; giantWords = new ArrayList&lt;String&gt;();
+giantWords.add("fee");
+giantWords.add("fie");
+giantWords.add("foe");
+
+for(String word: giantWords) {
+  System.out.print(word + "! ");
+}
+System.out.println();
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="more-tools">More Tools</h2>
+
+<p><code>ArrayList</code> has a number of other useful methods. The examples assume our list was created like so:</p>
+
+<pre><code class="language-java">ArrayList&lt;String&gt; myThings = new ArrayList&lt;String&gt;();
+myThings.add("this");
+myThings.add("that");
+myThings.add("the other");
+</code></pre>
+
+<p>Here are some other methods we can use:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>method</th>
+      <th>example</th>
+      <th>what it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>clear()</code></td>
+      <td><code>myThings.clear();</code></td>
+      <td>removes all the elements</td>
+    </tr>
+    <tr>
+      <td><code>set(int index, String element)</code></td>
+      <td><code>myThings.set(1, "foo");</code></td>
+      <td>assigns “foo” to index 1, replacing “that”:<br />“this”, “foo”, “the other”</td>
+    </tr>
+    <tr>
+      <td><code>add(int index, String element)</code></td>
+      <td><code>myThings.add(1, "foo");</code></td>
+      <td>inserts “foo” at index 1, shifting the others down to make room:<br />“this”, “foo”, “that”, “the other”</td>
+    </tr>
+    <tr>
+      <td><code>remove(int index)</code></td>
+      <td><code>myThings.remove(1);</code></td>
+      <td>removes the element at index 1:<br />“this”, “the other”</td>
+    </tr>
+    <tr>
+      <td><code>remove(Object o)</code></td>
+      <td><code>myThings.remove("that");</code></td>
+      <td>removes the value from the list:<br />“this”, “the other”</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="exploring-arraylist">Exploring <code>ArrayList</code></h2>
+
+<p>As you move into exercises, you’ll be inclined to dig into the <code>ArrayList</code> class. You might not find what you expect. As part of the Collections framework, <code>ArrayList</code> is just one piece of the puzzle. You’ll find that some of the methods we’re using aren’t even <em>in</em> <code>ArrayList</code>!</p>
+
+<p>That’s because <code>java.util.ArrayList</code> <em>is a</em> specific type of <code>java.util.List</code>, which in turn <em>is a</em> type of <code>java.lang.Iterable</code>.</p>
+
+<p>This is called inheritance. <code>ArrayList</code> <em>inherits</em> from its parent class and interfaces. More on that later.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="a-method-by-any-other-name">A method by any other name…</h2>
+
+<p>Notice the convention we’re seeing with methods. It’s a good one to follow when you create your own methods. Generally, a method should be doing something or giving us information, not both. It’s a good practice to use verbs for methods that do things, and nouns for methods that give us information. It is also common to see methods whose names start with <code>get</code> or <code>is</code> that give us information.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="not-all-bad">Not all bad</h2>
+
+<p>When might we use an array rather than an <code>ArrayList</code>?</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="do-it">Do It!</h2>
+
+<ul>
+  <li>
+    <p>Create an <code>ArrayList</code>. Add five animals to your list. Print each animal in your list.</p>
+  </li>
+  <li>Create a list that contains the following boolean values: <code>true</code>, <code>false</code>, <code>false</code>, <code>true</code>, <code>false</code>. Loop through your list. Based on the value of each element, print a message:
+    <ul>
+      <li><code>true</code>: “Better bring an umbrella”</li>
+      <li><code>false</code>: “No rain today, enjoy the sun!”</li>
+    </ul>
+  </li>
+  <li>Create a list with the following numbers: 1, 23, 9, 77, 922, 6, 32, 63, 14, 5, then:
+    <ul>
+      <li>determine whether each of the following values is an element in the list: 23, 77, 15</li>
+      <li>remove the following elements: 27, 922, 32, 6</li>
+      <li>again determine whether each of the following values is an element in the list: 23, 77, 15 (<em>Stretch: create a method so that you don’t need to duplicate this work.</em>)</li>
+    </ul>
+  </li>
+  <li>Come up with an example of how you might use each of the methods from the “More Tools” slide.</li>
+</ul>
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="../../shared/lib/js/head.min.js"></script>
+		<script src="../../shared/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// I suspect there's a better way to do this...
+				width: 1920 * 0.8,
+				height: 1080,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../shared/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../shared/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../shared/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../shared/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

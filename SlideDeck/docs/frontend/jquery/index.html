@@ -1,0 +1,324 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>JQuery - The Most Ubiquitous JS Library</title>
+
+		<meta name="description" content="- description not found -">
+		<meta name="author"      content="Your Name Here">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../shared/css/reveal.css">
+		<link rel="stylesheet" href="../../shared/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../shared/lib/css/zenburn.css">
+
+		<!-- WCCI style tweaks -->
+		<link rel="stylesheet" href="../../shared/css/wcci.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../shared/css/print/pdf.css' : '../../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="text-align: center">JQuery</h1>
+					<h3 style="text-align: center">The Most Ubiquitous JS Library</h3>
+					<div id="logo">
+						<img src="../../shared/images/wcci-logo.png">
+						<p style="font-size: smaller;">&copy; We Can Code IT, LLC</p>
+					</div>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_ -->
+<h2 id="what-is-jquery">What is jQuery?</h2>
+
+<p>jQuery is a JS library that allows you to, “write less and do more” with JS. It is built using the JS programming language. So, everything that you can do in jQuery can be done with Vanilla JS. But jQuery simplifies otherwise complex and code heavy endeavors like AJAX and DOM manipulation.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="including-jquery-in-your-project">Including jQuery in your project</h2>
+
+<p>There are two ways to include jQuery in your project. The first is to go to the <a href="https://jquery.com">jQuery site</a> and download it and include it inside of your project.</p>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;title&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+
+    &lt;script src="./js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<p>The other way to include jQuery is to use what’s called a CDN (Content Delivery Network).</p>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;title&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+
+    &lt;script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"&gt;&lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="variables">Variables</h2>
+
+<p>Since jQuery is just JS, variables work the same, but, when using jQuery, there is a common convention to use a <code>$</code> character before any variable that represents jQuery objects.</p>
+
+<pre><code class="language-javascript">var $myVar = $('#root');
+$myVar.click(function() {
+    $('.item')[0].hide();
+});
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="syntax">Syntax</h2>
+
+<p>Let’s talk a little bit about the convention that we used in the previous slide to select an item and do something with it.</p>
+
+<pre><code class="language-javascript">$('selector').action();
+</code></pre>
+
+<p>So jQuery is a list of predefined methods that execute some JS functionality but more simply than Vanilla JS. The selector behaves similarly to our <code>querySelector()</code> and <code>querySelectorAll()</code> methods. You can put any valid CSS selector in there and it will get that element for you. We can then call the methods, or as they’re know in jQuery, actions, to do something to the selector we’re referencing.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="documentready">$(document).ready();</h2>
+
+<p>next we’re going to talk about jQuerys <code>$(document).ready(function() {})</code> method. This method is going to wait until your page loads to execute any jQuery code within it. You should house all of your jQuery code inside the anonymous function being passed to <code>$(document).ready(function() {})</code>.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="methods">Methods</h2>
+
+<p>Methods in jQuery allow you to interact with your DOM elements. Let’s look at some of the most used jQuery methods:</p>
+
+<pre><code class="language-javascript">// Just like JS, this gives our
+// first 'p' element a new value
+$('p')[0].text('Some new value');
+
+// This does the same but it includes HTML elements
+$('#title').html('This is going to give &lt;span&gt;HTML&lt;/span&gt; code to our title');
+
+// The '.val' method actually gets the
+// value from an input element and let's
+// you use it in your jQuery code
+$('input').val();
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="callbacks">Callbacks</h2>
+
+<p>We have methods that accept callbacks in JS as well. Let’s play around with some of the more useful ones below:</p>
+
+<pre><code class="language-javascript">// This is going to set the value of 'display'
+// on '#myLogo' to 'hidden'
+$('#myLogo').hide();
+
+// This is going to toggle the value of 'display'
+// between 'block' and 'hidden' based on its
+// current value
+$('.container').toggle();
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="event-methods">Event Methods</h2>
+
+<p>Event methods in jQuery are used the same way we use event listeners in JS. They call some action when a selector is interacted with. Let’s see an example.</p>
+
+<pre><code class="language-javascript">// When any 'h1' elements on your page are clicked
+// they will be hidden from view.
+$('h1')[0].click(function() {
+    $('h1')[0].hide();
+});
+</code></pre>
+
+<p>I encourage you to look at the jQuery <a href="https://api.jquery.com/">documentation</a> to see what other methods there are. Notable event methods include:</p>
+
+<ul>
+  <li><code>.click</code></li>
+  <li><code>.dblclick</code></li>
+  <li><code>.mouseenter</code></li>
+  <li><code>.mouseout</code></li>
+  <li><code>.focus</code></li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="effects">Effects</h2>
+
+<p>There are effects that you can use inside of jQuery to add stylish effects to your code. Let’s look at some below.</p>
+
+<ul>
+  <li><code>.show(speed, callback)</code></li>
+  <li><code>.hide(speed, callback)</code></li>
+  <li><code>.toggle(speed, callback)</code></li>
+  <li><code>.fadeToggle(speed, callback)</code></li>
+  <li><code>.fadeIn(speed, callback)</code></li>
+  <li><code>.fadeOut(speed, callback)</code></li>
+  <li><code>.slideUp(speed, callback)</code></li>
+  <li><code>.slideDown(speed, callback)</code></li>
+  <li><code>.slideToggle(speed, callback)</code></li>
+</ul>
+
+<p>These effects are useful for adding interesting effects to your elements when your user interacts with them.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="jquery-css">jQuery CSS</h2>
+
+<p>So we can interact with our CSS inside of jQuery. This is really useful for dynamic styling. For example, if you want to change the background color of an element based on whether or not a user has clicked a button, you could use the css property for that. Or if you want to get the value of the color of one element to apply the same value to another element, the jQuery <code>.css()</code> method will do that for you.</p>
+
+<pre><code class="language-javascript">// This will return the current background-color
+// on your 'h1' element since it's only receiving one value.
+$('h1')[0].css('backgroundColor');
+
+// This will set the value of the 'font-size'
+// on the paragraph element when they are clicked
+$('p').click(function() {
+    $('p').css('fontSize', '30px');
+});
+
+// What do you think this will do?
+$('div').css({
+    'backgroundColor': 'blue',
+    'color': 'white',
+    'fontFamily': 'sans-serif'
+    'fontSize': '20px'
+});
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="practice">Practice</h2>
+
+<p>Clone the example exercise from <a href="https://github.com/WeCanCodeIT/jquery-example-project">here</a> and solve the challenges in the JS file.</p>
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="../../shared/lib/js/head.min.js"></script>
+		<script src="../../shared/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// I suspect there's a better way to do this...
+				width: 1920 * 0.8,
+				height: 1080,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../shared/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../shared/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../shared/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../shared/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

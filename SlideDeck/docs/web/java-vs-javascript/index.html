@@ -1,0 +1,539 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Java vs JavaScript - <em>"Who… run… Bartertown?"</em></title>
+
+		<meta name="description" content="- description not found -">
+		<meta name="author"      content="Your Name Here">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../shared/css/reveal.css">
+		<link rel="stylesheet" href="../../shared/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../shared/lib/css/zenburn.css">
+
+		<!-- WCCI style tweaks -->
+		<link rel="stylesheet" href="../../shared/css/wcci.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../shared/css/print/pdf.css' : '../../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="text-align: center">Java vs JavaScript</h1>
+					<h3 style="text-align: center"><em>"Who… run… Bartertown?"</em></h3>
+					<div id="logo">
+						<img src="../../shared/images/wcci-logo.png">
+						<p style="font-size: smaller;">&copy; We Can Code IT, LLC</p>
+					</div>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_ -->
+<h1 id="java-vs-javascript">Java vs JavaScript</h1>
+
+<p><img src="./resources/segue-blog-java-vs-javascript.png" alt="" /></p>
+
+<p><q>Java is to Javascript as ham is to hamster.</q> ―Jeremy Keith</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="differences">Differences</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">Java</th>
+      <th>vs</th>
+      <th style="text-align: left">JavaScript</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right">compiled</td>
+      <td> </td>
+      <td style="text-align: left">interpreted (usually)</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">write once, run (almost) anywhere</td>
+      <td> </td>
+      <td style="text-align: left">subject to differences in execution environments</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">statically typed</td>
+      <td> </td>
+      <td style="text-align: left">dynamically typed</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">classical inheritance - a class inherits from another class</td>
+      <td> </td>
+      <td style="text-align: left">prototypal (or prototypical) inheritance - an object delegates to another object (its <em>prototype</em>)</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="welcome-to-the-console">Welcome to the console</h1>
+
+<ul>
+  <li>Chrome Developer tools, ways to get there:
+    <ul>
+      <li>Tools Menu-&gt;Developer tools</li>
+      <li>Shift+Ctrl+I</li>
+      <li>Right click an element and select <em>Inspect</em></li>
+    </ul>
+  </li>
+  <li>
+    <p>Click the <em>Console</em> tab</p>
+
+    <p><img src="./resources/helloConsole.png" alt="" /></p>
+
+    <ul>
+      <li><code>&lt;- undefined</code> indicates the return value</li>
+      <li>implements what is known as a <strong>R</strong>ead <strong>E</strong>valuate <strong>P</strong>rint <strong>L</strong>oop (REPL)</li>
+    </ul>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="writing-to-the-console">Writing to the console</h1>
+
+<h3 id="java">Java</h3>
+
+<pre><code class="language-Java">System.out.println("my message");
+</code></pre>
+
+<h3 id="javascript">JavaScript</h3>
+
+<pre><code class="language-JavaScript">console.log("my message");
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="dynamic-languages">Dynamic languages</h1>
+
+<ul>
+  <li>no type-checking or compilation: ‘bad’ code is executed</li>
+  <li>variables have no type</li>
+</ul>
+
+<h3 id="java-statically-typed">Java (statically typed)</h3>
+
+<pre><code class="language-Java">String number = "42";
+number = 42; // Error!
+</code></pre>
+
+<h3 id="javascript-dynamic">JavaScript (dynamic)</h3>
+
+<pre><code class="language-JavaScript">var number = "42";
+number = 42;
+number = 42.0;
+number = new Date(); // ? ¯\_(ツ)_/¯
+</code></pre>
+
+<p>Names are more important than ever in a dynamic language.</p>
+
+<p><em>Be Careful!</em> If you do not use <code>var</code> to declare a JavaScript variable, it will be created automagically in the global scope. This can cause you pain.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="arrays">Arrays</h1>
+
+<h3 id="java-1">Java</h3>
+
+<pre><code class="language-Java">String[] menuItems = { "steak", "escargot", "tacos de pescado" };
+</code></pre>
+
+<h3 id="javascript-1">JavaScript</h3>
+
+<pre><code class="language-JavaScript">var menuItems = [ "steak", "escargot", "tacos de pescado" ];
+</code></pre>
+<p>Square brackets, not curly brackets.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="iterating-by-index">Iterating by index</h2>
+
+<h3 id="java-2">Java</h3>
+
+<pre><code class="language-Java">String[] menuItems = { "steak", "escargot", "tacos de pescado" };
+for(int idx = 0; idx &lt; menuItems.length; idx++) {
+  System.out.println(menuItems[idx]);
+}
+</code></pre>
+
+<h3 id="javascript-2">JavaScript</h3>
+
+<pre><code class="language-JavaScript">var menuItems = [ "steak", "escargot", "tacos de pescado" ];
+for (var idx = 0; idx &lt; menuItems.length; idx++) {
+  console.log(menuItems[idx]);
+}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="iterating-with-foreach">Iterating with forEach</h2>
+
+<h3 id="java-3">Java</h3>
+
+<pre><code class="language-Java">String[] menuItems = { "steak", "escargot", "tacos de pescado" };
+for(String item: menuItems) {
+  System.out.println(item);
+}
+</code></pre>
+
+<h3 id="javascript-3">JavaScript</h3>
+
+<pre><code class="language-JavaScript">var menuItems = [ "steak", "escargot", "tacos de pescado" ];
+menuItems.forEach(function(element) {
+  console.log(element)
+});
+</code></pre>
+
+<p>The function argument to <code>forEach</code> above is known as a <em>callback</em> function. JavaScript has a heavy focus on <em>functional</em> programming.</p>
+
+<p>Java’s <code>Collection</code> interface has a similar <code>forEach</code> method (in version 8 and above) for functional programming.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="functional-programming">Functional Programming</h1>
+
+<p>Java 8 introduced functional programming features, the most significant change in the language since Java 5.</p>
+
+<pre><code class="language-Java">List&lt;String&gt; menuItems
+  = Arrays.asList("steak", "escargot", "tacos de pescado");
+menuItems.forEach(System.out::println);
+// or…
+menuItems.forEach(item -&gt; System.out.println(item));
+</code></pre>
+
+<p>This is equivalent to the JavaScript from the previous slide:</p>
+
+<pre><code class="language-JavaScript">var menuItems = [ "steak", "escargot", "tacos de pescado" ];
+menuItems.forEach(function(element) {
+  console.log(element)
+});
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="functions-are-first-class-citizens">Functions are first-class citizens</h2>
+
+<p>Storing a function in a variable:</p>
+<pre><code>&gt; var sayHello = function(arg) {
+    console.log("Hello, I'm a function");
+  }
+&lt;- undefined
+</code></pre>
+
+<p>Getting its value:</p>
+
+<pre><code>&gt; sayHello // value of sayHello
+&lt;- function (arg) {
+    console.log("Hello, I'm a function");
+  }
+</code></pre>
+
+<p>Executing the function:</p>
+
+<pre><code>&gt; sayHello() // calling sayHello
+  Hello, I'm a function
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="javascript-object-notation-json">JavaScript Object Notation (JSON)</h1>
+
+<pre><code class="language-JavaScript">function VirtualPet() {}; // constructor
+VirtualPet.prototype = {
+  hunger: 20,
+  feed: function() {
+    this.hunger = this.hunger - 5;
+  },
+  isHungry: function() {
+    return this.hunger &gt;= 30;
+  }
+};
+var fido = new VirtualPet();
+</code></pre>
+
+<p>JavaScript inheritance is <em>prototypal</em>, which means that objects delegate to a <em>prototype</em> associated with the function that created them.</p>
+
+<p>Demo: Fido is always hungry, Bobo is never hungry.</p>
+
+<p><em>Encapsulation</em> in JavaScript is more difficult.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="also-json---instead-of-maps">Also JSON - instead of Maps</h2>
+
+<h3 id="java-4">Java</h3>
+
+<pre><code class="language-Java">Map&lt;String, String&gt; prices = new HashMap&lt;String, String&gt;();
+prices.put("steak", "34.95");
+prices.put("tacos de pescado", "19.95");
+
+for (Entry&lt;String, String&gt; entry : prices.entrySet()) {
+  System.out.println(entry.getKey() + ": " + entry.getValue());
+}
+</code></pre>
+
+<h3 id="javascript-4">JavaScript</h3>
+
+<pre><code class="language-JavaScript">var prices = {
+  "steak": "34.95",
+  "tacos de pescadot": "19.95"
+};
+
+for (var item in prices) {
+  console.log(item + ": " + prices[item]);
+}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="also-also-json">Also Also JSON</h2>
+
+<p>JavaScript objects are a lot like maps. In our previous example, we were really iterating over the properties of a JavaScript object. Try this:</p>
+
+<pre><code class="language-JavaScript">function VirtualPet() {}; // constructor
+VirtualPet.prototype = {
+  hunger: 20,
+  feed: function() {
+    this.hunger = this.hunger - 5;
+  }
+};
+var fido = new VirtualPet();
+
+console.log("Fido's hunger before feeding is " + fido.hunger);
+fido.feed();
+
+console.log("After feeding:");
+for (var attr in fido) {
+  console.log(attr + ": " + fido[attr]);
+}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="arrays-are-maps">Arrays are Maps?</h1>
+
+<pre><code>&gt; var myArray = [ "fee", "fie", "foe" ]
+&lt;- undefined
+&gt; myArray
+  ▼ (3) ["fee", "fie", "foe"]
+      0: "fee"
+      1: "fie"
+      2: "foe"
+      length: 3
+    ▶ __proto__: Array(0)
+&lt;- undefined
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="so-far-so-good">So far, so good…</h2>
+
+<pre><code>&gt; myArray[3] = "fum"
+&lt;- "fum"
+&gt; myArray
+  ▶ (4) ["fee", "fie", "foe", "fum"]
+</code></pre>
+
+<p>Ok, that makes sense. Let’s try:</p>
+<pre><code>&gt; myArray[42] = "fourty-two"
+&lt;- "fourty-two"
+&gt; myArray
+  ▼ (43) ["fee", "fie", "foe", undefined x 38, "fourty-two"]
+      0: "fee"
+      1: "fie"
+      2: "foe"
+      42: "fourty-two"
+      length: 43
+    ▶ __proto__: Array(0)
+&lt;- undefined
+&gt; myArray[23]
+  undefined
+&lt;- undefined
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="how-about">How about…</h2>
+
+<pre><code>&gt; myArray["wat"] = "Welcome to JavaScript!"
+&lt;- "Welcome to JavaScript!"
+&gt; myArray
+  ▼ (43) ["fee", "fie", "foe", undefined x 38, "fourty-two"]
+      0: "fee"
+      1: "fie"
+      2: "foe"
+      42: "fourty-two"
+      wat: "Welcome to JavaScript!"
+      length: 43
+    ▶ __proto__: Array(0)
+</code></pre>
+
+<p>Notice that the length of the array is still 43. Now try:</p>
+
+<pre><code>&gt; myArray.wat
+  Welcome to JavaScript!
+</code></pre>
+
+<p>Wat?</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="duck-typing">Duck Typing</h2>
+
+<p>Common to dynamic languages.</p>
+
+<p><img src="./resources/baby-duck.jpg" alt="baby duck" /></p>
+
+<p>If it looks like a duck, swims like a duck, and quacks like a duck, then it probably is a duck. <em>Quack!</em></p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="recommended-reading">Recommended Reading</h2>
+
+<p>If you’d like to get deeper into JavaScript than we will be, this is a great place to start.</p>
+
+<p><img src="./resources/the-good-parts.jpg" alt="JavaScript: The Good Parts" /></p>
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="../../shared/lib/js/head.min.js"></script>
+		<script src="../../shared/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// I suspect there's a better way to do this...
+				width: 1920 * 0.8,
+				height: 1080,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../shared/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../shared/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../shared/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../shared/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

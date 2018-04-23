@@ -1,0 +1,291 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Equality and Sets - •••</title>
+
+		<meta name="description" content="- description not found -">
+		<meta name="author"      content="Your Name Here">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../shared/css/reveal.css">
+		<link rel="stylesheet" href="../../shared/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../shared/lib/css/zenburn.css">
+
+		<!-- WCCI style tweaks -->
+		<link rel="stylesheet" href="../../shared/css/wcci.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../shared/css/print/pdf.css' : '../../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="text-align: center">Equality and Sets</h1>
+					<h3 style="text-align: center">•••</h3>
+					<div id="logo">
+						<img src="../../shared/images/wcci-logo.png">
+						<p style="font-size: smaller;">&copy; We Can Code IT, LLC</p>
+					</div>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_ -->
+<h1 id="comparing-primitives">Comparing primitives</h1>
+
+<p>Primitives are stored <em>by value</em>, so checking them for equality is simple. We use the <code>==</code> operator.</p>
+
+<pre><code class="language-java">int firstInt = 42;
+int secondInt = 86;
+if(firstInt == secondInt) {
+	System.out.println("These are equal.");
+} else {
+	System.out.println("These are not equal.");
+}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="comparing-objects">Comparing objects</h1>
+
+<p>Variables that hold objects are called <code>reference types</code>, because they hold a reference to an object. Think of this as a pointer to the object stored as a memory address.</p>
+
+<p>If we compare two object reference using the equals (<code>==</code>) operator, we are actually comparing the references, not the values to which they refer.</p>
+
+<p>Try this. You may be suprised:</p>
+
+<pre><code class="language-java">Integer firstInt = new Integer(42);
+Integer secondInt = new Integer(42);
+if(firstInt == secondInt) {
+	System.out.println("These are equal.");
+} else {
+	System.out.println("These are not equal.");
+}
+</code></pre>
+
+<p>What just happened?</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="i-am-me">I am me</h2>
+
+<p>Try changing <code>secondInt</code> to <code>firstInt</code> in the comparison. What happens?</p>
+
+<pre><code class="language-java">Integer firstInt = new Integer(42);
+Integer secondInt = new Integer(42);
+if(firstInt == firstInt) {
+	System.out.println("These are equal.");
+} else {
+	System.out.println("These are not equal.");
+}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="doing-it-right">Doing it right</h2>
+
+<p>To compare objects, we use the <code>equals</code> method.</p>
+
+<pre><code class="language-java">Integer firstInt = new Integer(42);
+Integer secondInt = new Integer(42);
+if(firstInt.equals(secondInt)) {
+	System.out.println("These are equal.");
+} else {
+	System.out.println("These are not equal.");
+}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="full-circle">Full circle</h1>
+
+<p>Fire up your IDE, and create this <code>Circle</code> class:</p>
+
+<pre><code class="language-java">public class Circle {
+
+	private int radius;
+
+	public Circle(int radius) {
+		this.radius = radius;
+	}
+
+	public double circumference() {
+		return 2 * Math.PI * radius;
+	}
+}
+</code></pre>
+
+<p>Note: <code>Math.PI</code> above is a <em>constant</em>. What does that mean?</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="circles-of-a-size">Circles of a size</h2>
+
+<p>As per our <code>Integer</code> example, this code won’t work as you may expect (drop it into a <code>main</code> method):</p>
+
+<pre><code class="language-java">Circle firstCircle = new Circle(42);
+Circle secondCircle = new Circle(42);
+
+if(firstCircle.equals(secondCircle)) {
+	System.out.println("These are the same size");
+} else {
+	System.out.println("These aren't the same size.");
+}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="establishing-equality">Establishing equality</h2>
+
+<p>What is the method we are using to compare objects?</p>
+
+<p>It is the <code>equals</code> method, not an operator. The <code>equals</code> method is a method like any other.</p>
+
+<p><code>Object</code> is the parent class for all objects, so when we call the <code>equals</code> method on <code>Circle</code>, we are calling the <code>equals</code> method on its parent class, <code>Object</code>:</p>
+
+<pre><code class="language-java">public boolean equals(Object obj) {
+    return (this == obj);
+}
+</code></pre>
+
+<p>What did we just discover about objects and the <code>==</code> operator?</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="creating-our-own-equals-method">Creating our own equals method</h2>
+
+<p>In order to compare two circles, we <em>override</em> the <code>equals</code> method in our <code>Circle</code> class.</p>
+
+<pre><code class="language-java">@Override
+public boolean equals(Object obj) {
+	
+	boolean isACircle = obj instanceof Circle;
+	
+	if(obj == null || !isACircle) {
+		return false;
+	}
+	
+	Circle theOther = (Circle) obj;
+	
+	return radius == theOther.radius;
+}
+</code></pre>
+
+<p>We’re comparing the radii of our <code>Circle</code>s!</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="lets-break-that-down">Lets break that down!</h1>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="sets">Sets</h1>
+
+<p>From Wikipedia:</p>
+
+<blockquote>
+  <p>In mathematics, a set is a well-defined collection of distinct objects, considered as an object in its own right. For example, the numbers 2, 4, and 6 are distinct objects when considered separately, but when they are considered collectively they form a single set of size three, written {2,4,6}. Sets are one of the most fundamental concepts in mathematics.</p>
+</blockquote>
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="../../shared/lib/js/head.min.js"></script>
+		<script src="../../shared/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// I suspect there's a better way to do this...
+				width: 1920 * 0.8,
+				height: 1080,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../shared/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../shared/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../shared/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../shared/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,452 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Loops - A New Hope</title>
+
+		<meta name="description" content="- description not found -">
+		<meta name="author"      content="Your Name Here">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../shared/css/reveal.css">
+		<link rel="stylesheet" href="../../shared/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../shared/lib/css/zenburn.css">
+
+		<!-- WCCI style tweaks -->
+		<link rel="stylesheet" href="../../shared/css/wcci.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../shared/css/print/pdf.css' : '../../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="text-align: center">Loops</h1>
+					<h3 style="text-align: center">A New Hope</h3>
+					<div id="logo">
+						<img src="../../shared/images/wcci-logo.png">
+						<p style="font-size: smaller;">&copy; We Can Code IT, LLC</p>
+					</div>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_ -->
+<h2 id="what-is-looping">What is Looping?</h2>
+
+<ul>
+  <li>
+    <p>Looping means to repeat something.</p>
+  </li>
+  <li>
+    <p>Looping is another means of controlling flow within a program.</p>
+  </li>
+  <li>
+    <p><code>if/else</code> and <code>switch/case</code> statements focus on <em>decision making</em>.</p>
+  </li>
+  <li>
+    <p>Looping statements focus on doing something repeatedly.</p>
+  </li>
+  <li>
+    <p>We call doing something repeatedly <em>iterating</em>.</p>
+  </li>
+  <li>
+    <p>Our efforts will focus predominantly on three types of loops: <mark>while, do while, for</mark></p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="why-would-i-want-to-do-that">Why Would I Want To Do That?</h2>
+
+<p>There are many practical examples of loops:</p>
+
+<ul>
+  <li>
+    <p>Sunrise and sunset</p>
+  </li>
+  <li>
+    <p>Your daily routine: drink coffee, walk the dog, ask the neighbors if they’ve seen the dog, catch the dog, take a shower, go to work, come home, eat dinner, repeat</p>
+  </li>
+</ul>
+
+<div class="fragment">
+Question time: What are some real life examples of a loop?
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="while-loops">While Loops</h2>
+
+<ul>
+  <li>
+    <p>A <code>while</code> loop continues to do what you’ve told it to do <em>while</em> some condition <strong>continues to be true</strong>.</p>
+  </li>
+  <li>
+    <p>Let’s go back to our Hello World program and use loops to make the program more efficient.</p>
+  </li>
+  <li>
+    <p>When Spartacus is deciding who will march to battle, we have to assume there will be more than one soldier.</p>
+  </li>
+  <li>
+    <p>Currently, our decision logic only processes one soldier at a time. Let’s use a while loop to process many soldiers.</p>
+  </li>
+  <li>
+    <p>Before we get started, please comment out section twelve of our Hello World program.</p>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>Volunteer time</p>
+  </li>
+  <li>
+    <p>Copy and paste the following code from your Hello World program.</p>
+  </li>
+</ul>
+
+<pre><code class="language-C#">// Part thirteen while loop example
+Console.WriteLine("What is your rank soldier?");
+string rank = Console.ReadLine();
+
+Console.WriteLine("What is your age soldier?");
+int age = int.Parse(Console.ReadLine());
+
+Console.WriteLine("What is your job soldier?");
+string job = Console.ReadLine();
+
+if ((rank == "officer") || (age &lt;= 26))
+{
+    Console.WriteLine("Get your gear, kiss your family goodbye, 
+		put on your marching boots.");
+}
+else if ((job == "cook") || (age &gt;= 26))
+{
+    Console.WriteLine("My army has to eat. Pack your pots and pans");
+}
+else
+{
+    Console.WriteLine("Sorry, you are staying home.");
+}
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here">We should all be here</h2>
+
+<div class="img" float="right"><img src="./resources/loop1.png" /></div>
+
+<ul>
+  <li>
+    <p>For a loop to operate successfully, we need to have an <mark>enter/exit statement</mark>.</p>
+  </li>
+  <li>
+    <p>This means there needs to be a process by which the program can enter and exit the loop.</p>
+  </li>
+  <li>
+    <p>If we do not provide an enter/exit statement, we will have a situation programmers call <mark>infinite looping</mark>.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="lets-break-that-down">Let’s Break That Down</h2>
+
+<ul>
+  <li>
+    <p>Let’s construct our while loop around our existing code.</p>
+  </li>
+  <li>
+    <p>We start with the <code>while</code> keyword. This keyword tells the compiler we are processing a loop.</p>
+  </li>
+</ul>
+
+<pre><code class="language-C#" data-noescape=""><mark>while</mark> () {	
+}</code></pre>
+
+<div class="fragment">
+<p><code>while</code> is followed by a set of parentheses. Our enter/exit statement in the form of a conditional statement goes here.</p>
+<p>We will use the following conditional as our enter/exit statement: <code>(rank != "exit")</code></p>
+<pre><code class="language-C#" data-noescape="">int count = 0;
+while <mark>(</mark>rank != "exit"<mark>)</mark> {
+}</code></pre>
+</div>
+
+<div class="fragment">
+- In each iteration of the while loop, the conditional <mark><code>rank != "exit"</code></mark> will be checked.
+</div>
+
+<div class="fragment">
+- As long as the value returned by the conditional remains true, the loop will execute.
+</div>
+
+<div class="fragment">
+- When the value returned by the conditional changes to false, the loop will no longer execute.
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="lets-keep-breaking-it-down">Let’s Keep Breaking It Down</h2>
+
+<ul>
+  <li>Within these curly braces goes the code we want to execute.</li>
+</ul>
+
+<pre><code class="language-C#" data-noescape="">int count = 0;
+while (rank != "exit") <mark>{</mark>
+	//Code body
+<mark>}</mark></code></pre>
+
+<ul>
+  <li>
+    <p>Any variables, data structures, or methods we declare in a loop are considered <mark>local</mark> to the loop, and cannot be accessed by the rest of the program.</p>
+  </li>
+  <li>
+    <p>Any variables, data structures, or methods declared outside a loop are considered <mark>global</mark>, and can be accessed inside and outside the loop.</p>
+  </li>
+  <li>
+    <p>Thus, our enter/exit conditional statement variable must be declared <strong>outside</strong> the scope of the loop. Let’s create that variable.</p>
+  </li>
+  <li>
+    <p>There are many ways to format this variable. We will format as follows: <mark><code>string action = " "</code></mark></p>
+  </li>
+  <li>
+    <p>Finally, we need a way to assign a new value to our variable <mark>action</mark> so we can exit the loop.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="add-the-following-code-to-your-helloworld-program">Add the following code to your HelloWorld Program</h2>
+
+<pre><code class="language-C#" data-noescape=""><mark>string action = " ";
+while (action != "exit"){ </mark>
+Console.WriteLine("What is your rank soldier?");
+string rank = Console.ReadLine();
+
+Console.WriteLine("What is your age soldier?");
+int age = int.Parse(Console.ReadLine());
+Console.WriteLine("What is your job soldier?");
+string job = Console.ReadLine();
+
+if ((rank == "officer") || (age &lt;= 26))
+{
+    Console.WriteLine("Get your gear, kiss your family goodbye, put on your marching boots.");
+}
+else if ((job == "cook") || (age &gt;= 26))
+{
+    Console.WriteLine("My army has to eat. Pack your pots and pans");
+}
+else
+{
+    Console.WriteLine("Sorry, you are staying home.");
+}
+<mark>Console.WriteLine("Add another? Type exit to quit");
+action = Console.ReadLine();
+}</mark>
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-1">We should all be here</h2>
+
+<div class="img" float="right"><img src="./resources/loop2.png" /></div>
+
+<ul>
+  <li>Let’s execute our program. Ensure the loop is operating as designed.</li>
+</ul>
+
+<div class="fragment">
+Question time:  What happens when you type anything other than exit or just hit the enter key?
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="do-while">Do while</h2>
+
+<ul>
+  <li>
+    <p>The next loop we will discuss is the <mark>do while</mark> loop.</p>
+  </li>
+  <li>
+    <p>If we look at the while loop, we notice the loop <strong>only</strong> executes if the conditional statement is satisfied.</p>
+  </li>
+  <li>
+    <p>The <mark>do while</mark> loop, on the other hand, will <strong>always execute at least once</strong>.</p>
+  </li>
+  <li>
+    <p>The operation of the <mark>do while</mark> loop is essentially the same as the while loop.</p>
+  </li>
+</ul>
+
+<div class="fragment">
+Question time:  Can you give me a real life example of a <code>do while</code> loop?
+</div>
+
+<div class="fragment">
+Let's take the code we just wrote in the while format and convert it to a <code>do while</code> loop. Comment out the <code>while</code> loop before we proceed with the exception of our action variable.
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="add-the-following-code-to-your-hello-world-program">Add the following code to your Hello World Program</h2>
+
+<pre><code class="language-C#" data-noescape="">string action = " ";
+<mark>do { </mark>
+Console.WriteLine("What is your rank soldier?");
+string rank = Console.ReadLine();
+
+Console.WriteLine("What is your age soldier?");
+int age = int.Parse(Console.ReadLine());
+Console.WriteLine("What is your job soldier?");
+string job = Console.ReadLine();
+
+if ((rank == "officer") || (age &lt;= 26))
+{
+    Console.WriteLine("Get your gear, kiss your family goodbye, put on your marching boots.");
+}
+else if ((job == "cook") || (age &gt;= 26))
+{
+    Console.WriteLine("My army has to eat. Pack your pots and pans");
+}
+else
+{
+    Console.WriteLine("Sorry you are staying home.");
+}
+Console.WriteLine("Add another? Type exit to quit");
+action = Console.ReadLine();
+<mark>} while (action != "exit");</mark>
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-2">We should all be here</h2>
+
+<div class="img" float="right"><img src="./resources/loop3.png" /></div>
+
+<ul>
+  <li>
+    <p>Let’s execute our program. Ensure the loop is operating as designed.</p>
+  </li>
+  <li>
+    <p>You will notice the execution of the loop is almost the same, but the circumstances for using each loop are varied.</p>
+  </li>
+</ul>
+
+<style type="text/css">
+.img:hover  {
+        transform: scale(1.5);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+</style>
+
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="../../shared/lib/js/head.min.js"></script>
+		<script src="../../shared/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// I suspect there's a better way to do this...
+				width: 1920 * 0.8,
+				height: 1080,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../shared/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../shared/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../shared/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../shared/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

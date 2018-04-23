@@ -1,0 +1,55 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activesupport (5.0.1)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (~> 0.7)
+      minitest (~> 5.1)
+      tzinfo (~> 1.1)
+    concurrent-ruby (1.0.4)
+    fetcher (0.4.5)
+      logutils (>= 0.6)
+    gli (2.15.0)
+    i18n (0.8.6)
+    kramdown (1.13.2)
+    liquid (3.0.6)
+    logutils (0.6.1)
+    minitest (5.10.3)
+    pakman (0.7.0)
+      fetcher (>= 0.4.5)
+      liquid (>= 3.0.6)
+      logutils (>= 0.6.1)
+    props (1.1.2)
+    rubyzip (1.2.1)
+    slideshow (3.1.0)
+      gli (>= 2.13.4)
+      slideshow-models (>= 3.1.0)
+      slideshow-templates (>= 3.0.0)
+    slideshow-models (3.3.0)
+      activesupport
+      kramdown (>= 1.10.0)
+      logutils (>= 0.6.1)
+      pakman (>= 0.7.0)
+      props (>= 1.1.2)
+      textutils (>= 0.10.0)
+    slideshow-templates (3.0.0)
+    textutils (1.4.0)
+      activesupport
+      logutils (>= 0.6.1)
+      props (>= 1.1.2)
+      rubyzip (>= 1.0.0)
+    thread_safe (0.3.6)
+    tzinfo (1.2.3)
+      thread_safe (~> 0.1)
+
+PLATFORMS
+  ruby
+  x64-mingw32
+  x86-mingw32
+
+DEPENDENCIES
+  liquid (= 3.0.6)
+  slideshow
+
+BUNDLED WITH
+   1.16.1

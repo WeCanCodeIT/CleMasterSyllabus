@@ -1,0 +1,251 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Enapsulation - Out of Sight!</title>
+
+		<meta name="description" content="- description not found -">
+		<meta name="author"      content="Your Name Here">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../shared/css/reveal.css">
+		<link rel="stylesheet" href="../../shared/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../shared/lib/css/zenburn.css">
+
+		<!-- WCCI style tweaks -->
+		<link rel="stylesheet" href="../../shared/css/wcci.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../shared/css/print/pdf.css' : '../../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="text-align: center">Enapsulation</h1>
+					<h3 style="text-align: center">Out of Sight!</h3>
+					<div id="logo">
+						<img src="../../shared/images/wcci-logo.png">
+						<p style="font-size: smaller;">&copy; We Can Code IT, LLC</p>
+					</div>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_ -->
+<h1 id="feeding-your-monkey">Feeding Your Monkey</h1>
+
+<p>Your <code>feed</code> method in <code>VirtualPet</code> was an example of encapsulation. It probably resembled this:</p>
+
+<pre><code class="language-java">public void feed() {
+  hunger -= 5;
+}
+</code></pre>
+
+<p>So we fed our pets like this:</p>
+
+<pre><code class="language-java">myMonkey.feed();
+</code></pre>
+
+<p>Here, the <code>VirtualPet</code> class is responsible for updating hunger when a pet feeds. A benefit of this is that the <code>VirtualPet</code> class <em>encapsulates</em> the effect of a feeding. In this case, it decreases hunger by five.</p>
+
+<p>If we were to do this in a procedural fashion without encapsulation, we might do this from our <code>main</code> method in our app:</p>
+
+<pre><code class="language-java">myMonkey.hunger -= 5; // feed myMonkey
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="hide-your-hunger">Hide Your Hunger</h1>
+
+<p>An example of violating encapsulation is the way we’ve handled accessing our <code>VirtualPet</code>’s hunger so far. You may have been doing something like this:</p>
+
+<pre><code class="language-java">System.out.println("My pet's hunger is " + myMonkey.hunger);
+</code></pre>
+
+<p>That’s all well and good while only our app class is using <code>VirtualPet</code>, but what if other developers start using our code, and someone (let’s assume innocently) does something like the following?</p>
+
+<pre><code class="language-java">thatPet.hunger = -5;
+</code></pre>
+
+<p>That would wreck your assumptions about hunger a bit, wouldn’t it? We avoid this situation by giving our <code>hunger</code> instance variable a <code>private</code> <em>visibility modifier</em>.</p>
+
+<pre><code class="language-java hljs" data-noescape=""><mark>private</mark> int hunger;</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="how-do-i-get-at-it">How do I get at it?</h2>
+
+<p>Once our hunger is private, we can’t access it via <code>myMonkey.hunger</code>. If we need to know how hungry our pet is, the best way is just to ask if it’s hungry. Perhaps with an <code>isHungry</code> method:</p>
+
+<pre><code class="language-java">public boolean isHungry() {
+  return hunger &gt; 50;
+}
+</code></pre>
+
+<p>We should usually allow our pet to deal with hunger, but if we need to know its specific hunger value, we could create a method to tell us:</p>
+
+<pre><code class="language-java">public int hunger() {
+  return hunger;
+}
+</code></pre>
+
+<p>For reasons that will (hopefully) become clear later, it’s more common in Java to call this method <code>getHunger</code>:</p>
+
+<pre><code class="language-java">public int getHunger() {
+  return hunger;
+}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="keep-your-hands-to-yourself">Keep Your Hands to Yourself</h1>
+
+<p><em>Encapsulation</em> is the practice of hiding information about an object from other objects. We do this so that the <em>responsibility</em> for manipulating state is limited to one object.</p>
+
+<p>A classic example of encapsulation is the cashier<sup>1</sup> collecting the price of a purchase. The cashier asks you for money to cover your purchase. You withdraw the money from your wallet/purse/pocket, then he returns your change. The cashier does not reach into your pocket, withdraw your wallet, remove money, then put change into your wallet.</p>
+
+<p><em>Shotgun surgery</em>, a design smell from Fowler’s <em>Refactoring</em>, can be an indicator of poor encapsulation. This analogy references the small pellets resulting from a shotgun blast, the removal of which requires surgery at several places. Poor encapsulation means that a small change can require us to change several classes.</p>
+
+<p style="padding-left: 1rem;"><sup>1</sup> In the days of yore, this example was of a paperboy (not "person"-this was the days of yore) coming to your door to collect the weekly fee for a newspaper, a daily periodical printing the news of the day on cheap pulp.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="i-spy-with-my-little-eye">I spy, with my little eye…</h2>
+
+<p><em>Visibility modifiers</em> allow us to specify the <em>visibility</em> of an element (who can see it). From most visible to least visible, these are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>modifier</th>
+      <th>visibility</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>public</code></td>
+      <td>everyone can see it</td>
+    </tr>
+    <tr>
+      <td><code>protected</code></td>
+      <td>this class and subclasses can see it</td>
+    </tr>
+    <tr>
+      <td><em>none</em> (default)</td>
+      <td>things in the same package can see it</td>
+    </tr>
+    <tr>
+      <td><code>private</code></td>
+      <td>only visible inside this class, not even subclasses can see it</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The instance variables that define the state of your objects should have less than <code>public</code> visibility.</p>
+
+<p>In practice, most things will be <code>public</code> or <code>private</code>. Sometimes, you will see <code>protected</code>. You will almost never see default visibility in practice. (There’s nothing wrong with default visibility. This is more a statement about practices in the industry and the level of craftsmanship.)</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="in-practice">In Practice</h2>
+
+<p>In reading your book, it may feel like “setter” methods violate enapsulation. For example, imagine I created a <code>setHunger</code> method for my pet that I would call like this:</p>
+
+<pre><code class="language-java">myMonkey.setHunger(35);
+</code></pre>
+<p>How is this any different or better than directly manipulating the value?</p>
+
+<pre><code class="language-java">myMonkey.hunger = 35; // direct manipulation
+</code></pre>
+
+<p>The answer is <strong>not much</strong>. We could do some validation of the value passed in, but this isn’t much different. <strong><em>Setter methods violate encapsulation by definition</em></strong>. We introduce them because you will see them in the wild, where sometimes they are used to do great damage.</p>
+
+<p>The <em>JavaBeans specification</em> introduced the concept of “getter” and “setter” methods for entirely different reasons than how they are used today. Human beings, apes in shoes that we are, embraced them in order to maintain the status quo, to continue to write procedural code. There were some practical reasons for doing so as well, but those have been overcome as the Java language matured.</p>
+
+<p>Luckily, we can usually avoid using setter methods. Avoid them. Prefer constructor parameters to initialize state. Use techniques that allow you to eliminate them.</p>
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="../../shared/lib/js/head.min.js"></script>
+		<script src="../../shared/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// I suspect there's a better way to do this...
+				width: 1920 * 0.8,
+				height: 1080,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../shared/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../shared/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../shared/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../shared/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

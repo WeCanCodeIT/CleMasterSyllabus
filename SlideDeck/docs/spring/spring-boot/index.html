@@ -1,0 +1,228 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Spring Framework - Delicious Software Dev</title>
+
+		<meta name="description" content="- description not found -">
+		<meta name="author"      content="Your Name Here">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../shared/css/reveal.css">
+		<link rel="stylesheet" href="../../shared/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../shared/lib/css/zenburn.css">
+
+		<!-- WCCI style tweaks -->
+		<link rel="stylesheet" href="../../shared/css/wcci.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../shared/css/print/pdf.css' : '../../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="text-align: center">Spring Framework</h1>
+					<h3 style="text-align: center">Delicious Software Dev</h3>
+					<div id="logo">
+						<img src="../../shared/images/wcci-logo.png">
+						<p style="font-size: smaller;">&copy; We Can Code IT, LLC</p>
+					</div>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_ -->
+<h1 id="getting-started-with-spring-boot">Getting started with Spring Boot</h1>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="putting-it-all-together">Putting it all together</h2>
+
+<div float="center"><img src="./resources/ingredients.png" class="logo" /></div>
+<p>“You can’t make a delicious cake without the correct ingredients!” - Scott Webb</p>
+<div float="center"><img src="./resources/cake.png" class="logo" /></div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="what-is-spring-boot-and-why-should-i-use-it">What is Spring Boot and Why should I use it?</h2>
+
+<ul>
+  <li>You want to be a Software Developer right?</li>
+  <li>Gives you the ability to produce modern enterprise applications using a <strong>convention over configuration</strong> design principle</li>
+  <li>Comes with 40+ starter modules:
+    <ul>
+      <li>Database Connections</li>
+      <li>Web Services</li>
+      <li>Social Network Integration</li>
+      <li>Monitoring Libraries</li>
+      <li>Logging</li>
+    </ul>
+  </li>
+  <li>Allows for end-to-end application that is production ready</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="terminology">Terminology</h2>
+
+<ul>
+  <li><strong>Bootstrap</strong>: To quickly Start up</li>
+  <li><strong>Stand-alone Application</strong>: a program that does not require operating system’s services to run</li>
+  <li><strong>Spring Framework</strong>: Makes it easy to create stand-alone, production grade Spring based apps you can “just run”</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="annotations">Annotations</h2>
+
+<ul>
+  <li>In Spring we will be creating a series of @Annotations</li>
+  <li>Some Annotations are not Spring specific
+    <ul>
+      <li>@Override</li>
+    </ul>
+  </li>
+  <li>Some Annotations are Spring Framework specific
+    <ul>
+      <li>@Component</li>
+    </ul>
+  </li>
+  <li><strong>Annotations</strong> are meta-data for classes</li>
+  <li>You can go through Spring documentation and Cookbooks like the Spring Boot Cookbook to get a good idea about the framework</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="restful-web-service">RESTful Web Service</h2>
+
+<ul>
+  <li><strong>REST</strong>: Representational State Transfer</li>
+  <li><strong>Rest Controller</strong>: Executes when a user makes a request</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="spring-mvc-framework">Spring MVC Framework</h2>
+
+<ul>
+  <li><a href="https://www.tutorialspoint.com/spring/spring_web_mvc_framework.htm">Spring Framework Tutorial</a></li>
+  <li>The Spring Web MVC framework provides <strong>Model-View-Controller (MVC)</strong> architecture and ready components that can be used to develop flexible and loosely coupled web applications. The MVC pattern results in separating the different aspects of the application (input logic, business logic, and UI logic), while providing a loose coupling between these elements.</li>
+  <li>The <strong>Model</strong> encapsulates the application data and in general they will consist of <strong>POJO (Plain Old Java Objects)</strong></li>
+  <li>The <strong>View</strong> is responsible for rendering the model data and in general it generates HTML output that the client’s browser can interpret.</li>
+  <li>The <strong>Controller</strong> is responsible for processing user requests and building an appropriate model and passes it to the view for rendering</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="which-ecosystemmaven-or-gradle">Which Ecosystem…Maven or Gradle?</h2>
+
+<ul>
+  <li>With Google choosing Gradle as the new build system for Android SDK and mature libraries like Spring, Hibernate, Grails, Groovy etc. already using it to power their builds, there is no doubt that Gradle is becoming de-facto build system for the Java ecosystem.</li>
+  <li><a href="https://gradle.org/maven-vs-gradle/">Maven vs. Gradle</a></li>
+</ul>
+
+<style type="text/css">
+.reveal section img.logo {
+	border: none;
+	background-color: rgba(255, 255, 255, 0.25);
+	padding: 1rem;
+}
+.reveal ol, .reveal dl, .reveal ul {
+	margin: 0 0 1rem 2rem;
+}
+</style>
+
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="../../shared/lib/js/head.min.js"></script>
+		<script src="../../shared/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// I suspect there's a better way to do this...
+				width: 1920 * 0.8,
+				height: 1080,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../shared/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../shared/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../shared/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../shared/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

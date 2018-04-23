@@ -1,0 +1,406 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Dictionaries - Pairing Keys with Values</title>
+
+		<meta name="description" content="- description not found -">
+		<meta name="author"      content="Your Name Here">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../shared/css/reveal.css">
+		<link rel="stylesheet" href="../../shared/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../shared/lib/css/zenburn.css">
+
+		<!-- WCCI style tweaks -->
+		<link rel="stylesheet" href="../../shared/css/wcci.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../shared/css/print/pdf.css' : '../../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="text-align: center">Dictionaries</h1>
+					<h3 style="text-align: center">Pairing Keys with Values</h3>
+					<div id="logo">
+						<img src="../../shared/images/wcci-logo.png">
+						<p style="font-size: smaller;">&copy; We Can Code IT, LLC</p>
+					</div>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_ -->
+<h2 id="topics">Topics</h2>
+
+<ul>
+  <li>What is a dictionary?</li>
+  <li>Structure &amp; Syntax</li>
+  <li>Key &amp; Value Pairs</li>
+  <li>Printing elements in a dictionary</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="common-properties--methods">Common Properties &amp; Methods</h2>
+
+<ul>
+  <li><code>Add</code></li>
+  <li><code>ContainsKey</code></li>
+  <li><code>ContainsValue</code></li>
+  <li><code>TryGetValue</code></li>
+  <li><code>Remove</code></li>
+  <li><code>Clear</code></li>
+  <li><code>Key</code></li>
+  <li><code>Value</code></li>
+  <li><code>Count</code></li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="goals">Goals</h2>
+
+<ul>
+  <li>To understand and be able to use dictionaries in your code.
+    <ul>
+      <li>Students should know when to use a dictionary.</li>
+      <li>Students should be able to complete the code exercises and project.</li>
+      <li>Students should be able to identify a dictionary when they see one.</li>
+      <li>Students should be able to explain dictionaries in their own words.</li>
+      <li>Students should know how to print the elements of a dictionary.</li>
+      <li>Students should understand how and when to use the different common properties and methods for dictionaries.</li>
+    </ul>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="the-basics">The Basics</h2>
+
+<ul>
+  <li>Think of a dictionary data structure in C# just as the dictionary you use to look up words.</li>
+  <li>When you need to find the definition of a term, you look up the term and the definition is paired with it.</li>
+  <li>In C#, dictionary entries are composed of a key-value pair. In our dictionary example, if we are looking up the term “tasty”, the key would be the term “tasty” and the value would be the definition, “having a marked and appetizing flavor”.</li>
+  <li>With dictionaries in C#, all keys within one dictionary must be unique, but values can be repeated.</li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<p>For example, let’s say we have we students, and each student has a student ID. Paired with the student’s ID number is the student’s full name. Which would be the key and which would be the value?</p>
+
+<div class="fragment">
+- The key would be the student ID numbers because they cannot be repeated
+</div>
+<div class="fragment">
+- The value would be the student's full name. Can you have students with the same full name? 
+</div>
+<div class="fragment">
+Yes, so that's a hint that the student's full name could not be the key.
+</div>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<div float="right" class="img"><img src="./resources/Dictionary.jpg" /></div>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>Let’s try creating a dictionary for a vending machine.</li>
+  <li>Each vending machine has an associated code such as A4 (for the 4th item on the first row) and an item it holds, such as “Twix”.</li>
+</ul>
+<div class="fragment">
+- Which will be the key and which will be the value? How do you know?
+<div>
+
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+
+
+- Let's add items to our vending machine dictionary.
+
+<pre><code class="language-C#" data-noescape="">
+     Dictionary&lt;string,string&gt;snackMachine = new Dictionary&lt;string,string&gt;()
+     {
+        {"A1", "Twix"},
+        {"A2", "Twizzlers"},
+        {"A3", "Hershey's"}
+     };
+</code></pre> 
+
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+
+
+  - We can print the items in our dictionary using a <code>foreach</code> loop:
+
+<pre><code class="language-C#" data-noescape="">
+     foreach(KeyValuePair&lt;string,string&gt; item in snackMachine)
+     {
+        Console.WriteLine(item);
+     }
+</code></pre> 
+
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+
+
+  - You may also see the <code>foreach</code> loop using the general keyword <code>var</code> for the data types of the KeyValuePair. 
+  <p>- Recognize what it is, but do not do this. Use the implicit version in the previous slide.</p>
+
+<pre><code class="language-C#" data-noescape="">
+     foreach(var item in snackMachine)
+     {
+        Console.WriteLine(item);
+     }
+</code></pre> 
+
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+
+
+- Now, let's try creating a dictionary for the drink vending machine. This time, we do not know what items we want to add to our dictionary initially.
+
+<pre><code class="language-C#" data-noescape="">
+     Dictionary&lt;int,string&gt;drinkMachine = new Dictionary&lt;int,string&gt;();
+     
+     //Using the Add method, let's add drinks to our drinks vending machine. 
+     //This vending machine uses a number to access the items versus a 
+     //combination of numbers and letters (e.g. A4 in the snackMachine).
+     
+     drinkMachine.Add(10, "Ginger Ale");
+     drinkMachine.Add(11, "Bottled Water");
+     drinkMachine.Add(12, "Orange Juice");
+     drinkMachine.Add(13, "Fruit Punch");
+     drinkMachine.Add(14, "Sparkling Water");
+     drinkMachine.Add(15, "Sports Drink");
+</code></pre> 
+
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+
+
+  - Use the <code>Count</code> property to ensure all 6 drinks have been added to your drinks vending machine.
+
+<pre><code class="language-C#" data-noescape="">
+     Console.WriteLine(drinkMachine.Count);
+</code></pre> 
+<div class="fragment">
+- Like lists and arrays, dictionaries also come with built-in properties and methods you can use (see Common Properties &amp; Methods above).
+</div>
+
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+
+
+- Let's say you only want to print the keys in the dictionary, you can use <code>.Key</code>:
+
+<pre><code class="language-C#" data-noescape="">
+   foreach(KeyValuePair&lt;int,string&gt; drink in drinkMachine)
+   {
+      Console.WriteLine(drink.Key);
+   }
+</code></pre> 
+
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+
+
+- This time, let's use <code>.Value</code> to print the drinks in our vending machine:
+
+<pre><code class="language-C#" data-noescape="">
+   foreach(KeyValuePair&lt;int,string&gt; drink in drinkMachine)
+   {
+      Console.WriteLine(drink.Value);
+   }
+</code></pre> 
+
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+
+<div>
+ - Come up with an example for each property and method listed in the Common Properties &amp; Methods section.
+</div>
+<div class="fragment">
+ - Create a dictionary for a theater coat check with 10 elements. The key will be a number and the value will be the coat style. Print all elements to the console.
+ </div>
+ <div class="fragment">
+ - Create a dictionary for a car valet service with 10 cars. The key will be the customer’s last name and the value will be the car make. Print all elements to the console.
+ </div>
+ <div class="fragment">
+ - Create a dictionary of 10 zoo animals. The key will be the animal type and the value will be the number of animals at the zoo. Print the animal with the highest quantity to the console.
+ </div>
+
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+
+
+<div>
+ - Remove the zoo animal with the lowest quantity from the dictionary using the <code>Remove</code> method. 
+ </div>
+<div class="fragment"> 
+ - Use the Count property to count the number of remaining entries in the dictionary. Print to the console.
+ </div>
+<div class="fragment"> 
+ - Create a program that allows a user to input an animal name to check to see if the dictionary contains that animal name.
+ </div>
+<div class="fragment"> 
+ - If the animal does not exist in the dictionary, ask the user if he/she would like to add it. If so, add the animal to the dictionary.
+ </div>
+
+
+<style type="text/css">
+/* should we move this into the template, or will it break existing slides. Maybe those slides are wrong. */
+.reveal h3 {
+	font-size: 4.4rem;	
+}
+.img:hover  {
+        transform: scale(1.5);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+</style>
+</div></div>
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="../../shared/lib/js/head.min.js"></script>
+		<script src="../../shared/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// I suspect there's a better way to do this...
+				width: 1920 * 0.8,
+				height: 1080,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../shared/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../shared/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../shared/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../shared/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,197 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Thymeleaf - Elegant dining for your development workflow</title>
+
+		<meta name="description" content="- description not found -">
+		<meta name="author"      content="Your Name Here">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../shared/css/reveal.css">
+		<link rel="stylesheet" href="../../shared/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../shared/lib/css/zenburn.css">
+
+		<!-- WCCI style tweaks -->
+		<link rel="stylesheet" href="../../shared/css/wcci.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../shared/css/print/pdf.css' : '../../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="text-align: center">Thymeleaf</h1>
+					<h3 style="text-align: center">Elegant dining for your development workflow</h3>
+					<div id="logo">
+						<img src="../../shared/images/wcci-logo.png">
+						<p style="font-size: smaller;">&copy; We Can Code IT, LLC</p>
+					</div>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_ -->
+<h2 id="what-is-thymeleaf">What is Thymeleaf?</h2>
+
+<div float="right"><img src="./resources/logo.png" class="logo" /></div>
+
+<p>• Thymeleaf is a modern server-side Java Template engine for both web and standalone environments, capable of processing HTML, XML, JavaScript, CSS and even plain text</p>
+
+<p>• Assists in your front-end HTML designs</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="natural-templates">Natural Templates</h2>
+
+<div class="sidebar">
+	<img alt="code" src="./resources/code.png" />
+</div>
+
+<p>• HTML Templates written in Thymeleaf still look and work
+ like HTML Templates</p>
+
+<p>• HTML can be correctly displayed in browser</p>
+
+<p>• Can also work as a static prototype (useful in team dev)</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="iterating-in-thymeleaf">Iterating in Thymeleaf</h2>
+
+<p>-th: each</p>
+<ul>
+  <li>for each item in a collection of items</li>
+  <li>similar to a for each loop traversing a List</li>
+  <li>will iterate over a list of products, array, map or other collection</li>
+</ul>
+
+<p>## Examples</p>
+<pre><code>  &lt;tbody&gt;
+    &lt;tr th:each="student: ${students}"&gt;
+        &lt;td th:text="${student.id}" /&gt;
+        &lt;td th:text="${student.name}" /&gt;
+    &lt;/tr&gt;
+	&lt;/tbody
+</code></pre>
+
+<p>Concatenation</p>
+<pre><code>	th:text="'The name of the student is ' + ${student.name}"
+</code></pre>
+
+<p>If/Unless</p>
+<pre><code>  &lt;td&gt;
+    &lt;span th:if="${student.age} &amp;ge; 16" th:text="You can drive" /&gt; 
+    &lt;span th:unless="${student.age} &amp;lt; 16" th:text="You cannot drive" /&gt;
+  &lt;/td&gt;
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="referencing">Referencing</h2>
+
+<ul>
+  <li>You should match your attributes from your Controller class</li>
+</ul>
+
+<p>In the Controller class…ie StudentController, imagine the following method</p>
+<pre><code>@RequestMapping("/students")
+public String getStudents(Model model) {
+	model.addAttribute("students", repository.findAll());
+	return "students";
+}
+</code></pre>
+<p>In students.html notice the collection is referred to as students</p>
+<pre><code> &lt;tr th:each="student: ${students}"&gt;
+
+</code></pre>
+
+<style type="text/css">
+.reveal section img.logo {
+	border: none;
+	background-color: rgba(255, 255, 255, 0.25);
+	padding: 1rem;
+}
+.reveal ol, .reveal dl, .reveal ul {
+	margin: 0 0 1rem 2rem;
+}
+</style>
+
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="../../shared/lib/js/head.min.js"></script>
+		<script src="../../shared/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// I suspect there's a better way to do this...
+				width: 1920 * 0.8,
+				height: 1080,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../shared/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../shared/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../shared/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../shared/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

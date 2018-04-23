@@ -1,0 +1,578 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Conditionals - If not that, then… ?</title>
+
+		<meta name="description" content="- description not found -">
+		<meta name="author"      content="Your Name Here">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../shared/css/reveal.css">
+		<link rel="stylesheet" href="../../shared/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../shared/lib/css/zenburn.css">
+
+		<!-- WCCI style tweaks -->
+		<link rel="stylesheet" href="../../shared/css/wcci.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../shared/css/print/pdf.css' : '../../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="text-align: center">Conditionals</h1>
+					<h3 style="text-align: center">If not that, then… ?</h3>
+					<div id="logo">
+						<img src="../../shared/images/wcci-logo.png">
+						<p style="font-size: smaller;">&copy; We Can Code IT, LLC</p>
+					</div>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_ -->
+<h2 id="an-insightful-process">An Insightful Process</h2>
+
+<p><img src="./resources/no-worries.png" alt="No worries" /></p>
+
+<p><em>This diagram isn’t quite right. If you don’t think learning to code is difficult, then you miiiight not get it yet.</em></p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="conditional-statements">Conditional Statements</h2>
+
+<div float="right" class="img"><img src="./resources/Cond1.png" /></div>
+
+<ul>
+  <li>
+    <p>Conditional statements are one of the ways that we control the flow of a program.</p>
+  </li>
+  <li>
+    <p>We control the flow by making decisions.</p>
+  </li>
+  <li>
+    <p>Let’s walk through the flow control diagram above.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="heroes-fight-battles">Heroes fight battles!!</h2>
+
+<ul>
+  <li>
+    <p>Let’s revisit our hero Spartacus in our HelloWorld program.</p>
+  </li>
+  <li>
+    <p>If it’s not already, open your <mark>HelloWorld</mark> program in Visual Studio.</p>
+  </li>
+  <li>
+    <p>Spartacus, like all heroes, makes his living fighting battles.</p>
+  </li>
+  <li>
+    <p>We will use conditional statements to help our hero do the following:</p>
+
+    <ul>
+      <li>
+        <p>Choose which battle to fight</p>
+      </li>
+      <li>
+        <p>Choose which soldiers to take into battle.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here">We should all be here</h2>
+
+<div float="right" class="img"><img src="./resources/Cond2.png" /></div>
+
+<ul>
+  <li>
+    <p>Volunteer time</p>
+  </li>
+  <li>
+    <p>Let’s start by <mark>Commenting out</mark> part ten.</p>
+  </li>
+</ul>
+
+<div class="fragment">
+Question time: What are two of the methods we can use to comment code?
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="if-this-then">if this then…..</h2>
+
+<ul>
+  <li>
+    <p>An <mark>if</mark> statement is exactly what it sounds like.</p>
+  </li>
+  <li>
+    <p>We use if statements in code like we do in every day life. If the temperature is at least 80 degrees, I will go to the beach.</p>
+  </li>
+  <li>
+    <p>Putting the above statement in code would look like this: if(temp &gt;= 80)</p>
+  </li>
+</ul>
+
+<div class="fragment">
+<p>In C#, we would say:</p>
+<pre><code class="language-C#">int temp = 81;
+
+if (temp &gt;= 80) 
+{
+  Console.WriteLine("I am going to the beach.");
+}</code></pre>
+</div>
+
+<div class="fragment">
+Question time: If we executed this code, what would be the output?
+</div>
+
+<div class="fragment">
+Question time: How would we change the equality operator to make the conditional <mark>false</mark>?
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="where-to-go">Where to go</h2>
+
+<ul>
+  <li>
+    <p>Now let’s use the <mark>if</mark> statement to give our hero direction.</p>
+  </li>
+  <li>
+    <p>Spartacus wants to go to battle, but only wants to march to the closest city.</p>
+  </li>
+  <li>
+    <p>Our <mark>if</mark> statement in spoken language might read: If the city is less than 125 miles away, then I will march there.</p>
+  </li>
+</ul>
+
+<div class="fragment">
+Question time: What would we need to add to our code to store the distances to each city?
+</div>
+
+<div class="fragment">
+Question time: What equality operator would we use in our conditional statement?
+</div>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<p>Add the following code below part ten:</p>
+
+<div float="right" class="img"><img src="./resources/Cond3a.png" /></div>
+
+<ul>
+  <li>
+    <p>Once complete, execute the code with the following inputs: <code>126</code> <code>40</code> <code>55</code></p>
+  </li>
+  <li>
+    <p>Obviously our scope is small. This example is to show the working of the concept in its simplest form.</p>
+  </li>
+  <li>
+    <p>It’s important to understand each <mark>if</mark> in this example will be executed if the conditional statement is met.</p>
+  </li>
+  <li>
+    <p>You may have noticed we included a few items we have not yet discussed, so let’s review them.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="strings-again">Strings again?</h2>
+
+<ul>
+  <li>
+    <p>Remember, we use the <code>Console.ReadLine()</code> to receive input from the user via the console.</p>
+  </li>
+  <li>
+    <p>C# reads all input from the console, regardless of format, as a string. So if we enter the number <em>42</em>, C# reads it as a string.</p>
+  </li>
+  <li>
+    <p>C# is able to look at input from the user, and decide if that input is a <code>string</code>, <code>int</code>, <code>double</code>, <code>float</code> etc..</p>
+  </li>
+  <li>
+    <p>We tell C# to review and format the input by using the <mark>Parse</mark> method.</p>
+  </li>
+  <li>
+    <p>In our example, we use <code>int.Parse</code> to tell C# to convert the console input to an int.</p>
+  </li>
+  <li>
+    <p>The same could be and should be done for <code>double</code>, <code>float</code>, etc..</p>
+  </li>
+</ul>
+
+<div class="fragment">
+Question time: If we wanted to convert input from the console to a <code>double</code> and save it to a variable, what would our code look like?
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="who-is-going-to-march">Who is going to march?</h2>
+
+<ul>
+  <li>
+    <p>Now we need to make sure Spartacus has the best soldiers to go to battle.</p>
+  </li>
+  <li>
+    <p>Our statement in spoken language would look as follows: If a soldier is an officer, <em>or</em> is 26 years old or younger, they will go to battle, else they will stay home.</p>
+  </li>
+  <li>
+    <p>We are introducing a new type of <mark>if</mark> called and <mark>if else</mark> statement. Let’s review the following:</p>
+  </li>
+</ul>
+
+<pre><code class="language-C#">Console.WriteLine("What is your rank?");
+string rank = Console.ReadLine();
+
+Console.WriteLine("What is your age?");
+int age = int.Parse(Console.ReadLine());
+
+if ((rank == "officer") || (age &lt;= 26))
+{ 
+    Console.WriteLine("Get your gear, kiss your family goodbye, 
+	put on your marching boots.");
+} 
+else
+{
+    Console.WriteLine("Sorry, you are staying home.");
+}
+</code></pre>
+
+<ul>
+  <li>Notice we are using the <mark>||</mark> logical operator.</li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>Comment out the previous code, and add the following code to your program</li>
+</ul>
+
+<pre><code class="language-C#">Console.WriteLine("What is your rank soldier?");
+string rank = Console.ReadLine().ToLower();
+
+Console.WriteLine("What is your age soldier?");
+int age = int.Parse(Console.ReadLine());
+            
+Console.WriteLine("What is your job soldier?");
+string job = Console.ReadLine().ToLower();
+
+if ((rank == "officer") || (age &lt;= 26))
+{
+	Console.WriteLine("Get your gear, kiss your family goodbye, 
+	put on your marching boots.");
+}
+else if ((job == "cook") || (age &gt;= 26))
+{
+	Console.WriteLine("My army has to eat. Pack your pots and pans.");
+}
+else
+{
+	Console.WriteLine("Sorry, you are staying home.");
+}
+</code></pre>
+
+<ul>
+  <li>Execute the code twice with the following inputs: <mark>officer 26</mark> then <mark>corporal 24</mark>.</li>
+</ul>
+
+<div class="fragment">
+Notice the if statement is being executed, and if the conditional fails, the else statement will be printed.
+</div>
+
+<div class="fragment">
+Question time: When will the first statement be printed?
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="and-the-fun-continues">And the fun continues</h2>
+
+<ul>
+  <li>
+    <p>So far we have reviewed and seen examples of the <mark>if</mark> and <mark>if else</mark> statements.</p>
+  </li>
+  <li>
+    <p>We know <mark>if</mark> statements <mark>WILL</mark> be executed, and their values returned if the conditional statement is met.</p>
+  </li>
+  <li>
+    <p>We know <mark>if else</mark> statements will be executed and the <mark>else</mark> will be executed if the conditional statement is <mark>NOT</mark>met.</p>
+  </li>
+  <li>
+    <p>Finally, we are going to learn about the <mark>if else if</mark> statement.</p>
+  </li>
+  <li>
+    <p>Let’s rewrite our prior <mark>if else</mark> statement into an <mark>if else if</mark>.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="if-else-if">If else if…</h2>
+
+<pre><code class="language-C#">Console.WriteLine("What is your rank soldier?");
+string rank = Console.ReadLine();
+            
+Console.WriteLine("What is your age soldier?");
+int age = int.Parse(Console.ReadLine());
+        
+Console.WriteLine("What is your job soldier?");
+string job = Console.ReadLine();
+
+if ((rank == "officer") || (age &lt;= 26))
+{
+    Console.WriteLine("Get your gear, kiss your family goodbye, 
+	put on your marching boots.");
+}
+else if ((job == "cook") || (age &gt;= 26))
+{
+    Console.WriteLine("My army has to eat. Pack your pots and pans");
+}
+else
+{
+    Console.WriteLine("Sorry, you are staying home.");
+}
+</code></pre>
+<div class="fragment">
+Question time: When would each statement execute? i.e... if, else if, else
+</div>
+
+<div class="fragment">
+Execute your code. Use input that will test each part of the <mark>if else</mark>statement.
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="the-switch-is-on">The switch is on!!</h2>
+
+<ul>
+  <li>
+    <p>The last remaing tool we will cover in this section is the <mark>Switch Case</mark>.</p>
+  </li>
+  <li>
+    <p>Sometimes, we can use a <code>switch/case</code> statement to replace several <code>if/else</code> statements.</p>
+  </li>
+  <li>
+    <p>Let’s say we are categorizing our army based on the following groups: infantry, archers, catapault, supply.</p>
+  </li>
+  <li>
+    <p>We will use a soldiers job to decide what weapon they use.</p>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>Here is an example of a <mark>Switch Case</mark>. Add the following code to your Hello World project.</li>
+</ul>
+
+<pre><code class="language-C#">
+switch(job)
+{
+    case "infantry":
+        Console.WriteLine("You will carry a sword.");
+        break;
+
+    case "archer":
+        Console.WriteLine("You will carry a bow and arrow.");
+        break;
+
+    case "supply":
+        Console.WriteLine("You will carry pots and pans.");
+        break;
+
+    case "specialist":
+        Console.WriteLine("You will operate the catapult.");
+        break;
+
+    default:
+        Console.WriteLine("You will ride horseback.");
+        break;
+}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-1">We should all be here</h2>
+
+<div float="right" class="img"><img src="./resources/Cond5a.png" /></div>
+
+<ul>
+  <li>
+    <p>Execute your code to ensure you get the results you are expecting.</p>
+  </li>
+  <li>
+    <p>Ensure you test all cases including the <mark>default</mark>.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="switch-case-explained">Switch case explained</h2>
+
+<ul>
+  <li>
+    <p>Switch case statement is separated into four sections</p>
+
+    <ul>
+      <li>
+        <p>The <mark>switch method</mark> which takes a variable. This variable acts as part of a conditional with the case statement.</p>
+      </li>
+      <li>
+        <p>The <mark>case</mark> statement whose value is compared to the variable in the switch method.</p>
+      </li>
+      <li>
+        <p>The <mark>output</mark> statement will be delivered when the comparison is true.</p>
+      </li>
+      <li>
+        <p>The <mark>break</mark> statement which has the effect of exiting the statement if the case statement is true.</p>
+      </li>
+      <li>
+        <p>Its important to note if none of othe case statments are true, the default case <mark>WILL</mark> be executed.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>For many students the <mark>switch case</mark> seems pretty daunting, but with practice will be a very useful tool.</p>
+  </li>
+</ul>
+
+<style type="text/css">
+.img:hover  {
+        transform: scale(1.5);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+</style>
+
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="../../shared/lib/js/head.min.js"></script>
+		<script src="../../shared/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// I suspect there's a better way to do this...
+				width: 1920 * 0.8,
+				height: 1080,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../shared/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../shared/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../shared/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../shared/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

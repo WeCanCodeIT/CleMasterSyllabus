@@ -1,0 +1,329 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Lists - Like Arrays, but Mutable!</title>
+
+		<meta name="description" content="- description not found -">
+		<meta name="author"      content="Your Name Here">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../shared/css/reveal.css">
+		<link rel="stylesheet" href="../../shared/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../shared/lib/css/zenburn.css">
+
+		<!-- WCCI style tweaks -->
+		<link rel="stylesheet" href="../../shared/css/wcci.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../shared/css/print/pdf.css' : '../../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="text-align: center">Lists</h1>
+					<h3 style="text-align: center">Like Arrays, but Mutable!</h3>
+					<div id="logo">
+						<img src="../../shared/images/wcci-logo.png">
+						<p style="font-size: smaller;">&copy; We Can Code IT, LLC</p>
+					</div>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_ -->
+<h1 id="data-collections">Data Collections</h1>
+
+<p>We have already seen one data collection type, an <code>array</code>. An <code>array</code> is a collection of values that have the same type, like <code>int</code> or <code>string</code>.</p>
+
+<p>There are several types of data collections in C#, many of which you will see during the upcoming weeks and even more during final projects.</p>
+
+<p>Today, we will be talking about <code>Lists</code>.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="arrays-are-fixed-size">Arrays are fixed size</h2>
+
+<p>We can’t change the size of an array once we’ve created it. It will never grow or shrink. This array will always have a <code>length</code> of three:</p>
+
+<p><code class="language-C#" data-noescape="">
+int[] myArray = {1, 2, 3};
+</code></p>
+
+<p>If I wanted to add an element to this array, I’d generally do something like this (but hopefully I’d use a loop):</p>
+
+<pre><code class="language-C#">int[] oldArray = myArray;
+
+myArray = new int[4];
+for(int index = 0; index &lt; oldArray.Length; index++) 
+{
+  myArray[index] = oldArray[index];
+}
+myArray[3] = 42;
+</code></pre>
+
+<p>We are forced to create a new array and assigned it to our <code>myArray</code> variable. Imagine if we needed to insert a new element in the middle? <em>Yuck!</em></p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="lets-start-a-new-project">Let’s Start a New Project</h2>
+
+<p>Create a new Console Application with the title “ToyStore”</p>
+
+<div float="right"><img src="./resources/createproject.jpg" /></div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="array-review">Array Review</h2>
+
+<p>This is how we’d set up an array of toys at our toy store. Remember, arrays have a fixed size.</p>
+
+<div float="right"><img src="./resources/toyarray.JPG" /></div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="how-to-initialize-a-list">How To Initialize a List</h2>
+
+<p>A list is created with the <mark>new</mark> keyword, which we will see a lot more of soon!</p>
+
+<p>Create the following list.</p>
+
+<div float="right"><img src="./resources/toylist.JPG" /></div>
+
+<p>Notice the similarities and differences between creating a new List versus creating an array.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="initializing-an-empty-list">Initializing an Empty List</h2>
+
+<p>Unlike arrays, with lists we don’t have to set a size when we create an empty list.</p>
+
+<div float="right"><img src="./resources/newEmptyList.JPG" /></div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="mutable">Mutable</h2>
+
+<p>Unlike an array, a List is <strong>mutable</strong>, meaning that it does not have a fixed size and can increase or decrease in size.</p>
+
+<p>We can use the <mark>.Add()</mark> method to add elements to our list.</p>
+
+<div float="right"><img src="./resources/addToToyList.JPG" /></div>
+
+<div class="fragment">
+What did our <code>foreach</code> loop do?
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="printing-elements-in-a-list">Printing Elements in a List</h2>
+
+<p>We saw what the <code>foreach</code> loop did in our previous slide. There is another way to print elements in a list using their indices.</p>
+
+<div float="right"><img src="./resources/PrintAtIndex.JPG" /></div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="objects-and-methods">Objects and Methods</h2>
+
+<p>We will be talking a lot more about objects this week, but it is good for you to know that Lists are a type of object.</p>
+
+<p>Lists have several built-in properties and methods, which we will go over now. Some of those are:</p>
+<ul>
+  <li><code>.Count</code></li>
+  <li><code>.Insert()</code></li>
+  <li><code>.Add()</code></li>
+  <li><code>.Remove()</code></li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="count-and-remove">Count and Remove</h2>
+
+<p>The <code>.Count</code> property is the List version of the <code>.Length</code> property that is built in to arrays. <code>.Count</code> tells us the size of the list.</p>
+
+<p>Write out the following code and share what you discover about <code>.Remove()</code>.</p>
+
+<div float="right"><img src="./resources/CountAndRemove.JPG" /></div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="insert">Insert</h2>
+
+<p>The <code>.Insert()</code> method allows us to put a new element in our list AND specify which index we want that element to go to. Take a look at the following code.</p>
+
+<div float="right"><img src="./resources/InsertMethod.JPG" /></div>
+
+<div class="fragment">
+What index is each element at?
+</div>
+<div class="fragment">
+Where did the elements originally at the indices of 0, 2, and 1 go?
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="contains">Contains</h2>
+
+<p>Another built-in method with Lists is the <code>.Contains()</code> method. <code>.Contains()</code> checks for a value in a list and returns a boolean value.</p>
+
+<p>We can use methods inside of loops and conditionals. Write out the example below:</p>
+
+<div float="right"><img src="./resources/ConditionalAndContains.JPG" /></div>
+
+<div class="fragment">
+What result did you expect? What method that we've learned can we use to change the result?
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="loops-and-conditionals-with-lists">Loops and Conditionals with Lists</h2>
+
+<p>Just like an array, we can iterate through a list. Write out the following code:</p>
+
+<div float="right"><img src="./resources/LoopAndConditionalWithList.JPG" /></div>
+
+<div class="fragment">
+What is the logic behind this code?
+</div>
+<div class="fragment">
+Will we ever get to the <code>else</code> statement?
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="do-it">Do It!</h2>
+
+<ul>
+  <li>Create a <code>List</code>. Add five stuffed animals to your list. Print each stuffed animal in your list.</li>
+</ul>
+
+<div class="fragment">
+<b>Practice Question</b>
+- Create a list with the following numbers: 1, 23, 9, 77, 922, 6, 32, 63, 14, 5, then:
+	<p>- determine whether each of the following values is an element in the list: 23, 77, 15</p>
+	<p>- remove the following elements: 27, 922, 32, 6</p>
+	<p>- again determine whether each of the following values is an element in the list: 23, 77, 15 (<b>Stretch</b>: create a method so that you don't need to duplicate this work.)</p>
+</div>
+
+<div class="fragment">  
+<li>Come up with an example of how you might use each of the methods from the previous slide.</li>
+</div>
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="../../shared/lib/js/head.min.js"></script>
+		<script src="../../shared/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// I suspect there's a better way to do this...
+				width: 1920 * 0.8,
+				height: 1080,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../shared/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../shared/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../shared/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../shared/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

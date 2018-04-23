@@ -1,0 +1,495 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Introduction to Object-Oriented Programming - The Fundamentals of OOP</title>
+
+		<meta name="description" content="- description not found -">
+		<meta name="author"      content="Your Name Here">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../shared/css/reveal.css">
+		<link rel="stylesheet" href="../../shared/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../shared/lib/css/zenburn.css">
+
+		<!-- WCCI style tweaks -->
+		<link rel="stylesheet" href="../../shared/css/wcci.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../shared/css/print/pdf.css' : '../../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="text-align: center">Introduction to Object-Oriented Programming</h1>
+					<h3 style="text-align: center">The Fundamentals of OOP</h3>
+					<div id="logo">
+						<img src="../../shared/images/wcci-logo.png">
+						<p style="font-size: smaller;">&copy; We Can Code IT, LLC</p>
+					</div>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_ -->
+<h2 id="topics">Topics</h2>
+
+<ul>
+  <li>What is Object-Oriented Programming?</li>
+  <li>Why would you use Object-Oriented Programming?</li>
+  <li>What are best practices in Object-Oriented Programming?</li>
+  <li>When would you not use OOP?</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="goals">Goals</h2>
+
+<ul>
+  <li>Understand the basics of Object-Oriented Programming
+    <ul>
+      <li>Classes</li>
+      <li>Objects</li>
+    </ul>
+  </li>
+  <li>Create and use objects</li>
+  <li>Access fields</li>
+  <li>Call methods
+    <ul>
+      <li>Using constructors</li>
+    </ul>
+  </li>
+  <li>Learn the benefits of namespaces</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="introduction-to-object-oriented-programming">Introduction to Object-Oriented Programming</h2>
+
+<ul>
+  <li>Object-Oriented Programming
+    <ul>
+      <li>Object-Oriented Programming is a way of structuring our programs to mimic real world objects.</li>
+      <li>It helps us understand how the program should function, what different parts do, and how we can use it.</li>
+      <li>Objects can be based off of real world objects:
+        <ul>
+          <li>Cat</li>
+          <li>Car</li>
+          <li>Bicycle</li>
+        </ul>
+      </li>
+      <li>Or based on abstract concepts:
+        <ul>
+          <li>List</li>
+          <li>System.Net</li>
+          <li>DateTime</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="objects-have-two-types-of-attributes">Objects have two types of attributes</h2>
+
+<ul>
+  <li>
+    <p><strong>States</strong></p>
+  </li>
+  <li>
+    <p><strong>Behaviors</strong></p>
+  </li>
+  <li>
+    <p>At this point it’s beneficial for us to talk about objects in terms of States and Behaviors. Later on we’ll clarify what these are in an actual C# object.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="states">States</h2>
+
+<ul>
+  <li>States are information that further describe the object.</li>
+  <li>If we think about states for a <code>Cat</code> object it might have the following states:
+    <ul>
+      <li>Name</li>
+      <li>Age</li>
+      <li>Fur Color</li>
+    </ul>
+  </li>
+</ul>
+
+<p>These are all things that our cat object <em>is</em>. What other states can you think of?</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="behaviors">Behaviors</h2>
+
+<ul>
+  <li>Behaviors are actions the object can perform. Thinking about our <code>Cat</code> object again lets think about its behaviors.</li>
+  <li>It might have some of the following behaviors.
+    <ul>
+      <li>Eat</li>
+      <li>Meow</li>
+      <li>Walk</li>
+    </ul>
+  </li>
+</ul>
+
+<p>These are all things our <code>Cat</code> object can <em>do</em>. What other behaviors can you think of?</p>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_   -->
+
+<ul>
+  <li>
+    <p>Instances of objects need to be created before they can be used. All objects of a specific type are created from the same template. This means they all have the same number and type of states, but each instance can have it’s own unique values.</p>
+  </li>
+  <li>
+    <p>The format we’d use to <em>initialize</em> our cat object would look like the following:</p>
+  </li>
+</ul>
+
+<pre><code class="language-csharp">    Cat mittens = new Cat();
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_   -->
+
+<ul>
+  <li>Let’s break this down piece by piece. Focusing on the left side of the equals sign we have:
+    <pre><code class="language-csharp"> Cat mittens 
+</code></pre>
+  </li>
+  <li>This is the same form we’ve seen since day one. The type of the variable comes first, followed by the name of the variable. The type of our variable here is <code>Cat</code> and our variable name is <code>mittens</code>.</li>
+  <li>Instead of storing an <code>int</code> or <code>string</code> like we’ve seen so far, this variable stores an <em>instance</em> of a <code>Cat</code> object.</li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<pre><code class="language-csharp">    new Cat(); 
+</code></pre>
+<p>The part after the equals sign is where we initialize our object. <code>new</code> is a keyword we use to instantiate an object and invoke the constructor. 
+<code>Cat();</code> is the <mark>constructor</mark> being called. We need both of these parts to instantiate an object.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="building-classes">Building classes</h2>
+
+<p>All classes start out with the keyword <code>class</code> followed by the name of the class. We can choose any name we like as long as it hasn’t been used already.</p>
+
+<p>Here we are defining a <code>class Cat</code>. It doesn’t contain anything yet.</p>
+<pre><code class="language-csharp">class Cat
+{
+
+
+}
+
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="adding-a-constructor">Adding a constructor</h2>
+
+<p>Next, let’s add a <strong>constructor</strong> and a <strong>field</strong>. The constructor we added is called a default constructor, i.e. it takes no arguments.</p>
+
+<pre><code class="language-csharp">class Cat
+{
+    private string name;
+
+    public Cat()
+    {
+
+    }
+}
+
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="completing-our-class">Completing our class</h2>
+
+<p>We have no way set the name to our cat. Let’s complete our class and talk about it.</p>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<pre><code class="language-csharp">class Cat
+{
+    private string name;
+    private int age;
+    private string furColor;
+    private isHungry = true;
+
+
+    public string Name
+    {
+        get {return this.name;}
+        set {this.name = value;}
+    }
+
+    public Cat()
+    {
+
+    }
+
+    public Cat(string name, int age, string furColor)
+    {
+        this.name = name;
+        this.age = age;
+        this.furColor = furColor
+    }
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="below-our-constructors-well-include-a-method">Below our Constructors we’ll include a method</h2>
+
+<pre><code class="language-csharp">    public void Eat()
+    {
+        if(isHungry)
+        {
+            isHungry = false;
+        }
+
+        Console.WriteLine("Is the cat hungry? " + isHungry);
+    }
+}
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="breaking-down-each-part-of-our-class">Breaking down each part of our class</h2>
+
+<ul>
+  <li>In the class we defined a number of fields at the top. These are where we store all the information that belongs to each instance (our object) of our class.</li>
+  <li>Remember, each instance comes from the same template. That means each object created from this class will have the same fields, but each instance’s variables will hold unique values.</li>
+  <li>We use camelCase when we name our fields.</li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>We have a public property called <code>Name</code>. This will allow for code outside of our class to access the field called <code>name</code>.</li>
+  <li>Properties should be named in PascalCase - this is important as it differentiates it from our fields.</li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>Our class <code>cat</code> has two constructors. We’re allowed as many constructors as we need as long as they each have a unique signature.</li>
+  <li>Our first constructor is a default constructor that doesn’t do anything.</li>
+  <li>Our second constructor takes a <code>string</code>, an <code>int</code>, and a <code>string</code> as parameters.</li>
+  <li>Our constructors <mark>always share the same name</mark>!!</li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>The keyword <code>this</code> allows us to select only the field, the variable that belongs to the class.</li>
+  <li>In a situation where a method’s parameter and a field have the same name, we can use the keyword <code>this</code> to differentiate the two.</li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>We have a public method <code>Eat</code>. The return type is <code>void</code>, which means after it completes it doesn’t provide us any new information.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="do-it">Do It</h2>
+<ul>
+  <li>Create a class Dog</li>
+  <li>The class Dog should have the following fields:
+    <ul>
+      <li>hairLength</li>
+      <li>height</li>
+      <li>runningSpeed</li>
+      <li>weight</li>
+    </ul>
+  </li>
+  <li>The class should have the following behaviors:
+    <ul>
+      <li>Run()</li>
+      <li>Bark()</li>
+      <li>Potty()</li>
+      <li>Cuddle()</li>
+    </ul>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="do-it-1">Do It</h2>
+<ul>
+  <li>Create a class Superhero</li>
+  <li>The class Superhero should have 4 fields
+    <ul>
+      <li>An example might be strengthLevel or hasCape</li>
+    </ul>
+  </li>
+  <li>The class Superhero should have 4 Properties
+    <ul>
+      <li>An example might be StrengthLevel or SecretIdentity</li>
+    </ul>
+  </li>
+  <li>The class Superhero should have 3 Constructors</li>
+  <li>The class Superhero should have at least two methods
+    <ul>
+      <li>One method should impact the Superhero’s health (could be Health, could be StrengthLevel, could be Speed, etc.)</li>
+      <li>One method should give your Superhero a power boost (could be EatsSpinach() or AbsorbsYellowSun(), etc.)</li>
+    </ul>
+  </li>
+</ul>
+
+<style type="text/css">
+/* should we move this into the template, or will it break existing slides. Maybe those slides are wrong. */
+.reveal h3 {
+	font-size: 4.4rem;	
+}
+</style>
+
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="../../shared/lib/js/head.min.js"></script>
+		<script src="../../shared/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// I suspect there's a better way to do this...
+				width: 1920 * 0.8,
+				height: 1080,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../shared/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../shared/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../shared/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../shared/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

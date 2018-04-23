@@ -1,0 +1,182 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Agile Software Development - Let's get Crafty</title>
+
+		<meta name="description" content="- description not found -">
+		<meta name="author"      content="Your Name Here">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../shared/css/reveal.css">
+		<link rel="stylesheet" href="../../shared/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../shared/lib/css/zenburn.css">
+
+		<!-- WCCI style tweaks -->
+		<link rel="stylesheet" href="../../shared/css/wcci.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../shared/css/print/pdf.css' : '../../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="text-align: center">Agile Software Development</h1>
+					<h3 style="text-align: center">Let's get Crafty</h3>
+					<div id="logo">
+						<img src="../../shared/images/wcci-logo.png">
+						<p style="font-size: smaller;">&copy; We Can Code IT, LLC</p>
+					</div>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_ -->
+<h2 id="manifesto-for-agile-software-development">Manifesto for Agile Software Development</h2>
+
+<p><a href="http://agilemanifesto.org/">http://agilemanifesto.org/</a></p>
+
+<p>We are uncovering better ways of developing software by doing it and helping others do it. Through this work we have come to value:</p>
+
+<ul>
+	<div class="fragment agile-value">
+		<li><strong>Individuals and Interactions</strong> over processes and tools</li>
+	</div>
+	<div class="fragment agile-value">
+		<li><strong>Working Software</strong> over comprehensive documentation</li>
+	</div>
+	<div class="fragment agile-value">
+		<li><strong>Customer Collaboration</strong> over contract negotiation</li>
+	</div>
+	<div class="fragment agile-value">
+		<li><strong>Responding to Change</strong> over following a plan</li>
+	</div>
+</ul>
+
+<p class="fragment">That is, while there is value in the items on the right, we value the items on the left more.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="embrace-change">Embrace Change</h2>
+
+<ul>
+  <li>
+    <p>“Day by day nothing seems to change, but pretty soon everything is different”
+  -Calvin and Hobbes</p>
+  </li>
+  <li>
+    <p>Manage Goals instead of activities</p>
+    <ul>
+      <li>Scrum</li>
+      <li>Extreme Programming</li>
+      <li>Trello Boards</li>
+    </ul>
+
+    <p>Analysis-Design-Code-Test-Production</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="the-team">The Team</h2>
+
+<ul>
+  <li>cohesion</li>
+  <li>egotistical programmers competing against each other = low productivity</li>
+  <li>ordinary programmers working cooperatively = high productivity</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="the-customer">The Customer</h2>
+
+<ul>
+  <li>essential to the team</li>
+  <li>software developers are not experts in their customer’s businesses</li>
+</ul>
+
+<style type="text/css">
+.agile-value strong {
+	font-size: larger;
+	text-shadow: 1px 1px 2px black;
+}
+</style>
+
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="../../shared/lib/js/head.min.js"></script>
+		<script src="../../shared/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// I suspect there's a better way to do this...
+				width: 1920 * 0.8,
+				height: 1080,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../shared/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../shared/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../shared/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../shared/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

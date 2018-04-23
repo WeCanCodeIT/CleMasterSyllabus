@@ -1,0 +1,851 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>strings - A class of characters</title>
+
+		<meta name="description" content="- description not found -">
+		<meta name="author"      content="Your Name Here">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../shared/css/reveal.css">
+		<link rel="stylesheet" href="../../shared/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../shared/lib/css/zenburn.css">
+
+		<!-- WCCI style tweaks -->
+		<link rel="stylesheet" href="../../shared/css/wcci.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../shared/css/print/pdf.css' : '../../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="text-align: center">strings</h1>
+					<h3 style="text-align: center">A class of characters</h3>
+					<div id="logo">
+						<img src="../../shared/images/wcci-logo.png">
+						<p style="font-size: smaller;">&copy; We Can Code IT, LLC</p>
+					</div>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_ -->
+<h2 id="strings-are-things">strings are Things</h2>
+
+<p><code>string</code> is a <em>class</em> from which we create <em>objects</em>. Object Oriented Programming (OOP) allows us to create <em>abstractions</em> to simplify the problem we’re solving.</p>
+
+<p>We use <em>abstraction</em> all the time in everyday activities. When you sit down to eat at your favorite resturaunt, one of the first things we order may be a drink.</p>
+
+<p>If you ordered Sugar, Concentrated orange juice, Citric acid, Natural flavors, Sodium benzoate, Caffeine, Sodium citrate, Erythorbic acid, Gum arabic, and Calcium disodium, the server would have no idea what you are asking. Right!! We use <em>abstraction</em> to descibe what we want to drink by utilizing the name ‘Mountain Dew’.</p>
+
+<p>Abstraction allows us to use methods to manipulate a sequence of <code>char</code>s and create new <code>string</code>s.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="clean-organized-commented-code-increases-your-success">Clean, organized, commented code increases your success</h2>
+
+<ul>
+  <li>
+    <p>Before we jump into our next lesson, let’s revisit our Hello World project.</p>
+  </li>
+  <li>
+    <p>We are going to organize and comment our code.</p>
+  </li>
+  <li>
+    <p>Doing so will help us to keep track of our progress, understand what our code’s function is, and help in future development and troubleshooting.</p>
+  </li>
+  <li>
+    <p>Go ahead and open up Visual Studio &gt; then open our Hello World project.</p>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>Volunteer time</p>
+  </li>
+  <li>
+    <p>Please make the following changes to your code</p>
+  </li>
+</ul>
+
+<div class="img" float="center"><img src="./resources/str1.png" /></div>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>Please make the following changes to your code</li>
+</ul>
+
+<div class="img" float="right"><img src="./resources/str2.png" /></div>
+
+<ul>
+  <li>Let’s keep our Hello World program open.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="the-wonderful-world-of-strings">The wonderful world of strings</h2>
+
+<ul>
+  <li>
+    <p>We have learned so far how to display strings using two differant approaches.</p>
+  </li>
+  <li>
+    <p>In part one of our Hello World program we used the following: <code>string messageOne = "Hello World!";</code></p>
+  </li>
+  <li>
+    <p>We then used the <code>Console.WriteLine()</code> method to display the variable <mark>messageOne</mark>. <code>Console.WriteLine(messageOne);</code></p>
+  </li>
+  <li>
+    <p>We also used the <code>Console.WriteLine()</code> method and directly referenced the string we wanted to display. <code>Console.WriteLine("Hello World!");</code></p>
+  </li>
+  <li>
+    <p>In the following slides we will learn two more approaches which will give you greater flexibility on how you configure your output.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="nothing-to-do-with-cats">Nothing to do with cats</h2>
+
+<ul>
+  <li>
+    <p>We learned in a prior lesson about the <mark>+</mark> operator, and gave you some examples of its use.</p>
+  </li>
+  <li>
+    <p>When we use the operator <code>+</code> with <code>string</code>s, we call this <mark>concatenation</mark>.</p>
+  </li>
+  <li>
+    <p>We are not adding strings as we would add numbers, but we are appending one <code>string</code> to another, resulting in a longer <code>string</code>.</p>
+  </li>
+  <li>
+    <p>C# knows how to turn characters into strings, so it does that for us behind the scenes, saving us a bit of work.</p>
+  </li>
+  <li>
+    <p>Let’s do an experiment</p>
+  </li>
+  <li>
+    <p>Volunteer time</p>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>Make the following additions or changes to your code:</p>
+  </li>
+  <li>
+    <p>Highlight parts three through seven of our Hello World code.</p>
+  </li>
+  <li>
+    <p>Select the <mark>Comment out selected lines</mark> tool highlighted on the standard tool bar as shown in the pic below.</p>
+  </li>
+</ul>
+
+<div class="img" float="right"><img src="./resources/str3.png" /></div>
+
+<div class="fragment">
+Question time: Any guesses what the console will show when we execute our code?
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here">We should all be here</h2>
+
+<div class="img" float="right"><img src="./resources/str4.png" /></div>
+
+<ul>
+  <li>
+    <p>Commenting code tells Visual Studio to ignore that code for execution.</p>
+  </li>
+  <li>
+    <p>Thus, when we executed our code, our console was blank.</p>
+  </li>
+  <li>
+    <p>Commenting code is very important for documenting and troubleshooting.</p>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>Make the following changes and additions to your code.</p>
+  </li>
+  <li>
+    <p>Place this code below part seven of your code.</p>
+  </li>
+</ul>
+
+<pre><code class="language-C#">//Part eight concatenation example
+Console.WriteLine(messageOne + " " + messageTwo + "."); 
+</code></pre>
+<div class="fragment">
+Question time: Any guesses what the console will show when we execute our code?
+</div>
+
+<div class="fragment">
+Let's have two volunteers come up and write on the whiteboard what they think the output will show.
+</div>
+
+<div class="fragment">
+Run your program and let's see if we are right.
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-1">We should all be here</h2>
+
+<div class="img" float="right"><img src="./resources/str5.png" /></div>
+
+<ul>
+  <li>
+    <p>We used two variables and two string literals and came up with a nice looking sentence.</p>
+  </li>
+  <li>
+    <p>The use of spaces is very important when formatting output.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="pair-programming-time">Pair programming time</h2>
+
+<ul>
+  <li>
+    <p>I would like you to add the following sentences below our last line of code in part eight.</p>
+  </li>
+  <li>
+    <p>I need two volunteers to write their solutions on the whiteboard.</p>
+  </li>
+  <li>
+    <p>Convert these sentences to code calling the appropriate variables.</p>
+  </li>
+  <li>
+    <p><mark>I am 35 years old, and it is true that I am godlike.</mark></p>
+  </li>
+  <li>
+    <p><mark>I weigh around 210 pounds, and I am around 72 inches tall.</mark> [decimal points removed for readability - exact values should still be used]</p>
+  </li>
+  <li>
+    <p>Once you have completed the exercise, execute your code.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-2">We should all be here</h2>
+
+<div class="img" float="right"><img src="./resources/str6.png" /></div>
+
+<ul>
+  <li>Did you get the same output? If not, why?</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="please-make-sure-your-code-is-the-same-as-the-code-below">Please make sure your code is the same as the code below.</h2>
+
+<div class="img" float="right"><img src="./resources/str7.png" /></div>
+
+<ul>
+  <li>Remember to pay attention to the spaces before and after our string literals.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="option-options-options-too-many-options">Option, options, options. Too many options…</h2>
+
+<ul>
+  <li>
+    <p>Yet another way to concatenate a string is to use <mark>indexing</mark>.</p>
+  </li>
+  <li>
+    <p>In a future lesson we will cover arrays and indexing.</p>
+  </li>
+  <li>
+    <p>For our purposes in this lesson, it is important to note indexes in Computer Science start with <mark>0</mark>.</p>
+  </li>
+  <li>
+    <p>So if I wrote the following sentence: <mark>I am 35 years old, and it is true that I am godlike...</mark>.</p>
+  </li>
+  <li>
+    <p>… We know that we need two variables to construct the sentence. We chose <mark>ageOne</mark> and <mark>isGodLike</mark>.</p>
+  </li>
+  <li>
+    <p>Now let’s use indexing to construct our output.</p>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>Volunteer time</p>
+  </li>
+  <li>
+    <p>I would like you to add the following sentences below our last line of code in part eight.</p>
+  </li>
+</ul>
+
+<pre><code class="language-C#">Console.WriteLine("My father is {0} years old, and it is {1} that he is 
+a god.", ageThree, isGodLikeOne);
+</code></pre>
+<ul>
+  <li>
+    <p>Notice the entire sentence is enclosed in <mark>quotes</mark>, but we have included <mark>{0}</mark> and <mark>{1}</mark>.</p>
+  </li>
+  <li>
+    <p>These two values are called <mark>indexes</mark>, and they reference the positions of the two variables <mark>ageOne, isGodLikeOne</mark>.</p>
+  </li>
+  <li>
+    <p><mark>ageThree</mark> is in the <mark>0</mark> position and <mark>isGodLikeOne</mark> is in the <mark>1</mark> position.</p>
+  </li>
+</ul>
+
+<div class="fragment">
+Question time: What would be the value of the index, if we added a third variable at the end of the sentence?
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="pair-programming-time-1">Pair programming time</h2>
+
+<ul>
+  <li>
+    <p>I would like you to add the following sentences below our last line of code in part eight.</p>
+  </li>
+  <li>
+    <p>I need two volunteers to write their solutions on the whiteboard.</p>
+  </li>
+  <li>
+    <p>Convert these sentences to code using indexing.</p>
+  </li>
+  <li>
+    <p><mark>I am 35 years old, and it is true that I am godlike.</mark></p>
+  </li>
+  <li>
+    <p><mark>I weigh around 210 pounds, and I am around 72 inches tall.</mark></p>
+  </li>
+  <li>
+    <p>Once you have completed the exercise, execute your code.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-3">We should all be here</h2>
+
+<div class="img" float="right"><img src="./resources/str8.png" /></div>
+
+<ul>
+  <li>Did you get the same output? If not, why?</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="please-make-sure-your-code-is-the-same-as-the-code-below-1">Please make sure your code is the same as the code below.</h2>
+
+<div class="img" float="right"><img src="./resources/str9.png" /></div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="strings-are-objects">strings are Objects</h2>
+
+<ul>
+  <li>What operator do we use when we want to check for equality between value type variables?</li>
+</ul>
+
+<div class="fragment">
+Remember the following: Console.WriteLine(5 == 5)
+</div>
+
+<div class="fragment">
+When we compare objects like strings, we use the equals method.
+</div>
+
+<div class="fragment">
+We will use our code to give us two examples.
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="lets-experiment">Let’s experiment</h2>
+
+<ul>
+  <li>
+    <p>Volunteer time</p>
+  </li>
+  <li>
+    <p>Please comment out part eight.</p>
+  </li>
+  <li>
+    <p>I would like you to add the following sentences below our last line of code in part eight.</p>
+  </li>
+</ul>
+
+<pre><code class="language-C#">//Part nine string equality examples
+
+Console.WriteLine(messageTwo.Equals(messageOne));
+
+Console.WriteLine(messageTwo.Equals("I am Spartacus"));
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-4">We should all be here</h2>
+
+<div class="img" float="right"><img src="./resources/str10.png" /></div>
+
+<div class="fragment">
+Question time: Before we execute our program, can anyone guess what values will be returned? Why?
+</div>
+
+<div class="fragment">
+Now let's execute our program.
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-5">We should all be here</h2>
+
+<div class="img" float="right"><img src="./resources/str11.png" /></div>
+
+<ul>
+  <li>
+    <p>Looking at our results, we can tell the Equals method returns a bool value.</p>
+  </li>
+  <li>
+    <p>In later lessons, we will learn to use the <mark>Equals</mark> method to facilitate the decision making process in our program.</p>
+  </li>
+  <li>
+    <p>In the following slides we will cover some methods we can use with strings that you may find extremely valuable in the near future. <mark>Hint</mark> <mark>Hint</mark></p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="just-in-case">Just in Case</h2>
+
+<ul>
+  <li>
+    <p>The methods that we call on strings create and <em>return</em> new strings rather than changing the original string.</p>
+  </li>
+  <li>
+    <p>Strings in C# are <em>immutable</em> meaning the size of the string cannot be changed after initialization.</p>
+  </li>
+  <li>
+    <p>In upcoming projects and exercises, you my find it useful to convert a string to all uppercase or all lowercase.</p>
+  </li>
+  <li>
+    <p>Let’s look at an example of how to accomplish such a feat.</p>
+  </li>
+</ul>
+
+<pre><code class="language-C#">string myGreeting = "Hello";
+Console.WriteLine(myGreeting.ToUpper()); // prints "HELLO"
+Console.WriteLine(myGreeting.ToLower()); // prints "hello"
+Console.WriteLine(myGreeting); // prints "Hello"
+</code></pre>
+<div class="fragment">
+Question time: When do you think it would be wise to change the case of a word when writing code?
+</div>
+
+<div class="fragment">
+Let's look at an example.
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="sensitivity-training">Sensitivity Training</h2>
+
+<ul>
+  <li>
+    <p>We often use one of these methods to normalize user input.</p>
+  </li>
+  <li>
+    <p>Say we’re asking for a color and call the <code>ToLower()</code> method on the user’s response.</p>
+  </li>
+  <li>
+    <p>Before comparing the user input to “red”, the user can type “RED”, “Red”, or “red” and it won’t matter.</p>
+  </li>
+</ul>
+
+<pre><code class="language-C#">
+Console.WriteLine("Enter a color, please.")
+string response = Console.ReadLine();
+
+if(response.ToLower().Equals("red")) {
+  Console.WriteLine("Roses can be red. Also, lillies.");
+}
+</code></pre>
+<ul>
+  <li>Wait a minute … what is this tomfoolery? We haven’t yet discussed
+    <pre><code class="language-C#">string response = Console.ReadLine();
+</code></pre>
+  </li>
+  <li>
+    <p>We will cover this in more detail at a later time.</p>
+  </li>
+  <li>Essentially, we are telling our program to take input from the console and save that input as a string to the variable called <mark>response</mark>.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="length">Length</h2>
+
+<ul>
+  <li>
+    <p>As we will soon learn, acquiring the length of a string, as well as other data structures, will be very important.</p>
+  </li>
+  <li>
+    <p>We already know a string is just a collection of characters (<code>char</code>).</p>
+  </li>
+  <li>
+    <p>C# provides a property for strings called <code>Length</code> which will tell us how many characters a string contains.</p>
+  </li>
+  <li>
+    <p>Let’s do an experiment.</p>
+  </li>
+  <li>
+    <p>Volunteer time.</p>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>Let’s make the following changes and additions to our code.</p>
+  </li>
+  <li>
+    <p>Comment out part nine of our Hello World code.</p>
+  </li>
+  <li>
+    <p>Add the following code</p>
+  </li>
+</ul>
+
+<pre><code class="language-C#">//Part ten string length examples
+int messOneLength = messageOne.Length;
+int messTwoLength = messageTwo.Length;
+
+Console.WriteLine("The length of messageOne is " + messageOne.Length);
+Console.WriteLine("The length of messageTwo is " + messageTwo.Length);
+Console.WriteLine("The length of messageOne is " + messOneLength);
+Console.WriteLine("The length of messageTwo is " + messTwoLength);
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-6">We should all be here</h2>
+
+<div class="img" float="right"><img src="./resources/str12.png" /></div>
+
+<div class="fragment">
+Question time: What values do you think will returned for <code>messageOne.Length</code> and <code>messageTwo.Length</code>?
+</div>
+
+<div class="fragment">
+Question time: What is the difference between the first two <code>Console.WriteLine</code>'s and the second two?
+</div>
+
+<div class="fragment">
+Let's execute our program and see if we get the results we anticipated.
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-7">We should all be here</h2>
+
+<div class="img" float="right"><img src="./resources/str13.png" /></div>
+
+<ul>
+  <li>Now let’s talk about our results</li>
+</ul>
+
+<div class="fragment">
+Question time: Any guesses why we received these results? 
+</div>
+
+<div class="fragment">
+Question time: We assigned the Length values to variables. Why couldn't we add those two values together or perform other mathematical operations?
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="escape">Escape!</h2>
+
+<ul>
+  <li>
+    <p>Sometimes we need special characters in strings.</p>
+  </li>
+  <li>
+    <p>The obvious example is a quotation mark.</p>
+  </li>
+  <li>
+    <p>Quotation marks are what open and close strings, so how would we include a quotation mark in a string?</p>
+  </li>
+  <li>
+    <p>We do something called <em>escaping</em>. We refer to the backslash (<code>\</code>) we use as an <em>escape character</em>.</p>
+  </li>
+</ul>
+
+<pre><code class="language-C#">Console.WriteLine("Phil said, \"You've got red on you\".");
+</code></pre>
+
+<p>We can also use escaping to insert special characters like newlines (<code>\n</code>) and tabs (<code>\t</code>):</p>
+
+<pre><code class="language-C#">Console.WriteLine("This is the first line.\nSecond line");
+Console.WriteLine("\tThis line is indented.");
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="other-useful-methods">Other Useful Methods</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>method</th>
+      <th>description</th>
+      <th>example</th>
+      <th>result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Trim</code></td>
+      <td>trims the whitespace from the beginning and end of a <code>string</code>; useful for cleaning up user input</td>
+      <td><code>" bar  ".Trim()</code></td>
+      <td><code>"bar"</code></td>
+    </tr>
+    <tr>
+      <td><code>IndexOf</code></td>
+      <td>returns the index of the first occurrence of a substring in this <code>string</code></td>
+      <td><code>"foo bar baz".IndexOf("bar")</code></td>
+      <td><code>4</code></td>
+    </tr>
+    <tr>
+      <td><code>Contains</code></td>
+      <td>indicates whether this <code>string</code> contains a substring</td>
+      <td><code>"foobarbaz".Contains("ba")</code></td>
+      <td><code>true</code></td>
+    </tr>
+    <tr>
+      <td><code>StartsWith</code></td>
+      <td>indicates whether this <code>string</code> starts with another</td>
+      <td><code>"foo".StartsWith("f")</code></td>
+      <td><code>true</code></td>
+    </tr>
+    <tr>
+      <td><code>EndsWith</code></td>
+      <td>indicates whether this <code>string</code> ends with another</td>
+      <td><code>"baz".EndsWith("az")</code></td>
+      <td><code>true</code></td>
+    </tr>
+    <tr>
+      <td><code>Substring</code></td>
+      <td>returns a substring starting at the specified index, optionally including an end index</td>
+      <td><code>"hello".Substring(1)</code><br /><code>"hello".Substring(1, 4)</code></td>
+      <td><code>"ello"</code><br /><code>"ell"</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Try <a href="https://www.w3resource.com/csharp-exercises/string/index.php">C# Sharp string 43 exercises with solution</a></p>
+
+<style type="text/css">
+.img:hover  {
+        transform: scale(1.5);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+</style>
+
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="../../shared/lib/js/head.min.js"></script>
+		<script src="../../shared/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// I suspect there's a better way to do this...
+				width: 1920 * 0.8,
+				height: 1080,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../shared/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../shared/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../shared/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../shared/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

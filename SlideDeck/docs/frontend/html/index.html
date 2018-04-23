@@ -1,0 +1,986 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>HTML - The Structure of the Internet</title>
+
+		<meta name="description" content="- description not found -">
+		<meta name="author"      content="Your Name Here">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../shared/css/reveal.css">
+		<link rel="stylesheet" href="../../shared/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../shared/lib/css/zenburn.css">
+
+		<!-- WCCI style tweaks -->
+		<link rel="stylesheet" href="../../shared/css/wcci.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../shared/css/print/pdf.css' : '../../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="text-align: center">HTML</h1>
+					<h3 style="text-align: center">The Structure of the Internet</h3>
+					<div id="logo">
+						<img src="../../shared/images/wcci-logo.png">
+						<p style="font-size: smaller;">&copy; We Can Code IT, LLC</p>
+					</div>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_ -->
+<h1 id="what-is-html">What is HTML?</h1>
+
+<p><strong>HTML</strong> (Hypertext Markup Language) is the first of three languages we use to create the front-end (also known as the client-side) of the web. Each of the three languages that we use (HTML, CSS, and JavaScript) has a specific job to do and it is important to keep these concerns separate. HTML’s job is to <strong>structure and organize your content</strong>.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="standard-html-document">Standard HTML Document</h2>
+
+<ul>
+  <li>
+    <p>HTML is marked up with <strong>tags</strong>. There are common tags that you will see in each HTML document. Lets open Visual Studio and create a blank html document.</p>
+  </li>
+  <li>
+    <p>Let’s put what we learned to the test. I need a volunteer!!</p>
+
+    <div float="right" class="img"><img src="./resources/boot1.png" /></div>
+
+    <ul>
+      <li>
+        <p>Open Visual Studio</p>
+      </li>
+      <li>
+        <p>Select File &gt; New &gt; Project</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<div float="right" class="img"><img src="./resources/boot2a.png" /></div>
+
+<ul>
+  <li>
+    <p>Select <mark>Installed</mark> - Select <mark>Web</mark> - Select <mark>Previous Versions</mark> and ensure <mark>ASP.NET Empty Web Site</mark> is highlighted.</p>
+  </li>
+  <li>
+    <p>Select the <mark>Web Location Path</mark>.</p>
+  </li>
+  <li>
+    <p>Use your right arrow key to navigate to the end of the location path.</p>
+  </li>
+  <li>
+    <p>Change <mark>WebSite1</mark> to <mark>MySuperDopeWebsite</mark>.</p>
+  </li>
+  <li>
+    <p>Your location address might have a value different than <mark>WebSite1</mark>, not to worry - just replace whatever value is there to <mark>MySuperDopeWebSite</mark></p>
+  </li>
+  <li>
+    <p>Finally, select <mark>OK</mark>.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="lets-add-an-html-page">Let’s add an HTML page</h2>
+
+<div float="right" class="img"><img src="./resources/boot3.png" /></div>
+
+<ul>
+  <li>
+    <p>Place your cursor in the Solution Explorer and right click on <mark>SuperDopeWebSite</mark></p>
+  </li>
+  <li>
+    <p>Select <mark>Add</mark> then <mark>Add New Item</mark>.</p>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<div float="right" class="img"><img src="./resources/boot4.png" /></div>
+
+<ul>
+  <li>
+    <p>Ensure <mark>Visual C#</mark> is selected under templates.</p>
+  </li>
+  <li>
+    <p>Ensure <mark>HTML Page</mark> is highlighted.</p>
+  </li>
+  <li>
+    <p>Change the value in the <mark>Name</mark> field to <mark>index.html</mark></p>
+  </li>
+  <li>
+    <p>Finally select <mark>Add</mark></p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here">We should all be here!!</h2>
+
+<div float="right" class="img"><img src="./resources/boot5.png" /></div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="its-all-about-the-tags">It’s all about the Tags</h2>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<ul>
+  <li>
+    <p>Our HTML page is built using <mark>Tags</mark>.</p>
+  </li>
+  <li>
+    <p>The Tags we will discuss in our index.html page are as follows:</p>
+
+    <ul>
+      <li><mark>&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;body&gt;</mark></li>
+    </ul>
+  </li>
+  <li>
+    <p>You’ll notice these each have a closing tag (e.g. <code>&lt;/body&gt;</code>). Let’s look at these in more detail.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="doctype">DOCTYPE</h2>
+
+<pre><code class="language-html" data-noescape="">
+<mark>&lt;!DOCTYPE html&gt;</mark>
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"&gt;
+
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<ul>
+  <li>The DOCTYPE tag tells your browser that this document is HTML. With that declaration, your browser knows to interpret this as HTML and display it as such.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="html-tag">HTML Tag</h2>
+
+<pre><code class="language-html" data-noescape="">
+&lt;!DOCTYPE html&gt;
+<mark>&lt;html lang="en"&gt;</mark>
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"&gt;
+
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+<mark>&lt;/html&gt;</mark>
+</code></pre>
+
+<ul>
+  <li>The <code>&lt;html&gt;</code> tag houses all of your other tags. All of your content needs to be inside of them.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="head-tag">Head Tag</h2>
+
+<pre><code class="language-html" data-noescape="">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+<mark>&lt;head&gt;</mark>
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"&gt;
+
+    &lt;title&gt;Document&lt;/title&gt;
+<mark>&lt;/head&gt;</mark>
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<ul>
+  <li>The <code>&lt;head&gt;</code> tag houses metadata for each of your pages. This content gives information to your browser about the page and content on the page. This is also where CSS and JavaScript files can be attached to your page.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="body-tag">Body Tag</h2>
+
+<pre><code class="language-html" data-noescape="">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"&gt;
+
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+<mark>&lt;body&gt;</mark>
+
+<mark>&lt;/body&gt;</mark>
+&lt;/html&gt;
+</code></pre>
+
+<ul>
+  <li>The <code>&lt;body&gt;</code> tag houses all of the content that your user will see/interact with.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="box-model">Box Model</h1>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="lets-build-our-super-dope-website">Let’s Build Our Super Dope Website</h2>
+
+<ul>
+  <li>Copy and paste the following in between the  <mark>body</mark> tags of your <mark>index.html</mark> page.</li>
+</ul>
+
+<pre><code class="language-C#">My Super Dope Web Page Hi, this is my super awesome fun web page where the content makes no sense but there is a lot of it. 
+So let's get into some business that you can learn from. This is a list of colors that are colorful in no particular order: 
+Red Teal Purple Daffodil Lime Green Magenta Atomic Tangerine This is a list of movies ranked from most-awesome to not-as-awesome 
+Anything with Bill Murray in it Life Aquatic Jurassic World Blade II The Matrix Sequels Let's look at some images: Cats Are Awesome! 
+Look at this one: Doggos Are Pretty Cool Too This doggo is a tricky doggo: Sometimes people say important things You need to document 
+important things that people say so you can sound smart when it's necessary. Success is a lousy teacher. It seduces smart people into 
+thinking they can't lose. - Bill Gates When it comes to HTML, there are some things you just shouldn't do At least, not anymore... 
+Want bold text? There's a wrong way and a right way. Always use the right way! Maybe you need some italics? Again, it used to be done 
+like this. This is wrong. This is the right way. Separation of concerns The wrong way tags above are deprecated and should not be used. 
+HTML should be used to mark-up or organize your content. It should not be used to style your content or interact with it. Those are 
+the jobs of CSS and JavaScript! Links Links are one of the most important parts of the web. They help you navigate from place to place 
+on the internet. Sections Section elements are good for grouping elements that belong together. You can also use div's for this
+
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="elements-in-html">Elements in HTML</h2>
+
+<ul>
+  <li>
+    <p>HTML tags and the content they house are called <strong>elements</strong>.</p>
+  </li>
+  <li>
+    <p>Lets add some HTML <mark>elements</mark> to our page.</p>
+  </li>
+  <li>
+    <p>Let’s start with the <mark>h1</mark> tag. This is a <mark>header</mark> tag.</p>
+  </li>
+  <li>
+    <p>Go ahead and type these header in between the <mark>body</mark> tags in your index.html page.</p>
+  </li>
+  <li>
+    <p>You will see the <mark>number 1</mark>. This signifies the size of the header.</p>
+  </li>
+</ul>
+
+<pre><code class="language-HTML">&lt;h1&gt;My Super Dope Web Page&lt;/h1&gt;
+&lt;h2&gt;My Super Dope Web Page&lt;/h2&gt;
+&lt;h3&gt;My Super Dope Web Page&lt;/h3&gt;
+</code></pre>
+
+<ul>
+  <li>
+    <p>Let’s publish our web page by selecting <mark>Google Chrome</mark> on the Visual Studio standard toolbar.</p>
+  </li>
+  <li>
+    <p>Your Chrome browser will open, and your index page will be displayed.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-1">We should all be here</h2>
+
+<div float="right" class="img"><img src="./resources/boot6.png" /></div>
+
+<ul>
+  <li>Question time: What do you notice about the size of the font in relation to the header tags?</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="paragraph-tags">Paragraph tags</h2>
+
+<ul>
+  <li>
+    <p>Next is the <mark>p</mark> tag.</p>
+  </li>
+  <li>
+    <p>These are <mark>paragraph</mark> tags.</p>
+  </li>
+  <li>
+    <p>Go ahead and type these paragraphs after you last header tag in your index.html page.</p>
+  </li>
+  <li><code>&lt;p&gt;Hi, this is my super awesome fun web page where the content makes no sense but there is a lot of it.&lt;/p&gt;</code></li>
+  <li>
+    <p><code>&lt;p&gt;So let's get into some business that you can learn from.&lt;/p&gt;</code></p>
+  </li>
+  <li>Select <mark>Ctrl Shift F5</mark> to refresh your browser.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-2">We should all be here</h2>
+
+<div float="right" class="img"><img src="./resources/boot7.png" /></div>
+
+<ul>
+  <li>Question time: Is there a difference between the line spacing between our paragraphs on our browser and our Visual Studio page?</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="ordered-and-unordered-lists">Ordered and unordered lists</h2>
+
+<ul>
+  <li>
+    <p>Next are the unordered list <mark>ul</mark>, ordered list <mark>ol</mark> and list item <mark>li</mark>tags.</p>
+  </li>
+  <li>
+    <p>Go ahead and type these lists after your last paragraph tag in your index.html page. Select <mark>Ctrl Shift F5</mark> to refresh your browser.</p>
+  </li>
+</ul>
+
+<pre><code class="language-HTML">&lt;ul&gt;
+	&lt;li&gt;Red&lt;/li&gt;
+	&lt;li&gt;Teal&lt;/li&gt;
+	&lt;li&gt;Purple&lt;/li&gt;
+	&lt;li&gt;Daffodil&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<pre><code class="language-HTML">&lt;ol&gt;
+	&lt;li&gt;Red&lt;/li&gt;
+	&lt;li&gt;Teal&lt;/li&gt;
+	&lt;li&gt;Purple&lt;/li&gt;
+	&lt;li&gt;Daffodil&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+<pre><code class="language-HTML">&lt;ol start = "50"&gt;
+	&lt;li&gt;Red&lt;/li&gt;
+	&lt;li&gt;Teal&lt;/li&gt;
+	&lt;li&gt;Purple&lt;/li&gt;
+	&lt;li&gt;Daffodil&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-3">We should all be here</h2>
+
+<div float="right" class="img"><img src="./resources/boot8.png" /></div>
+
+<ul>
+  <li>
+    <p>Question time: What is the difference between an ordered and unordered list?</p>
+  </li>
+  <li>
+    <p>Question time: What does the <mark>start</mark> attribute do in the second ordered list?</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="sections">Sections</h2>
+
+<ul>
+  <li>
+    <p>Next is the <mark>section</mark> tag.</p>
+  </li>
+  <li>
+    <p>Go ahead and type these lists after your last order list tag in your index.html page.</p>
+  </li>
+  <li>
+    <p>Select <mark>Ctrl Shift F5</mark> to refresh your browser.</p>
+  </li>
+</ul>
+
+<pre><code class="language-HTML">&lt;section&gt;
+	&lt;h1&gt;Section One&lt;/h1&gt;
+	&lt;ul&gt;
+		&lt;li&gt;Red&lt;/li&gt;
+		&lt;li&gt;Teal&lt;/li&gt;
+		&lt;li&gt;Purple&lt;/li&gt;
+		&lt;li&gt;Daffodil&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/section&gt;
+</code></pre>
+<pre><code class="language-HTML">&lt;section&gt;
+	&lt;h1&gt;Section Two&lt;/h1&gt;
+	&lt;ol&gt;
+		&lt;li&gt;Red&lt;/li&gt;
+		&lt;li&gt;Teal&lt;/li&gt;
+		&lt;li&gt;Purple&lt;/li&gt;
+		&lt;li&gt;Daffodil&lt;/li&gt;
+	&lt;/ol&gt;
+&lt;/section&gt;
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-4">We should all be here</h2>
+
+<div float="right" class="img"><img src="./resources/boot9.png" /></div>
+
+<ul>
+  <li>We can use <code>&lt;section&gt;</code> to divide our elements and provide a mechanism to make changes to individual sections.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="hyperlinks">Hyperlinks</h2>
+
+<ul>
+  <li>
+    <p>Next is the <mark>a</mark>tag or hyperlink tag.</p>
+  </li>
+  <li>
+    <p>Go ahead and type these lists with hyperlinks after your last section tag in your index.html page.</p>
+  </li>
+  <li>
+    <p>Select <mark> Ctrl Shift F5</mark> to refresh your browser.</p>
+  </li>
+</ul>
+
+<pre><code class="language-HTML">&lt;section&gt;
+	&lt;h1&gt;Section Three&lt;/h1&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href="http://www.google.com"&gt;Google&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="http://www.yahoo.com"&gt;Yahoo&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/section&gt;
+</code></pre>
+<pre><code class="language-HTML">&lt;section&gt;
+	&lt;h1&gt;Section Four&lt;/h1&gt;
+	&lt;a href="http://www.google.com"&gt;Google&lt;/a&gt;
+	&lt;a href="http://www.yahoo.com"&gt;Yahoo&lt;/a&gt;
+&lt;/section&gt;
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-5">We should all be here</h2>
+
+<div float="right" class="img"><img src="./resources/boot10.png" /></div>
+
+<ul>
+  <li>
+    <p>Notice the hyperlink is located within the opening <mark>a</mark> tag, and the name of the link is in between the <mark>a</mark> tags.</p>
+  </li>
+  <li>
+    <p>Question time: Could I have assigned any name we wanted to each hyperlink?</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="images">Images</h2>
+
+<ul>
+  <li>
+    <p>Next is the <mark>img</mark> tag.</p>
+  </li>
+  <li>
+    <p>Go ahead and type these lists with hyperlinks after your last section tag containing the two hyperlinks in your index.html page.</p>
+  </li>
+  <li>
+    <p>Select <mark>Ctrl Shift F5</mark> to refresh your browser.</p>
+  </li>
+</ul>
+
+<pre><code class="language-HTML">&lt;section&gt;
+	&lt;h1&gt;Section Five&lt;/h1&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;img src = "https://www.hdforums.com/forum/attachments/softail-models/532158d1501463768-carlini-apes-gangster-or-flying-let-s-see-them-5e943084-4634-4a50-8a68-4e35e7001b79-67530-0000035f738a9567.jpg"&gt;&lt;img&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/section&gt;
+</code></pre>
+<pre><code class="language-HTML">&lt;section&gt;
+	&lt;h1&gt;Section Six&lt;/h1&gt;
+	&lt;img src = "https://i.ytimg.com/vi/sGGb2qnIcrQ/maxresdefault.jpg"&gt;&lt;img&gt;
+&lt;/section&gt;
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="titles">Titles</h2>
+
+<ul>
+  <li>
+    <p>Next is the <mark>title</mark> tag.</p>
+  </li>
+  <li>
+    <p>Go ahead and type this line of code in between the <mark>head</mark> tags in your index.html page.</p>
+  </li>
+  <li>
+    <p>Select <mark>Ctrl Shift F5</mark> to refresh your browser.</p>
+  </li>
+</ul>
+
+<pre><code class="language-HTML">&lt;title&gt;SuperDope&lt;/title&gt;
+</code></pre>
+<ul>
+  <li>Question time: What changes on our web page?</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="element-attributes">Element Attributes</h2>
+
+<ul>
+  <li>
+    <p>There are attributes that you can include on your elements that will affect the way they behave. Some attributes are required to make an element function. These include:</p>
+  </li>
+  <li><strong>href</strong> (hypertext reference) - Used to give anchor tags a location to link to</li>
+  <li><strong>type</strong> - Used usually on input elements to describe what type of input they should accept</li>
+  <li><strong>src</strong> (source) - Used in script tags and img tags. These house the location of the resource</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="div-and-span-tags">DIV and SPAN tags</h1>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="divs">Divs</h2>
+
+<ul>
+  <li>
+    <p><strong>div</strong> tags are a useful tool in HTML. A <code>&lt;div&gt;&lt;/div&gt;</code> tag is a generic block level element.</p>
+  </li>
+  <li>
+    <p>They are used mostly for organizational purposes in HTML code.</p>
+  </li>
+  <li>
+    <p>If you have a block of information that exists as a group, you may choose to group it in a div to keep it organized and identify it as one unit.</p>
+  </li>
+  <li>
+    <p>Go ahead and type the following code after your last section tag containing the last image in your index.html page.</p>
+  </li>
+  <li>
+    <p>Select <mark>Ctrl Shift F5</mark> to refresh your browser.</p>
+  </li>
+  <li>
+    <p>Question time: What does this remind you of in our earlier code?</p>
+  </li>
+</ul>
+
+<pre><code class="language-html">&lt;div&gt;
+    &lt;h2&gt;Wonder Woman&lt;/h2&gt;
+    &lt;h3&gt;Super Hero&lt;/h3&gt;
+    &lt;p&gt;10/13/2017&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="spans">Spans</h2>
+
+<ul>
+  <li>
+    <p>Similar to divs, <strong>spans</strong> are a generic element in HTML as well.</p>
+  </li>
+  <li>
+    <p>The difference is that they are generic <em>inline</em> level elements.</p>
+  </li>
+  <li>
+    <p>Span tags are used mostly to add emphasis or apply specific CSS styles.</p>
+  </li>
+  <li>
+    <p>These can be used for highlighting individual text in a paragraph or list item.</p>
+  </li>
+  <li>
+    <p>Go ahead and type the following code after your last div tag in your index.html page.</p>
+  </li>
+  <li>
+    <p>Select <mark>Ctrl Shift F5</mark> to refresh your browser.</p>
+  </li>
+</ul>
+
+<pre><code class="language-html">&lt;p&gt;I enjoy driving my &lt;span style = "color:red;font-weight:bold" &gt;Ford Bronco
+&lt;/span&gt; but I really enjoy riding my &lt;span style = "color:black;
+font-weight:bold; font-style:italic" &gt;Road King&lt;/span&gt;.&lt;/p&gt;
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="ids-and-classes">IDs and Classes</h1>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="ids">IDs</h2>
+
+<ul>
+  <li>
+    <p>IDs in HTML are used as unique identifiers for your individual elements.</p>
+  </li>
+  <li>
+    <p>You can apply an ID to specific elements but, no two elements should have the same identifier.</p>
+  </li>
+  <li>
+    <p>You can think of them as similar to the key value in a Dictionary.</p>
+  </li>
+  <li>
+    <p>ID’s are identified by a <mark>#</mark> in front of the element identifier.</p>
+  </li>
+  <li>
+    <p>Let’s go back to our first <mark>h1</mark> element, and add the following</p>
+  </li>
+</ul>
+
+<pre><code class="language-html">&lt;h1 id="page-title"&gt;My Super Dope Web Page&lt;/h1&gt;
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>Go ahead and type the following code after your last <code>&lt;p&gt;</code> tag in your index.html page.</li>
+</ul>
+
+<pre><code class="language-html">&lt;a href="#page-title"&gt;Go back to where 'My Super Dope Web Page' is located on the page.&lt;/a&gt;
+</code></pre>
+<ul>
+  <li>
+    <p>You will notice the <mark>href</mark> attribute is referencing the <mark>page-title id</mark>. You know it’s an id because of the <mark>#</mark> in front of the id.</p>
+  </li>
+  <li>
+    <p>You will find id’s helpful when selecting specific elements in CSS and JS.</p>
+  </li>
+  <li>
+    <p>You can also use them for their specific location in a page.</p>
+  </li>
+  <li>
+    <p>For example, if you give an anchor tag an existing ID as a value, when you click the link, it will take you to the location of the element with that ID on the page.</p>
+  </li>
+  <li>
+    <p>Select <mark>Ctrl Shift F5</mark> to refresh your browser and click on the link at the bottom of your index.html page.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="classes">Classes</h2>
+
+<ul>
+  <li>
+    <p>Classes in HTML are similar to IDs.</p>
+  </li>
+  <li>
+    <p>They identify an element in your code.</p>
+  </li>
+  <li>
+    <p>The difference between IDs and classes is that classes are not unique.</p>
+  </li>
+  <li>
+    <p>You may give multiple elements the same class and you can give one element multiple classes.</p>
+  </li>
+  <li>
+    <p>Make the following changes to your div and span elements</p>
+  </li>
+  <li>
+    <p>Unlike id’s which are referenced by <mark>#</mark>, classes are referenced by <mark>.</mark> or a period before the class name.</p>
+  </li>
+</ul>
+
+<pre><code class="language-HTML">&lt;div class="superhero"&gt;
+        &lt;h2&gt;Wonder Woman&lt;/h2&gt;
+        &lt;h3&gt;Super Hero&lt;/h3&gt;
+        &lt;p&gt;10/13/2017&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-HTML">&lt;p class="superhero"&gt;I enjoy driving my &lt;span style="color:red;font-weight:bold"&gt;Ford Bronco&lt;/span&gt; but I really enjoy riding my &lt;span style="color:black;font-weight:bold; font-style:italic"&gt;Road King&lt;/span&gt;.&lt;/p&gt;
+</code></pre>
+<ul>
+  <li>The benefits of using classes and id’s will be clearer when we get into CSS and JavaScript.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="boxes">Boxes</h2>
+
+<ul>
+  <li>Each HTML element in the body has a structure that looks like this:</li>
+</ul>
+
+<div float="right" class="img" id="boxes"><img src="./resources/boxmodel-image.png" /></div>
+
+<ul>
+  <li>
+    <p>At the center is the <strong>content</strong> inside of your element. (e.g. <code>&lt;p&gt;This is the content&lt;/p&gt;</code>).</p>
+  </li>
+  <li>
+    <p>Just outside of that we have the <strong>padding</strong>. Padding adds space between your content and the inside of your element.</p>
+  </li>
+  <li>
+    <p>The next layer is the <strong>border</strong>. The border outlines your element. Borders don’t have a value by default.</p>
+  </li>
+  <li>
+    <p>The final layer is the <strong>margin</strong>. The margin is similar to padding but this creates space outside of your element.</p>
+  </li>
+  <li>
+    <p>Go to your browser and hit <mark>F12</mark>. Let’s practice accessing the box.Visual Studio.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="display-values">Display Values</h1>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="inline-vs-block">Inline vs. Block</h2>
+
+<p>There are two basic display values, <strong>inline</strong> and <strong>block</strong>. All HTML elements have one of these values by default.</p>
+
+<p>Block level elements can be thought of like building blocks. These elements will have the width of your viewport and will stack one on top of the other based on where they are in the code.</p>
+
+<p>Inline elements will only take up as much space as their content requires. Think paragraphs, anchors, or spans.</p>
+
+<style type="text/css">
+.img:hover  {
+        transform: scale(1.5);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+#boxes {
+    display: block;
+    margin-left: 0px;
+    margin-right: auto;
+	width: 40%;
+	}
+</style>
+
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="../../shared/lib/js/head.min.js"></script>
+		<script src="../../shared/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// I suspect there's a better way to do this...
+				width: 1920 * 0.8,
+				height: 1080,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../shared/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../shared/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../shared/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../shared/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

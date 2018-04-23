@@ -1,0 +1,175 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Ajax - Dynamically accessing data</title>
+
+		<meta name="description" content="- description not found -">
+		<meta name="author"      content="Your Name Here">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../shared/css/reveal.css">
+		<link rel="stylesheet" href="../../shared/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../shared/lib/css/zenburn.css">
+
+		<!-- WCCI style tweaks -->
+		<link rel="stylesheet" href="../../shared/css/wcci.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../shared/css/print/pdf.css' : '../../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="text-align: center">Ajax</h1>
+					<h3 style="text-align: center">Dynamically accessing data</h3>
+					<div id="logo">
+						<img src="../../shared/images/wcci-logo.png">
+						<p style="font-size: smaller;">&copy; We Can Code IT, LLC</p>
+					</div>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_ -->
+<h2 id="asynchronous-javascript-and-xml">Asynchronous Javascript and XML</h2>
+
+<p>AJAX is a really useful tool that allows you to query a data source and dynamically update it on your page without having to reload. This is imperative for optimal interaction with your user (remember what can happen to our JS when the page reloads?). We can get text, HTML, XML, or JSON data using AJAX. We are going to use jQuery for AJAX because it is far less code than using Vanilla JS, but it can be done. One last thing. Before using AJAX, we must be running a server so I will set up a simple eclipse project so we can demonstrate functionality.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="elementload">$(element).load()</h2>
+
+<p>The <code>.load(data)</code> method allows you to grab data from a specific location and load it back to an element in your HTML. This is a very basic AJAX call as it only accepts a parameter that is the location of the data you want to access. We can see this in action here:</p>
+
+<pre><code class="language-javascript">$('#myInfo').load('some-html-element.html');
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="get">$.get()</h2>
+
+<p>shorthand method.
+The <code>$.get()</code> method is a little more robust as it accepts some more specific parameters as well as a callback function to execute some functionality once a response comes back. Let’s see how to use this method.</p>
+
+<pre><code class="language-javascript">// The location you want to query
+const url = '/courses';
+// This will get appended to the url as
+// a query string '?courseName=javascript'
+const data = {
+    courseName: javascript;
+};
+// What you want to do when the response comes back
+const callback = function(response) {
+    $($('main')).append('&lt;p&gt;' + response + '&lt;/p&gt;');
+}
+$.get(url, data, callback);
+</code></pre>
+
+<p>There are many more shorthand methods. I encourage you to check out the jQuery docs to see what else you can do.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="ajax">$.ajax()</h2>
+
+<p>The <code>$.ajax(settings)</code> method uses http requests to grab data from a server and sends it back to your document. All of this without reloading your page! Notice how we call this directly on the jQuery object as well.</p>
+
+<pre><code class="language-javascript">$.ajax({
+    type: GET,
+    dataType: "json",
+    url: "./data/data.json",
+    success: function(res) {
+        $('h1').text(res.title);
+    }
+});
+</code></pre>
+
+<p>Again, check the docs for a full list of what this method can do.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="conclusion">Conclusion</h2>
+
+<p>There are many other shorthand methods for ajax as well as many other key/value pairs you can pass to the <code>$.ajax()</code> method. AJAx become a lot more powerful when you can pull data from other APIs such as Twitter, Facebook, Google Maps, Flickr, and countless others. Remeber that AJAX always needs a server running to function. if there is no server, you can’t make HTTP requests. If you feel like getting some practice, use the methods listed here with an API that requires no authentication to use. I like <a href="https://swapi.co/">this one</a>.</p>
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="../../shared/lib/js/head.min.js"></script>
+		<script src="../../shared/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// I suspect there's a better way to do this...
+				width: 1920 * 0.8,
+				height: 1080,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../shared/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../shared/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../shared/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../shared/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,790 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>CSS Styling - Designing your content for striking results</title>
+
+		<meta name="description" content="- description not found -">
+		<meta name="author"      content="Your Name Here">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../shared/css/reveal.css">
+		<link rel="stylesheet" href="../../shared/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../shared/lib/css/zenburn.css">
+
+		<!-- WCCI style tweaks -->
+		<link rel="stylesheet" href="../../shared/css/wcci.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../shared/css/print/pdf.css' : '../../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="text-align: center">CSS Styling</h1>
+					<h3 style="text-align: center">Designing your content for striking results</h3>
+					<div id="logo">
+						<img src="../../shared/images/wcci-logo.png">
+						<p style="font-size: smaller;">&copy; We Can Code IT, LLC</p>
+					</div>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_ -->
+<h2 id="cascading-style-sheets">Cascading Style Sheets</h2>
+
+<ul>
+  <li>
+    <p>The second front-end language we’re going to talk about is CSS (Cascading Style Sheets), the style layer of the front-end.</p>
+  </li>
+  <li>
+    <p>There are multiple ways to identify elements in your HTML and change the way they look.</p>
+  </li>
+  <li>
+    <p>There are two methods by which you can style your HTML page with CSS.</p>
+  </li>
+  <li>
+    <p>One method is to construct your CSS styling inside <mark>style</mark> tags within your HTML page.</p>
+  </li>
+  <li>
+    <p>The second method is to add a seperate styling sheet to your website, then reference that style sheet in your HTML page.</p>
+  </li>
+  <li>
+    <p>We will utilize both methods</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="external-styling-sheet">External Styling Sheet</h2>
+
+<ul>
+  <li>
+    <p>In your Solution Explorer, right click on <mark>SuperDopeWebSite</mark>.</p>
+  </li>
+  <li>
+    <p>Select <mark>Add</mark> then <mark>Style Sheet</mark>. Change the name to <mark>style</mark> then select <mark>OK</mark></p>
+
+    <div float="right" class="img"><img src="./resources/css1.png" /></div>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here">We should all be here</h2>
+
+<ul>
+  <li>
+    <p>You should now have an <mark>index</mark> and a <mark>style</mark> pages.</p>
+
+    <div float="right" class="img"><img src="./resources/css2.png" /></div>
+  </li>
+  <li>
+    <p>Now select the <mark>index</mark> tab.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="link-the-style-sheet">Link the style sheet</h2>
+
+<ul>
+  <li>
+    <p>Find the file named <mark>style</mark> in your solution explorer, and drag it to the <mark>head</mark> section of the index.html.</p>
+  </li>
+  <li>
+    <p>Ensure that the style sheet is the last item referenced in the <mark>head</mark> section.</p>
+
+    <div float="right" class="img"><img src="./resources/css3.png" /></div>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="selectors">Selectors</h2>
+
+<ul>
+  <li>
+    <p>Before we can apply styles to elements in your HTML, there are 5 main selectors that we need to talk about.</p>
+  </li>
+  <li>
+    <p>The first and least specific are <strong>element selectors</strong>.</p>
+  </li>
+  <li>
+    <p>These are just selecting elements by their tag name.</p>
+  </li>
+  <li>
+    <p>Styles will be applied to all elements that have that tag.</p>
+  </li>
+  <li>
+    <p>Add the following styling to your style.css file after the closing <mark>body }</mark></p>
+  </li>
+  <li>
+    <p>Select <mark>save all</mark>, select your <mark>index</mark> tab, then select <mark>Google Chrome</mark> from the standard toolbar.</p>
+  </li>
+</ul>
+
+<pre><code class="language-css">p {
+    background-color: blue;
+    color: white;
+}
+</code></pre>
+
+<ul>
+  <li>
+    <p>Because we are styling by element, all paragraph elements will now have a blue background and white text.</p>
+  </li>
+  <li>
+    <p>Question time: Which style command changes the color of the font?</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="css-commands">CSS commands</h2>
+
+<ul>
+  <li>
+    <p>There are hundreds of CSS commands we can use to style our HTML.</p>
+  </li>
+  <li>
+    <p>Covering all of them would be time consuming and inefficient.</p>
+  </li>
+  <li>
+    <p>We have a great resource we can reference whenever we need to find the correct CSS command.</p>
+  </li>
+</ul>
+
+<p><a href="https://www.w3schools.com/css/default.asp">W3Schools</a> Do not be afraid to experiment with as many CSS commands as you can.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="pseudo-selectors">Pseudo Selectors</h2>
+
+<ul>
+  <li>
+    <p>Pseudo selectors are the next most specific in our list of selectors.</p>
+  </li>
+  <li>
+    <p>With pseudo selectors we have the ability to select elements by attributes that they have, for example:</p>
+  </li>
+</ul>
+
+<pre><code class="language-css">input[type="text"] {
+    color: red;
+}
+</code></pre>
+<ul>
+  <li>
+    <p>This is going to give any of our input elements with a type of text a text color of red, but no other input items will be affected.</p>
+  </li>
+  <li>
+    <p>Other pseudo selectors include:</p>
+  </li>
+  <li><code>:focus</code></li>
+  <li><code>:active</code></li>
+  <li><code>[type="submit"]</code></li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="class-selectors">Class Selectors</h2>
+
+<ul>
+  <li>
+    <p>Next on our specificity tour are classes.</p>
+  </li>
+  <li>
+    <p>Classes can be applied to multiple HTML elements</p>
+  </li>
+  <li>
+    <p>Styling rules you apply to your classes will be applied to all elements that have that class.</p>
+  </li>
+</ul>
+
+<p>If you want to change the font-family of everything in the <code>.superhero</code> class to <code>sans-serif</code>, it would look like:</p>
+
+<pre><code class="language-css">.superhero {
+    font-family: Euphemia;
+}
+</code></pre>
+<ul>
+  <li>Look at our elements in our superhero class and notice the change in font type.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="id-selectors">ID Selectors</h2>
+
+<ul>
+  <li>
+    <p>The final and most specific selector are IDs.</p>
+  </li>
+  <li>
+    <p>IDs are unique to whatever element they are applied to.</p>
+  </li>
+  <li>
+    <p>Elements with IDs are identified with the <code>#</code> symbol.</p>
+  </li>
+  <li>
+    <p>So if you want to style the element that has the <code>#page-title</code> ID…</p>
+  </li>
+  <li>
+    <p>Add the following code to your style.css file.</p>
+  </li>
+  <li>
+    <p>Select save all and refresh your browser.</p>
+  </li>
+</ul>
+
+<pre><code class="language-css">#page-title {
+    color: var(--primary-color); /*We'll get to what this is shortly*/
+    font-family: Aharoni;
+    font-size: 2rem;
+}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="chain-selectors">Chain Selectors</h2>
+
+<ul>
+  <li>
+    <p>Chaining selectors is a way to add more specificity to your selection.</p>
+  </li>
+  <li>
+    <p>For example, if we wanted to keep the changes from our first slide:</p>
+  </li>
+</ul>
+
+<pre><code class="language-css">p {
+    background-color: blue;
+    color: white;
+}
+</code></pre>
+
+<ul>
+  <li>
+    <p>But we also want any <code>&lt;h1&gt;</code> tags inside of our section to have a red background.</p>
+  </li>
+  <li>
+    <p>In this case we can chain the selectors to be more specific.</p>
+  </li>
+  <li>
+    <p>Add the following code to your style.css file.</p>
+  </li>
+  <li>Select save all and refresh your browser.
+    <pre><code class="language-css">section h1 {
+  background-color: red;
+}
+</code></pre>
+  </li>
+  <li>These can also get as complicated as you want them to be, e.g.:</li>
+</ul>
+
+<pre><code class="language-css">header nav .nav-items li &gt; a:focus {
+    border-bottom: 1px solid #123456;
+}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="default-styles">Default Styles</h2>
+
+<ul>
+  <li>
+    <p>So what happens when we don’t declare any CSS rules?</p>
+  </li>
+  <li>
+    <p>Well, each browser has default style rules.</p>
+  </li>
+  <li>
+    <p>It is important to keep these in mind when declaring your own styles because, if you aren’t careful, these styles can overwrite and collide with your styles.</p>
+  </li>
+  <li>
+    <p>A good first step is to know what the default styles look like.</p>
+  </li>
+  <li>
+    <p>You can check these out using the Chrome’s dev tools and disable any link stylesheets.</p>
+  </li>
+  <li>
+    <p>To access the dev tools inside of Chrome: right-click inside of your browser window and click inspect (<code>Ctrl</code> + <code>Shift</code> + <code>i</code>).</p>
+  </li>
+  <li>
+    <p>An even better step is to knock out all default styles in all browsers with <a href="https://necolas.github.io/normalize.css/">Normalize</a>.</p>
+  </li>
+  <li>
+    <p>This is a maintained stylesheet that resets all default styles from all browsers so you start with absolutely no styling happening.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="colors">Colors!</h2>
+
+<ul>
+  <li>There are a few different ways to declare colors inside of CSS. Hexadecimal, rgba(), hsla(), and keywords.</li>
+</ul>
+
+<pre><code class="language-css">h1 {
+    background-color: #39ADD1; /*Hexadecimal*/
+    border: 3px solid hsla(270, 50%, 45%, 1); /*Hue, Saturation, Lightness, Alpha (opacity)*/
+    box-shadow: 3px 3px 3px aquamarine; /*Keyword*/
+    color: rgba(0, 255, 127, 0.9); /*Red, Green, Blue, Alpha (opacity)*/
+}
+</code></pre>
+
+<p><a href="http://www.w3schools.com/cssref/css_colors.asp">Check here</a> for a color checker.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="units">Units</h2>
+
+<ul>
+  <li>
+    <p>There are a lot of different things we need to have measurements for in CSS.</p>
+  </li>
+  <li>
+    <p>Some of them static, some dynamic, some relative to the size of the container they’re housed in, some relative to the size of the whole window.</p>
+  </li>
+</ul>
+
+<h3 id="px">px</h3>
+
+<ul>
+  <li>
+    <p>Pixels are a single area of illumination on your screen.</p>
+  </li>
+  <li>
+    <p>They are useful but losing popularity as better relative units are becoming available.</p>
+  </li>
+</ul>
+
+<h3 id="rem">rem</h3>
+
+<ul>
+  <li>
+    <p>Rem units are based on the default font-size of the root (HTML in our case).</p>
+  </li>
+  <li>
+    <p>So if your root font-size is 16px, 1rem = 16px.</p>
+  </li>
+</ul>
+
+<h3 id="em">em</h3>
+
+<ul>
+  <li>Em units are based on the font-size of the containing element.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="units-continued">Units continued…</h2>
+
+<h3 id="percentage">Percentage</h3>
+
+<ul>
+  <li>
+    <p>Percentage based measurements are based on the size of their parent element, e.g.:</p>
+  </li>
+  <li>
+    <p>Add the following code to your style.css file.</p>
+  </li>
+  <li>
+    <p>Select save all and refresh your browser.</p>
+  </li>
+</ul>
+
+<pre><code class="language-css">section {
+    width: 300px;
+}
+section h3 {
+    width: 50%; /*This equals 150px*/
+}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="units-continued-1">Units continued…</h2>
+
+<h3 id="viewport-height-vh-viewport-width-vw">Viewport Height (vh), Viewport Width (vw)</h3>
+
+<ul>
+  <li>
+    <p>These measurements are based on the size of your viewport (browser window).</p>
+  </li>
+  <li>
+    <p>They’re similar to percentage that way, except they are always related to the viewport, e.g.:</p>
+  </li>
+  <li>
+    <p>Add the following code to your style.css file.</p>
+  </li>
+  <li>
+    <p>Select save all and refresh your browser.</p>
+  </li>
+</ul>
+
+<pre><code class="language-css">ul li img {
+    height: 15vh; /*Always 15% the height of the viewport*/
+}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="typography">Typography</h2>
+
+<h3 id="font-stack">Font stack</h3>
+
+<ul>
+  <li>
+    <p>So a few words on your words:</p>
+  </li>
+  <li>
+    <p>You have what is known as a font stack for any given text based element.</p>
+  </li>
+  <li>
+    <p>What this means is that you can have a very specific typeface that you want to use but then also have back-ups just in case, for some reason, your typeface isn’t available to your user.</p>
+  </li>
+  <li>
+    <p>This way you can avoid having to rely on defaults EVER!</p>
+  </li>
+</ul>
+
+<pre><code class="language-css">p {
+    font-family: Cambria, Utopia, "Nimbus Roman No9 L Regular", Times, serif;
+}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="typography-continued">Typography continued…</h2>
+
+<h3 id="sans-serif-vs-serif">Sans-serif vs. Serif</h3>
+
+<ul>
+  <li>
+    <p>Hey, isn’t this more design than programming, you ask? Yes! But deal with it.</p>
+  </li>
+  <li>
+    <p>There are some important things to note here as far as screens vs printed material.</p>
+  </li>
+  <li>
+    <p>One of the biggest parts to consider is the size of your text.</p>
+  </li>
+  <li>
+    <p>Serifs tend to be better for things like titles because they’re large.</p>
+  </li>
+  <li>
+    <p>The reason this is helpful is because serifs are usually rendered in print media at 1000 dpi and screen media tends to render anywhere from 100-300 dpi.</p>
+  </li>
+  <li>
+    <p>This means large bodies of text tend to do better with sans-serif typefaces. (But rules are always made to be broken 😈)</p>
+  </li>
+</ul>
+
+<h3 id="monospace-fantasy-and-cursive-typefaces">Monospace, Fantasy, and Cursive typefaces</h3>
+
+<ul>
+  <li>
+    <p>DON’T USE THEM.</p>
+  </li>
+  <li>
+    <p>Not really never, but seriously, be very cautious using these typefaces.</p>
+  </li>
+  <li>
+    <p>They can make your page look disjointed but remember our font stack!</p>
+  </li>
+  <li>
+    <p>These fonts, by and large, are less likely to be available to your user than more common serif and sans-serif typefaces.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="backgrounds">Backgrounds</h2>
+
+<ul>
+  <li>Most things have backgrounds that can be manipulated and there are three options to choose from: images, colors, and gradients.</li>
+</ul>
+
+<h3 id="images">Images</h3>
+
+<ul>
+  <li>Images have a much larger range of options to use for the size, position, and repeat of your background.</li>
+</ul>
+
+<pre><code class="language-css">html { /*items with '||' aren't actually used with that*/
+    background-image: url('../images/path-to-my-image.jpg');
+    background-repeat: repeat || repeat-x || repeat-y;
+    background-size: 300px 200px || cover || length;
+    background-position: 50% 50%;
+}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="backgrounds-continued">Backgrounds continued…</h2>
+
+<h3 id="color">Color</h3>
+
+<ul>
+  <li>
+    <p>This one is much simpler than image by a long shot.</p>
+  </li>
+  <li>
+    <p>You just declare a background color and your element will have that color background.</p>
+  </li>
+  <li>
+    <p>So if you wanted to make all of your anchor (<code>&lt;a&gt;</code>) tags have a yellow background, add the following code to your style.css file.</p>
+  </li>
+  <li>
+    <p>Select save all and refresh your browser.</p>
+  </li>
+</ul>
+
+<pre><code class="language-css">a {
+    background-color: yellow;
+}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="backgrounds-continued-1">Backgrounds continued…</h2>
+
+<h3 id="gradient">Gradient</h3>
+
+<ul>
+  <li>
+    <p>Gradients are a good way to achieve some really interesting (read: subtle please!) backgrounds for your elements.</p>
+  </li>
+  <li>
+    <p>Hey look at  the background on this slide! So there are two gradient types: <strong>linear</strong> and <strong>radial</strong>.</p>
+  </li>
+  <li>
+    <p>Note that you need to use <code>background-image</code> for these.</p>
+  </li>
+  <li>
+    <p>Add the following code to your style.css file.</p>
+  </li>
+  <li>
+    <p>Select save all and refresh your browser.</p>
+  </li>
+</ul>
+
+<pre><code class="language-css">    body { /*These can get MUCH more complex btw*/
+        background-image: linear-gradient(rgba(127, 127, 255, 0.75), #ff6);
+    }
+    section {
+        background-image: radial-gradient(circle at center, red, blue);
+    }
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="css-variables">CSS Variables</h2>
+
+<ul>
+  <li>
+    <p>CSS has built-in variables now which is of HUGE benefit to us.</p>
+  </li>
+  <li>
+    <p>They must be declared in the <code>:root</code> element.</p>
+  </li>
+  <li>
+    <p>This is just another way to reference the <code>html</code> element.</p>
+  </li>
+  <li>
+    <p>This is a bit of a bonus so don’t be upset if this doesn’t make sense immediately.</p>
+  </li>
+  <li>
+    <p>Add the following code to your style.css file.</p>
+  </li>
+  <li>
+    <p>Select save all and restart your browser.</p>
+  </li>
+</ul>
+
+<pre><code class="language-css">:root { /*Notice we declare this with the same key, value pair.*/
+    --primary-color: red;
+    --secondary-color: blue;
+    --tertiary-color: yellow;
+}
+h1 { /*Declare variables the same way you would other values.*/
+    background-color: var(--tertiary-color);
+    color: var(--primary-color);
+}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="time-for-practice">Time for practice!</h1>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="homework">Homework</h2>
+
+<p>Time to put what you’ve learned here to work. Clone <a href="https://github.com/donhamiltoniii/css-demo">this</a> exercise from github and follow the instructions to complete the challenge.
+Once you finish up, check out what MDN has to offer <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">here</a>. Use these examples to play around on <a href="codepen.io">Codepen</a>. (also make yourself an account!)
+Let’s look at <a href="https://codepen.io/donhamiltoniii/pen/JyNjXM">this example</a> to see power of CSS!</p>
+<style type="text/css">
+.img:hover  {
+        transform: scale(1.5);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+</style>
+
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="../../shared/lib/js/head.min.js"></script>
+		<script src="../../shared/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// I suspect there's a better way to do this...
+				width: 1920 * 0.8,
+				height: 1080,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../shared/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../shared/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../shared/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../shared/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

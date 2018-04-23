@@ -1,0 +1,195 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Files and File Systems - Where do I find it?</title>
+
+		<meta name="description" content="- description not found -">
+		<meta name="author"      content="Your Name Here">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../shared/css/reveal.css">
+		<link rel="stylesheet" href="../../shared/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../shared/lib/css/zenburn.css">
+
+		<!-- WCCI style tweaks -->
+		<link rel="stylesheet" href="../../shared/css/wcci.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../shared/css/print/pdf.css' : '../../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="text-align: center">Files and File Systems</h1>
+					<h3 style="text-align: center">Where do I find it?</h3>
+					<div id="logo">
+						<img src="../../shared/images/wcci-logo.png">
+						<p style="font-size: smaller;">&copy; We Can Code IT, LLC</p>
+					</div>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_ -->
+<h1 id="file-it-away">File It Away</h1>
+
+<p>The computers we use have file systems. A disk drive is much like a file cabinet, with the exception that we put file folders inside other file folders. This helps us find things. The sequence of folders that represents a file’s location is called its <em>path</em>.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="different-strokes">Different Strokes</h1>
+
+<p>The Windows OS uses backslashes (‘') as path delimiters. Other OSes and shells like Git Bash use slashes (‘/’) as path delimiters.</p>
+
+<p>Windows also uses drive letters(<code>C:</code>) unlike other OSes, so Git Bash interprets them differently as well.</p>
+
+<p>The Windows path <code>C:\foo\bar</code></p>
+
+<p>is represented in Git Bash as <code>/c/foo/bar</code>.</p>
+
+<p>In Windows, you will see this path as your location in an Explorer window.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="can-one-ever-go-home">Can One Ever Go Home?</h1>
+
+<p>By default, you are logged in to your WCCI laptop as a user named “WeCanCodeIT”.</p>
+
+<p>Each user on a computer has a folder where the user’s personal files are stored. In Git Bash and Linux(-like) OSes, We call this the ‘home’ folder. The same concept exists in Windows but it’s a bit hidden from the casual user.</p>
+
+<p>Home folder in Git Bash: <code>/c/Users/WeCanCodeIT</code></p>
+
+<p>The Windows path <code>C:\Users\WeCanCodeIT</code></p>
+
+<p>is represented in Git Bash as <code>/c/Users/WeCanCodeIT</code>.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="what-the-tilde">What the Tilde?</h1>
+
+<p>Your home folder in Git Bash can be (and often is) represented by a tilde (<code>~</code>) character.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="whats-in-here">What’s in Here?</h1>
+
+<p>In git bash, you can list the contents of your current directory with <code>ls</code>:</p>
+
+<pre><code class="language-bash">
+</code></pre>
+
+<p>To see them in long form, use the <code>-l</code> switch:</p>
+
+<pre><code class="language-bash">
+</code></pre>
+
+<p>To see them all (including hidden files that start with a ‘.’), use <code>-a</code>:</p>
+
+<pre><code class="language-bash">
+</code></pre>
+
+<p>Or both:</p>
+
+<pre><code class="language-bash">
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="finding-your-current-directory">Finding your current directory</h1>
+
+<p>When you are at a GitBash prompt, your prompt will show your current directory, which may include <code>~</code> to represent the current path:</p>
+
+<pre><code class="language-bash">
+</code></pre>
+
+<p>In order to <strong>P</strong>rint the <strong>Working</strong> <strong>Directory</strong> (the current directory), use the <code>pwd</code> command:</p>
+
+<pre><code class="language-bash">
+</code></pre>
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="../../shared/lib/js/head.min.js"></script>
+		<script src="../../shared/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// I suspect there's a better way to do this...
+				width: 1920 * 0.8,
+				height: 1080,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../shared/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../shared/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../shared/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../shared/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
