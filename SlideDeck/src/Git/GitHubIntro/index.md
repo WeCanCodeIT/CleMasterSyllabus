@@ -16,7 +16,7 @@ theme: league
 
 ## Code version control
 
-<div float="right" class="img" id="img-comic"><img src="./resources/Git2.png" /></div>
+<div float="right" class="img img-center"><img src="./resources/Git2.png" /></div>
 
 - When you are developing software, you will almost certainly be doing so as part of a team.
 
@@ -88,15 +88,15 @@ theme: league
 
 ## GitBash cont.
 
-<div float="right" class="img"><img src="./resources/Git8.png" /></div>
+<div float="right" class="img img-center"><img src="./resources/Git8a.png" /></div>
 
 - To navigate through GitBash, we use the DOS command line.
 
 - We want to navigate to the folder in Visual Studio where our <mark>HelloWorld</mark> program resides.
 
-- Type the following: **cd documents > cd Visual\ Studio\ 2017 > cd Projects > cd HelloWorld**
+- Type the following: **cd source > cd repos > cd HelloWorld**
 
-- Shortcut: type a few letters of the desired directory and press <mark>Tab</mark> to automatically complete, e.g. `cd doc` + Tab
+- Shortcut: type a few letters of the desired directory and press <mark>Tab</mark> to automatically complete, e.g. `cd sou` + Tab
 
 ## GitBash cont.
 
@@ -314,7 +314,7 @@ git push -u origin master //pushes local repository to GitHub
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
 
-#img-comic {
+.img-center {
     display: block;
     margin-left: 0px;
     margin-right: auto;

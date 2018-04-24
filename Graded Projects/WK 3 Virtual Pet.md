@@ -3,9 +3,10 @@
 ### [Submission Link](https://docs.google.com/forms/d/e/1FAIpQLScUEvl_ZgH_OgBu0zbg_WIvB6zBSkkXh7wfxqjv4LwLdBDxLg/viewform)
 
 ## Overview
-Create a console application for an interactive game-like virtual pet program. The user must be able to select different tasks or activities from a menu.
+As a junior developer, you are being tasked with create a console application for an interactive, game-like virtual pet program. The user must be able to select different tasks or activities from a menu.
 
 ## Skills Required
+In order to deliver this application solution, you will need the following skills and knowledge.
 -  Loops
 -  Arrays
 -  Methods
@@ -14,6 +15,15 @@ Create a console application for an interactive game-like virtual pet program. T
 -  Creating Classes and Access Modifiers
 
 ## Tasks
+
+### Project Prerequisites
+
+After you have completed all coding and testing of your application, you will ensure the product owner has access to the application by ensuring the following:
+- [ ] Correct GitHub link is properly submitted.
+- [ ] GitHub repository created from correct folder and contains solution file.
+
+###  User Interface Requirements, Part 1
+
 - [ ] VirtualPet class
   - [ ] Fields (at least three)
   - [ ] Properties (at least three)

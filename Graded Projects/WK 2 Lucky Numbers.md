@@ -23,8 +23,8 @@ In order to deliver this application solution, you will need the following skill
 ### Project Prerequisites
 
 After you have completed all coding and testing of your application, you will ensure the product owner has access to the application by ensuring the following:
-- [ ] Correct GitHub link is properly submitted
-- [ ] GitHub repository created from correct folder and contains solution file
+- [ ] Correct GitHub link is properly submitted.
+- [ ] GitHub repository created from correct folder and contains solution file.
 
 ###  User Interface Requirements, Part 1
 
