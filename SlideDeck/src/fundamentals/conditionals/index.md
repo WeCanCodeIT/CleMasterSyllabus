@@ -38,7 +38,7 @@ theme: league
 
 - Volunteer time
 
-- Let's start by <mark>Commenting out</mark> part ten.
+- Let's start by <mark>commenting out</mark> part ten.
 
 <div class="fragment">
 Question time: What are two of the methods we can use to comment code?

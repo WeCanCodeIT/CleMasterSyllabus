@@ -66,13 +66,16 @@ During application development process, the following application logic requirem
 	- [ ] The application MUST output to the console to notify the user.
 	- [ ] As the junior developer, the product owner has given you flexibility to decide when and how to meet this requirement.
 	- [ ] The statement below is an example of the desired output:
-  ```
+ 
+```
   You guessed 3 numbers correctly!
- ``` 
+```
+
 - [ ] The application MUST calculate the user's winnings based on the number of numbers guessed correctly.
 - [ ] The application MUST display the user's winnings to the console.
 	- [ ] As the junior developer, the product owner has given you flexibility to decide when and how to meet this requirement.
 	- [ ] The statement below is an example of the desired output:
+ 
  ``` 
   You won $256,877.23!
  ``` 
@@ -83,14 +86,17 @@ During application development process, the following user interface (UI) requir
 - [ ] The application MUST provide the user the opportunity to play the game again.
 	- [ ] If the user says yes, the application MUST execute the program from the beginning.
 	- [ ] If the user says no, the application MUST display the following statement exactly as written below before exiting:
+
 ```	
-	Thanks for playing! 
+Thanks for playing! 
 ```
+
 ## Stretch Tasks:
 
 During application development process, the following application logic requirements were identified. These requirements are not mandatory and are in no way a requirement for delivering the application.
 - [ ] The application COULD ensure none of the generated numbers are repeated. 
 - [ ] The following is an example of valid output: 
+  
   ```
   Lucky Number: 12
   Lucky Number: 47
@@ -99,8 +105,10 @@ During application development process, the following application logic requirem
   Lucky Number: 19
   Lucky Number: 35
   ```
+
 - [ ] The following is an example of invalid output:
-    ```
+  
+  ```
   Lucky Number: 12
   Lucky Number: 47
   Lucky Number: 28
@@ -108,5 +116,6 @@ During application development process, the following application logic requirem
   Lucky Number: 19
   Lucky Number: 12
   ```
+
 - [ ] The application COULD replace a duplicate number with a new number.
 - [ ] The appplication COULD repeat this process until there are no duplicate numbers.
