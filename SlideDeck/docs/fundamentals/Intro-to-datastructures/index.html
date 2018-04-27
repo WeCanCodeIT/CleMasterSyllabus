@@ -6,7 +6,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Arrays - Data Structures</title>
+		<title>Intro to Data Structures - Data Structures</title>
 
 		<meta name="description" content="- description not found -">
 		<meta name="author"      content="Your Name Here">
@@ -46,7 +46,7 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1 style="text-align: center">Arrays</h1>
+					<h1 style="text-align: center">Intro to Data Structures</h1>
 					<h3 style="text-align: center">Data Structures</h3>
 					<div id="logo">
 						<img src="../../shared/images/wcci-logo.png">
@@ -79,9 +79,6 @@
   <li>
     <p>Lists are created, accessed, and manipulated in much the same way we create, access, and manipulate arrays.</p>
   </li>
-  <li>
-    <p>We will go into depth on lists in a future lecture.</p>
-  </li>
 </ul>
 
 
@@ -104,9 +101,6 @@
   </li>
   <li>
     <p>We can also store to the <mark>KeyValuePairs</mark> as different data types. Thus, the Key can be an <code>int</code>, while its value can be a <code>string</code>.</p>
-  </li>
-  <li>
-    <p>We will see in a future lecture how to create, access, and manipulate Dictionaries, although they will not be the focus of our data structure teaching efforts</p>
   </li>
 </ul>
 
@@ -685,6 +679,218 @@ Console.WriteLine("foo".IndexOf('o')); //prints "1"
 Why is the index value 10?
 </div>
 
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="lists">Lists</h1>
+
+<p>We have already seen one data collection type, an <code>array</code>. An <code>array</code> is a collection of values that have the same type, like <code>int</code> or <code>string</code>.</p>
+
+<p>There are several types of data collections in C#, many of which you will see during the upcoming weeks and even more during final projects.</p>
+
+<p>Lets talk about <code>Lists</code>.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="remember-arrays-are-fixed-size">Remember Arrays are fixed size</h2>
+
+<p>We can’t change the size of an array once we’ve created it. It will never grow or shrink. This array will always have a <code>length</code> of three:</p>
+
+<p><code class="language-C#" data-noescape="">
+int[] myArray = {1, 2, 3};
+</code></p>
+
+<p>If I wanted to add an element to this array, I’d generally do something like this (but hopefully I’d use a loop):</p>
+
+<pre><code class="language-C#">int[] oldArray = myArray;
+
+myArray = new int[4];
+for(int index = 0; index &lt; oldArray.Length; index++) 
+{
+  myArray[index] = oldArray[index];
+}
+myArray[3] = 42;
+</code></pre>
+
+<p>We are forced to create a new array and assigned it to our <code>myArray</code> variable. Imagine if we needed to insert a new element in the middle? <em>Yuck!</em></p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="lets-return-to-hello-world">Let’s Return to Hello World</h2>
+
+<ul>
+  <li>
+    <p>Open your Hello World application.</p>
+  </li>
+  <li>
+    <p>We are going to comment out our arrays, and replace them with a list.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="how-to-initialize-a-list">How To Initialize a List</h2>
+
+<ul>
+  <li>
+    <p>A list is created with the <mark>new</mark> keyword, which we will see a lot more of soon!</p>
+  </li>
+  <li>
+    <p>Lets start by Creating an empty list.</p>
+  </li>
+  <li>
+    <p>Enter the following code below the last <mark>foodList</mark> array addition.</p>
+  </li>
+</ul>
+
+<pre><code class="language-C#">List&lt;string&gt; foodList = new List&lt;string&gt;();
+</code></pre>
+<ul>
+  <li>We have now created a new datastructure which gives us the flexibility to add as many elements we desire.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="add-to-our-empty-list">Add To Our Empty List</h2>
+
+<ul>
+  <li>
+    <p>We will be talking a lot more about objects this week, but it is good for you to know that Lists are a type of object.</p>
+  </li>
+  <li>Lists have several built-in properties and methods, which we will go over now. Some of those are:
+    <ul>
+      <li><code>.Count</code></li>
+      <li><code>.Insert()</code></li>
+      <li><code>.Add()</code></li>
+      <li><code>.Remove()</code></li>
+    </ul>
+  </li>
+  <li>
+    <p>Lets start with the <code>.Add()</code> method.</p>
+  </li>
+  <li>
+    <p>We add elements to a list in the following manner.</p>
+  </li>
+  <li>Enter the following code below your foodList declaration</li>
+</ul>
+
+<pre><code class="language-C#">foodList.Add("Milk");
+foodList.Add("Fruit");
+foodList.Add("Meat");
+foodList.Add("Wine");
+foodList.Add("Bread");
+</code></pre>
+<ul>
+  <li>Notice the similarities and differences between creating a new List versus creating an array.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="initializing-an-empty-list">Initializing an Empty List</h2>
+
+<ul>
+  <li>As we have just demonstrated with lists we don’t have to set a size when we create an empty list.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="mutable">Mutable</h2>
+
+<ul>
+  <li>Unlike an array, a List is <strong>mutable</strong>, meaning that it does not have a fixed size and can increase or decrease in size.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="printing-elements-in-a-list">Printing Elements in a List</h2>
+
+<ul>
+  <li>Printing a list is no differant that printing and array with one exception we will note later.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="count-remove-insert">Count, Remove, Insert</h2>
+
+<ul>
+  <li>
+    <p>The <code>.Count</code> property is the List version of the <code>.Length</code> property that is built in to arrays.</p>
+  </li>
+  <li>
+    <p><code>.Count</code> tells us the size of the list.</p>
+  </li>
+  <li>
+    <p>The <code>.Remove</code> property removes an element from the list.</p>
+  </li>
+  <li>
+    <p>The <code>.Insert</code> property inserts an element at a specific index.</p>
+  </li>
+  <li>
+    <p>Enter the following code below your foodList declaration</p>
+  </li>
+</ul>
+
+<pre><code class="language-C#">foodList.Add("Pepsi");
+            Console.WriteLine("{0}, {1}, {2}, {3}, {4}, {5}", foodList[0], foodList[1], foodList[2], foodList[3], foodList[4], foodList[5]);
+            foodList.Remove("Pepsi");
+            Console.WriteLine("{0}, {1}, {2}, {3}, {4}", foodList[0], foodList[1], foodList[2], foodList[3], foodList[4]);
+            foodList.Insert(1, "Pepsi");
+            Console.WriteLine("{0}, {1}, {2}, {3}, {4}, {5}", foodList[0], foodList[1], foodList[2], foodList[3], foodList[4], foodList[5]);
+            foodList.RemoveAt(1);
+            Console.WriteLine("{0}, {1}, {2}, {3}, {4}", foodList[0], foodList[1], foodList[2], foodList[3], foodList[4]);
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="many-other-option-with-lists">Many Other Option with Lists</h2>
+
+<ul>
+  <li>
+    <p>We have many other options and tools C# provides when working with lists.</p>
+  </li>
+  <li>
+    <p>As we get further into the lesson, we will highlight those options and tools.</p>
+  </li>
+</ul>
 
         </section>
         
