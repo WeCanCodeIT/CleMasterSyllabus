@@ -880,6 +880,775 @@ villaArray.pop(villa);
 </code></pre>
 
 
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="have-you-had-enough-of-tuscanny-villa">Have you had enough of Tuscanny Villa?</h2>
+
+<ul>
+  <li>
+    <p>Lets switch gears and build a fun application.</p>
+  </li>
+  <li>
+    <p>In this application, we will really expand out JavaScipt toolbox.</p>
+  </li>
+  <li>
+    <p>We are going to us the tools we have already learned HTML, CSS, and Bootstrap combined with Javascript to build a personality quiz.</p>
+  </li>
+  <li>
+    <p>Lets create a new blank ASP.NET Empty website in Visual Studio.</p>
+  </li>
+  <li>
+    <p>Lets name is <mark>PersonalityQuiz</mark></p>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>We will utilize pair programming to accomplish this task.</p>
+  </li>
+  <li>
+    <p>Create a blank <mark>site.css</mark> file.</p>
+  </li>
+  <li>
+    <p>Create a blank <mark>script.js</mark> file.</p>
+  </li>
+  <li>
+    <p>We should all be here.</p>
+  </li>
+</ul>
+<div class="fragment">
+<div style="text-align:center" class="img1"><img src="./resources/js14.png" /></div>
+
+</div>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>Lets start by creating the inital greetings box on the <mark>index.html</mark> page.</p>
+  </li>
+  <li>
+    <p>Enter the following code on your <mark>index.html</mark> file.</p>
+  </li>
+</ul>
+
+<pre><code class="language-HTML">&lt;div id="quizContainer"&gt;
+
+&lt;h1&gt;What kind of animal ?&lt;/h1&gt;
+
+&lt;div id="quizZone"&gt;
+
+    &lt;p&gt;Click &lt;strong&gt;Start Quiz&lt;/strong&gt; to find out!&lt;/p&gt;
+
+    &lt;button&gt;Start Quiz&lt;/button&gt;
+
+&lt;/div&gt;
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>The object of this website is to ask the user five questions.</p>
+  </li>
+  <li>
+    <p>Based on the answers the user give, the website will choose the users spirit animal.</p>
+  </li>
+  <li>
+    <p>We will use no other HTML pages to accomplish this task.</p>
+  </li>
+  <li>
+    <p>When the user selects the <mark>Start Quiz</mark> button, the following MUST appear.</p>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>We are going to need to incorporate a Javascript solution to complete this application</p>
+  </li>
+  <li>
+    <p>Lets discuss some of the code we will use.</p>
+  </li>
+  <li>
+    <p>We are going to use Javascript to do the heavy lifting in our website.</p>
+  </li>
+  <li>
+    <p>Some of the things we are going use JS for are as follows:</p>
+    <ul>
+      <li>Define the questions and answers</li>
+      <li>Associate an answer with a pet</li>
+      <li>Keep track of the number of times a pet is chosen</li>
+      <li>Keep track of the index number for each question</li>
+      <li>Funtions that allow JS to perform all the necessary requirements.</li>
+    </ul>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>The first step in our process is to create some variables.</p>
+  </li>
+  <li>
+    <p>These variable will be used to keep track of the number of times a pet is chosen.</p>
+  </li>
+  <li>
+    <p>Copy and paste the following code in your <mark>script</mark> file:</p>
+  </li>
+</ul>
+
+<pre><code class="language-HTML">// This keeps track of the number of questions the student has answered that match each result
+// It will be reset each time the quiz starts
+const scoreKeeper = {
+    dog: 0,
+    cat: 0,
+    parrot: 0,
+    turtle: 0,
+};
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-3">We should all be here</h2>
+
+<div style="text-align:center" class="img1"><img src="./resources/js17.png" /></div>
+
+<ul>
+  <li>
+    <p>Next we need to create a counter to keep track of the index number of the question we are on</p>
+  </li>
+  <li>
+    <p>Enter the following code in your <mark>script.js</mark> file.</p>
+  </li>
+</ul>
+
+<pre><code class="language-HTML">let currentQuestionIndex = 0;
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>Our next task is to enter the questions, the answers to each question, and the animal chosen based on each choice.</p>
+  </li>
+  <li>
+    <p>Enter the following code in your <mark>script.js</mark> file.</p>
+  </li>
+</ul>
+
+<pre><code class="language-HTML">const questions = [
+    {
+        text: 'What are you most likely to be doing at a party?',
+        options: [
+            {
+                text: 'Playing games and making new friends',
+                point: 'dog',
+            },
+            {
+                text: 'Watching from a corner, hoping someone interesting shows up',
+                point: 'cat',
+            },
+            {
+                text: 'Partying! Dressed up, chatting it up, dancing... maybe a little loud',
+                point: 'parrot',
+            },
+            {
+                text: 'I would help set up beforehand and make sure everything goes smoothly',
+                point: 'turtle',
+            },
+        ],
+    }
+]
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>Lets take a minute to discuss the structure of the previous code.</p>
+  </li>
+  <li>
+    <p>Questions can be added and modified freely.</p>
+  </li>
+  <li>
+    <p>Each question must have the same structure.</p>
+  </li>
+  <li>
+    <p>The whole <code>questions</code> variable is an array, with square brackets: []</p>
+  </li>
+  <li>
+    <p>Individual questions are objects, with curly braces: {}</p>
+  </li>
+  <li>
+    <p>The options/answers of each question are another array: []</p>
+  </li>
+  <li>
+    <p>Each option is its own object {} with two properties: text and point</p>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>We will come back later and add the remaining questions.</p>
+  </li>
+  <li>
+    <p>Lets create the JS functions which will allow our website to operate.</p>
+  </li>
+  <li>
+    <p>Our first function will start the quiz.</p>
+  </li>
+  <li>
+    <p>Enter the following code into your <mark>script.js</mark> file.</p>
+  </li>
+</ul>
+
+<pre><code class="language-HTML">function startQuiz() {
+
+    // This puts a message in the console
+    // Press Ctrl+Shift+I to open the console in Chrome
+    // (Google how to open the dev tools in your browser if you're not sure)
+    console.log('Quiz started!');
+
+    // Reset score
+    // This loops over each of the properties in the object
+    for (let result in scoreKeeper) {
+        // We are setting that property's value back to zero
+        scoreKeeper[result] = 0;
+    }
+
+    // Ask first question
+    // This function is defined below
+    // We are passing the first question in our questions array into this function
+    askQuestion(questions[0]);
+}
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>Enter the following code into your <mark>script.js</mark> file.</p>
+  </li>
+  <li>
+    <p>The first part of this funtion is the Clear quiz zone.</p>
+  </li>
+  <li>
+    <p>First we get the element in the HTML by using its “id” value.</p>
+  </li>
+  <li>
+    <p>Next, while it still has a “first child element”, we remove that element.</p>
+  </li>
+  <li>
+    <p>This will continue until the parent is empty.</p>
+  </li>
+</ul>
+
+<pre><code class="language-HTML">// Display Question
+function askQuestion(question) {
+    let quizZone = document.getElementById('quizZone');
+    while (quizZone.firstChild) {
+        quizZone.removeChild(quizZone.firstChild);
+    }
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>Enter the following code into your <mark>script.js</mark> file.</p>
+  </li>
+  <li>
+    <p>This next part of the function will render the question.</p>
+  </li>
+  <li>
+    <p>We will create HTML elements here and is basically the same as writing &lt;p&gt;My paragraph&lt;/p&gt; in HTML</p>
+  </li>
+</ul>
+
+<pre><code class="language-HTML">    let questionP = document.createElement('p');
+    questionP.innerText = question.text;
+    quizZone.appendChild(questionP);
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>Enter the following code into your <mark>script.js</mark> file.</p>
+  </li>
+  <li>
+    <p>This next part of our function will create a box to hold answers.</p>
+  </li>
+  <li>
+    <p>These are more elements that we are creating from scratch.</p>
+  </li>
+</ul>
+
+<pre><code class="language-HTML">    let answerDiv = document.createElement('div');
+    answerDiv.setAttribute('id', 'quizAnswers');
+    quizZone.appendChild(answerDiv);
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>Enter the following code into your <mark>script.js</mark> file.</p>
+  </li>
+  <li>
+    <p>The next part of our function render the answers choices for each question.</p>
+  </li>
+  <li>
+    <p>Lets discuss the operation of the forEach loop we see in this render section</p>
+
+    <ul>
+      <li>Here, we say:
+        <ul>
+          <li>take my question</li>
+          <li>take its ‘options’ property (an array)</li>
+          <li>for each element in that array, do a thing</li>
+          <li>and then, inside the forEach() parentheses, we describe that thing</li>
+          <li>option` is this individual option</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<pre><code class="language-HTML">question.options.forEach((option, i) =&gt; {
+
+// Create a list item for this option
+let optionDiv = document.createElement('div');
+optionDiv.setAttribute('class', 'quizOption');
+optionDiv.innerText = option.text;
+answerDiv.appendChild(optionDiv);
+// Add the index to the optionDiv so we can use it later
+optionDiv.index = i;
+
+// Attache event listeners
+// This says: when optionDiv is clicked, call the acceptAnswer function
+optionDiv.onclick = acceptAnswer;
+    });
+}
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>Enter the following code into your <mark>script.js</mark> file.</p>
+  </li>
+  <li>
+    <p>This function will accept the answers from the user</p>
+    <pre><code class="language-HTML">function acceptAnswer(event) {
+  // Property we added ourselves
+  let selectedOptionIndex = event.target.index;
+  console.log({ selectedOptionIndex });
+
+  // Add point according to the question and option
+  let currentQuestion = questions[currentQuestionIndex];
+  let selectedOption = currentQuestion.options[selectedOptionIndex];
+  scoreKeeper[selectedOption.point]++;
+
+  console.log(JSON.stringify(scoreKeeper, null, 4));
+    
+  // Go to next question OR calculate result
+  currentQuestionIndex++;
+  if (currentQuestionIndex === questions.length) {
+      calculateResult();
+  }
+  else {
+      askQuestion(questions[currentQuestionIndex]);
+  }
+}
+</code></pre>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>Enter the following code into your <mark>script.js</mark> file.</p>
+  </li>
+  <li>
+    <p>This function will calculate the results based on each user answer</p>
+    <pre><code class="language-HTML">function calculateResult() {
+  // Add up points, taking the FIRST/HIGHEST score
+  let quizResult = '';
+
+  let possibleResults = Object.keys(scoreKeeper);
+
+  for (let i = 0; i &lt; possibleResults.length; i++) {
+      let thisPossibleResult = possibleResults[i];
+
+      if (!quizResult || scoreKeeper[quizResult] &lt; scoreKeeper[thisPossibleResult]) {
+          quizResult = thisPossibleResult;
+      }
+  }
+
+  // Display result
+  showResult(quizResult);
+}
+</code></pre>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>Enter the following code into your <mark>script.js</mark> file.</p>
+  </li>
+  <li>
+    <p>This function will display the results based on the score from calculateResult().</p>
+    <pre><code class="language-HTML">function showResult(result) {
+  // Hide the quizZone (the quiz is over)
+  let quizZoneDiv = document.getElementById('quizZone');
+  quizZoneDiv.style.display = 'none'; // hide it by adjusting its style (CSS) directly
+
+  // Find the hidden &lt;div&gt; that contains the results
+  let resultDiv = document.getElementById('answer-' + result);
+  resultDiv.classList.toggle('hide'); // un-hide it by removing the '.hide' class
+
+  // Show the 'Take Again' button
+  let takeAgainButton = document.querySelector('#takeAgain');
+  takeAgainButton.style.display = 'inline'; // Just a regular inline element that flows in the text, like a word or phrase
+}
+</code></pre>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>Now that we have completed the JS portion of our application, lets address the HTML page.</p>
+  </li>
+  <li>
+    <p>Enter the following code into your <mark>index.html</mark> file.</p>
+  </li>
+  <li>
+    <p>Add the following button in between the following lines of code</p>
+  </li>
+</ul>
+
+<pre><code class="language-HTML">&lt;h1&gt;What kind of animal ?&lt;/h1&gt;
+
+&lt;button id="takeAgain" style="display: none; float: right;" onclick="window.location.reload()"&gt;Take Again&lt;/button&gt;
+
+&lt;div id="quizZone"&gt;
+</code></pre>
+<ul>
+  <li>Add an <mark>onclick()</mark> to the <mark>Start Quiz</mark> button to call the function <mark>startQuiz()</mark>.</li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>Lets enter the final results that will be displayed.</p>
+  </li>
+  <li>
+    <p>Enter the following code into your <mark>index.html</mark> file.</p>
+  </li>
+</ul>
+
+<pre><code class="language-HTML">&lt;div&gt;
+
+&lt;!-- The results below are hidden by CSS when the page loads.
+    When the quiz is finished, JavaScript will make the correct result visible.
+--&gt;
+&lt;div id="answer-dog" class="answer dog hide"&gt;
+    &lt;h4&gt;You are a dog!&lt;/h4&gt;
+    &lt;p&gt;
+        &lt;img src="images/dog.jpg" /&gt;
+        Pros: active, friendly, fun
+        &lt;br&gt;
+        Cons: short attention span, really want to be liked, angry when hungry
+        &lt;/ul&gt;
+    &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>Enter the following code into your <mark>index.html</mark> file.</li>
+</ul>
+
+<pre><code class="language-HTML">&lt;div id="answer-cat" class="answer cat hide"&gt;
+    &lt;h4&gt;You are a cat!&lt;/h4&gt;
+    &lt;p&gt;
+        &lt;img src="images/cat.jpg" /&gt;
+        Pros: know how to get what you want, know how to make people feel good
+        &lt;br&gt;
+        Cons: easy for your ego to get hurt, tend to be a loner, sometimes would rather scheme than just communicate about what you need
+    &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>Enter the following code into your <mark>index.html</mark> file.</li>
+</ul>
+
+<pre><code class="language-HTML">&lt;div id="answer-parrot" class="answer parrot hide"&gt;
+    &lt;h4&gt;You are a parrot!&lt;/h4&gt;
+    &lt;p&gt;
+        &lt;img src="images/parrot.jpg" /&gt;
+        Pros: social, well-informed, great at fitting in
+        &lt;br&gt;
+        Cons: can be vain, sometimes speaks before thinking
+    &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>Enter the following code into your <mark>index.html</mark> file.</li>
+</ul>
+
+<pre><code class="language-HTML">&lt;div id="answer-turtle" class="answer turtle hide"&gt;
+    &lt;h4&gt;You are a turtle!&lt;/h4&gt;
+    &lt;p&gt;
+        &lt;img src="images/turtle.jpg" /&gt;
+        Pros: good listener, resilient, dedicated and can see things through.
+        &lt;br&gt;
+        Cons: Quiet, guarded, enduring, sturdy
+    &lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+ &lt;/div&gt;
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>Finally lets add the following code to your <mark>style.css</mark> file.</li>
+</ul>
+
+<pre><code class="language-C#">	body {
+		font-family: Calibri;
+		background: skyblue;
+	}
+
+	#quizContainer {
+		border-width: 5px;
+		border-style: solid;
+		border-color: #09f;
+		border-radius: 15px;
+		padding: 15px;
+		background: #fff;
+
+		min-width: 400px;
+		max-width: 800px;
+
+		/* causes this element to float in the middle of its parent */
+		margin: auto;
+
+		/* ONLY overrides margin-top ... other margins are same as declared above */
+		margin-top: 50px;
+	}
+
+
+
+&lt;!-- _S9SLIDE_  --&gt;
+
+
+
+- Add the following code to your &lt;mark&gt;style.css&lt;/mark&gt; file.
+
+```C#
+.quizOption {
+    cursor: pointer;
+    margin: 5px;
+    padding: 3px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.quizOption:hover {
+    color: #fff;
+    background: #333;
+}
+
+.answer {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 1em;
+}
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>Add the following code to your <mark>style.css</mark> file.</li>
+</ul>
+
+<pre><code class="language-C#">.answer p::after {
+    content: ' ';
+    display: block;
+    clear: both;
+}
+
+.answer img {
+    float: left;
+    width: 300px;
+    height: auto;
+    
+    margin: 0 1em 1em 0;
+}
+
+.hide {
+    display: none;
+}
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>We have all the tools you need to construct a personality quiz.</p>
+  </li>
+  <li>
+    <p>Lets have some fun shall we!!</p>
+  </li>
+  <li>
+    <p>I want each team to make their own personality quiz.</p>
+  </li>
+  <li>
+    <p>You must do the following</p>
+
+    <ul>
+      <li>
+        <p>Design your own quiz with six questions and answers</p>
+      </li>
+      <li>
+        <p>Choose your own options</p>
+      </li>
+      <li>
+        <p>Choose your own results</p>
+      </li>
+      <li>
+        <p>Include images into your results</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Be sure to add a <mark>;</mark> at the end of the closing <mark>}</mark> in between questions.</p>
+  </li>
+</ul>
+
+
 
         </section>
         

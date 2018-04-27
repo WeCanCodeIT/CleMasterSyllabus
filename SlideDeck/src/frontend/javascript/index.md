@@ -515,6 +515,518 @@ villaArray.push(villa);
 //This removes the last element from our villaArray
 villaArray.pop(villa);     
 ```
+## Have you had enough of Tuscanny Villa?
+
+- Lets switch gears and build a fun application.
+
+- In this application, we will really expand out JavaScipt toolbox.
+
+- We are going to us the tools we have already learned HTML, CSS, and Bootstrap combined with Javascript to build a personality quiz.
+
+- Lets create a new blank ASP.NET Empty website in Visual Studio.
+
+- Lets name is <mark>PersonalityQuiz</mark>
+
+!SLIDE
+
+- We will utilize pair programming to accomplish this task.
+
+- Create a blank <mark>site.css</mark> file.
+
+- Create a blank <mark>script.js</mark> file.
+
+- We should all be here.
+<div class="fragment">
+<div style="text-align:center" class="img1"><img src="./resources/js14.png" /></div>
+
+</div>
+
+!SLIDE
+
+- Lets start by creating the inital greetings box on the <mark>index.html</mark> page.
+
+- Enter the following code on your <mark>index.html</mark> file.
+
+```HTML
+<div id="quizContainer">
+
+<h1>What kind of animal ?</h1>
+
+<div id="quizZone">
+
+    <p>Click <strong>Start Quiz</strong> to find out!</p>
+
+    <button>Start Quiz</button>
+
+</div>
+````
+
+
+!SLIDE
+
+- The object of this website is to ask the user five questions.
+
+- Based on the answers the user give, the website will choose the users spirit animal.
+
+- We will use no other HTML pages to accomplish this task.
+
+- When the user selects the <mark>Start Quiz</mark> button, the following MUST appear.
+
+!SLIDE
+
+- We are going to need to incorporate a Javascript solution to complete this application
+
+- Lets discuss some of the code we will use.
+
+- We are going to use Javascript to do the heavy lifting in our website.
+
+- Some of the things we are going use JS for are as follows:
+	- Define the questions and answers
+	- Associate an answer with a pet
+	- Keep track of the number of times a pet is chosen
+	- Keep track of the index number for each question
+	- Funtions that allow JS to perform all the necessary requirements.
+
+!SLIDE
+
+- The first step in our process is to create some variables.
+
+- These variable will be used to keep track of the number of times a pet is chosen.
+
+- Copy and paste the following code in your <mark>script</mark> file:
+
+````HTML
+// This keeps track of the number of questions the student has answered that match each result
+// It will be reset each time the quiz starts
+const scoreKeeper = {
+    dog: 0,
+    cat: 0,
+    parrot: 0,
+    turtle: 0,
+};
+````
+## We should all be here
+
+<div style="text-align:center" class="img1"><img src="./resources/js17.png" /></div>
+
+- Next we need to create a counter to keep track of the index number of the question we are on
+
+- Enter the following code in your <mark>script.js</mark> file.
+
+```HTML
+let currentQuestionIndex = 0;
+````
+!SLIDE
+
+- Our next task is to enter the questions, the answers to each question, and the animal chosen based on each choice.
+
+- Enter the following code in your <mark>script.js</mark> file.
+
+```HTML
+const questions = [
+    {
+        text: 'What are you most likely to be doing at a party?',
+        options: [
+            {
+                text: 'Playing games and making new friends',
+                point: 'dog',
+            },
+            {
+                text: 'Watching from a corner, hoping someone interesting shows up',
+                point: 'cat',
+            },
+            {
+                text: 'Partying! Dressed up, chatting it up, dancing... maybe a little loud',
+                point: 'parrot',
+            },
+            {
+                text: 'I would help set up beforehand and make sure everything goes smoothly',
+                point: 'turtle',
+            },
+        ],
+    }
+]
+````
+!SLIDE
+
+- Lets take a minute to discuss the structure of the previous code.
+
+- Questions can be added and modified freely.
+
+- Each question must have the same structure.
+
+- The whole `questions` variable is an array, with square brackets: []
+
+- Individual questions are objects, with curly braces: {}
+
+- The options/answers of each question are another array: []
+
+- Each option is its own object {} with two properties: text and point
+
+!SLIDE
+
+- We will come back later and add the remaining questions.
+
+- Lets create the JS functions which will allow our website to operate.
+
+- Our first function will start the quiz.
+
+- Enter the following code into your <mark>script.js</mark> file.
+
+```HTML
+function startQuiz() {
+
+    // This puts a message in the console
+    // Press Ctrl+Shift+I to open the console in Chrome
+    // (Google how to open the dev tools in your browser if you're not sure)
+    console.log('Quiz started!');
+
+    // Reset score
+    // This loops over each of the properties in the object
+    for (let result in scoreKeeper) {
+        // We are setting that property's value back to zero
+        scoreKeeper[result] = 0;
+    }
+
+    // Ask first question
+    // This function is defined below
+    // We are passing the first question in our questions array into this function
+    askQuestion(questions[0]);
+}
+````
+!SLIDE
+
+- Enter the following code into your <mark>script.js</mark> file.
+
+- The first part of this funtion is the Clear quiz zone.
+
+- First we get the element in the HTML by using its "id" value.
+    
+- Next, while it still has a "first child element", we remove that element.
+
+- This will continue until the parent is empty.
+
+```HTML
+// Display Question
+function askQuestion(question) {
+    let quizZone = document.getElementById('quizZone');
+    while (quizZone.firstChild) {
+        quizZone.removeChild(quizZone.firstChild);
+    }
+````
+!SLIDE
+
+- Enter the following code into your <mark>script.js</mark> file.
+
+- This next part of the function will render the question. 
+
+- We will create HTML elements here and is basically the same as writing <p>My paragraph</p> in HTML
+
+```HTML
+    let questionP = document.createElement('p');
+    questionP.innerText = question.text;
+    quizZone.appendChild(questionP);
+````
+!SLIDE
+
+- Enter the following code into your <mark>script.js</mark> file.
+
+- This next part of our function will create a box to hold answers.
+
+- These are more elements that we are creating from scratch.
+
+```HTML
+    let answerDiv = document.createElement('div');
+    answerDiv.setAttribute('id', 'quizAnswers');
+    quizZone.appendChild(answerDiv);
+````
+!SLIDE
+
+- Enter the following code into your <mark>script.js</mark> file.
+
+- The next part of our function render the answers choices for each question.
+
+- Lets discuss the operation of the forEach loop we see in this render section 
+
+	- Here, we say:
+		- take my question
+		- take its 'options' property (an array)
+		- for each element in that array, do a thing
+		- and then, inside the forEach() parentheses, we describe that thing
+		- option` is this individual option
+
+```HTML
+question.options.forEach((option, i) => {
+
+// Create a list item for this option
+let optionDiv = document.createElement('div');
+optionDiv.setAttribute('class', 'quizOption');
+optionDiv.innerText = option.text;
+answerDiv.appendChild(optionDiv);
+// Add the index to the optionDiv so we can use it later
+optionDiv.index = i;
+
+// Attache event listeners
+// This says: when optionDiv is clicked, call the acceptAnswer function
+optionDiv.onclick = acceptAnswer;
+    });
+}
+````
+!SLIDE
+
+- Enter the following code into your <mark>script.js</mark> file.
+
+- This function will accept the answers from the user
+```HTML
+function acceptAnswer(event) {
+    // Property we added ourselves
+    let selectedOptionIndex = event.target.index;
+    console.log({ selectedOptionIndex });
+
+    // Add point according to the question and option
+    let currentQuestion = questions[currentQuestionIndex];
+    let selectedOption = currentQuestion.options[selectedOptionIndex];
+    scoreKeeper[selectedOption.point]++;
+
+    console.log(JSON.stringify(scoreKeeper, null, 4));
+    
+    // Go to next question OR calculate result
+    currentQuestionIndex++;
+    if (currentQuestionIndex === questions.length) {
+        calculateResult();
+    }
+    else {
+        askQuestion(questions[currentQuestionIndex]);
+    }
+}
+```
+!SLIDE
+
+- Enter the following code into your <mark>script.js</mark> file.
+
+- This function will calculate the results based on each user answer
+```HTML
+function calculateResult() {
+    // Add up points, taking the FIRST/HIGHEST score
+    let quizResult = '';
+
+    let possibleResults = Object.keys(scoreKeeper);
+
+    for (let i = 0; i < possibleResults.length; i++) {
+        let thisPossibleResult = possibleResults[i];
+
+        if (!quizResult || scoreKeeper[quizResult] < scoreKeeper[thisPossibleResult]) {
+            quizResult = thisPossibleResult;
+        }
+    }
+
+    // Display result
+    showResult(quizResult);
+}
+````
+!SLIDE
+
+- Enter the following code into your <mark>script.js</mark> file.
+
+- This function will display the results based on the score from calculateResult().
+```HTML
+function showResult(result) {
+    // Hide the quizZone (the quiz is over)
+    let quizZoneDiv = document.getElementById('quizZone');
+    quizZoneDiv.style.display = 'none'; // hide it by adjusting its style (CSS) directly
+
+    // Find the hidden <div> that contains the results
+    let resultDiv = document.getElementById('answer-' + result);
+    resultDiv.classList.toggle('hide'); // un-hide it by removing the '.hide' class
+
+    // Show the 'Take Again' button
+    let takeAgainButton = document.querySelector('#takeAgain');
+    takeAgainButton.style.display = 'inline'; // Just a regular inline element that flows in the text, like a word or phrase
+}
+````
+!SLIDE
+- Now that we have completed the JS portion of our application, lets address the HTML page.
+
+- Enter the following code into your <mark>index.html</mark> file.
+
+- Add the following button in between the following lines of code 
+
+```HTML
+<h1>What kind of animal ?</h1>
+
+<button id="takeAgain" style="display: none; float: right;" onclick="window.location.reload()">Take Again</button>
+
+<div id="quizZone">
+````
+- Add an <mark>onclick()</mark> to the <mark>Start Quiz</mark> button to call the function <mark>startQuiz()</mark>.
+
+!SLIDE
+
+- Lets enter the final results that will be displayed.
+
+- Enter the following code into your <mark>index.html</mark> file.
+
+```HTML
+<div>
+
+<!-- The results below are hidden by CSS when the page loads.
+    When the quiz is finished, JavaScript will make the correct result visible.
+-->
+<div id="answer-dog" class="answer dog hide">
+    <h4>You are a dog!</h4>
+    <p>
+        <img src="images/dog.jpg" />
+        Pros: active, friendly, fun
+        <br>
+        Cons: short attention span, really want to be liked, angry when hungry
+        </ul>
+    </p>
+</div>
+ ````
+!SLIDE
+ 
+- Enter the following code into your <mark>index.html</mark> file.
+
+```HTML
+<div id="answer-cat" class="answer cat hide">
+    <h4>You are a cat!</h4>
+    <p>
+        <img src="images/cat.jpg" />
+        Pros: know how to get what you want, know how to make people feel good
+        <br>
+        Cons: easy for your ego to get hurt, tend to be a loner, sometimes would rather scheme than just communicate about what you need
+    </p>
+</div>
+````
+!SLIDE
+
+- Enter the following code into your <mark>index.html</mark> file.
+
+```HTML
+<div id="answer-parrot" class="answer parrot hide">
+    <h4>You are a parrot!</h4>
+    <p>
+        <img src="images/parrot.jpg" />
+        Pros: social, well-informed, great at fitting in
+        <br>
+        Cons: can be vain, sometimes speaks before thinking
+    </p>
+</div>
+````
+!SLIDE
+
+- Enter the following code into your <mark>index.html</mark> file.
+
+```HTML
+<div id="answer-turtle" class="answer turtle hide">
+    <h4>You are a turtle!</h4>
+    <p>
+        <img src="images/turtle.jpg" />
+        Pros: good listener, resilient, dedicated and can see things through.
+        <br>
+        Cons: Quiet, guarded, enduring, sturdy
+    </p>
+</div>
+</div>
+
+ </div>
+ ````
+
+!SLIDE
+- Finally lets add the following code to your <mark>style.css</mark> file.
+
+```C#
+	body {
+		font-family: Calibri;
+		background: skyblue;
+	}
+
+	#quizContainer {
+		border-width: 5px;
+		border-style: solid;
+		border-color: #09f;
+		border-radius: 15px;
+		padding: 15px;
+		background: #fff;
+
+		min-width: 400px;
+		max-width: 800px;
+
+		/* causes this element to float in the middle of its parent */
+		margin: auto;
+
+		/* ONLY overrides margin-top ... other margins are same as declared above */
+		margin-top: 50px;
+	}
+
+!SLIDE
+
+- Add the following code to your <mark>style.css</mark> file.
+
+```C#
+.quizOption {
+    cursor: pointer;
+    margin: 5px;
+    padding: 3px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.quizOption:hover {
+    color: #fff;
+    background: #333;
+}
+
+.answer {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 1em;
+}
+````
+
+!SLIDE
+
+- Add the following code to your <mark>style.css</mark> file.
+
+```C#
+.answer p::after {
+    content: ' ';
+    display: block;
+    clear: both;
+}
+
+.answer img {
+    float: left;
+    width: 300px;
+    height: auto;
+    
+    margin: 0 1em 1em 0;
+}
+
+.hide {
+    display: none;
+}
+````
+!SLIDE
+
+- We have all the tools you need to construct a personality quiz.
+
+- Lets have some fun shall we!!
+
+- I want each team to make their own personality quiz.
+
+- You must do the following
+
+	- Design your own quiz with six questions and answers
+
+	- Choose your own options
+
+	- Choose your own results
+
+	- Include images into your results
+
+- Be sure to add a <mark>;</mark> at the end of the closing <mark>}</mark> in between questions.
 
 ## Lets take a breather
 
