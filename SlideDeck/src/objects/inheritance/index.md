@@ -15,6 +15,7 @@ theme: league
 - Inheritance also allows derived classes to customize that behavior for the sake of specificity.
 - For example, all cats EAT, but tigers EAT a certain way.
 
+
 ## Example of a Base Class
 
 ```csharp
@@ -282,6 +283,77 @@ class Dishwasher : Appliances
 ```
 <div class="fragment">Let me repeat that ... we use the OVERRIDE keyword in the derived class with abstract methods from the base class.</div>
 
+## Interfaces
+
+Interfaces are like a class with *no* behavior - everything is abstract!
+
+```csharp
+public interface ICat
+{
+    void Eat();
+}
+
+public class Tiger : ICat
+{
+    public void Eat()
+    {
+        Console.WriteLine("This cat is eating a large animal.");
+    }
+}
+
+public class HouseCat : ICat
+{
+    public void Eat()
+    {
+        Console.WriteLine("This cat is eating Meow Mix.");
+    }
+}
+```
+
+## Using Interfaces
+
+So why would we want a base type with no behavior?  There's no code re-use, so why bother?
+
+Imagine we have a zoo, which has a list of ICats:
+
+```csharp
+public class Zoo
+{
+    private List<ICat> Cats { get; set; }
+
+    public Zoo(List<ICat> cats)
+    {
+        Cats = cats;
+    }
+
+    public void FeedAllTheCats()
+    {
+        foreach (ICat cat in Cats)
+        {
+            cat.Eat();
+        }
+    }
+}
+```
+
+## Polymorphic Feeding Time
+
+The `FeedAllTheCats()` method is using Polymorphism - that method can feed Tigers, HouseCats, and any other type that derives from the ICat interface.  Even cats that don't exist yet!
+
+```csharp
+public void FeedAllTheCats()
+{
+    foreach (ICat cat in Cats)
+    {
+        cat.Eat();
+    }
+}
+```
+
+If we added Leopards to our code, the `Zoo` class would not need to change at all - it would immediately support Leopards! 
+
+This is known as the Open-Closed Principle. The O in SOLID refers to exactly this.
+
 ## PRACTICE!!
 
 Create an abstract Furniture class.
@@ -293,7 +365,6 @@ Create an abstract Furniture class.
 - Each type of furniture should also have a method that overrides the abstract method in the Furniture class.
 - In your Program class, instantiate an object of each type of furniture.
 - Use all methods from all derived classes inside of your Program class.
-
 
 
 

@@ -479,6 +479,90 @@ public class ChildClass : ParentClass
         
         <section>
           <!-- _S9SLIDE_ -->
+<h2 id="interfaces">Interfaces</h2>
+
+<p>Interfaces are like a class with <em>no</em> behavior - everything is abstract!</p>
+
+<pre><code class="language-csharp">public interface ICat
+{
+    void Eat();
+}
+
+public class Tiger : ICat
+{
+    public void Eat()
+    {
+        Console.WriteLine("This cat is eating a large animal.");
+    }
+}
+
+public class HouseCat : ICat
+{
+    public void Eat()
+    {
+        Console.WriteLine("This cat is eating Meow Mix.");
+    }
+}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="using-interfaces">Using Interfaces</h2>
+
+<p>So why would we want a base type with no behavior?  There’s no code re-use, so why bother?</p>
+
+<p>Imagine we have a zoo, which has a list of ICats:</p>
+
+<pre><code class="language-csharp">public class Zoo
+{
+    private List&lt;ICat&gt; Cats { get; set; }
+
+    public Zoo(List&lt;ICat&gt; cats)
+    {
+        Cats = cats;
+    }
+
+    public void FeedAllTheCats()
+    {
+        foreach (ICat cat in Cats)
+        {
+            cat.Eat();
+        }
+    }
+}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="polymorphic-feeding-time">Polymorphic Feeding Time</h2>
+
+<p>The <code>FeedAllTheCats()</code> is using Polymorphism - that method can feed Tigers, HouseCats, and any other type that derives from the ICat interface.  Even cats that don’t exist yet!</p>
+
+<pre><code class="language-csharp">public void FeedAllTheCats()
+{
+    foreach (ICat cat in Cats)
+    {
+        cat.Eat();
+    }
+}
+</code></pre>
+
+<p>If we added Leopards to our code, the Zoo class would not need to change at all - it would immediately support Leopards! This is known as the Open-Closed Principle. The O in SOLID refers to exactly this!</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
 <h2 id="practice-2">PRACTICE!!</h2>
 
 <p>Create an abstract Furniture class.</p>
