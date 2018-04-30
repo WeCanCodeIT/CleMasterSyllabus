@@ -19,6 +19,8 @@ The following exercises use unit tests to explore and reinforce different topics
 
 Katas are bite sized problems that allow you to focus on the fundamentals of programming and TDD.
 
+[How to get ready for a Kata?](https://docs.google.com/document/d/1EcmAcu6wGzgVpbuycicXjci6qIchfmbVUVTdbDB1-dc/edit?usp=sharing)
+
 FizzBuzz
 
 String Calculator
