@@ -10,7 +10,7 @@ There MUST be a test for every item in you Vehicle class.
 
 You must submit a screen shot showing your sucessful tests. When you take your screen shot you will put your name and date as shown in the following example
 
-![Submission Screen Shot](submissionexample.png)
+![Submission Screen Shot](Submissionexample.png)
 
 ## Prerequisites
 - OOP
