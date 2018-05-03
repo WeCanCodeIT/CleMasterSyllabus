@@ -4,7 +4,7 @@
 ## Overview
 
 In this assignment, you will be tasked with building a base vehicle class. You MUST use TDD to accomplish this assignment. 
-There MUST be a test for every item in you Vehicle class.
+There MUST be a test for every item in your Vehicle class.
 
 ## Submission
 
@@ -23,7 +23,7 @@ You must submit a screen shot showing your sucessful tests. When you take your s
 
 - [ ] Set Up VS project. The project MUST contain the following classes
 	- Vehicle
-	- Vehicle.Test
+	- VehicleTests
 
         
 - [ ] The VehicleTests class must have the following tests
@@ -54,7 +54,7 @@ You must submit a screen shot showing your sucessful tests. When you take your s
 		- This test MUST take in the following values as paramenter: startODO = 3579, endOdo = 3117, TankSize = 9251.
 		- This test MUST return the following: 49.94 MPG.
 
-- [ ] The Vehicle class MUST contain the following properties:, constructors, and methods
+- [ ] The Vehicle class MUST contain the following properties, constructors, and methods
 	- string Model
     - string Make
     - string Year 
