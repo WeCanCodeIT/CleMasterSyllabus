@@ -93,10 +93,10 @@ theme: league
 
 ## Staff Emails:
 
-- Daniel@Wecancodeit.org (Instructor)
-
 - Pete@wecancodeit.org (Instructor)
 
 - Melissa@wecancodeit.org (Student Success Coach)
+
+- Kyle@Wecancodeit.org (Education Team Director/Instructor)
 
 - Anne@wecancodeit.org (Campus Director)
