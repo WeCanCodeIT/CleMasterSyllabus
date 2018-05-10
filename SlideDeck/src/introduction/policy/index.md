@@ -32,13 +32,13 @@ theme: league
 
 - Homework is mandatory.
 
-- Homework is calculated as ten percent of your overall grade.
+	- Homework is calculated as ten percent of your overall grade.
 
-- You are allowed to skip one homework assignment without affecting your grade.
+	- You are allowed to skip one homework assignment without affecting your grade.
 
-- Homework is graded as Pass/Fail.
+	- Homework is graded as Pass/Fail.
 
-- You must turn in all homework to receive full credit.
+	- You must turn in all homework to receive full credit.
 
 ## Submission Policy
 
