@@ -28,6 +28,18 @@ theme: league
 	
 	- The final <mark>10</mark> points of each project are determined by overall code quality, including code readability, proper variable names, and comments when necessary.
 
+## Homework
+
+	- Homework is mandatory.
+
+	- Homework is calculated as ten percent of your overall grade.
+
+	- You are allowed to skip one homework assignment without affecting your grade.
+
+	- Homework is graded as Pass/Fail.
+
+	- You must turn in all homework to receive full credit.
+
 ## Submission Policy
 
 - Students are required to submit all projects using the submission form provided by the instructors.
