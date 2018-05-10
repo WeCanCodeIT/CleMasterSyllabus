@@ -4,7 +4,7 @@ theme: league
 
 ## Life Just Easier
 
- <div float="right"><img src="./resources/bootstrap.png" /></div>
+ <div float="right" class="img"><img src="./resources/bootstrap.png" /></div>
 
  - If you remember our journey through HTML, formatting a HTML page can be daunting, frustrating, almost impossible task.
 
@@ -14,7 +14,7 @@ theme: league
 
 ## Let's Learn Bootstrap
 
-  <div float="right"><img src="./resources/Bootstrap-grid.png" /></div>
+  <div float="right" class="img"><img src="./resources/Bootstrap-grid.png" /></div>
 
  - Bootstrap uses a grid system which is composed of a series of containers, rows, and columns to layout and align content. 
  
@@ -32,7 +32,7 @@ theme: league
 
 ## So Many Options
 
-   <div float="right"><img src="./resources/1-basic-grid.png" /></div>
+   <div float="right" class="img"><img src="./resources/1-basic-grid.png" /></div>
 
  - As we can see, our options on how we layout our grid are almost unlimited.
 
@@ -109,7 +109,7 @@ theme: league
 
 - Lets put what we learned to the test
 
-    <div float="right"><img src="./resources/boot1.png" /></div>
+    <div float="right" class="img"><img src="./resources/boot1.png" /></div>
 
 	- Open Visual Studio
 
@@ -117,7 +117,7 @@ theme: league
 
 !SLIDE
 
-   <div float="right"><img src="./resources/boot2.png" /></div>
+   <div float="right" class="img"><img src="./resources/boot2.png" /></div>
 
 - Ensure <mark>Visual C#</mark> is selected under templates.
 
@@ -135,17 +135,17 @@ theme: league
 
 ## We should all be here!!
 
-   <div float="right"><img src="./resources/boot3.png" /></div>
+   <div float="right" class="img"><img src="./resources/boot3.png" /></div>
 
 ## Let's add an HTML page
 
-   <div float="right"><img src="./resources/boot4.png" /></div>
+   <div float="right" class="img"><img src="./resources/boot4.png" /></div>
 
 - Select Website > Add New Item
 
 !SLIDE
 
-   <div float="right"><img src="./resources/boot5.png" /></div>
+   <div float="right" class="img"><img src="./resources/boot5.png" /></div>
 
 - Ensure <mark>Visual C#</mark> is selected under templates.
 
@@ -157,7 +157,7 @@ theme: league
 
 ## We should all be here!!
 
-   <div float="right"><img src="./resources/boot6.png" /></div>   
+   <div float="right" class="img"><img src="./resources/boot6.png" /></div>   
 
 ## Let's Do Some Prep Work Next
 
@@ -180,7 +180,7 @@ theme: league
 
 ## We should all be here!!
 
-   <div float="right"><img src="./resources/boot7.png" /></div>  
+   <div float="right" class="img"><img src="./resources/boot7.png" /></div>  
    
 ## Let's build our .container
 
@@ -209,7 +209,7 @@ theme: league
 
 ## We should all be here!!
 
-   <div float="right"><img src="./resources/boot8.png" /></div>  
+   <div float="right" class="img"><img src="./resources/boot8.png" /></div>  
 
 ## Run It!!
 
@@ -227,11 +227,11 @@ theme: league
 
 ## We should all be here!!
 
-   <div float="right"><img src="./resources/boot9.png" /></div>  
+   <div float="right" class="img"><img src="./resources/boot9.png" /></div>  
 
 ## Now let's talk about what we see
 
-   <div float="right"><img src="./resources/boot9.png" /></div>  
+   <div float="right" class="img"><img src="./resources/boot9.png" /></div>  
 
  Question time: What's the difference between the text in a container, and the text not encapsulated in a container?
 
@@ -240,7 +240,7 @@ theme: league
  </div>
 
 ## Test It!!
-   <div float="right"><img src="./resources/boot10.png" /></div>  
+   <div float="right" class="img"><img src="./resources/boot10.png" /></div>  
 
 - The container's size has been set inside the <mark>bootstrap.min.css</mark> we placed in the index.html head.
 
@@ -283,7 +283,7 @@ So let's discuss the differences we see.
 ```
 ## We should all be here!!
 
-   <div float="right"><img src="./resources/boot11.png" /></div>  
+   <div float="right" class="img"><img src="./resources/boot11.png" /></div>  
 
 
 ## Run It!!
@@ -298,11 +298,11 @@ So let's discuss the differences we see.
 
 ## We should all be here!!
 
-   <div float="right"><img src="./resources/boot12.png" /></div>  
+   <div float="right" class="img"><img src="./resources/boot12.png" /></div>  
 
 ## Now let's talk about what we see
 
-   <div float="right"><img src="./resources/boot12.png" /></div>  
+   <div float="right" class="img"><img src="./resources/boot12.png" /></div>  
 
 <div class="fragment">
  Question time: Whats the difference between the text in each container, and the test not encapsulated in a container?
@@ -310,7 +310,7 @@ So let's discuss the differences we see.
 
 ## Test It!!
 
-   <div float="right"><img src="./resources/boot13.png" /></div>  
+   <div float="right" class="img"><img src="./resources/boot13.png" /></div>  
 
 - The container's size has been set inside the <mark>bootstrap.min.css</mark> we placed in the index.html head.
 
@@ -326,7 +326,7 @@ So let's discuss the differences we see.
 
 ## Hey wait, there's only one column per row
 
-   <div float="right"><img src="./resources/boot12.png" /></div>  
+   <div float="right" class="img"><img src="./resources/boot12.png" /></div>  
 
 - So obviously we cannot build a website with one column per row!
 
@@ -432,7 +432,7 @@ Question time: Can someone explain how I would create three columns in each div?
 
 ## We should all be here!!
 
-   <div float="right"><img src="./resources/boot14.png" /></div>  
+   <div float="right" class="img"><img src="./resources/boot14.png" /></div>  
 
 ## Let's discuss what we have done
 
@@ -468,7 +468,7 @@ Question time: Can someone explain how I would create three columns in each div?
 
 ## We should all be here!!
 
-   <div float="right"><img src="./resources/boot15.png" /></div>
+   <div float="right" class="img"><img src="./resources/boot15.png" /></div>
 
 ## Run It!!
 
@@ -482,7 +482,7 @@ Question time: Can someone explain how I would create three columns in each div?
 
 ## We should all be here!!
 
-   <div float="right"><img src="./resources/boot16.png" /></div>
+   <div float="right" class="img"><img src="./resources/boot16.png" /></div>
 
 <div class="fragment">
 Question time: So let's answer the question I posed earlier in the slides. Can we call each div with a container class a row?
@@ -497,7 +497,7 @@ No!!
 </div>
 
 <div class="fragment">
-<div float="right"><img src="./resources/container.jpg" /></div>
+<div float="right" class="img"><img src="./resources/container.jpg" /></div>
 </div> 
 
 !SLIDE
@@ -519,7 +519,7 @@ No!!
 </div>
 
 <div class="fragment">
-   <div float="right"><img src="./resources/boot17.png" /></div>
+   <div float="right" class="img"><img src="./resources/boot17.png" /></div>
 </div>
 
 ## Let's style our page ever further
@@ -535,13 +535,13 @@ No!!
 - Let's look back at the default grid we presented in an earlier slide.
 
 <div class="fragment">
-   <div float="right"><img src="./resources/Bootstrap-grid.png" /></div>
+   <div float="right" class="img"><img src="./resources/Bootstrap-grid.png" /></div>
 </div>
 
 !SLIDE
 
 
-   <div float="right"><img src="./resources/Bootstrap-grid.png" /></div>
+   <div float="right" class="img"><img src="./resources/Bootstrap-grid.png" /></div>
 
 
 - If you notice, each span has a number: Span 1, Span 4, Span 6, Span 8, Span 12
@@ -655,4 +655,16 @@ Volunteer Time!!
 
 - Our page is to large to show on a slide, so does everyone's look like our volunteers page?
 
-## What about different size devices?
+
+<style type="text/css">
+.img:hover  {
+        transform: scale(1.5);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+.img-center {
+    display: block;
+    margin-left: 0px;
+    margin-right: auto;
+	width: 40%;
+}
+</style>
