@@ -3,51 +3,48 @@
 ### - [Submission Link](https://docs.google.com/forms/d/e/1FAIpQLScUEvl_ZgH_OgBu0zbg_WIvB6zBSkkXh7wfxqjv4LwLdBDxLg/viewform)
 
 ## Overview
-Create a static portfolio webpage highlighting your work so far. Focus first on having a good structure so you can add some great style to it with CSS!
+As a junior developer, you are being tasked with creating a static portfolio webpage highlighting your work so far. Focus first on having a good structure so you can add some great style to it with CSS. Ultimately, you will share this with employers. You will likely want to revisit this later as your knowledge increases, but you should focus on getting a solid HTML structure in place.
 
 ## Skills Required
+
+In order to deliver this webpage solution, you will need the following skills and knowledge.
 - HTML5
 - CSS
-- CSS-Grid
+- CSS Grid
 - Flexbox
 
 
 ## Tasks
-- [ ] Project Setup
+
+### Project Prerequisites
   - [ ] Create a project/repository called `username.github.io` with **your GitHub username.**
   - [ ] Create a static HTML site, including a file called `index.html` that will serve as the landing page for your portfolio
-- [ ] Projects (3)
+
+### User Interface Requirements
+
+During application development process, the following user interface (UI) requirements were identified.
+- [ ] You MUST have different sections for your site. You can create the entire site as one page with multiple sections, or multiple pages.
+- [ ] **Projects** (3) - the following MUST be included:
   - [ ] Name of project
   - [ ] Screenshot
   - [ ] Link to GitHub code
   - [ ] Unique skills used
-  - Note: Should be able to easily add additional projects later
-- [ ] About Me
+  - Note: You MUST be able to easily add additional projects later. For this version of your portfolio, you should have at least 3 projects. You can have more if you like, but don't just put a link to every single thing you've ever made - focus on the projects/assignments you're most proud of. You will add to the portfolio later, especially when you finish your final project.
+- [ ] **About Me** - the following MUST be included:
   - [ ] Brief biographical information
   - [ ] List of skills
   - [ ] Link to GitHub/LinkedIn
   - [ ] Photo/image
   - [ ] Contact information
 - [ ] Look & Feel
-  - [ ] Responsive layout
-- [ ] This project must be deployed and live on [Github Pages](https://pages.github.com/)
-
-## Details
-Your task is to create a portfolio website that you will ultimately share with employers. You will likely want to revisit this later as your knowledge increases, but you should focus on getting a solid HTML structure in place so you aren't scrambling to put something together later on!
-
-You should have different sections for your site. You can create the entire site as one page with multiple sections, or multiple pages.
-
-For this version of your portfolio, you should have at least 3 projects. You can have more if you like, but don't just put a link to every single thing you've ever made - focus on the projects/assignments you're most proud of. You will add to the portfolio later, especially when you finish your final project.
-
-Each project should present some information about the project, and you should use CSS classes to make the projects have a similar look.
-
-You should include an _About Me_ section that includes some personal information about yourself.
-
-Your site should be responsive - it should be easily viewable on mobile, tablet, and desktop screen sizes.
+  - [ ] The website MUST have a responsive layout, i.e. easily viewable on mobile, tablet, and desktop screen sizes.
+  - [ ] CSS classes MUST be used to make the projects have a similar look.
+- [ ] This project MUST be deployed and live on [Github Pages](https://pages.github.com/)
 
 
 ## Stretch Tasks
-Incorporate some effects, using jQuery plugins, other libraries, or your own JavaScript.
+During application development process, the following application logic requirements were identified. These requirements are not mandatory and are in no way a requirement for delivering the application.
+- [ ] The website COULD incorporate some of the following effects, using jQuery plugins, other libraries, or your own JavaScript:
   - [ ] Carousel of your screenshots
   - [ ] Parallax scrolling
   - [ ] [Material Design](https://material.google.com/#) effects

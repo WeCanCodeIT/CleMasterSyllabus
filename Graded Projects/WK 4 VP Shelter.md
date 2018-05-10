@@ -2,59 +2,82 @@
 ## Due: Monday 2/12/18 at 9:30AM
 ### [Submission Link](https://docs.google.com/forms/d/e/1FAIpQLScUEvl_ZgH_OgBu0zbg_WIvB6zBSkkXh7wfxqjv4LwLdBDxLg/viewform)
 
-So, you have some experience under your belt in the care and feeding of a virtual pet. It's time to share that with the community! 
+## Overview
+As a junior developer, you are being tasked with developing an application to share your experience in the care and feeding of a virtual pet with the community. The application will simulate employees taking care of the pets in a shelter.
 
 ## Skills Required
+In order to deliver this application solution, you will need the following skills and knowledge.
 -  Loops
 -  Lists
 -  Methods
--  Intro to OOP
+-  Principles of OOP
 -  Defining Classes
 -  Creating Classes and Access Modifiers
 -  Inheritance and Polymorphism
 
-## Requirements
+## Tasks
 
+### Project Prerequisites
+
+After you have completed all coding and testing of your application, you will ensure the product owner has access to the application by ensuring the following:
+- [ ] Correct GitHub link is properly submitted.
+- [ ] GitHub repository created from correct folder and contains solution file.
+
+### Application Logic Requirements, Part 1
+
+During application development process, the following application logic requirements were identified.
 - [ ] Create a C# project in Visual Studio named `VPShelter`.
-- [ ] Create a GitHub repository also named `VPShelter` and set it up so that you can push your code there from your Visual Studio project. Do this *now*. It's the least fun part, so just get it out of the way.
+
 - Create the following classes:
-	- [ ] `VirtualPet`: You can start with your class from last week's assignment or create another.
-	- [ ] A class that is derived and has `VirtualPet` as its base class.
-		- [ ] Fields/Properties for the type of pet and the pet's diet
-	- [ ] `VirtualPetShelter`: Homeless virtual pets need a place to stay.
-		- [ ] Fields/Properties to store all of the pets and all of the employees
-	- [ ] `Employee` base class.
-		- [ ] One property (perhaps EmployeeID)
-		- [ ] Two abstract methods
-	- [ ] `Volunteer` class derived from `Employee`
-		- [ ] An override method
-		- [ ] An additional property
-		- [ ] A method for feeding all of the pets
-		- [ ] A method for giving water to all of the pets
-	- [ ] `Manager` class derived from `Employee`
-		- [ ] An override method
-		- [ ] An additional property
-		- [ ] A method for adopting a pet
-- Your Program class will house your `Main` method, and be responsible for reading user input and writing output to the console.
+	- [ ] The application MUST contain a `VirtualPet` class (you can start with your class from last week's assignment or create another).
+	- [ ] The application MUST contain a class that is derived and has `VirtualPet` as its base class.
+		- [ ] The derived class MUST contain Fields/Properties for the type of pet and the pet's diet.
+	- [ ] The application MUST contain a `VirtualPetShelter` class: Homeless virtual pets need a place to stay.
+		- [ ] The `VirtualPetShelter` class MUST contain Fields/Properties to store all of the pets and all of the employees.
+	- [ ] The application MUST contain an `Employee` base class.
+		- [ ] The `Employee` class MUST contain one property (e.g. EmployeeID).
+		- [ ] The `Employee` class MUST contain two abstract methods.
+	- [ ] The application MUST contain a `Volunteer` class derived from `Employee`.
+		- [ ] The `Volunteer` class MUST contain an override method.
+		- [ ] The `Volunteer` class MUST contain an additional property.
+		- [ ] The `Volunteer` class MUST contain a method for feeding all of the pets.
+		- [ ] The `Volunteer` class MUST contain a method for giving water to all of the pets.
+	- [ ] The application MUST contain a `Manager` class derived from `Employee`.
+		- [ ] The `Manager` class MUST contain an override method.
+		- [ ] The `Manager` class MUST contain an additional property.
+		- [ ] The `Manager` class MUST contain a method for adopting a pet.
+- [ ] The `Program` class MUST house your `Main` method, and be responsible for reading user input and writing output to the console.
 
-## Details
+- [ ] The application MUST also include a game loop in this project. It should prompt the user, then call the appropriate method(s) on any of the required classes.
 
-We're going to create an application that simulates employees taking care of the pets in a shelter.
+### User Interface Requirements, Part 1
 
-Include a game loop in this project, too. It should prompt the user, then call the appropriate method(s) on any of the required classes.
+During application development process, the following user interface (UI) requirements were identified.
 
-### NOTE:
+#### Program class
+
+- The `Main` method MUST have a program that…
+	- [ ] asks for user input.
+	- [ ] writes output to the console.
+
+- Available user interface actions MUST include (at minimum)…
+	- [ ] `Volunteer` feeding all the pets 
+	- [ ] `Volunteer` watering all the pets 
+	- [ ] `Volunteer` or `Manager` playing with an individual pet
+	- [ ] `Manager` to coordinate adoption of a pet, which should display a list of pet names and descriptions, allowing a user to select one
+
+#### NOTE:
 
 The following examples are _GUIDELINES ONLY_, you can customize your user interface as you see fit as long as you meet all of the above requirements.
 
-### Example Employee Set Up
+#### Example Employee Set Up
 
 ```bash
 Welcome to Big Al's Virtual Pet Shelter. What employee type are you?
 1. Manager
 2. Volunteer
 ```
-### Example Interactions
+#### Example Interactions
 
 For volunteer:
 
@@ -104,68 +127,57 @@ Which pet would you like to play with?
 
 4
 
-Ok, you play with Tommy.
+Ok, you played with Tommy.
 ```
 
-## Required Tasks
+### Application Logic Requirements, Part 2
 
-### Program class
+During application development process, the following application logic requirements were identified.
 
-- In the `Main` method have a program that…
-	- [ ] asks for user input.
-	- [ ] writes output to the console.
+#### VirtualPetShelter class
 
-- Available user interface actions should include (at minimum)…
-	- [ ] `Volunteer` feeding all the pets 
-	- [ ] `Volunteer` watering all the pets 
-	- [ ] `Volunteer` or `Manager` playing with an individual pet
-	- [ ] `Manager` to coordinate adoption of a pet, which should display a list of pet names and descriptions, allowing a user to select one
-
-
-### VirtualPetShelter class
-
-- [ ] include appropriate instance variable(s) (fields/Properties) to store the pets who reside at the shelter
-- [ ] include appropriate instance variable(s) (fields/Properties) to store all of the employees who volunteer or work at the shelter.
+- [ ] The `VirtualPetShelter` class MUST include the appropriate instance variable(s) (fields/properties) to store the pets who reside at the shelter.
+- [ ] The `VirtualPetShelter` class MUST include the appropriate instance variable(s) (fields/properties) to store all of the employees who volunteer or work at the shelter.
 - *HINT:* Don't overthink this class. You might not instantiate an object from this class in your program. This class allows us to see your ability to appropriately use Lists.
 
-### VirtualPet class
+#### VirtualPet class
 	
 For this week's VirtualPet, you can keep the class from last week's project and add the following, or create a new class with the following: 
-- include instance variables (fields/Properties) representing:
+- [ ] The `VirtualPet` class MUST include instance variables (fields/Properties) representing:
 	- [ ] name
 	- [ ] description
-- include a constructor that accepts a name and description only
-- include a constructor that, in addition to name and description, accepts starting values for the pet's attributes (hunger, boredom, etc)
+- [ ] The `VirtualPet` class MUST include a constructor that accepts a name and description only
+- [ ] The `VirtualPet` class MUST include a constructor that, in addition to name and description, accepts starting values for the pet's attributes (hunger, boredom, etc).
 
 Remember that it is OK to have more than one constructor. This will be called an **overloaded** constructor
 
-### Class derived from VirtualPet
+#### Class derived from VirtualPet
 
-- Include instance variables (fields/Properties) representing:
+- The dervied class MUST include instance variables (fields/properties) representing:
 	- [ ] type of pet
 	- [ ] pet's specific diet
 
-### Employee Classes
-- [ ] `Employee` base class.
-		- [ ] One property (perhaps EmployeeID)
-		- [ ] Two abstract methods (for example, ClockIn() or ShowID())
-	- [ ] `Volunteer` class derived from `Employee`
-		- [ ] An override method (How does a Volunteer do one of the Employee methods differently?)
-		- [ ] An additional property (for example HoursAvailable, VolunteerType, or VolunteerSpecialty)
-		- [ ] A method for feeding all of the pets (*HINT:* Don't overthink this. It can return a status of "All pets have been fed.")
-		- [ ] A method for giving water to all of the pets (see above hint)
-	- [ ] `Manager` class derived from `Employee`
-		- [ ] An override method (How does a Manager do one of the Employee methods differently?)
-		- [ ] An additional property (for example, Salary, YearsEmployed, or Department)
-		- [ ] A method for adopting a pet
+#### Employee Classes
+- [ ] The `Employee` base class MUST include:
+		- [ ] One property (perhaps EmployeeID).
+		- [ ] Two abstract methods (for example, `ClockIn()` or `ShowID()`).
+	- [ ] The `Volunteer` class derived from `Employee` MUST include:
+		- [ ] An override method (How does a Volunteer do one of the Employee methods differently?).
+		- [ ] An additional property (for example HoursAvailable, VolunteerType, or VolunteerSpecialty).
+		- [ ] A method for feeding all of the pets. (*HINT:* Don't overthink this. It can return a status of "All pets have been fed.")
+		- [ ] A method for giving water to all of the pets (see above hint).
+	- [ ] The `Manager` class derived from `Employee` MUST include:
+		- [ ] An override method (How does a Manager do one of the Employee methods differently?).
+		- [ ] An additional property (for example, Salary, YearsEmployed, or Department).
+		- [ ] A method for adopting a pet.
 
 ## Stretch Tasks
 
+During application development process, the following application logic requirements were identified. These requirements are not mandatory and are in no way a requirement for delivering the application.
 - [ ] Consider any stretch tasks from last week's project that you did not attempt.
-- [ ] Keep track of the cleanliness of individual pets' cages and offer an option in the user interface to clean pet cages
+- [ ] The application COULD keep track of the cleanliness of individual pets' cages and offer an option in the user interface to clean pet cages.
 
 ## Hints
 - Break this project down into smaller parts. Start with your VirtualPet class and then create your derived "type of pet" class before starting the new stuff.
-- There is a lot of creativity allowed in this project. Focus on meeting the requirements first, then add some personality. *KEEP IN MIND you will not be graded on your stylistic choices, you will be graded on whether or not you met the requirements.*
+- There is a lot of creativity allowed in this project. Focus on meeting the requirements first, then add some personality. Keep in mind you will not be graded on your stylistic choices: *you will be graded on whether or not you met the requirements.*
 - Review the _BankAccount_ project, the _Lists_ slides, and the _Inheritance and Polymorphism_ slides as preparation for this project.
-- Have fun!!
