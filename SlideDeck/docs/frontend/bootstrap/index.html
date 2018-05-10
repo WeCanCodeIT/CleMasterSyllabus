@@ -1,0 +1,1155 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Bootstrap - Build a Responsive website!!</title>
+
+		<meta name="description" content="- description not found -">
+		<meta name="author"      content="Your Name Here">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../shared/css/reveal.css">
+		<link rel="stylesheet" href="../../shared/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../shared/lib/css/zenburn.css">
+
+		<!-- WCCI style tweaks -->
+		<link rel="stylesheet" href="../../shared/css/wcci.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../shared/css/print/pdf.css' : '../../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="text-align: center">Bootstrap</h1>
+					<h3 style="text-align: center">Build a Responsive website!!</h3>
+					<div id="logo">
+						<img src="../../shared/images/wcci-logo.png">
+						<p style="font-size: smaller;">&copy; We Can Code IT, LLC</p>
+					</div>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_ -->
+<h2 id="life-just-easier">Life Just Easier</h2>
+
+<div float="right" class="img"><img src="./resources/bootstrap.png" /></div>
+
+<ul>
+  <li>
+    <p>If you remember our journey through HTML, formatting a HTML page can be daunting, frustrating, almost impossible task.</p>
+  </li>
+  <li>
+    <p>We learned Cascading Styling Sheets (CSS) offer us greater flexibility and control in our web page developement process.</p>
+  </li>
+  <li>
+    <p>Now finally we will become masters using a tool which gives us a powerful flexbox grid system for building layouts of all shapes and sizes.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="lets-learn-bootstrap">Let’s Learn Bootstrap</h2>
+
+<div float="right" class="img"><img src="./resources/Bootstrap-grid.png" /></div>
+
+<ul>
+  <li>
+    <p>Bootstrap uses a grid system which is composed of a series of containers, rows, and columns to layout and align content.</p>
+  </li>
+  <li>
+    <p>Bootstrap is built with flexbox and is fully responsive.</p>
+  </li>
+  <li>
+    <p>The image above gives a representation of many different possible layouts of the Bootstrap grid.</p>
+  </li>
+</ul>
+
+<div class="fragment">
+ Question time: What are the max number of spans on a bootstrap grid?
+ </div>
+
+<div class="fragment">
+ Question time: What do we mean when we say "fully responsive"?
+ </div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="so-many-options">So Many Options</h2>
+
+<div float="right" class="img"><img src="./resources/1-basic-grid.png" /></div>
+
+<ul>
+  <li>
+    <p>As we can see, our options on how we layout our grid are almost unlimited.</p>
+  </li>
+  <li>
+    <p>So now lets discuss some of the terms we mentioned earlier.</p>
+
+    <ul>
+      <li>
+        <p>Container: Containers provide a means to center your site’s contents.</p>
+      </li>
+      <li>
+        <p>There are two types of Containers you can utilize: <code>.container</code> and <code>.container-fluid.</code></p>
+      </li>
+      <li>
+        <p><code>.container</code> has one fixed width for each screen size in bootstrap (<code>xs</code>, <code>sm</code>, <code>md</code>, <code>lg</code>);</p>
+      </li>
+      <li>
+        <p>So what does this mean in English?</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="container-explained">.container Explained</h2>
+
+<pre><code class="language-CSS">@media (min-width: 568px) {
+  .container {
+    width: 550px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+</code></pre>
+<ul>
+  <li>
+    <p>Let’s say your browser window has a width of 700px.</p>
+  </li>
+  <li>
+    <p>Because 700px is greater than the <code>.container</code> width of 550px, the <code>.container</code> width will be 550px</p>
+  </li>
+  <li>
+    <p>The <code>.container</code> width will stay at 550px regardless of the browser size until the browser size reaches a min width of 992px.</p>
+  </li>
+  <li>
+    <p>Once the browser window reaches 992px, the <code>.container</code> width will increase to 970px.</p>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<pre><code class="language-CSS">@media (min-width: 568px) {
+  .container {
+    width: 550px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+</code></pre>
+<div class="fragment">
+ Question time: What will happen to our .container width when our browser size reaches 1159px?
+ </div>
+
+<div class="fragment">
+ Question time: What will happen to our .container width when our browser size reaches 1200px?
+ </div>
+
+<div class="fragment">
+ Question time: What will happen to our .container width when our browser size reaches 991px?
+ </div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="lets-practice">Let’s Practice</h2>
+
+<ul>
+  <li>
+    <p>Lets put what we learned to the test</p>
+
+    <div float="right" class="img"><img src="./resources/boot1.png" /></div>
+
+    <ul>
+      <li>
+        <p>Open Visual Studio</p>
+      </li>
+      <li>
+        <p>Select File &gt; New &gt; WebSite</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<div float="right" class="img"><img src="./resources/boot2.png" /></div>
+
+<ul>
+  <li>
+    <p>Ensure <mark>Visual C#</mark> is selected under templates.</p>
+  </li>
+  <li>
+    <p>Ensure <mark>ASP.NET Empty Web Site</mark> is highlighted.</p>
+  </li>
+  <li>
+    <p>Select the <mark>Web Location Path</mark>.</p>
+  </li>
+  <li>
+    <p>Use your right arrow key to navigate to the end of the location path.</p>
+  </li>
+  <li>
+    <p>Change <mark>WebSite1</mark> to <mark>Bootstrap</mark>.</p>
+  </li>
+  <li>
+    <p>Your location address might have a value differant than <mark>WebSite1</mark>, not to worry just replace whatever value is there to <mark>Bootstrap</mark></p>
+  </li>
+  <li>
+    <p>Finally Select <mark>Ok</mark>.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here">We should all be here!!</h2>
+
+<div float="right" class="img"><img src="./resources/boot3.png" /></div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="lets-add-an-html-page">Let’s add an HTML page</h2>
+
+<div float="right" class="img"><img src="./resources/boot4.png" /></div>
+
+<ul>
+  <li>Select Website &gt; Add New Item</li>
+</ul>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<div float="right" class="img"><img src="./resources/boot5.png" /></div>
+
+<ul>
+  <li>
+    <p>Ensure <mark>Visual C#</mark> is selected under templates.</p>
+  </li>
+  <li>
+    <p>Ensure <mark>HTML Page</mark> is highlighted.</p>
+  </li>
+  <li>
+    <p>Change the value in the <mark>Name</mark> field to <mark>index.html</mark></p>
+  </li>
+  <li>
+    <p>Finally select <mark>Add</mark></p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-1">We should all be here!!</h2>
+
+<div float="right" class="img"><img src="./resources/boot6.png" /></div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="lets-do-some-prep-work-next">Let’s Do Some Prep Work Next</h2>
+
+<ul>
+  <li>Before we can begin, we need to add three items to our index.html page.</li>
+</ul>
+
+<pre><code class="language-C#">&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"&gt;
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"&gt;&lt;/script&gt;
+</code></pre>
+<ul>
+  <li>
+    <p>These three items are necessary for Bootstrap to function correctly.</p>
+  </li>
+  <li>
+    <p>You will find current versions of these three items getbootstrap.com under Bootstrap CDN.</p>
+  </li>
+  <li>
+    <p>Although you will find more current versions at getbootstrap.com, for our purposes and to ensure stablility of code, we will use the versions listed.</p>
+  </li>
+  <li>
+    <p>You can find these versions if needed at <a href="https://www.w3schools.com/bootstrapbootstrap_get_started.asp">w3schools</a> under <mark>MAXCDN</mark></p>
+  </li>
+  <li>
+    <p>Goto your class Slack channel, and you can copy and past the three items from Slack into the <mark>Head section</mark> of your index.html page.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-2">We should all be here!!</h2>
+
+<div float="right" class="img"><img src="./resources/boot7.png" /></div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="lets-build-our-container">Let’s build our .container</h2>
+
+<ul>
+  <li>
+    <p>The following code will build the <code>.container</code>.</p>
+  </li>
+  <li>
+    <p>Remember, the <code>.container</code> is responsible for the resposiveness of you webpage.</p>
+  </li>
+  <li>
+    <p>You must encapsulate the code you want to be reposnsive with a <code>.container</code> class.</p>
+  </li>
+</ul>
+
+<pre><code class="language-C#">&lt;div&gt; 
+  &lt;h2&gt;Without a Container&lt;/h2&gt;
+  &lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="container"&gt; 
+  &lt;h2&gt;With a Container&lt;/h2&gt;
+  &lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<ul>
+  <li>
+    <p>Write the code you see listed above in between the <mark>body</mark> tags on your index.html page.</p>
+  </li>
+  <li>
+    <p>Got your class Slack channel, and copy the information that was just posted.</p>
+  </li>
+  <li>
+    <p>Paste the information in between the <mark>p</mark> tags in the body of your index.html.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-3">We should all be here!!</h2>
+
+<div float="right" class="img"><img src="./resources/boot8.png" /></div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="run-it">Run It!!</h2>
+
+<ul>
+  <li>
+    <p>If you will notice there is a small <mark>asterisk</mark> on the index.html page tab next to the words index.html.</p>
+  </li>
+  <li>
+    <p>This asterisk is there to remind you the page has not been saved.</p>
+  </li>
+  <li>
+    <p>Before we select Google Chrome, let’s go ahead and select the <mark>Single Floppy Disk</mark> right above the index.html tab.</p>
+  </li>
+  <li>
+    <p>The asterisk is no longer there, so we can proceed.</p>
+  </li>
+  <li>
+    <p>Select Google Chrome</p>
+  </li>
+  <li>
+    <p>Once you browser opens, maximize it if it is not already.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-4">We should all be here!!</h2>
+
+<div float="right" class="img"><img src="./resources/boot9.png" /></div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="now-lets-talk-about-what-we-see">Now let’s talk about what we see</h2>
+
+<div float="right" class="img"><img src="./resources/boot9.png" /></div>
+
+<p>Question time: What’s the difference between the text in a container, and the text not encapsulated in a container?</p>
+
+<div class="fragment">
+- The text inside the container is centered inside the container.
+ </div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="test-it">Test It!!</h2>
+<div float="right" class="img"><img src="./resources/boot10.png" /></div>
+
+<ul>
+  <li>
+    <p>The container’s size has been set inside the <mark>bootstrap.min.css</mark> we placed in the index.html head.</p>
+  </li>
+  <li>
+    <p>Now let’s shrink and enlarge the browser and see what what the responsiveness differences are between the two paragraphs.</p>
+  </li>
+</ul>
+
+<div class="fragment">
+Let's get a volunteer to come up and demonstrate to the class.
+</div>
+
+<div class="fragment">
+So let's discuss the differences we see.
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="lets-add-container-fluid">Let’s add .container-fluid</h2>
+
+<ul>
+  <li>
+    <p>Go ahead and stop the program from running by selecting the <mark>red box</mark> on the Standard toolbar.</p>
+  </li>
+  <li>
+    <p>Lets add a <code>.container-fluid</code> div to our code and compare the three.</p>
+  </li>
+  <li>
+    <p>Add the following code to your index.html</p>
+  </li>
+  <li>
+    <p>You can copy the <mark>p</mark> tag and its contents into the new <code>container-fluid</code> div.</p>
+  </li>
+</ul>
+
+<pre><code class="language-C#">&lt;div&gt; 
+  &lt;h2&gt;Without a Container&lt;/h2&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas euismod dolor rhoncus lectus rhoncus, sed ultrices neque hendrerit. Morbi iaculis accumsan elementum. Ut sem ipsum, tristique vitae elementum non, consequat luctus justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam id volutpat augue. Pellentesque pellentesque, nibh vitae finibus sollicitudin, magna odio lobortis magna, et facilisis nisl dui sit amet tortor.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="container"&gt; 
+  &lt;h2&gt;With a Container&lt;/h2&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas euismod dolor rhoncus lectus rhoncus, sed ultrices neque hendrerit. Morbi iaculis accumsan elementum. Ut sem ipsum, tristique vitae elementum non, consequat luctus justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam id volutpat augue. Pellentesque pellentesque, nibh vitae finibus sollicitudin, magna odio lobortis magna, et facilisis nisl dui sit amet tortor.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="container-fluid"&gt; 
+  &lt;h2&gt;With a Container-fluid&lt;/h2&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas euismod dolor rhoncus lectus rhoncus, sed ultrices neque hendrerit. Morbi iaculis accumsan elementum. Ut sem ipsum, tristique vitae elementum non, consequat luctus justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam id volutpat augue. Pellentesque pellentesque, nibh vitae finibus sollicitudin, magna odio lobortis magna, et facilisis nisl dui sit amet tortor.&lt;/p&gt;
+&lt;/div&gt;
+
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-5">We should all be here!!</h2>
+
+<div float="right" class="img"><img src="./resources/boot11.png" /></div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="run-it-1">Run It!!</h2>
+
+<ul>
+  <li>
+    <p>Before we select Google Chrome, let’s go ahead and select the <mark>Single Floppy Disk</mark> right above the index.html tab.</p>
+  </li>
+  <li>
+    <p>The asterisk is no longer there, so we can proceed.</p>
+  </li>
+  <li>
+    <p>Select Google Chrome</p>
+  </li>
+  <li>
+    <p>Once you browser opens, maximize it if it is not already.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-6">We should all be here!!</h2>
+
+<div float="right" class="img"><img src="./resources/boot12.png" /></div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="now-lets-talk-about-what-we-see-1">Now let’s talk about what we see</h2>
+
+<div float="right" class="img"><img src="./resources/boot12.png" /></div>
+
+<div class="fragment">
+ Question time: Whats the difference between the text in each container, and the test not encapsulated in a container?
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="test-it-1">Test It!!</h2>
+
+<div float="right" class="img"><img src="./resources/boot13.png" /></div>
+
+<ul>
+  <li>
+    <p>The container’s size has been set inside the <mark>bootstrap.min.css</mark> we placed in the index.html head.</p>
+  </li>
+  <li>
+    <p>Now let’s shrink and enlarge the browser and see what what the responsiveness differences are between the three paragraphs.</p>
+  </li>
+</ul>
+
+<div class="fragment">
+Let's get a volunteer to come up and demonstrate to the class.
+</div>
+
+<div class="fragment">
+So let's discuss the differences we see.
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="hey-wait-theres-only-one-column-per-row">Hey wait, there’s only one column per row</h2>
+
+<div float="right" class="img"><img src="./resources/boot12.png" /></div>
+
+<ul>
+  <li>
+    <p>So obviously we cannot build a website with one column per row!</p>
+  </li>
+  <li>
+    <p>Let’s add some columns to our code. I need a volunteer.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="lets-separate-the-masses">Let’s separate the masses</h2>
+
+<ul>
+  <li>
+    <p>Let’s stop our program and go back to our index.html page in Visual Studio.</p>
+  </li>
+  <li>
+    <p>Let’s discuss our code</p>
+  </li>
+</ul>
+
+<pre><code class="language-C#">&lt;div&gt; 
+  &lt;h2&gt;Without a Container&lt;/h2&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas euismod dolor rhoncus lectus rhoncus, sed ultrices neque hendrerit. Morbi iaculis accumsan elementum. Ut sem ipsum, tristique vitae elementum non, consequat luctus justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam id volutpat augue. Pellentesque pellentesque, nibh vitae finibus sollicitudin, magna odio lobortis magna, et facilisis nisl dui sit amet tortor.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="container"&gt; 
+  &lt;h2&gt;With a Container&lt;/h2&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas euismod dolor rhoncus lectus rhoncus, sed ultrices neque hendrerit. Morbi iaculis accumsan elementum. Ut sem ipsum, tristique vitae elementum non, consequat luctus justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam id volutpat augue. Pellentesque pellentesque, nibh vitae finibus sollicitudin, magna odio lobortis magna, et facilisis nisl dui sit amet tortor.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="container-fluid"&gt; 
+  &lt;h2&gt;With a Container-fluid&lt;/h2&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas euismod dolor rhoncus lectus rhoncus, sed ultrices neque hendrerit. Morbi iaculis accumsan elementum. Ut sem ipsum, tristique vitae elementum non, consequat luctus justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam id volutpat augue. Pellentesque pellentesque, nibh vitae finibus sollicitudin, magna odio lobortis magna, et facilisis nisl dui sit amet tortor.&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<div class="fragment">
+Question time: How did we separate each of our paragraphs?
+</div>
+
+<div class="fragment">
+Question time: Could we call each <mark>div</mark> with a container class a row? The answer to this question might not be as straightforward as you may think. We will cover why in later slides.
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="lets-do-this">Let’s do this</h2>
+
+<ul>
+  <li>Because we need container classes to create rows with columns, lets delete the div without a container class.</li>
+</ul>
+
+<pre><code class="language-C#">&lt;div class="container"&gt; 
+  &lt;h2&gt;With a Container&lt;/h2&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas euismod dolor rhoncus lectus rhoncus, sed ultrices neque hendrerit. Morbi iaculis accumsan elementum. Ut sem ipsum, tristique vitae elementum non, consequat luctus justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam id volutpat augue. Pellentesque pellentesque, nibh vitae finibus sollicitudin, magna odio lobortis magna, et facilisis nisl dui sit amet tortor.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="container-fluid"&gt; 
+  &lt;h2&gt;With a Container-fluid&lt;/h2&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas euismod dolor rhoncus lectus rhoncus, sed ultrices neque hendrerit. Morbi iaculis accumsan elementum. Ut sem ipsum, tristique vitae elementum non, consequat luctus justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam id volutpat augue. Pellentesque pellentesque, nibh vitae finibus sollicitudin, magna odio lobortis magna, et facilisis nisl dui sit amet tortor.&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<ul>
+  <li>Now let’s create three columns in each container.</li>
+</ul>
+
+<div class="fragment">
+Question time: Can someone explain how I would create three columns in each div?
+</div>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>Let’s modify our code further to reflect the creation of columns. I need a volunteer.</p>
+  </li>
+  <li>
+    <p>Replace your existing code in you index.html with the following slides</p>
+  </li>
+</ul>
+
+<pre><code class="language-C#">&lt;div class="container"&gt;
+	&lt;div class="row"&gt; 
+		&lt;div class="col"&gt; 
+			&lt;h2&gt;With a Container&lt;/h2&gt;
+			&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas euismod dolor rhoncus lectus rhoncus, sed ultrices neque hendrerit. Morbi iaculis accumsan elementum. Ut sem ipsum, tristique vitae elementum non, consequat luctus justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam id volutpat augue. Pellentesque pellentesque, nibh vitae finibus sollicitudin, magna odio lobortis magna, et facilisis nisl dui sit amet tortor.&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div class="col"&gt; 
+			&lt;h2&gt;With a Container&lt;/h2&gt;
+			&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas euismod dolor rhoncus lectus rhoncus, sed ultrices neque hendrerit. Morbi iaculis accumsan elementum. Ut sem ipsum, tristique vitae elementum non, consequat luctus justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam id volutpat augue. Pellentesque pellentesque, nibh vitae finibus sollicitudin, magna odio lobortis magna, et facilisis nisl dui sit amet tortor.&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div class="col"&gt; 
+			&lt;h2&gt;With a Container&lt;/h2&gt;
+			&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas euismod dolor rhoncus lectus rhoncus, sed ultrices neque hendrerit. Morbi iaculis accumsan elementum. Ut sem ipsum, tristique vitae elementum non, consequat luctus justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam id volutpat augue. Pellentesque pellentesque, nibh vitae finibus sollicitudin, magna odio lobortis magna, et facilisis nisl dui sit amet tortor.&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;	
+&lt;/div&gt;
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>Finish modifying your code</li>
+</ul>
+
+<pre><code class="language-C#">&lt;div class="container-fluid"&gt; 
+	&lt;div class="row"&gt; 
+		&lt;div class="col"&gt; 
+			&lt;h2&gt;With a Container&lt;/h2&gt;
+			&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas euismod dolor rhoncus lectus rhoncus, sed ultrices neque hendrerit. Morbi iaculis accumsan elementum. Ut sem ipsum, tristique vitae elementum non, consequat luctus justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam id volutpat augue. Pellentesque pellentesque, nibh vitae finibus sollicitudin, magna odio lobortis magna, et facilisis nisl dui sit amet tortor.&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div class="col"&gt; 
+			&lt;h2&gt;With a Container&lt;/h2&gt;
+			&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas euismod dolor rhoncus lectus rhoncus, sed ultrices neque hendrerit. Morbi iaculis accumsan elementum. Ut sem ipsum, tristique vitae elementum non, consequat luctus justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam id volutpat augue. Pellentesque pellentesque, nibh vitae finibus sollicitudin, magna odio lobortis magna, et facilisis nisl dui sit amet tortor.&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div class="col"&gt; 
+			&lt;h2&gt;With a Container&lt;/h2&gt;
+			&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas euismod dolor rhoncus lectus rhoncus, sed ultrices neque hendrerit. Morbi iaculis accumsan elementum. Ut sem ipsum, tristique vitae elementum non, consequat luctus justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam id volutpat augue. Pellentesque pellentesque, nibh vitae finibus sollicitudin, magna odio lobortis magna, et facilisis nisl dui sit amet tortor.&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;	
+&lt;/div&gt;
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-7">We should all be here!!</h2>
+
+<div float="right" class="img"><img src="./resources/boot14.png" /></div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="lets-discuss-what-we-have-done">Let’s discuss what we have done</h2>
+
+<ul>
+  <li>
+    <p>We introduced a new class called <code>row</code>.</p>
+  </li>
+  <li>
+    <p>Can someone explain why we used the class <code>row</code> instead of just placing the columns inside the containers by themsleves?</p>
+  </li>
+</ul>
+
+<div class="fragment">
+- Wait!!! Let's not wonder what will happen, let's see what will happen. I need a volunteer.
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="its-time-to-break-something">It’s time to break something</h2>
+
+<ul>
+  <li>Let’s remove the <mark>Row</mark> class from our .container.</li>
+</ul>
+
+<pre><code class="language-C#">&lt;div class="container"&gt;
+		&lt;div class="col"&gt; 
+			&lt;h2&gt;With a Container&lt;/h2&gt;
+			&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas euismod dolor rhoncus lectus rhoncus, sed ultrices neque hendrerit. Morbi iaculis accumsan elementum. Ut sem ipsum, tristique vitae elementum non, consequat luctus justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam id volutpat augue. Pellentesque pellentesque, nibh vitae finibus sollicitudin, magna odio lobortis magna, et facilisis nisl dui sit amet tortor.&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div class="col"&gt; 
+			&lt;h2&gt;With a Container&lt;/h2&gt;
+			&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas euismod dolor rhoncus lectus rhoncus, sed ultrices neque hendrerit. Morbi iaculis accumsan elementum. Ut sem ipsum, tristique vitae elementum non, consequat luctus justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam id volutpat augue. Pellentesque pellentesque, nibh vitae finibus sollicitudin, magna odio lobortis magna, et facilisis nisl dui sit amet tortor.&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div class="col"&gt; 
+			&lt;h2&gt;With a Container&lt;/h2&gt;
+			&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas euismod dolor rhoncus lectus rhoncus, sed ultrices neque hendrerit. Morbi iaculis accumsan elementum. Ut sem ipsum, tristique vitae elementum non, consequat luctus justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam id volutpat augue. Pellentesque pellentesque, nibh vitae finibus sollicitudin, magna odio lobortis magna, et facilisis nisl dui sit amet tortor.&lt;/p&gt;
+		&lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-8">We should all be here!!</h2>
+
+<div float="right" class="img"><img src="./resources/boot15.png" /></div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="run-it-2">Run It!!</h2>
+
+<ul>
+  <li>
+    <p>Before we select Google Chrome, let’s go ahead and select the <mark>Single Floppy Disk</mark> right above the index.html tab.</p>
+  </li>
+  <li>
+    <p>The asterisk is no longer there, so we can proceed.</p>
+  </li>
+  <li>
+    <p>Select Google Chrome</p>
+  </li>
+  <li>
+    <p>Once you browser opens, maximize it if it is not already.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="we-should-all-be-here-9">We should all be here!!</h2>
+
+<div float="right" class="img"><img src="./resources/boot16.png" /></div>
+
+<div class="fragment">
+Question time: So let's answer the question I posed earlier in the slides. Can we call each div with a container class a row?
+</div>
+
+<div class="fragment">
+No!! 
+</div>
+
+<div class="fragment">
+- Although a container may look like a row, it's a container!! Let's picture a container.
+</div>
+
+<div class="fragment">
+<div float="right" class="img"><img src="./resources/container.jpg" /></div>
+</div>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>
+    <p>When we create a container, no matter if it is a <code>.container</code> or a <code>.container-fluid</code>, what we have done is create a defined space in which to set up our <mark>responsive</mark> page structure.</p>
+  </li>
+  <li>
+    <p>We then have the flexibilty using the <code>row</code> and <code>column</code> classes to build our website to meet our design needs.</p>
+  </li>
+</ul>
+
+<div class="fragment">
+- Question time: How many rows can we place in a container?
+</div>
+
+<div class="fragment">
+- Question time: How many columns can we place in a container?
+</div>
+
+<div class="fragment">
+- Task time: Let's answer those two questions through coding. I would like each of you to create the following page by modifying your index.html page.
+</div>
+
+<div class="fragment">
+   <div float="right" class="img"><img src="./resources/boot17.png" /></div>
+</div>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="lets-style-our-page-ever-further">Let’s style our page ever further</h2>
+
+<ul>
+  <li>
+    <p>If we look at our page, our columns are all the same size in each row.</p>
+  </li>
+  <li>
+    <p>In the real world, we wouldn’t be so lucky as to use a simple design like this.</p>
+  </li>
+  <li>
+    <p>Let’s learn another tool which will help us to dicate the size of our columns and make the column sizes different for each column.</p>
+  </li>
+  <li>
+    <p>By design, the Bootstrap grid is 12 spans in width.</p>
+  </li>
+  <li>
+    <p>Let’s look back at the default grid we presented in an earlier slide.</p>
+  </li>
+</ul>
+
+<div class="fragment">
+   <div float="right" class="img"><img src="./resources/Bootstrap-grid.png" /></div>
+</div>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<div float="right" class="img"><img src="./resources/Bootstrap-grid.png" /></div>
+
+<ul>
+  <li>If you notice, each span has a number: Span 1, Span 4, Span 6, Span 8, Span 12</li>
+</ul>
+
+<div class="fragment">
+Question time: Who can explain to the class what the numbers tell us in each of the spans?
+</div>
+
+<div class="fragment">
+The numbers signify how many units of spans each column is taking.
+</div>
+
+<div class="fragment">
+Question time: So if I needed 3 columns of the exact same size, what size would I make each span?
+</div>
+
+<div class="fragment">
+Remember, a Bootstrap grid is 12 units across. When you set the sizes for your columns, <b>they must total 12 units</b>.
+</div>
+
+<div class="fragment">
+Volunteer Time!!
+</div>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>Let’s make the following changes to the code.</li>
+</ul>
+
+<pre><code class="language-C#">	&lt;div class="container"&gt;
+		&lt;div class="row"&gt;
+			&lt;div class="col"&gt;
+				&lt;h2&gt;With a Container&lt;/h2&gt;
+				&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas euismod dolor rhoncus lectus rhoncus, sed ultrices neque hendrerit. Morbi iaculis accumsan elementum. Ut sem ipsum, tristique vitae elementum non, consequat luctus justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam id volutpat augue. Pellentesque pellentesque, nibh vitae finibus sollicitudin, magna odio lobortis magna, et facilisis nisl dui sit amet tortor.&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="row"&gt;
+			&lt;div class="col-4"&gt;
+				&lt;h2&gt;With a Container&lt;/h2&gt;
+				&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas euismod dolor rhoncus lectus rhoncus, sed ultrices neque hendrerit. Morbi iaculis accumsan elementum. Ut sem ipsum, tristique vitae elementum non, consequat luctus justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam id volutpat augue. Pellentesque pellentesque, nibh vitae finibus sollicitudin, magna odio lobortis magna, et facilisis nisl dui sit amet tortor.&lt;/p&gt;
+			&lt;/div&gt;
+			&lt;div class="col-8"&gt;
+				&lt;h2&gt;With a Container&lt;/h2&gt;
+				&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas euismod dolor rhoncus lectus rhoncus, sed ultrices neque hendrerit. Morbi iaculis accumsan elementum. Ut sem ipsum, tristique vitae elementum non, consequat luctus justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam id volutpat augue. Pellentesque pellentesque, nibh vitae finibus sollicitudin, magna odio lobortis magna, et facilisis nisl dui sit amet tortor.&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="row"&gt;
+			&lt;div class="col-2"&gt;
+				&lt;h2&gt;With a Container&lt;/h2&gt;
+				&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas euismod dolor rhoncus lectus rhoncus, sed ultrices neque hendrerit. Morbi iaculis accumsan elementum. Ut sem ipsum, tristique vitae elementum non, consequat luctus justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam id volutpat augue. Pellentesque pellentesque, nibh vitae finibus sollicitudin, magna odio lobortis magna, et facilisis nisl dui sit amet tortor.&lt;/p&gt;
+			&lt;/div&gt;
+			&lt;div class="col-8"&gt;
+				&lt;h2&gt;With a Container&lt;/h2&gt;
+				&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas euismod dolor rhoncus lectus rhoncus, sed ultrices neque hendrerit. Morbi iaculis accumsan elementum. Ut sem ipsum, tristique vitae elementum non, consequat luctus justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam id volutpat augue. Pellentesque pellentesque, nibh vitae finibus sollicitudin, magna odio lobortis magna, et facilisis nisl dui sit amet tortor.&lt;/p&gt;
+			&lt;/div&gt;
+			&lt;div class="col-2"&gt;
+				&lt;h2&gt;With a Container&lt;/h2&gt;
+				&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas euismod dolor rhoncus lectus rhoncus, sed ultrices neque hendrerit. Morbi iaculis accumsan elementum. Ut sem ipsum, tristique vitae elementum non, consequat luctus justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam id volutpat augue. Pellentesque pellentesque, nibh vitae finibus sollicitudin, magna odio lobortis magna, et facilisis nisl dui sit amet tortor.&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>Lets make some changes to the .container-fluid code.</li>
+</ul>
+
+<pre><code class="language-C#">	&lt;div class="container-fluid"&gt; 
+		&lt;div class="row"&gt;
+			&lt;div class="col"&gt;
+				&lt;h2&gt;With a Container&lt;/h2&gt;
+				&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas euismod dolor rhoncus lectus rhoncus, sed ultrices neque hendrerit. Morbi iaculis accumsan elementum. Ut sem ipsum, tristique vitae elementum non, consequat luctus justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam id volutpat augue. Pellentesque pellentesque, nibh vitae finibus sollicitudin, magna odio lobortis magna, et facilisis nisl dui sit amet tortor.&lt;/p&gt;
+			&lt;/div&gt;
+			&lt;div class="col-4"&gt;
+				&lt;h2&gt;With a Container&lt;/h2&gt;
+				&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas euismod dolor rhoncus lectus rhoncus, sed ultrices neque hendrerit. Morbi iaculis accumsan elementum. Ut sem ipsum, tristique vitae elementum non, consequat luctus justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam id volutpat augue. Pellentesque pellentesque, nibh vitae finibus sollicitudin, magna odio lobortis magna, et facilisis nisl dui sit amet tortor.&lt;/p&gt;
+			&lt;/div&gt;
+			&lt;div class="col-7"&gt;
+				&lt;h2&gt;With a Container&lt;/h2&gt;
+				&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas euismod dolor rhoncus lectus rhoncus, sed ultrices neque hendrerit. Morbi iaculis accumsan elementum. Ut sem ipsum, tristique vitae elementum non, consequat luctus justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam id volutpat augue. Pellentesque pellentesque, nibh vitae finibus sollicitudin, magna odio lobortis magna, et facilisis nisl dui sit amet tortor.&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="row"&gt;
+			&lt;div class="col-9"&gt;
+				&lt;h2&gt;With a Container&lt;/h2&gt;
+				&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas euismod dolor rhoncus lectus rhoncus, sed ultrices neque hendrerit. Morbi iaculis accumsan elementum. Ut sem ipsum, tristique vitae elementum non, consequat luctus justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam id volutpat augue. Pellentesque pellentesque, nibh vitae finibus sollicitudin, magna odio lobortis magna, et facilisis nisl dui sit amet tortor.&lt;/p&gt;
+			&lt;/div&gt;
+			&lt;div class="col-3"&gt;
+				&lt;h2&gt;With a Container&lt;/h2&gt;
+				&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas euismod dolor rhoncus lectus rhoncus, sed ultrices neque hendrerit. Morbi iaculis accumsan elementum. Ut sem ipsum, tristique vitae elementum non, consequat luctus justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam id volutpat augue. Pellentesque pellentesque, nibh vitae finibus sollicitudin, magna odio lobortis magna, et facilisis nisl dui sit amet tortor.&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="row"&gt;
+			&lt;div class="col"&gt;
+				&lt;h2&gt;With a Container&lt;/h2&gt;
+				&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas euismod dolor rhoncus lectus rhoncus, sed ultrices neque hendrerit. Morbi iaculis accumsan elementum. Ut sem ipsum, tristique vitae elementum non, consequat luctus justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam id volutpat augue. Pellentesque pellentesque, nibh vitae finibus sollicitudin, magna odio lobortis magna, et facilisis nisl dui sit amet tortor.&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+</code></pre>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="run-it-3">Run It!!</h2>
+
+<ul>
+  <li>
+    <p>Before we select Google Chrome, let’s go ahead and select the <mark>Single Floppy Disk</mark> right above the index.html tab.</p>
+  </li>
+  <li>
+    <p>The asterisk is no longer there, so we can proceed.</p>
+  </li>
+  <li>
+    <p>Select Google Chrome</p>
+  </li>
+  <li>
+    <p>Once you browser opens, maximize it if it is not already.</p>
+  </li>
+  <li>
+    <p>Our page is to large to show on a slide, so does everyone’s look like our volunteers page?</p>
+  </li>
+</ul>
+
+<style type="text/css">
+.img:hover  {
+        transform: scale(1.5);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+.img-center {
+    display: block;
+    margin-left: 0px;
+    margin-right: auto;
+	width: 40%;
+}
+</style>
+
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="../../shared/lib/js/head.min.js"></script>
+		<script src="../../shared/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// I suspect there's a better way to do this...
+				width: 1920 * 0.8,
+				height: 1080,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../shared/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../shared/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../shared/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../shared/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
