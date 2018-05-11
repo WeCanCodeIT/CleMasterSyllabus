@@ -22,7 +22,7 @@ In order to deliver this webpage solution, you will need the following skills an
 
 ### User Interface Requirements
 
-During application development process, the following user interface (UI) requirements were identified.
+During website development process, the following user interface (UI) requirements were identified.
 - [ ] You MUST have different sections for your site. You can create the entire site as one page with multiple sections, or multiple pages.
 - [ ] **Projects** (3) - the following MUST be included:
   - [ ] Name of project
@@ -43,7 +43,7 @@ During application development process, the following user interface (UI) requir
 
 
 ## Stretch Tasks
-During application development process, the following application logic requirements were identified. These requirements are not mandatory and are in no way a requirement for delivering the application.
+During website development process, the following application logic requirements were identified. These requirements are not mandatory and are in no way a requirement for delivering the application.
 - [ ] The website COULD incorporate some of the following effects, using jQuery plugins, other libraries, or your own JavaScript:
   - [ ] Carousel of your screenshots
   - [ ] Parallax scrolling

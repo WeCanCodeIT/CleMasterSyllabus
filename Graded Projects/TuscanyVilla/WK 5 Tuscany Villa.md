@@ -29,7 +29,7 @@
 In order to deliver this webpage solution, you will need the following skills and knowledge.
 -  HTML5
 -  CSS Styling
--  CSS Grids
+-  CSS Grid
 
 ## Tasks
 
@@ -41,7 +41,7 @@ After you have completed all coding and testing of your application, you will en
 
 ### User Interface Requirements
 
-During application development process, the following user interface (UI) requirements were identified.
+During website development process, the following user interface (UI) requirements were identified.
 - [ ] HTML5
   - [ ] The base HTML MUST be created in a file called `index.html`.
   - [ ] Semantic elements MUST be used where appropriate.
@@ -60,7 +60,7 @@ During application development process, the following user interface (UI) requir
 
 ## Stretch Tasks
 
-During application development process, the following application logic requirements were identified. These requirements are not mandatory and are in no way a requirement for delivering the application.
+During website development process, the following application logic requirements were identified. These requirements are not mandatory and are in no way a requirement for delivering the application.
 - [ ] The site COULD make use of `:hover` and CSS transitions to be more dynamic.
 
 - [ ] You COULD find some images of homes, bring them in, and experiment using different CSS techniques.

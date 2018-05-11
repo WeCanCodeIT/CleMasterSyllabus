@@ -38,7 +38,6 @@ During application development process, the following application logic requirem
 ### User Interface Requirements, Part 1
 
 During application development process, the following user interface (UI) requirements were identified.
-
 - [ ] The Program class MUST contain an interactive user interface (see example at bottom of page).
   - [ ] The Program class MUST display the current status of pet.
   - [ ] The Program class MUST display options for interacting with pet.
