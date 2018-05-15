@@ -1,4 +1,4 @@
-title: Arrays
+title: Intro to Data Structures
 subtitle: Data Structures
 theme: league
 
@@ -16,8 +16,6 @@ theme: league
 
 - Lists are created, accessed, and manipulated in much the same way we create, access, and manipulate arrays.
 
-- We will go into depth on lists in a future lecture.
-
 ## Dictionaries... No, not Webster's
 
 - Dictionaries, or as they are commonly referred, Hash Tables, are an extended/advanced array. 
@@ -27,8 +25,6 @@ theme: league
 - Unlike arrays or lists in which we only store the data values, in Dictionaries we can also store a key along with a value. This is commonly referred to as a <mark>KeyValuePair</mark>.
 
 - We can also store to the <mark>KeyValuePairs</mark> as different data types. Thus, the Key can be an `int`, while its value can be a `string`.
-
-- We will see in a future lecture how to create, access, and manipulate Dictionaries, although they will not be the focus of our data structure teaching efforts
 
 ## Queues 
 
@@ -390,4 +386,119 @@ Console.WriteLine("fee, fie, foe, fum".IndexOf("foe")); //prints "10"
 Why is the index value 10?
 </div>
 
+# Lists
 
+We have already seen one data collection type, an `array`. An `array` is a collection of values that have the same type, like `int` or `string`.
+
+There are several types of data collections in C#, many of which you will see during the upcoming weeks and even more during final projects.
+
+Lets talk about `Lists`.
+
+## Remember Arrays are fixed size
+
+We can't change the size of an array once we've created it. It will never grow or shrink. This array will always have a `length` of three:
+
+<code class="language-C#" data-noescape>
+int[] myArray = {1, 2, 3};
+</code>
+
+If I wanted to add an element to this array, I'd generally do something like this (but hopefully I'd use a loop):
+
+```C#
+int[] oldArray = myArray;
+
+myArray = new int[4];
+for(int index = 0; index < oldArray.Length; index++) 
+{
+  myArray[index] = oldArray[index];
+}
+myArray[3] = 42;
+```
+
+We are forced to create a new array and assigned it to our `myArray` variable. Imagine if we needed to insert a new element in the middle? *Yuck!*
+
+## Let's Return to Hello World
+
+- Open your Hello World application.
+
+- We are going to comment out our arrays, and replace them with a list.
+
+## How To Initialize a List
+
+- A list is created with the <mark>new</mark> keyword, which we will see a lot more of soon!
+
+- Lets start by Creating an empty list.
+
+- Enter the following code below the last <mark>foodList</mark> array addition.
+
+```C#
+List<string> foodList = new List<string>();
+````
+- We have now created a new datastructure which gives us the flexibility to add as many elements we desire.
+
+## Add To Our Empty List
+
+- We will be talking a lot more about objects this week, but it is good for you to know that Lists are a type of object.
+
+- Lists have several built-in properties and methods, which we will go over now. Some of those are:
+	- `.Count`
+	- `.Insert()`
+	- `.Add()`
+	- `.Remove()`
+
+- Lets start with the `.Add()` method.
+
+- We add elements to a list in the following manner.
+
+- Enter the following code below your foodList declaration
+
+```C#
+foodList.Add("Milk");
+foodList.Add("Fruit");
+foodList.Add("Meat");
+foodList.Add("Wine");
+foodList.Add("Bread");
+```
+- Notice the similarities and differences between creating a new List versus creating an array.
+
+## Initializing an Empty List
+
+- As we have just demonstrated with lists we don't have to set a size when we create an empty list.
+
+## Mutable
+
+- Unlike an array, a List is **mutable**, meaning that it does not have a fixed size and can increase or decrease in size.
+
+
+## Printing Elements in a List
+
+- Printing a list is no differant that printing and array with one exception we will note later.
+
+## Count, Remove, Insert
+
+- The `.Count` property is the List version of the `.Length` property that is built in to arrays.
+
+- `.Count` tells us the size of the list.
+
+- The `.Remove` property removes an element from the list.
+
+- The `.Insert` property inserts an element at a specific index.
+
+- Enter the following code below your foodList declaration
+
+```C#
+foodList.Add("Pepsi");
+            Console.WriteLine("{0}, {1}, {2}, {3}, {4}, {5}", foodList[0], foodList[1], foodList[2], foodList[3], foodList[4], foodList[5]);
+            foodList.Remove("Pepsi");
+            Console.WriteLine("{0}, {1}, {2}, {3}, {4}", foodList[0], foodList[1], foodList[2], foodList[3], foodList[4]);
+            foodList.Insert(1, "Pepsi");
+            Console.WriteLine("{0}, {1}, {2}, {3}, {4}, {5}", foodList[0], foodList[1], foodList[2], foodList[3], foodList[4], foodList[5]);
+            foodList.RemoveAt(1);
+            Console.WriteLine("{0}, {1}, {2}, {3}, {4}", foodList[0], foodList[1], foodList[2], foodList[3], foodList[4]);
+````
+
+## Many Other Option with Lists
+
+- We have many other options and tools C# provides when working with lists. 
+
+- As we get further into the lesson, we will highlight those options and tools.

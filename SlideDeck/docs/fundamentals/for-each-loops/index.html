@@ -1,0 +1,247 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Foreach Loops - •••</title>
+
+		<meta name="description" content="- description not found -">
+		<meta name="author"      content="Your Name Here">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../shared/css/reveal.css">
+		<link rel="stylesheet" href="../../shared/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../shared/lib/css/zenburn.css">
+
+		<!-- WCCI style tweaks -->
+		<link rel="stylesheet" href="../../shared/css/wcci.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../shared/css/print/pdf.css' : '../../shared/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="text-align: center">Foreach Loops</h1>
+					<h3 style="text-align: center">•••</h3>
+					<div id="logo">
+						<img src="../../shared/images/wcci-logo.png">
+						<p style="font-size: smaller;">&copy; We Can Code IT, LLC</p>
+					</div>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_ -->
+<h2 id="the-wonderful-world-of-loops">The wonderful world of Loops</h2>
+
+<ul>
+  <li>
+    <p>In prior lessons we covered <mark>while</mark> and <mark>do while</mark> and <mark>for</mark> loops.</p>
+  </li>
+  <li>
+    <p>We also discussed some of the situations in which we would use them.</p>
+  </li>
+  <li>
+    <p>Now we will discuss the <mark>foreach</mark> loop.</p>
+  </li>
+  <li>
+    <p>The <mark>foreach</mark> loop will be one of the most important tools C# has to offer.</p>
+  </li>
+  <li>
+    <p>We predominantly use a <mark>foreach</mark> loops when we are iterating through an array, list, dictionary, or other data structure.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="understanding-the-foreach-loop-structure">Understanding the foreach loop structure</h2>
+
+<ul>
+  <li>
+    <p>The <mark>foreach</mark> loop is one of the least error prone loops we will use in programming.</p>
+  </li>
+  <li>
+    <p>The structure of a <mark>foreach</mark> loop is differant from that of a <mark>for</mark> loop.</p>
+  </li>
+  <li>
+    <p>As with the <mark>for</mark> loop, the <mark>foreach</mark> keyword tells the compiler to execute a foreach loop.</p>
+  </li>
+  <li>
+    <p>Unlike a <mark>for</mark> loop, we do not use a index variable, .length property, or and increment/decrement statement.</p>
+  </li>
+  <li>
+    <p>One of the most common error’s <mark>Array out of bounds exception</mark> does not apply to <mark>foreach</mark> loops.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="foreach-loop-array-example">Foreach loop array example</h2>
+
+<ul>
+  <li>
+    <p>Here is an example of a <mark>foreach</mark> loop. Lets walk through its parts.</p>
+  </li>
+  <li>
+    <p>You will notice a <mark>foreach</mark> loop is written in plain english.</p>
+  </li>
+</ul>
+
+<pre><code class="language-C#">int[] fibarray = new int[] { 0, 1, 1, 2, 3, 5, 8, 13 };
+foreach (int element in fibarray)
+{
+    System.Console.WriteLine(element);
+}
+</code></pre>
+<ul>
+  <li>
+    <p>The <mark>foreach</mark> loop operates just as it is written.</p>
+  </li>
+  <li>
+    <p>The loop will execute for each int element in the fibarray.</p>
+  </li>
+  <li>
+    <p>We do not have to keep track of the length, nor do we have to increment with each iteration.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="foreach-loop-list-example">Foreach loop list example</h2>
+
+<ul>
+  <li>Here is another example of a <mark>foreach</mark> loop.</li>
+</ul>
+
+<pre><code class="language-C#">List&lt;int&gt; fibarray = new List&lt;int&gt; { 0, 1, 1, 2, 3, 5, 8, 13 };
+foreach (int element in fibarray)
+{
+    System.Console.WriteLine(element);
+}
+</code></pre>
+<ul>
+  <li>
+    <p>The <mark>foreach</mark> loop operates just as it is written.</p>
+  </li>
+  <li>
+    <p>The loop will execute for each int element in the fibarray.</p>
+  </li>
+  <li>
+    <p>We do not have to keep track of the length, nor do we have to increment with each iteration.</p>
+  </li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="the-body">The body</h2>
+
+<ul>
+  <li>With the exception of list operations such as .Add(), .Remove(), .Insert(), etc the body is the same as a <mark>for</mark> loop.</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="summary">Summary</h2>
+
+<ul>
+  <li>
+    <p>The for loop and the foreach loop perform the same functions.</p>
+  </li>
+  <li>
+    <p>Although their inital set-up statements are differant, the work done in the body is the same.</p>
+  </li>
+</ul>
+
+<style type="text/css">
+.img:hover  {
+        transform: scale(1.5);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+</style>
+
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="../../shared/lib/js/head.min.js"></script>
+		<script src="../../shared/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// I suspect there's a better way to do this...
+				width: 1920 * 0.8,
+				height: 1080,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../../shared/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../shared/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../shared/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../shared/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../shared/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

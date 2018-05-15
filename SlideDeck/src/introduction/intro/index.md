@@ -27,31 +27,37 @@ theme: league
  
 	- Strings and Text Processing
  
-	- Git and GitHub
+	- Unit Testing Homework
+
+	- Project One
  
 - Career Services
  
-	- Intro to Career Services
+	- Elevator Pitch
  
-	- Interview Bucket List
+	- Opportunity Characteristic Inventory
  
 ## Week Two
  
 - Active Learning
  
-	- Arrays
+	- Intro to Data Structures
+ 
+	- Git and Git Hub
  
 	- Loops
  
-	- Introduction to Object Oriented Programming (OOP)
+	- Methods and Attributes
  
-	- Building Classes- Methods and Attributes
- 
-	- Unit Testing/Test-Driven Development (TDD)
+	- Unit Testing Homework
+
+	- Project Two
  
 - Career Services
  
-	- Resume Services
+	- Resume Workshop
+
+	- Headshots
  
 ## Week Three
  
@@ -59,15 +65,17 @@ theme: league
  
 	- Introduction to Object Oriented Programming (OOP)
  
-	- Lists
- 
-	- Dictionaries
- 
-	- Continue Testing/TDD
- 	
+	- Introduction to Test Driven Development (TDD)
+  	
+	- TDD Homework
+
+	- Project Three
+
 - Career Services
  
-	- Watch Interview Videos
+	- LinkedIn Profile
+
+	- Social Media Etiquette Self-Study
  
 ## Week Four
  
@@ -76,10 +84,16 @@ theme: league
 	- Continue OOP
  
 	- Inheritance & Polymorphism
+
+	- Interfaces
+
+	- TDD Homework
+
+	- Project Four
  	
 - Career Services
  
-	- Watch Interview Videos
+	- Inbound Marketing, Business Cards, Branding, and LinkedIn Self Publishing
  
 ## Week Five
  
@@ -89,93 +103,133 @@ theme: league
  
 	- Cascading Style Sheets (CSS)
  
-	- Bootstrap
+	- CSS Styling
+
+	- CSS Grid
+
+	- TDD Homework
+
+	- Project Five
  		
 - Career Services
  
-	- Headshots
- 
-	- Polish LinkedIn Profile
- 
-	- Ten Second Elevator Speech
+	- Inclusion Topics
+
+	- Open Source Project Contribution and Service Learning Discussion
+
+	- Cover My Meds Open Source visit (tentative)
  
 ## Week Six
  
 - Active Learning
  
-	- Code-first design / MVC
- 
-	- Razor
+	- Flexbox
+
+	- TDD Homework
+
+	- Project Six
  			
 - Career Services
  
-	- STAR Stories
- 
-	- Tech Interview Preparation
- 
-	- Ten Second Elevator Speech
+	- LinkedIn Messaging & Informational Interviewing
+
+	- Job Search Announcement
  
 ## Week Seven
  
 - Active Learning
  
-	- SQL Relational Databases and Design
- 				
+	- Bootstrap
+	
+	- JavaScript
+
+	- Project Seven
+
 - Career Services
  
-	- Tech Interview Preparation
+	- Behavioral Interviewing
+
+	- Scheduling one-on-ones
  
  
 ## Week Eight
 
 - Active Learning
  
-	- Database First/MVC
- 
-	- Introduction to Pair Programming with Git/GitHub
+	- Javascript Object Notation (JSON)
+
+	- Asynchronous JavaScript And XML (AJAX)
+
+	- Language-Integrated Query (LINQ)
+
+	- Web Application Programming Interface (API)
+
+	- Oath
+
+	- TDD Homework
+
+	- Project Eight
  				
 - Career Services
  
-	- Tech Interview Preparation
+	- Tech I: How to talk about your projects
+
+	- Salary Negotatiation Self Study
+
+	- Deadline to earn your "Hunting License"
  
 ## Week Nine
  
 - Active Learning
  
-	- JavaScript/jQuery
+	- Introduction to Model View Controller (MVC)
+
+	- MVC Code First 
  
-	- Continue Pair Programming with Git/GitHub
- 
-	- Continue Testing/TDD
+	- TDD Homework
+
+	- Project Nine
  				
 - Career Services
  
-	- Networking
+	- Mental Game Plan (imposter syndrome, anxiety management, etc.)
+
+	- Required Behavioral Mock Interview Deadline
  
 ## Week Ten
  
 - Active Learning
  
-	- AJAX
+	- SQL Database Design
  
-	- JavaScript Object Notation (JSON)
+	- SQL Queries
  
-	- RESTful APIs
- 
-	- Continue Pair Programming with Git/GitHub
+	- LINQ Continued
  				
 - Career Services
  
-	- Networking
+	- Tech II: Tech tests, katas, assessments, etc.
+
+	- Cover Letter Self Study
+
+	- Required Mock Tech Interview deadline
  
 ## Week 11
  
-- Guided Instruction
+- Active Learning
  
-	- Agile Scrum
+	- Database First MVC
  
-	- Trello
+	- Advanced Git (Merging and Branching)
+
+	- Project Ten
+ 				
+- Career Services
  
+	- Tech III: White Boarding, Walking through the process
+ 
+## Week 12
+
 - Final Project Preparation
  
 	- Project Pitches
@@ -183,12 +237,6 @@ theme: league
 	- Project Team Placement
  
 	- Project Team Blue Sky Meeting
- 				
-- Career Services
- 
-	- Networking
- 
-## Week 12
  
 - Final Project
  
