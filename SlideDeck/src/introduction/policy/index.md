@@ -10,7 +10,7 @@ theme: league
 	 
 	- Please inform your facilitators if extenuating circumstances arise.
 
-	- In order to pass the course and to participate in final projects, you must receive a grade of <mark><mark>80%</mark></mark> or higher averaged over all the assignments.
+	- In order to pass the course and to participate in final projects, you must receive a grade of <mark>80%</mark> or higher averaged over all the assignments.
 
 ## Projects
 
@@ -36,7 +36,7 @@ theme: league
 
 	- You are allowed to skip one homework assignment without affecting your grade.
 
-	- Homework is graded as Pass/Fail.
+	- Homework is graded as Pass or Fail.
 
 	- You must turn in all homework to receive full credit.
 
