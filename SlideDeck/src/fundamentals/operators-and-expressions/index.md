@@ -3,7 +3,7 @@ subtitle: •••
 theme: league
 
 
-## Lets Build on what we learned yesterday
+## Lets build on what we learned yesterday
 
 <div float="right" class="img"><img src="./resources/opr1.png" /></div>
 
@@ -64,7 +64,7 @@ Question time: How would you denote the difference between a <code>string</code>
             string messageTwo = "I am Spartacus";
             <mark>int age</mark> = 35;
             <mark>double height</mark> = 72.50;
-            <mark>float weight</mark> = 210.0284606f;
+            <mark>float weight</mark> = 210.028461f;
             <mark>bool isGodLike</mark> = true;
             <mark>char gender</mark> = 'M';
         }
@@ -98,23 +98,23 @@ Question time: What is the value of weight?
         {
             string messageOne = "Hello World!";
             string messageTwo = "I am Spartacus";
-            <mark>int ageOne  = 35;
-            int ageTwo  = 45;
-            double heightOne  = 72.50;
-            double heightTwo  = 91.45;
-            float weightOne  = 210.0284606f;
-            float weightTwo  = 331.12345678f;
-            bool isGodLikeOne  = true;
-            bool isGodLikeTwo  = false;
-            char genderMale  = 'M';
-            char genderFemale  = 'F';
-            Console.WriteLine(messageOne);
-            Console.WriteLine(messageTwo);
-            Console.WriteLine(ageOne + ageTwo);
-            Console.WriteLine(heightOne - heightTwo);
-            Console.WriteLine(weightOne * weightTwo);
-            Console.WriteLine(isGodLikeOne);
-            Console.WriteLine(genderMale);</mark>
+            <mark>int ageOne  = 35;</mark>
+            <mark>int ageTwo  = 45;</mark>
+            <mark>double heightOne  = 72.50;</mark>
+            <mark>double heightTwo  = 91.45;</mark>
+            <mark>float weightOne  = 210.028461f;</mark>
+            <mark>float weightTwo  = 331.123457f;</mark>
+            <mark>bool isGodLikeOne  = true;</mark>
+            <mark>bool isGodLikeTwo  = false;</mark>
+            <mark>char genderMale  = 'M';</mark>
+            <mark>char genderFemale  = 'F';</mark>
+            <mark>Console.WriteLine(messageOne);</mark>
+            <mark>Console.WriteLine(messageTwo);</mark>
+            <mark>Console.WriteLine(ageOne + ageTwo);</mark>
+            <mark>Console.WriteLine(heightOne - heightTwo);</mark>
+            <mark>Console.WriteLine(weightOne * weightTwo);</mark>
+            <mark>Console.WriteLine(isGodLikeOne);</mark>
+            <mark>Console.WriteLine(genderMale);</mark>
         }
     }
 </code></pre> 
@@ -159,9 +159,9 @@ Question time: Because we are using variables, if we assigned new values to our 
 
 	- Assign heightTwo a new value of 35.12345f.
 
-	- Assign weightTwo a new value of -429.1234573f.
+	- Assign weightTwo a new value of -429.123456f.
 
-- Do not change the original values, as we want to see the orginal output and the new output so we can compare the differance.
+- Do not change the original values, as we want to see the orginal output and the new output so we can compare the difference.
 
 - We want our new calculations to be sent to the console, so write a statement to display our new calculations to the console.
 
@@ -242,7 +242,7 @@ Question time: What is the advantage of using variables when performing mathemat
 
             ageTwo = <mark>70</mark>;
             heightTwo = 35.12345f;
-            weightTwo = -429.1234573f;
+            weightTwo = -429.123456f;
             Console.WriteLine(ageOne + ageTwo);
             Console.WriteLine(heightOne - heightTwo);
             Console.WriteLine(weightOne * weightTwo);
@@ -333,7 +333,7 @@ The modulus operator will have many useful benefits in coding, so make sure you 
 
             ageTwo = 70;
             heightTwo = 35.12345f;
-            weightTwo = -429.1234573f;
+            weightTwo = -429.123456f;
             Console.WriteLine(ageOne + ageTwo);
             Console.WriteLine(heightOne - heightTwo);
             Console.WriteLine(weightOne * weightTwo);
@@ -386,7 +386,7 @@ Console.WriteLine(ageTwo);
 - Let's run our program and discuss the results
 
 <div class="fragment">
-Note: <code>ageTwo + 1</code>, <code>ageTwo+=1</code>, and <code>ageTwo++</code> are all equivalent.
+Note: <code>ageTwo = ageTwo + 1;</code>, <code>ageTwo+=1;</code>, and <code>ageTwo++;</code> are all equivalent.
 </div>
 
 ## So let's discuss our results.

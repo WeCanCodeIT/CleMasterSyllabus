@@ -145,13 +145,15 @@ We can add comments to our code to explain it. Comments are very important as th
 
 Here, I have created a comment to remind me that I need to do something — namely, write some code inside the method! We'll do that next.
 
-<pre><code class="language-C#" data-noescape>public class HelloWorld {
-
-	public static void Main(string[] args) {
+<pre><code class="language-C#" data-noescape>namespace HelloWorld
+{
+	class Program
+	{
+	public static void Main(string[] args) 
+		{
 		<mark>// add code for future development</mark>
-
+		}
 	}
-
 }
 </code></pre>
 
@@ -163,15 +165,18 @@ Finally, we can also highlight the code we want to comment and use the following
 Comment: <mark>Ctrl + K C</mark>
 
 Uncomment: <mark>Ctrl + K U.</mark>
-<pre><code class="language-C#" data-noescape>public class HelloWorld {
-
-	public static void Main(string[] args) {
+<pre><code class="language-C#" data-noescape>namespace HelloWorld
+{
+	class Program
+	{
+	public static void Main(string[] args) 
+		{
 		<mark>//</mark> add code for future development
 		<mark>/*</mark>
 		add code for future development
 		<mark>*/</mark>
+		}
 	}
-
 }
 </code></pre>
 

@@ -14,7 +14,7 @@ theme: league
 
 - We call doing something repeatedly *iterating*.
 
-- Our efforts will focus predominantly on three types of loops: <mark>while, do while, for</mark>
+- Our efforts will focus predominantly on four types of loops: <mark>while, do while, for, foreach</mark>
 
 ## Why Would I Want To Do That?
 
@@ -62,7 +62,7 @@ if ((rank == "officer") || (age <= 26))
     Console.WriteLine("Get your gear, kiss your family goodbye, 
 		put on your marching boots.");
 }
-else if ((job == "cook") || (age >= 26))
+else if ((job == "cook") && (age >= 26))
 {
     Console.WriteLine("My army has to eat. Pack your pots and pans");
 }
@@ -129,7 +129,7 @@ while (rank != "exit") <mark>{</mark>
 
 - Finally, we need a way to assign a new value to our variable <mark>action</mark> so we can exit the loop.
 
-## Add the following code to your HelloWorld Program 
+## Add the following code
 
 <pre><code class="language-C#" data-noescape><mark>string action = " ";
 while (action != "exit"){ </mark>
@@ -145,7 +145,7 @@ if ((rank == "officer") || (age <= 26))
 {
     Console.WriteLine("Get your gear, kiss your family goodbye, put on your marching boots.");
 }
-else if ((job == "cook") || (age >= 26))
+else if ((job == "cook") && (age >= 26))
 {
     Console.WriteLine("My army has to eat. Pack your pots and pans");
 }
@@ -185,7 +185,7 @@ Question time:  Can you give me a real life example of a <code>do while</code> l
 Let's take the code we just wrote in the while format and convert it to a <code>do while</code> loop. Comment out the <code>while</code> loop before we proceed with the exception of our action variable.
 </div>
 
-## Add the following code to your Hello World Program 
+## Add the following code 
 
 <pre><code class="language-C#" data-noescape>string action = " ";
 <mark>do { </mark>
@@ -201,7 +201,7 @@ if ((rank == "officer") || (age <= 26))
 {
     Console.WriteLine("Get your gear, kiss your family goodbye, put on your marching boots.");
 }
-else if ((job == "cook") || (age >= 26))
+else if ((job == "cook") && (age >= 26))
 {
     Console.WriteLine("My army has to eat. Pack your pots and pans");
 }

@@ -76,7 +76,7 @@ Question time: How would we change the equality operator to make the conditional
 
 - Spartacus wants to go to battle, but only wants to march to the closest city.
 
-- Our <mark>if</mark> statement in spoken language might read: If the city is less than 125 miles away, then I will march there.
+- Our <mark>if</mark> statement in spoken language might read: If the city is 125 miles away or less, then I will march there.
 
 <div class="fragment">
 Question time: What would we need to add to our code to store the distances to each city?
@@ -164,7 +164,7 @@ if ((rank == "officer") || (age <= 26))
 	Console.WriteLine("Get your gear, kiss your family goodbye, 
 	put on your marching boots.");
 }
-else if ((job == "cook") || (age >= 26))
+else if ((job == "cook") && (age >= 26))
 {
 	Console.WriteLine("My army has to eat. Pack your pots and pans.");
 }
@@ -213,7 +213,7 @@ if ((rank == "officer") || (age <= 26))
     Console.WriteLine("Get your gear, kiss your family goodbye, 
 	put on your marching boots.");
 }
-else if ((job == "cook") || (age >= 26))
+else if ((job == "cook") && (age >= 26))
 {
     Console.WriteLine("My army has to eat. Pack your pots and pans");
 }
@@ -236,7 +236,7 @@ Execute your code. Use input that will test each part of the <mark>if else</mark
 
 - Sometimes, we can use a `switch/case` statement to replace several `if/else` statements. 
 
-- Let's say we are categorizing our army based on the following groups: infantry, archers, catapault, supply.
+- Let's say we are categorizing our army based on the following groups: infantry, archers, catapult, supply.
 
 - We will use a soldiers job to decide what weapon they use.
 

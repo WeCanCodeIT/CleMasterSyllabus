@@ -283,7 +283,7 @@ Question time: What values will be printed to the console and in what order?
   static void Main(string[] args) 
   {
    int ageOne = 35;
-   bool isGodLike = true; // I am not showing all the code.
+   bool isGodLikeOne = true; // I am not showing all the code.
    isGodLikeOne = IsGodLike(ageOne);
    Console.WriteLine("To say our hero is God like is " + isGodLikeOne);
   }
@@ -305,11 +305,11 @@ Question time: What values will be printed to the console and in what order?
 
 - Now let's walk through the process step by step.
 
-	1. We assigned the bool variable <mark>isGodLike</mark> the return value of the <mark>IsGodLike</mark> method call.
+	1. We assigned the bool variable <mark>isGodLikeOne</mark> the return value of the <mark>IsGodLike</mark> method call.
 
 	2. We passed the value from the int variable <mark>ageOne</mark> into the <mark>IsGodLike</mark> method call.
 
-	3. When the compiler executes the new value assignment of the bool <mark>IsGodLike</mark>, it executes the<mark>IsGodLike</mark> method call.
+	3. When the compiler executes the new value assignment of the bool <mark>isGodLikeOne</mark>, it executes the<mark>IsGodLike</mark> method call.
 	
 	4. The compiler exits the main method, and executes the <mark>IsGodLike</mark> method.
 	
@@ -317,9 +317,9 @@ Question time: What values will be printed to the console and in what order?
 
 	6. The value of age is passed to the conditional statement in the <mark>if</mark> statement, and the logic is processed.
 
-	7. The return value <mark>status</mark> is passed back to the <mark>IsGodLike</mark> method call. The value of that method call is assigned to <mark>isGodLike</mark> variable.
+	7. The return value <mark>status</mark> is passed back to the <mark>IsGodLike</mark> method call. The value of that method call is assigned to <mark>isGodLikeOne</mark> variable.
 
-	8. The Console.WriteLine() then prints the value of the bool variable <mark>isGodLike</mark>.
+	8. The Console.WriteLine() then prints the value of the bool variable <mark>isGodLikeOne</mark>.
 
 - Execute your code.
 
