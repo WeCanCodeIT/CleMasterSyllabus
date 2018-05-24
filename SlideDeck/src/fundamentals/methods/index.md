@@ -372,18 +372,18 @@ class Program
 {
   static void Main(string[] args) 
   {
-   Console.WriteLine("To say our hero is God like is " + isGodLikeOne);
-   Console.WriteLine(Reverse(messageTwo));
+   Console.WriteLine("The total sum of the foodAmount array is {0}", SumArray(foodAmount));
+
   }
- static int[] Reverse(int[] text)
- {
-   char[] cArray = text.ToCharArray();
-   string reverse = " ";
-   for (int i = cArray.Length - 1; i > -1; i--){
-        reverse += cArray[i];
-    }
-    return reverse;
- }
+         static int SumArray(int[] num)
+        {
+            int sum = 0;
+            for (int i = 0; i < num.Length; i++)
+            {
+                sum += num[i];
+            }
+            return sum;
+        }
 }
 </code></pre>
 
