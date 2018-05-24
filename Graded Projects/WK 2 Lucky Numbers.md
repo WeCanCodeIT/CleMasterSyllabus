@@ -16,7 +16,7 @@ In order to deliver this application solution, you will need the following skill
 -  Conditionals
 -  Loops
 -  Arrays
--  Math Random (not to be graded)
+-  Math Random (You have been given an example)
 
 ## Tasks
 
