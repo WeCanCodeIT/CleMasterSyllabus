@@ -72,6 +72,7 @@ During application development process, the following application logic requirem
 ```
 
 - [ ] The application MUST calculate the user's winnings based on the number of numbers guessed correctly.
+	- [ ] You cannot hard code the user winnings. Example would be winnings = jackpot/correctGuessed 
 - [ ] The application MUST display the user's winnings to the console.
 	- [ ] As the junior developer, the product owner has given you flexibility to decide when and how to meet this requirement.
 	- [ ] The statement below is an example of the desired output:
@@ -85,6 +86,7 @@ During application development process, the following application logic requirem
 During application development process, the following user interface (UI) requirements were identified. 
 - [ ] The application MUST provide the user the opportunity to play the game again.
 	- [ ] If the user says yes, the application MUST execute the program from the beginning.
+	- [ ] All of the values must reset as if the application was being executed for the first time. 
 	- [ ] If the user says no, the application MUST display the following statement exactly as written below before exiting:
 
 ```	
