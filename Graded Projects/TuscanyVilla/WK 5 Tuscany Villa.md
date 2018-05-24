@@ -4,11 +4,9 @@
 ### - [GitHub Submission Link](https://docs.google.com/forms/d/e/1FAIpQLScUEvl_ZgH_OgBu0zbg_WIvB6zBSkkXh7wfxqjv4LwLdBDxLg/viewform)
 
 ## Overview
-- As a junior devloper, you will construct the following website as per the mockup from a designer.
+- As a junior front-end developer at a marketing agency, you have been tasked with constructing the following website as per the mockup from a designer.
 
-## Details
-
-- You are working as a front-end developer at a marketing agency. 
+### Details
 
 - The design team has created a new layout for a client's web site. 
 
@@ -24,37 +22,33 @@
 
 	- They want to use free fonts, so you thought you could help the team save money by using Google Fonts. https://www.google.com/fonts
 
-    - You are pretty sure these can be included on web pages pretty easily. Also, they are open source / free to use, plus since many sites use Google fonts, some users may already have these cached on their computers, making the page ultimately faster to load than if using a completely custom font.
+    - You are pretty sure these can be included on web pages easily. Also, they are open source/free to use, and since many sites use Google fonts, some users may already have these cached on their computers making the page ultimately faster to load than if using a custom font.
 
 ## Skills Required
 
 In order to deliver this webpage solution, you will need the following skills and knowledge.
 -  HTML5
 -  CSS Styling
--  CSS Grids
+-  CSS Grid
 
 ## Tasks
 
-### Project Prerequesites
+### Project Prerequisites
 
-After you have completed all coding and testing of your website, you will ensure the product owner has access to the application by ensuring the following:
-- [ ] Correct GitHub link is properly submitted
-- [ ] GitHub repository created from correct folder and contains solution file
+After you have completed all coding and testing of your application, you will ensure the product owner has access to the application by ensuring the following:
+- [ ] Correct GitHub link is properly submitted.
+- [ ] GitHub repository created from correct folder and contains solution file.
 
-### Required Tasks
+### User Interface Requirements
 
+During website development process, the following user interface (UI) requirements were identified.
 - [ ] HTML5
-  - [ ] Create the base HTML in a file called `index.html`.
-  - [ ] Use semantic elements where appropriate.
+  - [ ] The base HTML MUST be created in a file called `index.html`.
+  - [ ] Semantic elements MUST be used where appropriate.
 - [ ] CSS Grid
-  - [ ]	Use CSS Grid to create the layout of the web page.
+  - [ ]	CSS Grid MUST be used to create the layout of the web page.
 - [ ] Custom CSS
-  - [ ] Add a custom stylesheet to incorporate required styling
-  - [ ] The use of inline or internal stying is not authorized!
-
-### Stretch Tasks
-
-- [ ] Explore using `:hover` and CSS transitions to make the site more dynamic
+  - [ ] A custom stylesheet MUST be added to incorporate required styling - the use of inline or internal styling is not authorized.
 
 
 
@@ -64,13 +58,14 @@ After you have completed all coding and testing of your website, you will ensure
 
 
 
-### Stretch Tasks
+## Stretch Tasks
 
-- Once you've got the basic layout implemented and responsive, it's time to add some pizzazz.
+During website development process, the following application logic requirements were identified. These requirements are not mandatory and are in no way a requirement for delivering the application.
+- [ ] The site COULD make use of `:hover` and CSS transitions to be more dynamic.
 
-- Find some images of homes, bring them in, and experiment using different CSS techniques.
+- [ ] You COULD find some images of homes, bring them in, and experiment using different CSS techniques.
 
-- Accentuate boxes when the mouse is over them, and/or look into using transitions to make them smoothly animated!
+- [ ] Boxes COULD be accentuated when the mouse is over them, and/or COULD use transitions to be smoothly animated.
 
 ## Hints
 
@@ -78,4 +73,4 @@ After you have completed all coding and testing of your website, you will ensure
 
 - Before getting too caught up in getting everything pixel perfect, look at how the layout is going to fit the CSS grid system.
 
-- Understand how to implement Flexbox use the site for the different screen sizes.
+- Understand how to implement Flexbox to use the site for the different screen sizes.
