@@ -92,9 +92,9 @@ The term *refactoring* is often misused. The following are *not* refactoring act
 
 <p class="fragment">These are all good things to do in the appropriate context. Each should be started with a failing test, just like any other new functionality.</p>
 
-# Red, Green, Refactor
+!SLIDE
 
-<img src="./resources/red-green-refactor.svg" style="width: 60%; padding: 2rem; background-color: #FAFAFA; " />
+<img src="./resources/tdd_flow.gif" style="width: 60%; padding: 2rem; background-color: #FAFAFA; " />
 
 <style type="text/css">
 .reveal section div.rgr {
