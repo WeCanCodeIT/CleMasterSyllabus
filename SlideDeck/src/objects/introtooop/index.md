@@ -57,7 +57,7 @@ These are all things that our cat object _is_. What other states can you think o
 
 ## Behaviors
 
-- Behaviors are actions the object can perform. Thinking about our `Cat` object again lets think about its behaviors. 
+- Behaviors are actions the object can perform. Thinking about our `Cat` object again, let's think about its behaviors. 
 - It might have some of the following behaviors.
 	- Eat 
 	- Meow
@@ -134,7 +134,7 @@ class Cat
     private string name;
     private int age;
     private string furColor;
-    private isHungry = true;
+    private bool isHungry = true;
 
 
     public string Name
@@ -152,8 +152,9 @@ class Cat
     {
         this.name = name;
         this.age = age;
-        this.furColor = furColor
+        this.furColor = furColor;
     }
+}
 ```
 
 ## Below our Constructors we'll include a method
