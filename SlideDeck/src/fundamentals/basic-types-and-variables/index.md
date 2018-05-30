@@ -2,7 +2,7 @@ title: Basic Types and Variables
 subtitle: •••
 theme: league
 
-## Let's Build on what we learned yesterday
+## Let's build on what we learned yesterday
 
 <div float="right" class="img"><img src="./resources/var1.png" /></div>
 
@@ -58,7 +58,7 @@ Console.WriteLine("Hello World!");
 
 - Comment out any other code you may have
 
-- Lets declare a variable and assign it the value <mark>Hello World!</mark>
+- Let's declare a variable and assign it the value <mark>Hello World!</mark>
 
 - Underneath `Console.WriteLine("Hello World");` let's insert the following code:
 
@@ -378,18 +378,18 @@ Once you declare a variable you cannot declare another variable with the same na
         {
             string messageOne = "Hello World!";
             string messageTwo = "I am Spartacus";
-            <mark>int age = 35;
-            double height = 72.50;
-            float weight = 210.0284606f;
-            bool isGodLike = true;
-            char gender = 'M';
-            Console.WriteLine(messageOne);
-            Console.WriteLine(messageTwo);
-            Console.WriteLine(age);
-            Console.WriteLine(height);
-            Console.WriteLine(weight);
-            Console.WriteLine(isGodLike);
-            Console.WriteLine(gender);</mark>
+            <mark>int age = 35;</mark>
+            <mark>double height = 72.50;</mark>
+            <mark>float weight = 210.028461f;</mark>
+            <mark>bool isGodLike = true;</mark>
+            <mark>char gender = 'M';</mark>
+            <mark>Console.WriteLine(messageOne);</mark>
+            <mark>Console.WriteLine(messageTwo);</mark>
+            <mark>Console.WriteLine(age);</mark>
+            <mark>Console.WriteLine(height);</mark>
+            <mark>Console.WriteLine(weight);</mark>
+            <mark>Console.WriteLine(isGodLike);</mark>
+            <mark>Console.WriteLine(gender);</mark>
         }
     }
 }
@@ -414,7 +414,7 @@ Once you declare a variable you cannot declare another variable with the same na
             string messageTwo = "I am Spartacus";
             <mark>int age</mark> = 35;
             <mark>double height</mark> = 72.50;
-            <mark>float weight</mark> = 210.0284606f;
+            <mark>float weight</mark> = 210.028461f;
             <mark>bool isGodLike</mark> = true;
             <mark>char gender</mark> = 'M';
             Console.WriteLine(messageOne);
@@ -470,7 +470,7 @@ Question time: Which of the following is not a <code>short</code>: 45, 32767, 80
             string messageTwo = "I am Spartacus";
             int age = 35;
             <mark>double height</mark> = 72.50;
-            <mark>float weight</mark> = 210.0284606f;
+            <mark>float weight</mark> = 210.028461f;
             bool isGodLike = true;
             char gender = 'M';
         }
@@ -488,7 +488,7 @@ Question time: Which of the following is not a <code>short</code>: 45, 32767, 80
             string messageTwo = "I am Spartacus";
             int age = 35;
             double height = 72.50;
-            float weight = 210.0284606f;
+            float weight = 210.028461f;
             <mark>bool isGodLike</mark> = true;
             char gender = 'M';
         }
@@ -509,7 +509,7 @@ Question time: Which of the following is not a <code>short</code>: 45, 32767, 80
             string messageTwo = "I am Spartacus";
             int age = 35;
             double height = 72.50;
-            float weight = 210.0284606f;
+            float weight = 210.028461f;
             bool isGodLike = true;
             <mark>char gender</mark> = 'M';
         }
@@ -531,7 +531,7 @@ Question time: Which of the following is not a <code>short</code>: 45, 32767, 80
             <mark>string messageTwo</mark> = "I am Spartacus";
             int age = 35;
             double height = 72.50;
-            float weight = 210.0284606f;
+            float weight = 210.028461f;
             bool isGodLike = true;
             char gender = 'M';
         }

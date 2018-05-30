@@ -8,7 +8,7 @@ theme: league
 
 - Some examples of the more commonly used data structures are as follows: Arrays, Lists, Dictionaries (Hash Tables), Queues, Stacks
 
-- In this lecture we will focus solely on <mark>Arrays</mark>, but we will take a few minutes to introduce you to the rest.
+- In this lecture we will focus on <mark>Arrays</mark> and <mark>Lists</mark>, but we will take a few minutes to introduce you to the others.
 
 - A <mark>list</mark> is a data strucuture which holds variables in a specific order. 
 
@@ -66,7 +66,7 @@ Question time: What are some examples you might be aware of where we might use a
 
 - We reference a specific element using its *zero-based index*. 
 
-- It's important to remember the index values of an Array and all other data strutures you will encounter will <mark>START WITH 0</mark>.
+- It's important to remember the index values of an Array and all other data structures you will encounter will <mark>START WITH 0</mark>.
 
 <div class="cups">
 	<div><p class="row-label">Element →</p></div>
@@ -434,7 +434,7 @@ We are forced to create a new array and assigned it to our `myArray` variable. I
 ```C#
 List<string> foodList = new List<string>();
 ````
-- We have now created a new datastructure which gives us the flexibility to add as many elements we desire.
+- We have now created a new data structure which gives us the flexibility to add as many elements we desire.
 
 ## Add To Our Empty List
 
@@ -488,16 +488,16 @@ foodList.Add("Bread");
 
 ```C#
 foodList.Add("Pepsi");
-            Console.WriteLine("{0}, {1}, {2}, {3}, {4}, {5}", foodList[0], foodList[1], foodList[2], foodList[3], foodList[4], foodList[5]);
-            foodList.Remove("Pepsi");
-            Console.WriteLine("{0}, {1}, {2}, {3}, {4}", foodList[0], foodList[1], foodList[2], foodList[3], foodList[4]);
-            foodList.Insert(1, "Pepsi");
-            Console.WriteLine("{0}, {1}, {2}, {3}, {4}, {5}", foodList[0], foodList[1], foodList[2], foodList[3], foodList[4], foodList[5]);
-            foodList.RemoveAt(1);
-            Console.WriteLine("{0}, {1}, {2}, {3}, {4}", foodList[0], foodList[1], foodList[2], foodList[3], foodList[4]);
-````
+Console.WriteLine("{0}, {1}, {2}, {3}, {4}, {5}", foodList[0], foodList[1], foodList[2], foodList[3], foodList[4], foodList[5]);
+foodList.Remove("Pepsi");
+Console.WriteLine("{0}, {1}, {2}, {3}, {4}", foodList[0], foodList[1], foodList[2], foodList[3], foodList[4]);
+foodList.Insert(1, "Pepsi");
+Console.WriteLine("{0}, {1}, {2}, {3}, {4}, {5}", foodList[0], foodList[1], foodList[2], foodList[3], foodList[4], foodList[5]);
+foodList.RemoveAt(1);
+Console.WriteLine("{0}, {1}, {2}, {3}, {4}", foodList[0], foodList[1], foodList[2], foodList[3], foodList[4]);
+```
 
-## Many Other Option with Lists
+## Many Other Options with Lists
 
 - We have many other options and tools C# provides when working with lists. 
 

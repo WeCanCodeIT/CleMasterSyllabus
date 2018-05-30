@@ -77,7 +77,7 @@
     <p>We call doing something repeatedly <em>iterating</em>.</p>
   </li>
   <li>
-    <p>Our efforts will focus predominantly on three types of loops: <mark>while, do while, for</mark></p>
+    <p>Our efforts will focus predominantly on four types of loops: <mark>while, do while, for, foreach</mark></p>
   </li>
 </ul>
 
@@ -160,7 +160,7 @@ if ((rank == "officer") || (age &lt;= 26))
     Console.WriteLine("Get your gear, kiss your family goodbye, 
 		put on your marching boots.");
 }
-else if ((job == "cook") || (age &gt;= 26))
+else if ((job == "cook") &amp;&amp; (age &gt;= 26))
 {
     Console.WriteLine("My army has to eat. Pack your pots and pans");
 }
@@ -272,7 +272,7 @@ while (rank != "exit") <mark>{</mark>
         
         <section>
           <!-- _S9SLIDE_ -->
-<h2 id="add-the-following-code-to-your-helloworld-program">Add the following code to your HelloWorld Program</h2>
+<h2 id="add-the-following-code">Add the following code</h2>
 
 <pre><code class="language-C#" data-noescape=""><mark>string action = " ";
 while (action != "exit"){ </mark>
@@ -288,7 +288,7 @@ if ((rank == "officer") || (age &lt;= 26))
 {
     Console.WriteLine("Get your gear, kiss your family goodbye, put on your marching boots.");
 }
-else if ((job == "cook") || (age &gt;= 26))
+else if ((job == "cook") &amp;&amp; (age &gt;= 26))
 {
     Console.WriteLine("My army has to eat. Pack your pots and pans");
 }
@@ -355,7 +355,7 @@ Let's take the code we just wrote in the while format and convert it to a <code>
         
         <section>
           <!-- _S9SLIDE_ -->
-<h2 id="add-the-following-code-to-your-hello-world-program">Add the following code to your Hello World Program</h2>
+<h2 id="add-the-following-code-1">Add the following code</h2>
 
 <pre><code class="language-C#" data-noescape="">string action = " ";
 <mark>do { </mark>
@@ -371,7 +371,7 @@ if ((rank == "officer") || (age &lt;= 26))
 {
     Console.WriteLine("Get your gear, kiss your family goodbye, put on your marching boots.");
 }
-else if ((job == "cook") || (age &gt;= 26))
+else if ((job == "cook") &amp;&amp; (age &gt;= 26))
 {
     Console.WriteLine("My army has to eat. Pack your pots and pans");
 }

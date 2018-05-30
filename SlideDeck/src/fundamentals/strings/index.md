@@ -44,9 +44,9 @@ Abstraction allows us to use methods to manipulate a sequence of `char`s and cre
 
 - In part one of our Hello World program we used the following: `string messageOne = "Hello World!";`
 
-- We then used the `Console.WriteLine()` method to display the variable <mark>messageOne</mark>. `Console.WriteLine(messageOne);`
+- We then used the `Console.WriteLine();` method to display the variable <mark>messageOne</mark>. `Console.WriteLine(messageOne);`
 
-- We also used the `Console.WriteLine()` method and directly referenced the string we wanted to display. `Console.WriteLine("Hello World!");`
+- We also used the `Console.WriteLine();` method and directly referenced the string we wanted to display. `Console.WriteLine("Hello World!");`
 
 - In the following slides we will learn two more approaches which will give you greater flexibility on how you configure your output.
 
@@ -145,7 +145,7 @@ Run your program and let's see if we are right.
 
 - Remember to pay attention to the spaces before and after our string literals.
 
-## Option, options, options. Too many options...
+## Options, options, options. Too many options...
 
 - Yet another way to concatenate a string is to use <mark>indexing</mark>.
 
@@ -291,11 +291,11 @@ Let's look at an example.
 - Before comparing the user input to "red", the user can type "RED", "Red", or "red" and it won't matter.
 
 ```C#
-
 Console.WriteLine("Enter a color, please.")
 string response = Console.ReadLine();
 
-if(response.ToLower().Equals("red")) {
+if(response.ToLower().Equals("red")) 
+{
   Console.WriteLine("Roses can be red. Also, lillies.");
 }
 ```

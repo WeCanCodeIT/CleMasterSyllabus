@@ -140,10 +140,10 @@
     <p>In part one of our Hello World program we used the following: <code>string messageOne = "Hello World!";</code></p>
   </li>
   <li>
-    <p>We then used the <code>Console.WriteLine()</code> method to display the variable <mark>messageOne</mark>. <code>Console.WriteLine(messageOne);</code></p>
+    <p>We then used the <code>Console.WriteLine();</code> method to display the variable <mark>messageOne</mark>. <code>Console.WriteLine(messageOne);</code></p>
   </li>
   <li>
-    <p>We also used the <code>Console.WriteLine()</code> method and directly referenced the string we wanted to display. <code>Console.WriteLine("Hello World!");</code></p>
+    <p>We also used the <code>Console.WriteLine();</code> method and directly referenced the string we wanted to display. <code>Console.WriteLine("Hello World!");</code></p>
   </li>
   <li>
     <p>In the following slides we will learn two more approaches which will give you greater flexibility on how you configure your output.</p>
@@ -337,7 +337,7 @@ Run your program and let's see if we are right.
         
         <section>
           <!-- _S9SLIDE_ -->
-<h2 id="option-options-options-too-many-options">Option, options, options. Too many options…</h2>
+<h2 id="options-options-options-too-many-options">Options, options, options. Too many options…</h2>
 
 <ul>
   <li>
@@ -594,11 +594,11 @@ Let's look at an example.
   </li>
 </ul>
 
-<pre><code class="language-C#">
-Console.WriteLine("Enter a color, please.")
+<pre><code class="language-C#">Console.WriteLine("Enter a color, please.")
 string response = Console.ReadLine();
 
-if(response.ToLower().Equals("red")) {
+if(response.ToLower().Equals("red")) 
+{
   Console.WriteLine("Roses can be red. Also, lillies.");
 }
 </code></pre>

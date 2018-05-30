@@ -195,7 +195,7 @@ Question time: How would we change the equality operator to make the conditional
     <p>Spartacus wants to go to battle, but only wants to march to the closest city.</p>
   </li>
   <li>
-    <p>Our <mark>if</mark> statement in spoken language might read: If the city is less than 125 miles away, then I will march there.</p>
+    <p>Our <mark>if</mark> statement in spoken language might read: If the city is 125 miles away or less, then I will march there.</p>
   </li>
 </ul>
 
@@ -330,7 +330,7 @@ if ((rank == "officer") || (age &lt;= 26))
 	Console.WriteLine("Get your gear, kiss your family goodbye, 
 	put on your marching boots.");
 }
-else if ((job == "cook") || (age &gt;= 26))
+else if ((job == "cook") &amp;&amp; (age &gt;= 26))
 {
 	Console.WriteLine("My army has to eat. Pack your pots and pans.");
 }
@@ -400,7 +400,7 @@ if ((rank == "officer") || (age &lt;= 26))
     Console.WriteLine("Get your gear, kiss your family goodbye, 
 	put on your marching boots.");
 }
-else if ((job == "cook") || (age &gt;= 26))
+else if ((job == "cook") &amp;&amp; (age &gt;= 26))
 {
     Console.WriteLine("My army has to eat. Pack your pots and pans");
 }
@@ -433,7 +433,7 @@ Execute your code. Use input that will test each part of the <mark>if else</mark
     <p>Sometimes, we can use a <code>switch/case</code> statement to replace several <code>if/else</code> statements.</p>
   </li>
   <li>
-    <p>Let’s say we are categorizing our army based on the following groups: infantry, archers, catapault, supply.</p>
+    <p>Let’s say we are categorizing our army based on the following groups: infantry, archers, catapult, supply.</p>
   </li>
   <li>
     <p>We will use a soldiers job to decide what weapon they use.</p>

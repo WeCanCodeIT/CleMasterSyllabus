@@ -68,7 +68,7 @@
     <p>Some examples of the more commonly used data structures are as follows: Arrays, Lists, Dictionaries (Hash Tables), Queues, Stacks</p>
   </li>
   <li>
-    <p>In this lecture we will focus solely on <mark>Arrays</mark>, but we will take a few minutes to introduce you to the rest.</p>
+    <p>In this lecture we will focus on <mark>Arrays</mark> and <mark>Lists</mark>, but we will take a few minutes to introduce you to the others.</p>
   </li>
   <li>
     <p>A <mark>list</mark> is a data strucuture which holds variables in a specific order.</p>
@@ -185,7 +185,7 @@ Question time: What are some examples you might be aware of where we might use a
     <p>We reference a specific element using its <em>zero-based index</em>.</p>
   </li>
   <li>
-    <p>It’s important to remember the index values of an Array and all other data strutures you will encounter will <mark>START WITH 0</mark>.</p>
+    <p>It’s important to remember the index values of an Array and all other data structures you will encounter will <mark>START WITH 0</mark>.</p>
   </li>
 </ul>
 
@@ -761,7 +761,7 @@ myArray[3] = 42;
 <pre><code class="language-C#">List&lt;string&gt; foodList = new List&lt;string&gt;();
 </code></pre>
 <ul>
-  <li>We have now created a new datastructure which gives us the flexibility to add as many elements we desire.</li>
+  <li>We have now created a new data structure which gives us the flexibility to add as many elements we desire.</li>
 </ul>
 
 
@@ -866,13 +866,13 @@ foodList.Add("Bread");
 </ul>
 
 <pre><code class="language-C#">foodList.Add("Pepsi");
-            Console.WriteLine("{0}, {1}, {2}, {3}, {4}, {5}", foodList[0], foodList[1], foodList[2], foodList[3], foodList[4], foodList[5]);
-            foodList.Remove("Pepsi");
-            Console.WriteLine("{0}, {1}, {2}, {3}, {4}", foodList[0], foodList[1], foodList[2], foodList[3], foodList[4]);
-            foodList.Insert(1, "Pepsi");
-            Console.WriteLine("{0}, {1}, {2}, {3}, {4}, {5}", foodList[0], foodList[1], foodList[2], foodList[3], foodList[4], foodList[5]);
-            foodList.RemoveAt(1);
-            Console.WriteLine("{0}, {1}, {2}, {3}, {4}", foodList[0], foodList[1], foodList[2], foodList[3], foodList[4]);
+Console.WriteLine("{0}, {1}, {2}, {3}, {4}, {5}", foodList[0], foodList[1], foodList[2], foodList[3], foodList[4], foodList[5]);
+foodList.Remove("Pepsi");
+Console.WriteLine("{0}, {1}, {2}, {3}, {4}", foodList[0], foodList[1], foodList[2], foodList[3], foodList[4]);
+foodList.Insert(1, "Pepsi");
+Console.WriteLine("{0}, {1}, {2}, {3}, {4}, {5}", foodList[0], foodList[1], foodList[2], foodList[3], foodList[4], foodList[5]);
+foodList.RemoveAt(1);
+Console.WriteLine("{0}, {1}, {2}, {3}, {4}", foodList[0], foodList[1], foodList[2], foodList[3], foodList[4]);
 </code></pre>
 
 
@@ -881,7 +881,7 @@ foodList.Add("Bread");
         
         <section>
           <!-- _S9SLIDE_ -->
-<h2 id="many-other-option-with-lists">Many Other Option with Lists</h2>
+<h2 id="many-other-options-with-lists">Many Other Options with Lists</h2>
 
 <ul>
   <li>

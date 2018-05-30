@@ -62,7 +62,7 @@
 
 <ul>
   <li>
-    <p>In prior lessons we covered <mark>while</mark> and <mark>do while</mark> and <mark>for</mark> loops.</p>
+    <p>In prior lessons we covered <mark>while</mark>, <mark>do while</mark>, and <mark>for</mark> loops.</p>
   </li>
   <li>
     <p>We also discussed some of the situations in which we would use them.</p>
@@ -74,7 +74,7 @@
     <p>The <mark>foreach</mark> loop will be one of the most important tools C# has to offer.</p>
   </li>
   <li>
-    <p>We predominantly use a <mark>foreach</mark> loops when we are iterating through an array, list, dictionary, or other data structure.</p>
+    <p>We predominantly use a <mark>foreach</mark> loop when we are iterating through an array, list, dictionary, or other data structure.</p>
   </li>
 </ul>
 
@@ -88,19 +88,19 @@
 
 <ul>
   <li>
-    <p>The <mark>foreach</mark> loop is one of the least error prone loops we will use in programming.</p>
+    <p>The <mark>foreach</mark> loop is one of the least error-prone loops we will use in programming.</p>
   </li>
   <li>
-    <p>The structure of a <mark>foreach</mark> loop is differant from that of a <mark>for</mark> loop.</p>
+    <p>The structure of a <mark>foreach</mark> loop is different from that of a <mark>for</mark> loop.</p>
   </li>
   <li>
     <p>As with the <mark>for</mark> loop, the <mark>foreach</mark> keyword tells the compiler to execute a foreach loop.</p>
   </li>
   <li>
-    <p>Unlike a <mark>for</mark> loop, we do not use a index variable, .length property, or and increment/decrement statement.</p>
+    <p>Unlike a <mark>for</mark> loop, we do not use an index variable, .Length property, or an increment/decrement statement.</p>
   </li>
   <li>
-    <p>One of the most common error’s <mark>Array out of bounds exception</mark> does not apply to <mark>foreach</mark> loops.</p>
+    <p>One of the most common errors, <mark>Array out of bounds exception</mark>, does not apply to <mark>foreach</mark> loops.</p>
   </li>
 </ul>
 
@@ -114,17 +114,17 @@
 
 <ul>
   <li>
-    <p>Here is an example of a <mark>foreach</mark> loop. Lets walk through its parts.</p>
+    <p>Here is an example of a <mark>foreach</mark> loop. Let’s walk through its parts.</p>
   </li>
   <li>
-    <p>You will notice a <mark>foreach</mark> loop is written in plain english.</p>
+    <p>You will notice a <mark>foreach</mark> loop is written in plain English.</p>
   </li>
 </ul>
 
-<pre><code class="language-C#">int[] fibarray = new int[] { 0, 1, 1, 2, 3, 5, 8, 13 };
-foreach (int element in fibarray)
+<pre><code class="language-C#">int[] fibArray = new int[] { 0, 1, 1, 2, 3, 5, 8, 13 };
+foreach (int element in fibArray)
 {
-    System.Console.WriteLine(element);
+    Console.WriteLine(element);
 }
 </code></pre>
 <ul>
@@ -132,7 +132,7 @@ foreach (int element in fibarray)
     <p>The <mark>foreach</mark> loop operates just as it is written.</p>
   </li>
   <li>
-    <p>The loop will execute for each int element in the fibarray.</p>
+    <p>The loop will execute for each int element in the fibArray.</p>
   </li>
   <li>
     <p>We do not have to keep track of the length, nor do we have to increment with each iteration.</p>
@@ -151,10 +151,10 @@ foreach (int element in fibarray)
   <li>Here is another example of a <mark>foreach</mark> loop.</li>
 </ul>
 
-<pre><code class="language-C#">List&lt;int&gt; fibarray = new List&lt;int&gt; { 0, 1, 1, 2, 3, 5, 8, 13 };
-foreach (int element in fibarray)
+<pre><code class="language-C#">List&lt;int&gt; fibArray = new List&lt;int&gt; { 0, 1, 1, 2, 3, 5, 8, 13 };
+foreach (int element in fibArray)
 {
-    System.Console.WriteLine(element);
+    Console.WriteLine(element);
 }
 </code></pre>
 <ul>
@@ -162,7 +162,7 @@ foreach (int element in fibarray)
     <p>The <mark>foreach</mark> loop operates just as it is written.</p>
   </li>
   <li>
-    <p>The loop will execute for each int element in the fibarray.</p>
+    <p>The loop will execute for each int element in the fibArray.</p>
   </li>
   <li>
     <p>We do not have to keep track of the length, nor do we have to increment with each iteration.</p>
@@ -178,7 +178,7 @@ foreach (int element in fibarray)
 <h2 id="the-body">The body</h2>
 
 <ul>
-  <li>With the exception of list operations such as .Add(), .Remove(), .Insert(), etc the body is the same as a <mark>for</mark> loop.</li>
+  <li>With the exception of list operations such as .Add(), .Remove(), .Insert(), etc., the body is the same as a <mark>for</mark> loop.</li>
 </ul>
 
 
@@ -194,7 +194,7 @@ foreach (int element in fibarray)
     <p>The for loop and the foreach loop perform the same functions.</p>
   </li>
   <li>
-    <p>Although their inital set-up statements are differant, the work done in the body is the same.</p>
+    <p>Although their inital set-up statements are different, the work done in the body is the same.</p>
   </li>
 </ul>
 
