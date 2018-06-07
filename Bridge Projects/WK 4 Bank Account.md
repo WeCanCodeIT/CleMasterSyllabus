@@ -21,7 +21,7 @@ In this assignment, you will be tasked with building a Bank Account.
 	- Program 
 
 ### Details
-- [ ] The program MUST include the items listed below. You can choose where to implement each method type.
+- [ ] The program MUST implement the items listed below. You can choose where to implement each method type.
 	- [ ] 1 abstract method (at least)
 	- [ ] 1 virtual method (at least)
 	- [ ] 1 override method (at least)
@@ -33,7 +33,7 @@ In this assignment, you will be tasked with building a Bank Account.
 	- [ ] A way to view the current balance
 	- [ ] User must be able to deposit money into either account
 	- [ ] User must be able to withdraw money from either account
-	- [ ] The application must add interest to the checking and savings account balances efter every third user interation.
+	- [ ] The application must add interest to the checking and savings account balances after every third user interaction.
 		- [ ] The interest rates applied to each account must be differant.
 
 - [ ] Along with the previous requirements, the Checking class must contain the following:
