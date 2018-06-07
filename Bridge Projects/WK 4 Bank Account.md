@@ -33,7 +33,7 @@ In this assignment, you will be tasked with building a Bank Account.
 	- [ ] A way to view the current balance
 	- [ ] User must be able to deposit money into either account
 	- [ ] User must be able to withdraw money from either account
-	- [ ] The application must add interest to the checking and savings account balances efter every user interation.
+	- [ ] The application must add interest to the checking and savings account balances efter every third user interation.
 		- [ ] The interest rates applied to each account must be differant.
 
 - [ ] Along with the previous requirements, the Checking class must contain the following:
