@@ -62,7 +62,8 @@ During application development process, the following user interface (UI) requir
 
 - Available user interface actions MUST include (at minimum)…
 	- [ ] `Volunteer` feeding all the pets 
-	- [ ] `Volunteer` watering all the pets 
+	- [ ] `Volunteer` watering all the pets
+	- [ ] `Volunteer` or `Manager` viewing status of pets
 	- [ ] `Volunteer` or `Manager` playing with an individual pet
 	- [ ] `Manager` to coordinate adoption of a pet, which should display a list of pet names and descriptions, allowing a user to select one
 
