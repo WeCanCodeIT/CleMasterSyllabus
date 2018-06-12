@@ -312,10 +312,10 @@ p {
 - Images have a much larger range of options to use for the size, position, and repeat of your background.
 
 ```css
-html { /*items with '||' aren't actually used with that*/
+html {
     background-image: url('../images/path-to-my-image.jpg');
-    background-repeat: repeat || repeat-x || repeat-y;
-    background-size: 300px 200px || cover || length;
+    background-repeat: repeat; /*other options: repeat-x or repeat-y*/
+    background-size: 300px 200px; /*other options: cover or length*/
     background-position: 50% 50%;
 }
 ```
