@@ -30,6 +30,7 @@ In order to deliver this webpage solution, you will need the following skills an
 -  HTML5
 -  CSS Styling
 -  CSS Grid
+-  Flex Box
 
 ## Tasks
 
@@ -49,7 +50,8 @@ During website development process, the following user interface (UI) requiremen
   - [ ]	CSS Grid MUST be used to create the layout of the web page.
 - [ ] Custom CSS
   - [ ] A custom stylesheet MUST be added to incorporate required styling - the use of inline or internal styling is not authorized.
-
+- [ ] Flex Box
+  - [ ] All containers withing the grid containers must be styled using Flex Box as appropiate.
 
 
 
