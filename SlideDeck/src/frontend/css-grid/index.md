@@ -154,7 +154,7 @@ theme: league
 
 - There is a shorthand when both top/bottom AND right/left share the same values.
 
-- Rewrite your code as follows: `2rem auto`. 
+- Rewrite your code as follows: `2rem auto`
 
 - It will be written this way in following slides. Ok, back to actual grid syntax.
 
@@ -382,7 +382,7 @@ width: 1000px;
 | ---- | -------- |
 | `%` | Percentage units will take up whatever percentage you declare of the containing element |
 | `em/rem` | `em/rem` will do the same as you're used to. Fixed but much more flexible than `px` |
-| `auto` | This unit is a big one. Auto will take up any remaining space in a fixed container. if the container isn't fixed, it will push elements to the edge of the viewport and take up all space in between. |
+| `auto` | This unit is a big one. Auto will take up any remaining space in a fixed container. If the container isn't fixed, it will push elements to the edge of the viewport and take up all space in between. |
 
 ## Container revisited
 

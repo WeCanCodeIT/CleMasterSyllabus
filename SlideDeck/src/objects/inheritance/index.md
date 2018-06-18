@@ -124,10 +124,10 @@ Let's review access modifiers:
 <code>public</code> - can be accessed from every class
 </div>
 <div class="fragment">
-<code>private</code> - can not be accessed from any other class (default for elements of a class)
+<code>private</code> - cannot be accessed from any other class (default for elements of a class)
 </div>
 <div class="fragment">
-<mark><code>protected</code> - can be accessed from its class and all descendent classes</mark>
+<mark><code>protected</code> - can be accessed from its class and all its derived classes</mark>
 </div>
 <div class="fragment">
 <code>internal</code> - can only be accessed from the same assembly (default for classes) → More later.
