@@ -186,7 +186,7 @@ theme: league
 
 - Open Google Developer tools and select the container to view the box model.
 
-- Now make the following changes to your styleTwo.css
+- Now make the following changes to your styleThree.css
 
 ```CSS
 .container {
