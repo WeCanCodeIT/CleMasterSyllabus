@@ -51,7 +51,7 @@ During website development process, the following user interface (UI) requiremen
 - [ ] Custom CSS
   - [ ] A custom stylesheet MUST be added to incorporate required styling - the use of inline or internal styling is not authorized.
 - [ ] Flex Box
-  - [ ] All containers withing the grid containers must be styled using Flex Box as appropiate.
+  - [ ] All containers within the grid must be styled using Flex Box as appropiate.
 
 
 
