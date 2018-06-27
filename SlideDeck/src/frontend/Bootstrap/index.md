@@ -175,7 +175,7 @@ theme: league
 
 - Although you will find more current versions at getbootstrap.com, for our purposes and to ensure stablility of code, we will use the versions listed.
 
-- You can find these versions if needed at [W3Schools](https://www.w3schools.com/bootstrapbootstrap_get_started.asp) under <mark>MAXCDN</mark>
+- You can find these versions if needed at [W3Schools](https://www.w3schools.com/bootstrap4/bootstrap_get_started.asp) under <mark>MAXCDN</mark>
 
 - Go to your class Slack channel, and you can copy and paste the four items from Slack into the <mark>Head section</mark> of your index.html page.
 
