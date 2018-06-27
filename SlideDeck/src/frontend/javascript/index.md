@@ -85,7 +85,7 @@ theme: league
 
 ## Inside Script Tags
 
-- You can also write JavaScript directly inside your HTML by enclosing it in `<script>` tags.
+- You can also write JavaScript directly inside your HTML by enclosing it in `<script>` tags within the `<body>`
 
 - Go to line 240 of your index pages and enter the following code:
 
@@ -515,13 +515,13 @@ villaArray.push(villa);
 //This removes the last element from our villaArray
 villaArray.pop(villa);     
 ```
-## Have you had enough of Tuscanny Villa?
+## Have you had enough of Tuscnny Villa?
 
-- Lets switch gears and build a fun application.
+- Let's switch gears and build a fun application.
 
 - In this application, we will really expand out JavaScipt toolbox.
 
-- We are going to us the tools we have already learned HTML, CSS, and Bootstrap combined with Javascript to build a personality quiz.
+- We are going to us the tools we have already learned HTML, CSS, and Bootstrap combined with JavaScript to build a personality quiz.
 
 - Lets create a new blank ASP.NET Empty website in Visual Studio.
 

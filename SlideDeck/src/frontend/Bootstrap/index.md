@@ -177,7 +177,7 @@ theme: league
 
 - You can find these versions if needed at [W3Schools](https://www.w3schools.com/bootstrap4/bootstrap_get_started.asp) under <mark>MAXCDN</mark>
 
-- Go to your class Slack channel, and you can copy and paste the four items from Slack into the <mark>Head section</mark> of your index.html page.
+- Go to your class Slack channel, and you can copy and paste the four items from Slack into the `<head>` section of your index.html page.
 
 ## We should all be here!!
 
