@@ -4,7 +4,7 @@ theme: league
 
 ## Life Just Easier
 
- <div float="right" class="img"><img src="./resources/bootstrap.png" /></div>
+ <div float="right"><img src="./resources/bootstrap.png" /></div>
 
  - If you remember our journey through HTML, formatting a HTML page can be daunting, frustrating, almost impossible task.
 
@@ -40,7 +40,7 @@ theme: league
 
 	- Container: Containers provide a means to center your site’s contents.
 
-	- There are two types of Containers you can utilize: `.container` and `.container-fluid.`
+	- There are two types of Containers you can utilize: `.container` and `.container-fluid`
 
 	- `.container` has one fixed width for each screen size in bootstrap (`xs`, `sm`, `md`, `lg`);
 	
@@ -107,7 +107,7 @@ theme: league
  
 ## Let's Practice
 
-- Lets put what we learned to the test
+- Let's put what we learned to the test
 
     <div float="right" class="img"><img src="./resources/boot1.png" /></div>
 
@@ -129,9 +129,9 @@ theme: league
 
 - Change <mark>WebSite1</mark> to <mark>Bootstrap</mark>. 
 
-- Your location address might have a value differant than <mark>WebSite1</mark>, not to worry just replace whatever value is there to <mark>Bootstrap</mark>
+- Your location address might have a value different than <mark>WebSite1</mark>, not to worry just replace whatever value is there to <mark>Bootstrap</mark>
 
-- Finally Select <mark>Ok</mark>.
+- Finally, select <mark>Ok</mark>.
 
 ## We should all be here!!
 
@@ -153,7 +153,7 @@ theme: league
 
 - Change the value in the <mark>Name</mark> field to <mark>index.html</mark> 
 
-- Finally select <mark>Add</mark>
+- Finally, select <mark>Add</mark>
 
 ## We should all be here!!
 
@@ -161,22 +161,23 @@ theme: league
 
 ## Let's Do Some Prep Work Next
 
-- Before we can begin, we need to add three items to our index.html page.
+- Before we can begin, we need to add four items to our index.html page.
 
 ```C#
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 ```
-- These three items are necessary for Bootstrap to function correctly.
+- These four items are necessary for Bootstrap to function correctly.
 
-- You will find current versions of these three items getbootstrap.com under Bootstrap CDN.
+- You will find current versions of these three items at [getbootstrap.com](https://www.getbootstrap.com) under Bootstrap CDN.
 
 - Although you will find more current versions at getbootstrap.com, for our purposes and to ensure stablility of code, we will use the versions listed.
 
-- You can find these versions if needed at [w3schools](https://www.w3schools.com/bootstrapbootstrap_get_started.asp) under <mark>MAXCDN</mark>
+- You can find these versions if needed at [W3Schools](https://www.w3schools.com/bootstrapbootstrap_get_started.asp) under <mark>MAXCDN</mark>
 
-- Goto your class Slack channel, and you can copy and past the three items from Slack into the <mark>Head section</mark> of your index.html page.
+- Go to your class Slack channel, and you can copy and paste the four items from Slack into the <mark>Head section</mark> of your index.html page.
 
 ## We should all be here!!
 
@@ -184,11 +185,11 @@ theme: league
    
 ## Let's build our .container
 
- - The following code will build the `.container`.
+ - The following code will build the `.container`
 
  - Remember, the `.container` is responsible for the resposiveness of you webpage.
 
- - You must encapsulate the code you want to be reposnsive with a `.container` class.
+ - You must encapsulate the code you want to be responsive with a `.container` class.
 
  ```C#
 <div> 
@@ -305,7 +306,7 @@ So let's discuss the differences we see.
    <div float="right" class="img"><img src="./resources/boot12.png" /></div>  
 
 <div class="fragment">
- Question time: Whats the difference between the text in each container, and the test not encapsulated in a container?
+ Question time: Whats the difference between the text in each container, and the text not encapsulated in a container?
 </div>
 
 ## Test It!!
@@ -364,7 +365,7 @@ Question time: Could we call each <mark>div</mark> with a container class a row?
 
 ## Let's do this
 
-- Because we need container classes to create rows with columns, lets delete the div without a container class.
+- Because we need container classes to create rows with columns, let's delete the div without a container class.
 
 ```C#
 <div class="container"> 
@@ -514,13 +515,12 @@ No!!
 - Question time: How many columns can we place in a container?
 </div>
 
-<div class="fragment">
-- Task time: Let's answer those two questions through coding. I would like each of you to create the following page by modifying your index.html page.
-</div>
+!SLIDE
 
-<div class="fragment">
-   <div float="right" class="img"><img src="./resources/boot17.png" /></div>
-</div>
+- Task time: Let's answer those two questions through coding. I would like each of you to create the following page by modifying your index.html page.
+
+<div float="right" class="img"><img src="./resources/boot17.png" /></div>
+
 
 ## Let's style our page ever further
 
@@ -607,7 +607,7 @@ Volunteer Time!!
 ```
 !SLIDE
 
-- Lets make some changes to the .container-fluid code.
+- Let's make some changes to the .container-fluid code.
 
 ```C#
 	<div class="container-fluid"> 
@@ -653,7 +653,7 @@ Volunteer Time!!
 
 - Once you browser opens, maximize it if it is not already.
 
-- Our page is to large to show on a slide, so does everyone's look like our volunteers page?
+- Our page is to large to show on a slide, so does everyone's look like our volunteer's page?
 
 
 <style type="text/css">

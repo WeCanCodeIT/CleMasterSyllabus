@@ -60,7 +60,7 @@
 <!-- _S9SLIDE_ -->
 <h2 id="life-just-easier">Life Just Easier</h2>
 
-<div float="right" class="img"><img src="./resources/bootstrap.png" /></div>
+<div float="right"><img src="./resources/bootstrap.png" /></div>
 
 <ul>
   <li>
@@ -126,7 +126,7 @@
         <p>Container: Containers provide a means to center your site’s contents.</p>
       </li>
       <li>
-        <p>There are two types of Containers you can utilize: <code>.container</code> and <code>.container-fluid.</code></p>
+        <p>There are two types of Containers you can utilize: <code>.container</code> and <code>.container-fluid</code></p>
       </li>
       <li>
         <p><code>.container</code> has one fixed width for each screen size in bootstrap (<code>xs</code>, <code>sm</code>, <code>md</code>, <code>lg</code>);</p>
@@ -221,7 +221,7 @@
 
 <ul>
   <li>
-    <p>Lets put what we learned to the test</p>
+    <p>Let’s put what we learned to the test</p>
 
     <div float="right" class="img"><img src="./resources/boot1.png" /></div>
 
@@ -261,10 +261,10 @@
     <p>Change <mark>WebSite1</mark> to <mark>Bootstrap</mark>.</p>
   </li>
   <li>
-    <p>Your location address might have a value differant than <mark>WebSite1</mark>, not to worry just replace whatever value is there to <mark>Bootstrap</mark></p>
+    <p>Your location address might have a value different than <mark>WebSite1</mark>, not to worry just replace whatever value is there to <mark>Bootstrap</mark></p>
   </li>
   <li>
-    <p>Finally Select <mark>Ok</mark>.</p>
+    <p>Finally, select <mark>Ok</mark>.</p>
   </li>
 </ul>
 
@@ -311,7 +311,7 @@
     <p>Change the value in the <mark>Name</mark> field to <mark>index.html</mark></p>
   </li>
   <li>
-    <p>Finally select <mark>Add</mark></p>
+    <p>Finally, select <mark>Add</mark></p>
   </li>
 </ul>
 
@@ -334,28 +334,29 @@
 <h2 id="lets-do-some-prep-work-next">Let’s Do Some Prep Work Next</h2>
 
 <ul>
-  <li>Before we can begin, we need to add three items to our index.html page.</li>
+  <li>Before we can begin, we need to add four items to our index.html page.</li>
 </ul>
 
-<pre><code class="language-C#">&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"&gt;
-&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"&gt;&lt;/script&gt;
-&lt;script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"&gt;&lt;/script&gt;
+<pre><code class="language-C#">&lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous"&gt;&gt;
+&lt;script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"&gt;&lt;/script&gt;
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"&gt;&lt;/script&gt;
+&lt;script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"&gt;&lt;/script&gt;
 </code></pre>
 <ul>
   <li>
-    <p>These three items are necessary for Bootstrap to function correctly.</p>
+    <p>These four items are necessary for Bootstrap to function correctly.</p>
   </li>
   <li>
-    <p>You will find current versions of these three items getbootstrap.com under Bootstrap CDN.</p>
+    <p>You will find current versions of these three items at <a href="https://www.getbootstrap.com">getbootstrap.com</a> under Bootstrap CDN.</p>
   </li>
   <li>
     <p>Although you will find more current versions at getbootstrap.com, for our purposes and to ensure stablility of code, we will use the versions listed.</p>
   </li>
   <li>
-    <p>You can find these versions if needed at <a href="https://www.w3schools.com/bootstrapbootstrap_get_started.asp">w3schools</a> under <mark>MAXCDN</mark></p>
+    <p>You can find these versions if needed at <a href="https://www.w3schools.com/bootstrapbootstrap_get_started.asp">W3Schools</a> under <mark>MAXCDN</mark></p>
   </li>
   <li>
-    <p>Goto your class Slack channel, and you can copy and past the three items from Slack into the <mark>Head section</mark> of your index.html page.</p>
+    <p>Go to your class Slack channel, and you can copy and paste the four items from Slack into the <mark>Head section</mark> of your index.html page.</p>
   </li>
 </ul>
 
@@ -379,13 +380,13 @@
 
 <ul>
   <li>
-    <p>The following code will build the <code>.container</code>.</p>
+    <p>The following code will build the <code>.container</code></p>
   </li>
   <li>
     <p>Remember, the <code>.container</code> is responsible for the resposiveness of you webpage.</p>
   </li>
   <li>
-    <p>You must encapsulate the code you want to be reposnsive with a <code>.container</code> class.</p>
+    <p>You must encapsulate the code you want to be responsive with a <code>.container</code> class.</p>
   </li>
 </ul>
 
@@ -595,7 +596,7 @@ So let's discuss the differences we see.
 <div float="right" class="img"><img src="./resources/boot12.png" /></div>
 
 <div class="fragment">
- Question time: Whats the difference between the text in each container, and the test not encapsulated in a container?
+ Question time: Whats the difference between the text in each container, and the text not encapsulated in a container?
 </div>
 
 
@@ -693,7 +694,7 @@ Question time: Could we call each <mark>div</mark> with a container class a row?
 <h2 id="lets-do-this">Let’s do this</h2>
 
 <ul>
-  <li>Because we need container classes to create rows with columns, lets delete the div without a container class.</li>
+  <li>Because we need container classes to create rows with columns, let’s delete the div without a container class.</li>
 </ul>
 
 <pre><code class="language-C#">&lt;div class="container"&gt; 
@@ -917,13 +918,17 @@ No!!
 - Question time: How many columns can we place in a container?
 </div>
 
-<div class="fragment">
-- Task time: Let's answer those two questions through coding. I would like each of you to create the following page by modifying your index.html page.
-</div>
 
-<div class="fragment">
-   <div float="right" class="img"><img src="./resources/boot17.png" /></div>
-</div>
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<ul>
+  <li>Task time: Let’s answer those two questions through coding. I would like each of you to create the following page by modifying your index.html page.</li>
+</ul>
+
+<div float="right" class="img"><img src="./resources/boot17.png" /></div>
 
 
 
@@ -1038,7 +1043,7 @@ Volunteer Time!!
           <!-- _S9SLIDE_  -->
 
 <ul>
-  <li>Lets make some changes to the .container-fluid code.</li>
+  <li>Let’s make some changes to the .container-fluid code.</li>
 </ul>
 
 <pre><code class="language-C#">	&lt;div class="container-fluid"&gt; 
@@ -1096,7 +1101,7 @@ Volunteer Time!!
     <p>Once you browser opens, maximize it if it is not already.</p>
   </li>
   <li>
-    <p>Our page is to large to show on a slide, so does everyone’s look like our volunteers page?</p>
+    <p>Our page is to large to show on a slide, so does everyone’s look like our volunteer’s page?</p>
   </li>
 </ul>
 
