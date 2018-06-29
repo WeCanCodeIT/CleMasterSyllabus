@@ -10,7 +10,7 @@ As a junior developer, you are being tasked with creating a static portfolio web
 In order to deliver this webpage solution, you will need the following skills and knowledge.
 - HTML5
 - CSS
-- CSS Grid
+- CSS Grid or Bootstrap
 - Flexbox
 - JavaScript
 
