@@ -12,6 +12,7 @@ In order to deliver this webpage solution, you will need the following skills an
 - CSS
 - CSS Grid
 - Flexbox
+- JavaScript
 
 
 ## Tasks
