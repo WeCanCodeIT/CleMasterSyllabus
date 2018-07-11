@@ -25,8 +25,8 @@ During application development process, the following application logic requirem
 - [ ] The following models MUST be created:
   - [ ] Review
   - [ ] Category
-  - [ ] You MUST have at least two models and a foreign key relationship. Review the [Bookshelf](https://docs.google.com/a/wecancodeit.org/presentation/d/1C9v9Upx7NWePFbh5kO06GSQnuxdyeJwFVAWsTKHzgdw/edit?usp=sharing) for an example of a foreign key relationship.
-  - [ ] You MUST be able to view the styled home page, navigate to the reviews index, click a review and view a styled detail page.
+- [ ] You MUST have at least two models and a foreign key relationship. Review the [Bookshelf](https://docs.google.com/a/wecancodeit.org/presentation/d/1C9v9Upx7NWePFbh5kO06GSQnuxdyeJwFVAWsTKHzgdw/edit?usp=sharing) for an example of a foreign key relationship.
+- [ ] You MUST be able to view the styled home page, navigate to the reviews index, click a review and view a styled detail page.
 - [ ] The Review model MUST have properties to properly represent all the fields you feel need to be represented in a review. This may include:
     - [ ] ID
     - [ ] Title
