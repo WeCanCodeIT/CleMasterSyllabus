@@ -1,5 +1,5 @@
 # Wardrobe MVC
-## Due:Monday 9:30am
+## Due: Monday 9:30am
 ### - [Submission Link](https://docs.google.com/forms/d/e/1FAIpQLScUEvl_ZgH_OgBu0zbg_WIvB6zBSkkXh7wfxqjv4LwLdBDxLg/viewform)
 
 ## Overview
