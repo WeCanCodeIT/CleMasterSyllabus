@@ -22,7 +22,7 @@ During application development process, the following application logic requirem
   - [ ] Shoes
   - [ ] Accessories
 - [ ] Model(s) MUST include the following properties:
-  - [ ] ID
+  - [ ] ***category name***ID
   - [ ] Name
   - [ ] Photo
   - [ ] Type
