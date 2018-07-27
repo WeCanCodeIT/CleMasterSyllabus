@@ -1,5 +1,6 @@
 # Week 1 - Computational Thinking
 
+Summary: 
 Students begin to learn their way around Visual Studio and learn some of the fundamentals of the language.
 
 Objectives:
@@ -29,61 +30,21 @@ Setting expectations for everyone about course content and high level flow.
 
 [Slides](http://htmlpreview.github.io/?https://github.com/WeCanCodeIT/CleMasterSyllabus/blob/master/SlideDeck/docs/introduction/intro/index.html#/)
 
-[Slides Source Code](https://github.com/WeCanCodeIT/CleMasterSyllabus/blob/master/SlideDeck/src/introduction/intro/index.md)
-
-
 ## School Policies
 
 More expectation setting.  Grading, attendance, pass/fail, homework, late & incomplete assignments, academic probation, who to talk to.
 
 [Slides](http://htmlpreview.github.io/?https://github.com/WeCanCodeIT/CleMasterSyllabus/blob/master/SlideDeck/docs/introduction/policy/index.html#/)
 
-[Slides Source Code](https://github.com/WeCanCodeIT/CleMasterSyllabus/blob/master/SlideDeck/src/introduction/policy/index.md)
-
-
 ## Student Welcome Trello Boards
 
 TODO: I've seen this, but I'm not sure when/where this takes place.  Here seems like a good spot?
-
 
 ## Hello World
 
 Follow along with the slides to create your first C# Application!
 
 [Slides](http://htmlpreview.github.io/?https://github.com/WeCanCodeIT/CleMasterSyllabus/blob/master/SlideDeck/docs/fundamentals/hello-world/index.html#/)
-
-[Slides Source Code](https://github.com/WeCanCodeIT/CleMasterSyllabus/blob/master/SlideDeck/src/fundamentals/hello-world/index.md)
-
-
-## Syntax - Statements & Blocks of Code
-
-Walk through the following example code, highlighting:
-* Statements
-* Expressions
-* Blocks of Code
-* Naming Conventions
-* etc.
-
-
-```code csharp
-using System;
-
-namespace ConsoleApp1
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-            Console.WriteLine("I can code it!");
-
-            Console.WriteLine(42);
-            Console.WriteLine(1.23);
-            Console.WriteLine(2 + 3);
-        }
-    }
-}
-```
 
 ## Basic Types
 
@@ -113,7 +74,6 @@ Java slides for reference:  https://wecancodeit.github.io/java-slides/fundamenta
 
 [Practice Problems](https://wecancodeit.github.io/java-exercises/fundamentals-practice-problems/strings/)
 
-
 ## Introduction to GIT
 
 Git is one of the most popular Version Control Systems out there.  We'll use Git, along with Github to keep track of our code and the changes that we make to it.
@@ -123,9 +83,9 @@ Git is one of the most popular Version Control Systems out there.  We'll use Git
 ## Graded Project:  Fortune Teller
 
 
-
 # Week 2 Flow of Control and Class Design
 
+Overview:
 Learn how to control the flow of execution in your application. Begin developing capabilities to store larger amounts of data and be able to iterate through that data. Begin the process of Object Oriented Programming. Test-Drive an application's design from start to finish.
 
 Objectives:
@@ -222,7 +182,20 @@ TODO: Are there slides for class design?  I don't see them in FlexCode.
 
 # Week 3 - Collections and Other Data Types
 
+Overview:
 Design more powerful collections to handle your data. Learn how to test drive and build out maintenance on your data collections. 
+
+Objectives:
+* Understand the difference between a arrays and lists.
+* Understand how Type parameters are used (Raw Types vs Generic Types)
+* Manipulate a List using its methods.
+* Understand the usage and purpose of a Dictionary.
+
+Key Terminology:
+TODO: Create list
+
+Reading:
+TODO: What should they be reading?
 
 ## Lists
 
@@ -231,7 +204,14 @@ Design more powerful collections to handle your data. Learn how to test drive an
 
 # Week 4 - Inheritance
 
+Overview:
 Explore the core concepts of Java as an Object Oriented Programming language. You will learn how relationships are structured and begin to place more thought into the architecture and design of your software.  Your software is starting to look more organized. 
+
+Objectives:
+
+Key Terminology:
+
+Reading:
 
 ## Inheritance
 
@@ -248,7 +228,15 @@ Explore the core concepts of Java as an Object Oriented Programming language. Yo
 
 # Week 5 - Model View Controller
 
+Overview:
 Begin to develop an understanding of the tools available in the ASP.NET MVC Framework to wire up a web application. Take your C# code from the back end and wire it up using ASP.NET MVC, Razor and HTML to create a web based application.
+
+Objectives:
+
+Key Terminology:
+
+Reading:
+
 
 ## Introduction to HTML
 
@@ -282,7 +270,14 @@ Java version:  https://wecancodeit.github.io/java-exercises/reviews-site/
 
 # Week 6 - Front End Development
 
+Overview:
 Students will be introduced to CSS Grid and Flexbox and learn how to use these tools to create a beautiful front end to their web applications.
+
+Objectives:
+
+Key Terminology:
+
+Reading:
 
 ## Introduction to CSS
 
@@ -311,7 +306,14 @@ Java: https://wecancodeit.github.io/java-exercises/professional-portfolio/
 
 # Week 7 - Entity Framework
 
+Overview:
 Learn how to implement and manage the data access layer of your application.  Develop an understanding of Relational Databases and Object Relational Mapping, and how a powerful tool like Entity Framework can get you up and running quickly and efficiently. Quickly configure an application, explore relationships and query your data. 
+
+Objectives:
+
+Key Terminology:
+
+Reading:
 
 ## Intro to Entity Framework 
 
@@ -334,7 +336,15 @@ Java version: https://wecancodeit.github.io/java-exercises/reviews-site-fullstac
 
 # Week 8 - JavaScript
 
+Overview:
 Now that you are beginning to understand the logic of C#, let's fully immerse you in the language of JavaScript, a dynamically typed functional language. Learn the basics, DOM manipulation and Ajax requests to allow your JavaScript to talk to your Java database. 
+
+Objectives:
+
+Key Terminology:
+
+Reading:
+
 
 ## C# Vs JavaScript
 
@@ -352,16 +362,60 @@ Java Version: https://wecancodeit.github.io/java-slides/web/java-vs-javascript/#
 Replaces java's jquery curriculum here: https://wecancodeit.github.io/java-slides/frontend/jquery/#/
 and also from java: https://wecancodeit.github.io/java-slides/flexcode/ajax/#/
 with something that uses fetch...or we let jQuery & xhr live on?
+We also have this https://docs.google.com/presentation/d/1cX0ERV-1cByiNY8H8FcjzdzAxzPUIyneApkUbq0iarA/edit#slide=id.p
 
+## Additional Activities
+
+* Check out the [Dev Docs](http://devdocs.io/javascript/).
+* Work through this [MDN Tutorial](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/A_first_splash)
+* Start the [30 Day Vanilla JS Coding Challenge](https://javascript30.com/)
+* Work through [CodingJS](https://the-winter.github.io/codingjs/)
+
+## Testing JavaScript with Jasmine
+
+[Introduction Slides](https://jasmine.github.io/2.0/introduction.html)
+[Jasmine Testing for JavaScript Slides](https://wecancodeit.github.io/java-slides/frontend/javascript-testing/#/)
+
+## Graded Project: Professional Portfolio with JavaScript
+
+[Slides](https://wecancodeit.github.io/java-exercises/js-professional-portfolio/)
 
 # Week 9 - Forms and API Development
 
+Overview:
 Take full control of your software. Create your own API so that you know what data you want to hit on and when. Add dynamically changing content to your repertoire and take your development skills to the next level. 
+
+Objectives:
+
+Key Terminology:
+
+Reading:
+
+## Interacting with HTML Forms
+
+TODO: Create slides or activity plan based on this Java video:
+https://flexcode.wecancodeit.org/mod/hvp/view.php?id=311
+
+## Developing a Restful WebAPI
+
+TODO: Find and link to the Todo API slides
+
+## LINQ
+
+TODO: Move slides to standard format.
+[Slides](https://docs.google.com/presentation/d/1ytw5e31Vz8i0Jpaqzj5uUEAl__c2VhCAQkBuVy9yGuE/edit#slide=id.p)
 
 
 # Week 10 - Single Page Applications (React) || More SQL || Database First?
 
+Overview:
 TODO: Develop curriculum || Link to Sql in 7 slides || Review slides
+
+Objectives:
+
+Key Terminology:
+
+Reading:
 
 
 # Weeks 11-14
