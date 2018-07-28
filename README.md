@@ -44,6 +44,8 @@ TODO: I've seen this, but I'm not sure when/where this takes place.  Here seems 
 
 Follow along with the slides to create your first C# Application!
 
+TODO: Update to use .NET Core Console App.
+
 [Slides](http://htmlpreview.github.io/?https://github.com/WeCanCodeIT/CleMasterSyllabus/blob/master/SlideDeck/docs/fundamentals/hello-world/index.html#/)
 
 ## Basic Types
