@@ -39,6 +39,7 @@ More expectation setting.  Grading, attendance, pass/fail, homework, late & inco
 ## Student Welcome Trello Boards
 
 TODO: I've seen this, but I'm not sure when/where this takes place.  Here seems like a good spot?
+TODO: Links?
 
 ## Hello World
 
@@ -122,12 +123,9 @@ This [Google Doodle](https://www.google.com/doodles/celebrating-50-years-of-kids
 
 ## While Loops
 
-TODO: Remove dependencies on prior code.
+Updated slides created.
 
 Instructor notes: Use debugger to allow students to visualize.
-
-Java slides for reference:
-https://wecancodeit.github.io/java-slides/fundamentals/while-loops/#/
 
 [Slides](http://htmlpreview.github.io/?https://github.com/WeCanCodeIT/CleMasterSyllabus/blob/master/SlideDeck/docs/fundamentals/loops-01/index.html#/)
 
@@ -218,6 +216,7 @@ Reading:
 ## Inheritance
 
 ## IComparable
+Comparable
 
 ## Equality
 
