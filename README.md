@@ -139,10 +139,6 @@ TODO: Remove dependencies on prior code. Use a new console app instead.
 
 ## Branching Statements
 
-TODO: Remove dependencies on prior code.  Use a new console app instead.
-
-Java slides for reference:  https://wecancodeit.github.io/java-slides/fundamentals/branching-statements/#/
-
 [Slides](http://htmlpreview.github.io/?https://github.com/WeCanCodeIT/CleMasterSyllabus/blob/master/SlideDeck/docs/fundamentals/conditionals/index.html#/)
 
 ## Arrays
