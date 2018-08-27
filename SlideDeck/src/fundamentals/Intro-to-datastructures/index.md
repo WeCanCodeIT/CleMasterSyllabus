@@ -10,7 +10,7 @@ theme: league
 
 - In this lecture we will focus on <mark>Arrays</mark> and <mark>Lists</mark>, but we will take a few minutes to introduce you to the others.
 
-- A <mark>list</mark> is a data strucuture which holds variables in a specific order. 
+- A <mark>list</mark> is a data structure which holds variables in a specific order. 
 
 - Lists are dynamically sized, meaning you do not have to specify the size of the list, and the list can grow as needed.
 
@@ -44,7 +44,7 @@ Question time: What are some examples you might be aware of where we might use a
 
 - Stacks and queues are similar in many ways with the following exceptions:
 
-	- As we discussed, queues are a <mark>FIFO</mark> data structure, while stackes are <mark>LIFO</mark> data structure.
+	- As we discussed, queues are a <mark>FIFO</mark> data structure, while stacks are <mark>LIFO</mark> data structure.
 
 	- Stacks are accessed and manipulated by <mark>popping and pushing</mark> while queues use <mark>Enqueue() and Dequeue().
 
@@ -122,7 +122,7 @@ div.cups .cup {
 
 ## Declaring an Array
 
-- Remember, when we want to create an variable, we declare that variable.
+- Remember, when we want to create a variable, we declare that variable.
 
 - We use the same process to create an array.
 
@@ -472,11 +472,11 @@ foodList.Add("Bread");
 
 ## Printing Elements in a List
 
-- Printing a list is no differant that printing and array with one exception we will note later.
+- Printing a list is no different than printing and array with one exception we will note later.
 
 ## Count, Remove, Insert
 
-- The `.Count` property is the List version of the `.Length` property that is built in to arrays.
+- The `.Count` property is the List version of the `.Length` property that is built-in to arrays.
 
 - `.Count` tells us the size of the list.
 

@@ -291,7 +291,7 @@ switch(job)
 
 	- The <mark>break</mark> statement which has the effect of exiting the statement if the case statement is true.
 
-	- Its important to note if none of othe case statments are true, the default case <mark>WILL</mark> be executed.
+	- It's important to note if none of other case statments are true, the default case <mark>WILL</mark> be executed.
 
 - For many students the <mark>switch case</mark> seems pretty daunting, but with practice will be a very useful tool.
 

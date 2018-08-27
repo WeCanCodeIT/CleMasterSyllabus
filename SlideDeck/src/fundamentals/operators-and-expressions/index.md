@@ -134,7 +134,7 @@ Question time: When we perform the addition operation on variables ageOne and ag
 </div>
 
 <div class="fragment">
-Question time: When we perform the multiplcation operation on variables weightOne and weightTwo, what values are we multiplying? 
+Question time: When we perform the multiplication operation on variables weightOne and weightTwo, what values are we multiplying? 
 </div>
 
 <div class="fragment">
@@ -489,9 +489,9 @@ I would suggest experimenting with  the operators we have covered during your co
 
 - When we make decisions in life, we commonly use the following language:
 
-	- I will go to the mall if Mitchell's *and* Brownstone are open.
+	- I will go to the mall if Mitchell's *and* Cold Stone are open.
 
-	- I will go to the mall if Mitchell's *or* Brownstone are open.
+	- I will go to the mall if Mitchell's *or* Cold Stone are open.
 
 - We use statements just like these to control the decision making process in coding.
 
@@ -511,13 +511,13 @@ I would suggest experimenting with  the operators we have covered during your co
 
 - Let's see an example.
 
-	- I will go to the mall if Mitchell's *and* Brownstone are open, *or* I will go to the beach if the Beachcomber *or* the Boardwalk are open.
+	- I will go to the mall if Mitchell's *and* Cold Stone are open, *or* I will go to the beach if the Beachcomber *or* the Boardwalk are open.
 
-- Now let's rewrite in code. (("Mitchell's" && "Brownstone") `||` ("Beachcomber" `||` "Boardwalk"))
+- Now let's rewrite in code. (("Mitchell's" && "Cold Stone") `||` ("Beachcomber" `||` "Boardwalk"))
 
-- So because of order of operations, if Mitchell's *and* the Brownstone are <mark>BOTH</mark> open we are going to the mall.
+- So because of order of operations, if Mitchell's *and* the Cold Stone are <mark>BOTH</mark> open we are going to the mall.
 
-- If Mitchells *or* the Brownstone are closed and <mark>EITHER</mark> the Beachcomber *or* the Boardwalk are open then it's off to the beach.
+- If Mitchell's *or* the Cold Stone are closed and <mark>EITHER</mark> the Beachcomber *or* the Boardwalk are open then it's off to the beach.
 
 <div class="fragment">
 Question time: What values will be returned when a logical operation is processed? 

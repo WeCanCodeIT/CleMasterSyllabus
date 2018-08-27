@@ -498,7 +498,7 @@ Question time: Which of the following is not a <code>short</code>: 45, 32767, 80
 
 ## Character Value Types
 
-- The `char` value type vairable holds individual characters. 
+- The `char` value type variable holds individual characters. 
 
 - We define `char` literals by using single apostrophes.
 

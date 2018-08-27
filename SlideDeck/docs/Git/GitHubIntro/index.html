@@ -245,7 +245,7 @@
           <!-- _S9SLIDE_ -->
 <h2 id="gitbash-cont">GitBash cont.</h2>
 
-<div float="right" class="img img-center"><img src="./resources/Git8a.png" /></div>
+<div float="right" class="img img-center"><img src="./resources/Git8b.png" /></div>
 
 <ul>
   <li>
@@ -255,10 +255,13 @@
     <p>We want to navigate to the folder in Visual Studio where our <mark>HelloWorld</mark> program resides.</p>
   </li>
   <li>
-    <p>Type the following: <strong>cd source &gt; cd repos &gt; cd HelloWorld</strong></p>
+    <p>Type the following: <code>cd ~/source/repos/HelloWorld</code> and press enter</p>
   </li>
   <li>
-    <p>Shortcut: type a few letters of the desired directory and press <mark>Tab</mark> to automatically complete, e.g. <code>cd sou</code> + Tab</p>
+    <p>Shortcut: type a few letters of the desired directory and press <mark>Tab</mark> to automatically complete, e.g. <code>sou</code> + Tab, <code>rep</code> + Tab</p>
+  </li>
+  <li>
+    <p>Alternatively, navigate to the folder in Windows Explorer, right click and select <strong>GitBash Here</strong></p>
   </li>
 </ul>
 
@@ -300,7 +303,7 @@
     <p>When we initially create a project or website in Visual Studio we must use GitBash to <mark>initialize</mark> the local repository.</p>
   </li>
   <li>
-    <p>We intialize the local project or website repository by executing the following command at the root of the local repository in GitBash: <mark>git init</mark>.</p>
+    <p>We intialize the local project or website repository by executing the following command at the root of the local repository in GitBash: <code>git init</code></p>
   </li>
   <li>
     <p>Next we must add a <mark>.gitignore</mark> file to the root of our local repository.</p>
@@ -319,10 +322,10 @@
 
 <ul>
   <li>
-    <p>The purpose of the .gitignore file is to allow you to ignore files that you never want to commit into a repository (e.g… editor backup files, build products, or local configuration overrides).</p>
+    <p>The purpose of the <code>.gitignore</code> file is to allow you to ignore files that you never want to commit into a repository (e.g. editor backup files, build products, or local configuration overrides).</p>
   </li>
   <li>
-    <p>You can generate a .gitignore file by browsing to <mark>https://www.gitignore.io/</mark></p>
+    <p>You can generate a <code>.gitignore</code> file by browsing to <mark>https://www.gitignore.io/</mark></p>
   </li>
   <li>
     <p>Enter <mark>VisualStudio</mark> into the text box and select <mark>Create</mark></p>
@@ -344,24 +347,22 @@
     <p>Highlight and copy the entire contents of the web page that appears.</p>
   </li>
   <li>
-    <p>Go to your desktop, and create and open a new text file. Paste the contents of the .gitignore file into the new text file.</p>
-  </li>
-  <li>
-    <p>Save the file as <mark>.gitignore</mark>. Change <mark>file type</mark> to <mark>all files</mark>.</p>
+    <p>Paste the contents of the <code>.gitignore</code> file into a new text file (i.e. Notepad).</p>
   </li>
 </ul>
-
 
 
         </section>
         
         <section>
-          <!-- _S9SLIDE_ -->
-<h2 id="gitbash-cont-5">GitBash cont.</h2>
+          <!-- _S9SLIDE_  -->
 
 <div float="right" class="img"><img src="./resources/Git12.png" /></div>
 
 <ul>
+  <li>
+    <p>Save the file to your <mark>deskotop</mark> as <code>.gitignore</code> and change <mark>file type</mark> to <mark>all files</mark>.</p>
+  </li>
   <li>
     <p>You will now see a document on your desktop with no name. Keep this copy for future projects.</p>
   </li>
@@ -376,7 +377,7 @@
         
         <section>
           <!-- _S9SLIDE_ -->
-<h2 id="gitbash-cont-6">GitBash cont.</h2>
+<h2 id="gitbash-cont-5">GitBash cont.</h2>
 
 <div float="right" class="img"><img src="./resources/Git13.png" /></div>
 
@@ -390,7 +391,7 @@
         
         <section>
           <!-- _S9SLIDE_ -->
-<h2 id="gitbash-cont-7">GitBash cont.</h2>
+<h2 id="gitbash-cont-6">GitBash cont.</h2>
 
 <div float="right" class="img"><img src="./resources/Git14.png" /></div>
 
@@ -399,10 +400,10 @@
     <p>We now need to add all the files in the <mark>HelloWorld</mark> local repository to be processed.</p>
   </li>
   <li>
-    <p>We add the files to be processed by typing the following commands in GitBash: <mark>git add .</mark> and pressing <mark>enter</mark>.</p>
+    <p>We add the files to be processed by typing the following commands in GitBash: <mark><code>git add .</code></mark> and pressing <mark>enter</mark>.</p>
   </li>
   <li>
-    <p>Now let’s check the status of our <mark>git add .</mark> to see what files have been added</p>
+    <p>Now let’s check the status of our <code>git add .</code> to see what files have been added</p>
   </li>
 </ul>
 
@@ -412,13 +413,16 @@
         
         <section>
           <!-- _S9SLIDE_ -->
-<h2 id="gitbash-cont-8">GitBash cont.</h2>
+<h2 id="gitbash-cont-7">GitBash cont.</h2>
 
 <div float="right" class="img"><img src="./resources/Git15.png" /></div>
 
 <ul>
   <li>
-    <p>You can see a number of files have been added for git processing including our <mark>.gitignore</mark>.</p>
+    <p>Type <code>git status</code> and press enter</p>
+  </li>
+  <li>
+    <p>You can see a number of files have been added for tracking including our <code>.gitignore</code></p>
   </li>
   <li>
     <p>We will cover in future lessons what <mark>branches</mark> are and how we use them.</p>
@@ -571,11 +575,14 @@
 <div float="right" class="img"><img src="./resources/Git21.png" /></div>
 
 <ul>
+  <li>In your GitBash window, enter the following command (where “WCCIStudent” is your GitHub username):</li>
+</ul>
+
+<pre><code class="language-bash">git remote add origin https://github.com/WCCIStudent/HelloWorld.git
+</code></pre>
+<ul>
   <li>
-    <p>In your GitBash window, enter the following command: <code>git remote add origin https://github.com/WCCIStudent/HelloWorld.git</code> (where “WCCIStudent” is your GitHub username)</p>
-  </li>
-  <li>
-    <p>You can copy and paste this directly from GitHub to you GitBash window and press <mark>enter</mark>.</p>
+    <p>You can copy and paste this directly from GitHub to your GitBash window and press <mark>enter</mark>.</p>
   </li>
   <li>
     <p>Now that we have set up a relationship between the local repository on your desktop and your GitHub repository, let’s do our first push.</p>

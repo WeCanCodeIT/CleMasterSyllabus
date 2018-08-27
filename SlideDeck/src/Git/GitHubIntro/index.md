@@ -88,15 +88,17 @@ theme: league
 
 ## GitBash cont.
 
-<div float="right" class="img img-center"><img src="./resources/Git8a.png" /></div>
+<div float="right" class="img img-center"><img src="./resources/Git8b.png" /></div>
 
 - To navigate through GitBash, we use the DOS command line.
 
 - We want to navigate to the folder in Visual Studio where our <mark>HelloWorld</mark> program resides.
 
-- Type the following: **cd source > cd repos > cd HelloWorld**
+- Type the following: `cd ~/source/repos/HelloWorld` and press enter
 
-- Shortcut: type a few letters of the desired directory and press <mark>Tab</mark> to automatically complete, e.g. `cd sou` + Tab
+- Shortcut: type a few letters of the desired directory and press <mark>Tab</mark> to automatically complete, e.g. `sou` + Tab, `rep` + Tab
+
+- Alternatively, navigate to the folder in Windows Explorer, right click and select **GitBash Here**
 
 ## GitBash cont.
 
@@ -114,7 +116,7 @@ theme: league
 
 - When we initially create a project or website in Visual Studio we must use GitBash to <mark>initialize</mark> the local repository.
 
-- We intialize the local project or website repository by executing the following command at the root of the local repository in GitBash: <mark>git init</mark>.
+- We intialize the local project or website repository by executing the following command at the root of the local repository in GitBash: `git init`
 
 - Next we must add a <mark>.gitignore</mark> file to the root of our local repository.
 
@@ -122,9 +124,9 @@ theme: league
 
 <div float="right" class="img"><img src="./resources/Git10.png" /></div>
 
-- The purpose of the .gitignore file is to allow you to ignore files that you never want to commit into a repository (e.g... editor backup files, build products, or local configuration overrides).
+- The purpose of the `.gitignore` file is to allow you to ignore files that you never want to commit into a repository (e.g. editor backup files, build products, or local configuration overrides).
 
-- You can generate a .gitignore file by browsing to <mark>https://www.gitignore.io/</mark>
+- You can generate a `.gitignore` file by browsing to <mark>https://www.gitignore.io/</mark>
 
 - Enter <mark>VisualStudio</mark> into the text box and select <mark>Create</mark>
 
@@ -134,13 +136,13 @@ theme: league
 
 - Highlight and copy the entire contents of the web page that appears.
 
-- Go to your desktop, and create and open a new text file. Paste the contents of the .gitignore file into the new text file.
+- Paste the contents of the `.gitignore` file into a new text file (i.e. Notepad).
 
-- Save the file as <mark>.gitignore</mark>. Change <mark>file type</mark> to <mark>all files</mark>.
-
-## GitBash cont.
+!SLIDE
 
 <div float="right" class="img"><img src="./resources/Git12.png" /></div>
+
+- Save the file to your <mark>deskotop</mark> as `.gitignore` and change <mark>file type</mark> to <mark>all files</mark>.
 
 - You will now see a document on your desktop with no name. Keep this copy for future projects.
 
@@ -158,15 +160,17 @@ theme: league
 
 - We now need to add all the files in the <mark>HelloWorld</mark> local repository to be processed.
 
-- We add the files to be processed by typing the following commands in GitBash: <mark>git add .</mark> and pressing <mark>enter</mark>.
+- We add the files to be processed by typing the following commands in GitBash: <mark><code>git add .</code></mark> and pressing <mark>enter</mark>.
 
-- Now let's check the status of our <mark>git add .</mark> to see what files have been added
+- Now let's check the status of our `git add .` to see what files have been added
 
 ## GitBash cont.
 
 <div float="right" class="img"><img src="./resources/Git15.png" /></div>
 
-- You can see a number of files have been added for git processing including our <mark>.gitignore</mark>.
+- Type `git status` and press enter
+
+- You can see a number of files have been added for tracking including our `.gitignore`
 
 - We will cover in future lessons what <mark>branches</mark> are and how we use them.
 
@@ -237,9 +241,12 @@ theme: league
 
 <div float="right" class="img"><img src="./resources/Git21.png" /></div>
 
-- In your GitBash window, enter the following command: `git remote add origin https://github.com/WCCIStudent/HelloWorld.git` (where "WCCIStudent" is your GitHub username)
+- In your GitBash window, enter the following command (where "WCCIStudent" is your GitHub username): 
 
-- You can copy and paste this directly from GitHub to you GitBash window and press <mark>enter</mark>.
+```bash
+git remote add origin https://github.com/WCCIStudent/HelloWorld.git
+```
+- You can copy and paste this directly from GitHub to your GitBash window and press <mark>enter</mark>.
 
 - Now that we have set up a relationship between the local repository on your desktop and your GitHub repository, let's do our first push.
 

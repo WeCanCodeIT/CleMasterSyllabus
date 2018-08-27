@@ -209,11 +209,11 @@ Question time: What would be the value of the index, if we added a third variabl
 - What operator do we use when we want to check for equality between value type variables?
 
 <div class="fragment">
-Remember the following: Console.WriteLine(5 == 5)
+Remember the following: <code>Console.WriteLine(5 == 5);</code>
 </div>
 
 <div class="fragment">
-When we compare objects like strings, we use the equals method.
+When we compare objects like strings, we use the <code>Equals()</code> method.
 </div>
 
 <div class="fragment">
@@ -252,9 +252,9 @@ Now let's execute our program.
 
 <div class="img" float="right"><img src="./resources/str11.png" /></div>
 
-- Looking at our results, we can tell the Equals method returns a bool value.
+- Looking at our results, we can tell the `Equals()` method returns a `bool` value.
 
-- In later lessons, we will learn to use the <mark>Equals</mark> method to facilitate the decision making process in our program.
+- In later lessons, we will learn to use the `Equals()` method to facilitate the decision making process in our program.
 
 - In the following slides we will cover some methods we can use with strings that you may find extremely valuable in the near future. <mark>Hint</mark> <mark>Hint</mark>
 
@@ -402,7 +402,7 @@ method	|description|example|result
 `EndsWith`|indicates whether this `string` ends with another|`"baz".EndsWith("az")`|`true`
 `Substring`|returns a substring starting at the specified index, optionally including an end index|`"hello".Substring(1)`<br />`"hello".Substring(1, 4)`|`"ello"`<br/>`"ell"`
 
-Try [C# Sharp string 43 exercises with solution](https://www.w3resource.com/csharp-exercises/string/index.php)
+Try [C# strings - 43 exercises with solutions](https://www.w3resource.com/csharp-exercises/string/index.php)
 
 <style type="text/css">
 .img:hover  {
