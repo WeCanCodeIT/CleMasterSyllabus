@@ -88,7 +88,7 @@ theme: league
 
 ## GitBash cont.
 
-<div float="right" class="img img-center"><img src="./resources/Git8b.png" /></div>
+<div float="right" class="img img-center"><img src="./resources/Git8b.PNG" /></div>
 
 - To navigate through GitBash, we use the DOS command line.
 
