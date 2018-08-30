@@ -32,7 +32,7 @@ Question time: What are some methods we have already encountered?
 - Do you remember the term <mark>abstraction</mark> we referenced in a prior lecture? Mountain Dew ingredients?
 </div>
 <div class="fragment">
-- Methods are a form of abstraction. If we didnt have a <mark>Console.WriteLine()</mark> method, we would have to include all the code in the Console.WriteLine() method each time we wanted to print to the console.
+- Methods are a form of abstraction. If we didn't have a <mark>Console.WriteLine()</mark> method, we would have to include all the code in the Console.WriteLine() method each time we wanted to print to the console.
 </div>
 <div class="fragment">
 - The command <mark>Console.WriteLine()</mark> is what we term as a <mark>method call</mark>.
@@ -282,20 +282,20 @@ Question time: What values will be printed to the console and in what order?
 {
   static void Main(string[] args) 
   {
-   int ageOne = 35;
-   bool isGodLikeOne = true; // I am not showing all the code.
-   isGodLikeOne = IsGodLike(ageOne);
-   Console.WriteLine("To say our hero is God like is " + isGodLikeOne);
+    int ageOne = 35;
+    bool isGodLikeOne = true; // I am not showing all the code.
+    isGodLikeOne = IsGodLike(ageOne);
+    Console.WriteLine("To say our hero is God like is " + isGodLikeOne);
   }
- static bool IsGodLike(int age)
+  static bool IsGodLike(int age)
   {
-   bool status;
-   if (age % 2 == 0) {
-	   status = false;
-  }
-   else {
-	status = true;
-  }
+    bool status;
+    if (age % 2 == 0) {
+	  status = false;
+    }
+    else {
+	  status = true;
+    }
     return status;
   }
 }
@@ -333,9 +333,9 @@ Question time: What values will be printed to the console and in what order?
 
 ## ...String Method
 
-- We took our time and I walked you step by step through the `bool` method.
+- We took our time and I walked you step by step through a `bool` method.
 
-- Now let's create the `string` method and you will walk us through the process.
+- Now let's create a `string` method and you will walk us through the process.
 
 - Add the following code to your HelloWorld program, then execute your code.
 
