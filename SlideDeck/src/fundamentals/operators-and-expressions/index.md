@@ -264,7 +264,7 @@ Question time: What is the advantage of using variables when performing mathemat
 
 <div float="right" class="img"><img src="./resources/opr9.png" /></div>
 
-- <mark>ageTwo / ageOne</mark> gave us the expected result of <mark>2</mark> because 70 / 35 = 2; No suprise there.
+- <mark>ageTwo / ageOne</mark> gave us the expected result of <mark>2</mark> because 70 / 35 = 2; No surprise there.
 
 - <mark>ageTwo % ageOne</mark> gave us <mark>0</mark> as a result. <mark>0</mark>?
 
@@ -278,7 +278,7 @@ Question time: What is the advantage of using variables when performing mathemat
 
 - The modulus operator will give us the <mark>remainder</mark> in a division calculation.
 
-- When you look at both operators <mark>/</mark> and <mark>%</mark> they are each responsible for returning one of the two values we would expect perfoming normal division. <mark>/</mark> returns an integer here because operands are `int`s.
+- When you look at both operators <mark>/</mark> and <mark>%</mark> they are each responsible for returning one of the two values we would expect performing normal division. <mark>/</mark> returns an integer here because operands are `int`s.
 
 - Let's look at some easy examples for mod.
 
@@ -471,7 +471,7 @@ ageTwo-=2;
 	- Likewise, <mark>a >= b</mark> checks to see if <mark>a</mark> is greater than *or* equal to value <mark>b</mark>.
 	
 <div class="fragment">
-Question time: What value is returned with the following: ("pete" !> "PETE")? Why? 
+Question time: What value is returned with the following: ("pete" != "PETE")? Why? 
 </div>
 
 <div class="fragment">
