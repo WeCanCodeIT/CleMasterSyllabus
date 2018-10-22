@@ -1,10 +1,10 @@
 title: JavaScript
-subtitle: Like Java but better!
+subtitle: Like C# but better!
 theme: league
 
 ## What is JavaScript?
 
-JavaScript is a dynamic, weakly typed, prototype-based programming language. But JavaScript is mostly used on the frontend or client side of web applications. Though now, JavaScript is able to be used as a full stack tool for developing robust web applications thanks to Node.js. We will only be going through using JavaScript on the frontend to add interactivity with our end user.
+JavaScript is a dynamic, weakly typed, prototype-based programming language. We will use JavaScript for the client side of our web applications. Though now, JavaScript is able to be used as a full stack tool for developing robust web applications thanks to Node.js. We will only be going through using JavaScript on the frontend to add interactivity with our end user.
 
 ## How to include JS
 
@@ -165,19 +165,19 @@ Let's see what it does when we give it a value and what we get when we hit cance
 
 ## Printing to the console
 
-We can print to our console with JS the same way we can with Java. The only thing that's different is the command to execute this behavior.
+We can print to our console with JS the same way we can with C#. The only thing that's different is the command to execute this behavior.
 
-In JS that command is `console.log()`. There is also `console.error()` and `console.dir`. They are for more specific tasks but have generally the same behavior. Let's see them in action:
+In JS that command is `console.log()`. There is also `console.error()` and `console.dir()`. They are for more specific tasks but have generally the same behavior. Let's see them in action:
 
 <img src="./resources/console-commands.gif" alt="console-commands" style="margin: 0 auto; width: 70%;">
 
 ## Variables
 
-We have variables in JS just like we have in Java. Since JS isn't statically typed, we don't have to expressly tell JS what type of variable we have. This is a cool feature but it can also get you into trouble. For example, if you're trying to do some sort of math operation an accidentally pass a boolean value instead of a number, you'll get unexpected functionality. Variables are declared in JS using the `var` keyword, like so:
+We have variables in JS just like we have in C#. Since JS isn't statically typed, we don't have to expressly tell JS what type of variable we have. This is a cool feature but it can also get you into trouble. For example, if you're trying to do some sort of math operation an accidentally pass a boolean value instead of a number, you'll get unexpected functionality. Variables are declared in JS using the `var` keyword, like so:
 
 ```JavaScript
 var myNumber = 42;
-var myString = 'Hello world'
+var myString = 'Hello world';
 var myFunction = function() {
     // I do stuff
 }
@@ -190,16 +190,16 @@ With these variables declared, you can now use them inside your code. These are 
 Concatenating is the same here as well (notice how similarly programming languages behave?). In fact, we use the same concatenation operator in JS as in Java:
 
 ```javascript
-var myName = 'Instructor'
+var myName = 'Instructor';
 
-console.log('Hey, ' + myName + '! How\'s it going?')
+console.log('Hey, ' + myName + '! How\'s it going?');
 ```
 
 This would print out `Hey, Instructor! How's it going?` to the console.
 
 ## Comparison operators
 
-More of the same here. JS has the same comparison operators as Java. It adds two new ones though and that's what we're going to focus on.
+More of the same here. JS has the same comparison operators as C#. It adds two new ones though and that's what we're going to focus on.
 
 - `==`
 - `!=`
@@ -219,7 +219,7 @@ These last two have more specificity than `==` and `!=`. With the less specific 
 
 ## Logical and Mathematical operators
 
-These are the same as Java.
+These are the same as C#.
 
 ### Logical
 - `&&`
@@ -240,7 +240,7 @@ These are the same as Java.
 You can comment things out in JS also. You can use `//` for inline commenting and `/*  */` for commenting blocks of code.
 
 ```javascript
-var name = 'Instructor' // This is a name
+var name = 'Instructor'; // This is a name
 
 /*
 Here is a bunch
@@ -337,14 +337,14 @@ names['Brian'] = 'Brian';
 
 ## Objects
 
-We have objects in JS the same as Java. They behave in a similar fashion
+We have objects in JS the same as C#. They behave in a similar fashion
 
 ### Methods and Properties vs. Functions and Variables
 
 Functions and variables are the anonymous versions of methods and properties. Once a variable is placed inside of an object, it is a property of that object. The same goes for functions and methods. Let's look at how to declare an object in JS and give it some properties and methods.
 
 ```javascript
-var Car = {
+var car = {
     color: 'green',
     hornSound: 'BEEEEP!',
     numOfWheels: 4,
@@ -355,7 +355,7 @@ var Car = {
 };
 
 // We can also add values like this
-Car.engine = 'V8';
+car.engine = 'V8';
 ```
 
 ## Encapsulation
@@ -373,7 +373,7 @@ var MyApp = {
 };
 ```
 
-Now `MyApp` is the only thing that we are adding to our global scope, everything else is local to our application and can't be accessed directly by our browser or any other JavaScript frameworks or libraries that may be in our document.
+Now `MyApp` is the only thing that we are adding to our global scope, everything else is local to our application and can't be accessed accidentally by our browser or any other JavaScript frameworks or libraries that may be in our document.
 
 ## Dates and times
 
@@ -547,4 +547,4 @@ Now for some...
 
 ## PRACTICE!
 
-Clone the example project from [here](https://github.com/WeCanCodeIT/javascript-example-project). ENJOY!
+Clone the example project from [here](https://github.com/WeCanCodeIT/cs-javascript-example-project). ENJOY!

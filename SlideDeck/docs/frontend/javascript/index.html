@@ -60,108 +60,7 @@
 <!-- _S9SLIDE_ -->
 <h2 id="what-is-javascript">What is JavaScript?</h2>
 
-<ul>
-  <li>
-    <p>JavaScript is a <strong>dynamic</strong>, <strong>weakly typed</strong>, <strong>prototype-based</strong> programming language.</p>
-  </li>
-  <li>
-    <p>Many of you notice there will be parts of JavaScript that remind you of C#.</p>
-  </li>
-  <li>
-    <p>JavaScript is mostly used on the front-end or client-side of web applications.</p>
-  </li>
-  <li>
-    <p>But now, JavaScript is able to be used as a full-stack tool for developing robust web applications thanks to <strong>Node.js</strong></p>
-  </li>
-  <li>
-    <p>We will only be going through using JavaScript on the front-end to add interactivity with our end user.</p>
-  </li>
-</ul>
-
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_ -->
-<h2 id="html-dom-or-document-object-model">HTML DOM or Document Object Model</h2>
-
-<ul>
-  <li>
-    <p>Before we get started, let’s discuss a very important concept you will need to understand.</p>
-  </li>
-  <li>
-    <p>When a web page is loaded, the browser creates a <mark>Document Object Model</mark> of the page.</p>
-  </li>
-  <li>
-    <p>The HTML DOM model is constructed as a tree of Objects:</p>
-  </li>
-</ul>
-
-<div style="text-align:center" class="img"><img src="./resources/DomModel.gif" /></div>
-
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_ -->
-<h2 id="dynamic-html">Dynamic HTML</h2>
-
-<ul>
-  <li>
-    <p>With the object model, JavaScript gets all the power it needs to create dynamic HTML.</p>
-  </li>
-  <li>
-    <p>Here are some example of what you can accomplish using JavaScript:</p>
-
-    <ul>
-      <li>JavaScript can change all the HTML elements in the page</li>
-      <li>JavaScript can change all the HTML attributes in the page</li>
-      <li>JavaScript can change all the CSS styles in the page</li>
-      <li>JavaScript can remove existing HTML elements and attributes</li>
-      <li>JavaScript can add new HTML elements and attributes</li>
-      <li>JavaScript can react to all existing HTML events in the page</li>
-      <li>JavaScript can create new HTML events in the page</li>
-    </ul>
-  </li>
-</ul>
-
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_ -->
-<h2 id="lets-do-this">Let’s do this</h2>
-
-<ul>
-  <li>
-    <p>We could create a blank website and practice, but I feel working with an existing website would be beneficial.</p>
-  </li>
-  <li>
-    <p>Go to the following GitHub link, and clone <a href="https://github.com/pfittante1001/Villa">Tuscany Villa</a>.</p>
-  </li>
-  <li>
-    <p>Open Tuscany Villa.</p>
-  </li>
-  <li>
-    <p>Add a new JavaScript page named <mark>villaScript</mark></p>
-  </li>
-  <li>
-    <p>Place a source reference to <code>villaScript.js</code> in your head section above <code>style.css</code></p>
-  </li>
-</ul>
-
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_ -->
-<h2 id="we-should-all-be-here">We should all be here</h2>
-
-<div style="text-align:center" class="img1"><img src="./resources/js1.png" /></div>
+<p>JavaScript is a dynamic, weakly typed, prototype-based programming language. We will use JavaScript for the client side of our web applications. Though now, JavaScript is able to be used as a full stack tool for developing robust web applications thanks to Node.js. We will only be going through using JavaScript on the frontend to add interactivity with our end user.</p>
 
 
 
@@ -171,17 +70,7 @@
           <!-- _S9SLIDE_ -->
 <h2 id="how-to-include-js">How to include JS</h2>
 
-<ul>
-  <li>
-    <p>We can include JavaScript in our page very similarly to how we include CSS.</p>
-  </li>
-  <li>
-    <p>Like CSS, there are 3 options (and two of them are not advised).</p>
-  </li>
-  <li>
-    <p>Question Time: What are the three methods you can use to implement CSS?</p>
-  </li>
-</ul>
+<p>We can include JavaScript in our page very similarly to how we include CSS. Like CSS there are 3 options (and two of them are not advised).</p>
 
 
 
@@ -191,31 +80,14 @@
           <!-- _S9SLIDE_ -->
 <h2 id="inline">Inline</h2>
 
-<ul>
-  <li>
-    <p>We can include JavaScript right inside of our HTML elements. (Your separation-of-concerns sense should be tingling right now):</p>
-  </li>
-  <li>
-    <p>Go to lines <mark>53-54</mark> of your index page and enter/update the following code:</p>
-  </li>
-</ul>
+<p>We can include JavaScript right inside of our HTML elements. (Your separation-of-concerns-sense should be tingling right now):</p>
 
-<pre><code class="language-html">&lt;h2 onclick=" this.style.color = 'red';"&gt;LOCATIONS&lt;/h2&gt;
-&lt;p onclick=" this.style.color = 'yellow';"&gt;Some places for you to go&lt;/p&gt;
+<pre><code class="language-html">&lt;h1 onclick="this.style.color = `pink`;"&gt;My Title&lt;/h1&gt;
 </code></pre>
-<ul>
-  <li>
-    <p>Save and open your browser by selecting Google Chrome.</p>
-  </li>
-  <li>
-    <p>Browse to the <mark>Locations</mark> subheader and click on both lines of text.</p>
-  </li>
-  <li>
-    <p>You should get the following:</p>
-  </li>
-</ul>
 
-<div style="text-align:center" class="img1"><img src="./resources/js2.png" /></div>
+<p>Which gives you:</p>
+
+<p><img src="./resources/inline-js.gif" alt="Inline JavaScript" style="width: 30%;" /></p>
 
 
 
@@ -225,35 +97,25 @@
           <!-- _S9SLIDE_ -->
 <h2 id="inside-script-tags">Inside Script Tags</h2>
 
-<ul>
-  <li>
-    <p>You can also write JavaScript directly inside your HTML by enclosing it in <code>&lt;script&gt;</code> tags within the <code>&lt;body&gt;</code></p>
-  </li>
-  <li>
-    <p>Go to line 240 of your index pages and enter the following code:</p>
-  </li>
-</ul>
+<p>You can also write JavaScript directly inside your HTML by enclosing it in <code>&lt;script&gt;</code> tags. Like this:</p>
 
-<pre><code class="language-HTML">&lt;script&gt;
-        function myFunction() {
-        var x = document.getElementById("jumbomain");
-        x.getElementsByTagName("h1")[0].style.fontSize = "50px";
-        x.getElementsByTagName("p")[0].style.fontSize = "50px";
-        x.getElementsByTagName("h1")[0].style.color = "red";
-        x.getElementsByTagName("p")[0].style.color = "red";
-    };
-&lt;/script&gt;
+<pre><code class="language-HTML">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;title&gt;JS Example&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1 onclick="this.style.color = `pink`"&gt;My Title&lt;/h1&gt;
+        &lt;h2&gt;My Subheading&lt;/h2&gt;
+        &lt;script type="text/JavaScript"&gt;
+            document.getElementsByTagName('h2')[0].onclick = function() {
+                this.getElementsByTagName('h2')[0].style.fontSize = `30px`;
+            };
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
-<ul>
-  <li>Update lines <mark>43-44</mark> as follows:</li>
-</ul>
-
-<pre><code class="language-HTML">&lt;h1 onclick="myFunction()"&gt;Tuscany Villa&lt;/h1&gt;
-&lt;p onclick="myFunction()"&gt;We specialize in relaxation&lt;/p&gt;
-</code></pre>
-<ul>
-  <li>Question Time: What section of code will this script affect, and what will be the result?</li>
-</ul>
 
 
         </section>
@@ -261,15 +123,9 @@
         <section>
           <!-- _S9SLIDE_  -->
 
-<p>Before</p>
+<p>Which yields:</p>
 
-<div style="text-align:center" class="img1"><img src="./resources/js3.png" /></div>
-
-<div class="fragment">
-After
-
-<div style="text-align:center" class="img1"><img src="./resources/js4.png" /></div>
-</div>
+<p><img src="./resources/script-tag-js.gif" alt="Inline JavaScript" style="margin: 0 auto; width: 70%;" /></p>
 
 
 
@@ -279,113 +135,14 @@ After
           <!-- _S9SLIDE_ -->
 <h2 id="linking-an-external-js-file-do-this-one">Linking an External JS File (Do this one!)</h2>
 
-<ul>
-  <li>
-    <p>Finally, similar to CSS, you can link JS code from an external file.</p>
-  </li>
-  <li>
-    <p>This is ideal because it keeps your code organized and concerns separated.</p>
-  </li>
-  <li>
-    <p>You connect the file to your HTML with the <code>&lt;script&gt;</code> tag like your <code>style.css</code></p>
-  </li>
-</ul>
+<p>Finally, similar to CSS, you can link JS code from an external file. This is ideal because it keeps your code organized and concerns separated. You connect the file to your HTML with the <code>&lt;script&gt;</code> tag like so:</p>
 
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_ -->
-<h2 id="external-is-where-it-is-at">External is where it is at</h2>
-
-<ul>
-  <li>
-    <p>Just like external CSS, we can keep our JavaScript separate from our HTML.</p>
-  </li>
-  <li>
-    <p>Copy the following code and paste it into villaScript.js</p>
-  </li>
-</ul>
-
-<pre><code class="language-Javascript">function overBtn(x) {
-	x.style.backgroundColor = "white";
-	x.style.color = "black";
-    }
-
-function outBtn(x) {
-	x.style.backgroundColor = "#474e5d";
-	x.style.color = "white";
-    }
+<pre><code class="language-html">&lt;!-- index.html --&gt;
+&lt;script src="./js/app.js"&gt;&lt;/script&gt;
 </code></pre>
-<ul>
-  <li>Make the following changes to the Reserve Now! button located on line 61 of your HTML.</li>
-</ul>
-
-<pre><code class="language-HTML">&lt;button type="button" class="btn" onmouseover="overBtn(this)" 
-   onmouseout="outBtn(this)"&gt;Reserve Now!&lt;/button&gt;
-</code></pre>
-<ul>
-  <li>Question Time: What section of code will this script affect, and what will be the result?</li>
-</ul>
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_  -->
-
-<ul>
-  <li>Before mouseover</li>
-</ul>
-<div class="fragment">
-<div style="text-align:center" class="img1"><img src="./resources/js5.png" /></div>
-
-</div>
-<div class="fragment">
-- During mouseover
-<div style="text-align:center" class="img1"><img src="./resources/js6.png" /></div>
-
-</div>
-<div class="fragment">
-- After mouseover
-<div style="text-align:center" class="img1"><img src="./resources/js5.png" /></div>
-</div>
-
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_ -->
-<h2 id="so-how-does-this-whole-thing-work-you-ask">So how does this whole thing work you ask</h2>
-
-<ul>
-  <li>
-    <p>Let’s make another change to our site which I think you will find extremely useful</p>
-  </li>
-  <li>
-    <p>After we make this change we will dicuss each part of the code</p>
-  </li>
-  <li>
-    <p>Copy and paste the following code into villaScript.js</p>
-  </li>
-</ul>
-
-<pre><code class="language-Javascript">function SwapDivsWithClick(div1,div2)
-{
-    d1 = document.getElementById(div1);
-    d2 = document.getElementById(div2);
-   if( d2.style.display == "none" )
-   {
-        d1.style.display = "none";
-        d2.style.display = "flex";
-   }
-   else
-   {
-        d1.style.display = "flex";
-        d2.style.display = "none";
-   }
+<pre><code class="language-JavaScript">// app.js
+document.getElementsByTagName('h3')[0].onclick = function() {
+    this.style.backgroundColor = `orange`;
 }
 </code></pre>
 
@@ -395,57 +152,9 @@ function outBtn(x) {
         <section>
           <!-- _S9SLIDE_  -->
 
-<ul>
-  <li>Paste the following code on line 67 of index.html by inserting a blank line:</li>
-</ul>
+<p>Which gives you:</p>
 
-<pre><code class="language-HTML">&lt;div class="row locationsrowodd" style="display:none" id="swap"&gt;
-   &lt;div class="col-7 locationscolodd"&gt;
-      &lt;h2&gt;Please login or join to reserve a site&lt;/h2&gt;
-      &lt;form action="/action_page.php"&gt;
-         First name:&lt;br&gt;
-         &lt;input type="text" name="firstname" value="Mickey"&gt;
-         &lt;br&gt;
-         Last name:&lt;br&gt;
-         &lt;input type="text" name="lastname" value="Mouse"&gt;
-         &lt;br&gt;&lt;br&gt;
-         &lt;button type="button" class="btn" onmouseover="overBtn(this)" onmouseout="outBtn(this)" onclick="SwapDivsWithClick('orig','swap')"&gt;Submit&lt;/button&gt;
-      &lt;/form&gt;
-
-      &lt;/div&gt;
-      &lt;div class="col-5 locationscolodd"&gt;
-
-      &lt;/div&gt;
-   &lt;/div&gt;
-</code></pre>
-<ul>
-  <li>Replace the button on line 61 of index.html with the following code:</li>
-</ul>
-
-<pre><code class="language-HTML">&lt;button type="button" class="btn" onmouseover="overBtn(this)" onmouseout="outBtn(this)" 
-  onclick="SwapDivsWithClick('orig','swap')"&gt;Reserve Now!&lt;/button&gt;
-</code></pre>
-<ul>
-  <li>Update line 57 with the following:</li>
-</ul>
-
-<pre><code class="language-HTML">&lt;div class="row locationsrowodd" style="display:flex" id="orig"&gt;
-</code></pre>
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_ -->
-<h2 id="we-should-all-be-here-1">We should all be here</h2>
-
-<div style="text-align:center" class="img1"><img src="./resources/js7.png" /></div>
-
-<ul>
-  <li>Now click on the button and you should have the following</li>
-</ul>
-
-<div style="text-align:center" class="img1"><img src="./resources/js8.png" /></div>
+<p><img src="./resources/attached-js-file.gif" alt="Inline JavaScript" style="margin: 0 auto; width: 100%;" /></p>
 
 
 
@@ -453,108 +162,17 @@ function outBtn(x) {
         
         <section>
           <!-- _S9SLIDE_ -->
-<h2 id="lets-discuss-the-code">Let’s discuss the code</h2>
+<h2 id="boxes">Boxes</h2>
 
-<div style="text-align:center" class="img1"><img src="./resources/js9.png" /></div>
-
-<div style="text-align:center" class="img"><img src="./resources/js10.png" /></div>
-
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_ -->
-<h2 id="some-things-look-familiar">Some things look familiar</h2>
+<p>JavaScript allows you to send and receive messages from your user in a number of ways. The first ones we’re going to talk about are boxes. There are three types of boxes:</p>
 
 <ul>
-  <li>
-    <p>In the code we have seen the use of the following:</p>
-  </li>
-  <li>Functions:
-    <pre><code class="language-Javascript">onmouseover="overBtn(this)" onmouseout="outBtn(this)" onclick="SwapDivsWithClick(
- 'orig','swap')" function SwapDivsWithClick(div1,div2)
-</code></pre>
-  </li>
-  <li>Variables:
-    <pre><code class="language-Javascript">d1 = document.getElementById(div1);
-d2 = document.getElementById(div2);
-</code></pre>
-  </li>
-  <li>Parameters:
-    <pre><code class="language-Javascript">onmouseover="overBtn(this)" onmouseout="outBtn(this)" onclick="SwapDivsWithClick('orig','swap')"
-</code></pre>
-  </li>
-  <li>CSS Styling:
-    <pre><code class="language-Javascript">d1.style.display = "none";
-d2.style.display = "flex";
-</code></pre>
-  </li>
-  <li>
-    <p>The concept behind the use of the tools we have used throughout the course is the same with JavaScript.</p>
-  </li>
-  <li>Because JavaScript takes advantage of the DOM and is rooted in the concept of OOP, our options are almost limitless.</li>
+  <li>alert</li>
+  <li>confirm</li>
+  <li>prompt</li>
 </ul>
 
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_ -->
-<h2 id="to-be-sucessful-in-using-javascript-you-must-understand">To be sucessful in using JavaScript, you must understand…</h2>
-
-<ul>
-  <li>
-    <p>With JavaScript, you want to manipulate HTML elements.</p>
-  </li>
-  <li>
-    <p>To do so, you have to find the elements first. There are a couple of ways to do this:</p>
-  </li>
-  <li>Finding HTML elements by <strong>id</strong>: <code>document.getElementById();</code></li>
-  <li>Finding HTML elements by <strong>tag name</strong>: <code>document.getElementsByTagName();</code></li>
-  <li>Finding HTML elements by <strong>class name</strong>: <code>document.getElementsByClassName();</code></li>
-  <li>Finding HTML elements by <strong>CSS selectors</strong>: <code>document.querySelectorAll();</code></li>
-  <li>Finding HTML elements by <strong>HTML object collections</strong>:
-    <pre><code class="language-Javascript">var x = document.forms["frm1"];
-var text = "";
-var i;
-for (i = 0; i &lt; x.length; i++) {
-  text += x.elements[i].value + " ";
-}
-document.getElementById("demo").innerHTML = text;
-</code></pre>
-  </li>
-</ul>
-
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_ -->
-<h2 id="lets-look-at-some-more-tools">Let’s look at some more tools</h2>
-
-<ul>
-  <li>
-    <p>JavaScript allows you to send and receive messages from your user in a number of ways.</p>
-  </li>
-  <li>
-    <p>The first ones we’re going to talk about are boxes.</p>
-  </li>
-  <li>
-    <p>There are three types of boxes:</p>
-
-    <ul>
-      <li>alert</li>
-      <li>confirm</li>
-      <li>prompt</li>
-    </ul>
-  </li>
-  <li>
-    <p>Let’s explore them in more detail.</p>
-  </li>
-</ul>
+<p>Let’s explore them in more detail.</p>
 
 
 
@@ -564,38 +182,28 @@ document.getElementById("demo").innerHTML = text;
           <!-- _S9SLIDE_ -->
 <h2 id="alert">Alert</h2>
 
-<ul>
-  <li>
-    <p>Alert boxes allow you to send a message that your user can read when an action is performed.</p>
-  </li>
-  <li>
-    <p>Replace the submit button located on line 77 of your index.html with the following code:</p>
-  </li>
-</ul>
+<p>Alert boxes allow you to send a message that your user can read when an action is performed. By adding a button we can see how this works:</p>
 
-<pre><code class="language-html">&lt;button type="button" class="btn" onmouseover="overBtn(this)" onmouseout="outBtn(this)" onclick="SwapDivsWithClick('orig', 'swap'); Redirect();"&gt;Submit&lt;/button&gt;
+<pre><code class="language-html">&lt;button type="button" name="button" id="alert"&gt;Alert Box&lt;/button&gt;    
 </code></pre>
-<ul>
-  <li>Paste the following code into villaScript.js</li>
-</ul>
 
-<pre><code class="language-JavaScript">function Redirect() {
-	alert('You are being redirected');      
-	}
+<p>And inside of our JS file:</p>
+
+<pre><code class="language-JavaScript">var alertButton = document.getElementById('alert');
+alertButton.onclick = function() {
+    alert('Here is our alert box')
+}
 </code></pre>
-<ul>
-  <li>Select <mark>Reserve Now!</mark> then select <mark>Submit</mark></li>
-</ul>
-
 
 
         </section>
         
         <section>
-          <!-- _S9SLIDE_ -->
-<h2 id="we-should-all-be-here-2">We should all be here</h2>
+          <!-- _S9SLIDE_  -->
 
-<div style="text-align:center" class="img1"><img src="./resources/js11.png" /></div>
+<p>Which then performs like this:</p>
+
+<p><img src="./resources/alert-box.gif" alt="alert-box" style="margin: 0 auto; width: 100%;" /></p>
 
 
 
@@ -605,40 +213,37 @@ document.getElementById("demo").innerHTML = text;
           <!-- _S9SLIDE_ -->
 <h2 id="confirm">Confirm</h2>
 
-<ul>
-  <li>
-    <p>Confirm boxes actually perform a action based on a boolean.</p>
-  </li>
-  <li>
-    <p>This way, you can interact with your user and get some kind of feedback from them.</p>
-  </li>
-  <li>
-    <p>When your user clicks ok in the confirm box, you get a <strong>true</strong> value, and an action is performed.</p>
-  </li>
-  <li>
-    <p>When they click cancel, you get a <strong>false</strong> value, and an action is not performed:</p>
-  </li>
-  <li>
-    <p>Paste the following code into villaScript.js:</p>
-  </li>
-</ul>
+<p>Confirm boxes actually return a boolean value to you. This way you can interact with your user and get some kind of feedback from them. When your user clicks ok in the confirm box, you get a true value. When they click cancel, you get a false value:</p>
 
-<pre><code class="language-JavaScript">function Redirect(x) {
-    var confirmButton = document.getElementById(x);
-    var userResponse = confirm('You are about to leave this site. If you want to stay, please select cancel.');
+<pre><code class="language-html">&lt;button type="button" name="button" id="confirm"&gt;Confirm Box&lt;/button&gt;
+&lt;output name="result" id="confirmResponse"&gt;&lt;/output&gt;
+</code></pre>
+
+<p>And inside of our JS file:</p>
+
+<pre><code class="language-JavaScript">var confirmButton = document.getElementById('confirm');
+confirmButton.onclick = function() {
+    var userResponse = confirm('Here is our confirm box');
     var displayContainer = document.getElementById('confirmResponse');
     var displayMessage = '';
     if (userResponse) {
-        var win = window.open("https://www.tuscanyaccommodation.com/tuscany-villas/?gclid=EAIaIQobChMIlcqH3bzi2QIVDEwNCh1Xbg9DEAAYAyAAEgLW1vD_BwE", '_blank');
-        win.focus();
-    } }
+        displayMessage += 'You like bananas! Did you know they\'re a berry?'
+    } else {
+        displayMessage += 'You don\'t like bananas because you\'re wrong.'
+    }
+    displayContainer.innerText = displayMessage;
+}
 </code></pre>
-<ul>
-  <li>Paste the following code to line 78 of index.html by inserting a blank line:</li>
-</ul>
 
-<pre><code class="language-HTML"> &lt;output name="result" id="confirmResponse"&gt;&lt;/output&gt;
-</code></pre>
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<p>Which then performs like this:</p>
+
+<p><img src="./resources/confirm-box.gif" alt="confirm-box" style="margin: 0 auto; width: 100%;" /></p>
 
 
 
@@ -648,33 +253,20 @@ document.getElementById("demo").innerHTML = text;
           <!-- _S9SLIDE_ -->
 <h2 id="prompt">Prompt</h2>
 
-<ul>
-  <li>
-    <p>Prompt works very similar to to confirm.</p>
-  </li>
-  <li>
-    <p>It accepts input from your user as well.</p>
-  </li>
-  <li>
-    <p>This time, the value is a <code>string</code> so you can get specific information from your user and use it however you want.</p>
-  </li>
-  <li>
-    <p>Replace the <code>&lt;body&gt;</code> tag located on line 14 of index.html with the following code:</p>
-  </li>
-</ul>
+<p>Prompt works very similar to to confirm. It accepts input from your user as well. This time the value is a string. So you can get specific information from your user and use it however you want.</p>
 
-<pre><code class="language-html">&lt;body onload="Greeting()"&gt;
+<pre><code class="language-html">&lt;button type="button" name="button" id="prompt"&gt;Prompt Box&lt;/button&gt;
+&lt;output name="result" id="promptResponse"&gt;&lt;/output&gt;
 </code></pre>
 
-<ul>
-  <li>Add the following code to villaScript.js.</li>
-</ul>
+<p>And inside of our JS file:</p>
 
-<pre><code class="language-JavaScript">function Greeting() {
-        var x = document.getElementById("jumbomain");
-        var userResponse = prompt('Welcome to Tuscany Villa. What is your name?');
-        x.getElementsByTagName('h1')[0].innerText = 'Welcome to Tuscany Villa ' + userResponse;
-      }
+<pre><code class="language-JavaScript">var promptButton = document.getElementById('prompt');
+promptButton.onclick = function() {
+    var userResponse = prompt('What is your name?');
+    var displayContainer = document.getElementById('promptResponse');
+    displayContainer.innerText = 'Hey, ' + userResponse;
+}
 </code></pre>
 
 
@@ -683,22 +275,23 @@ document.getElementById("demo").innerHTML = text;
         <section>
           <!-- _S9SLIDE_  -->
 
-<ul>
-  <li>
-    <p>When we load our site, we can take input from the user and use it however we want.</p>
-  </li>
-  <li>
-    <p>We prompt the user upon load of our site:</p>
-  </li>
-</ul>
+<p>Let’s see what it does when we give it a value and what we get when we hit cancel:</p>
 
-<div style="text-align:center" class="img1"><img src="./resources/js12.png" /></div>
+<p><img src="./resources/prompt-box.gif" alt="prompt-box" style="margin: 0 auto; width: 100%;" /></p>
 
-<ul>
-  <li>We take the user input and use it in another element:</li>
-</ul>
 
-<div style="text-align:center" class="img1"><img src="./resources/js13.png" /></div>
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="printing-to-the-console">Printing to the console</h2>
+
+<p>We can print to our console with JS the same way we can with C#. The only thing that’s different is the command to execute this behavior.</p>
+
+<p>In JS that command is <code>console.log()</code>. There is also <code>console.error()</code> and <code>console.dir()</code>. They are for more specific tasks but have generally the same behavior. Let’s see them in action:</p>
+
+<p><img src="./resources/console-commands.gif" alt="console-commands" style="margin: 0 auto; width: 70%;" /></p>
 
 
 
@@ -708,38 +301,16 @@ document.getElementById("demo").innerHTML = text;
           <!-- _S9SLIDE_ -->
 <h2 id="variables">Variables</h2>
 
-<ul>
-  <li>
-    <p>As we have seen, JS uses variables just like we have in C#.</p>
-  </li>
-  <li>
-    <p>Since JS isn’t statically typed, we don’t have to expressly tell JS what type of variable we have.</p>
-  </li>
-  <li>
-    <p>This is a cool feature but it can also get you into trouble.</p>
-  </li>
-  <li>
-    <p>For example, if you’re trying to do some sort of math operation and accidentally pass a boolean value instead of a number, you’ll get unexpected functionality.</p>
-  </li>
-  <li>
-    <p>Variables are declared in JS using the <code>var</code> keyword, like so:</p>
-  </li>
-</ul>
+<p>We have variables in JS just like we have in C#. Since JS isn’t statically typed, we don’t have to expressly tell JS what type of variable we have. This is a cool feature but it can also get you into trouble. For example, if you’re trying to do some sort of math operation an accidentally pass a boolean value instead of a number, you’ll get unexpected functionality. Variables are declared in JS using the <code>var</code> keyword, like so:</p>
 
 <pre><code class="language-JavaScript">var myNumber = 42;
-var myString = 'Hello world'
+var myString = 'Hello world';
 var myFunction = function() {
     // I do stuff
 }
 </code></pre>
-<ul>
-  <li>
-    <p>With these variables declared, you can now use them inside your code.</p>
-  </li>
-  <li>
-    <p>These are more useful than literals because you can reference them as many times as you want without having to explicitly define them again.</p>
-  </li>
-</ul>
+
+<p>With these variables declared, you can now use them inside your code. These are more useful than literals because you can reference them as many times as you want without having to explicitly define them again.</p>
 
 
 
@@ -747,28 +318,39 @@ var myFunction = function() {
         
         <section>
           <!-- _S9SLIDE_ -->
-<h2 id="other-useful-comparisons">Other useful comparisons</h2>
+<h2 id="concatenation">Concatenation</h2>
+
+<p>Concatenating is the same here as well (notice how similarly programming languages behave?). In fact, we use the same concatenation operator in JS as in Java:</p>
+
+<pre><code class="language-javascript">var myName = 'Instructor';
+
+console.log('Hey, ' + myName + '! How\'s it going?');
+</code></pre>
+
+<p>This would print out <code>Hey, Instructor! How's it going?</code> to the console.</p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="comparison-operators">Comparison operators</h2>
+
+<p>More of the same here. JS has the same comparison operators as C#. It adds two new ones though and that’s what we’re going to focus on.</p>
 
 <ul>
-  <li>
-    <p>Some of the concepts we used in C# are the same when using JavaScript. Here some examples:</p>
-  </li>
-  <li>
-    <p>Tools like <strong>concatenation</strong>, <strong>comparison operators</strong>, <strong>logical</strong> and <strong>mathematical operators</strong> all work the same.</p>
-  </li>
-  <li>
-    <p>There are 2 additional comparison operators I would like to highlight: <mark><code>===</code></mark> and <mark><code>!==</code></mark></p>
-  </li>
-  <li>
-    <p>These have more specificity than <code>==</code> and <code>!=</code></p>
-  </li>
-  <li>
-    <p>With the less specific operators, if two objects have the same value, they are considered equal.</p>
-  </li>
-  <li>
-    <p>The more specific versions, however, will compare the types <em>and</em> values, e.g.</p>
-  </li>
+  <li><code>==</code></li>
+  <li><code>!=</code></li>
+  <li><code>&gt;</code></li>
+  <li><code>&lt;</code></li>
+  <li><code>&gt;=</code></li>
+  <li><code>&lt;=</code></li>
+  <li><code>===</code></li>
+  <li><code>!==</code></li>
 </ul>
+
+<p>These last two have more specificity than <code>==</code> and <code>!=</code>. With the less specific operators, if two objects have similar values, they are considered equal. Similarly, the more specific versions will compare the types and values i.e.</p>
 
 <pre><code class="language-javascript">5 == '5' // true
 5 === '5' // false
@@ -780,897 +362,91 @@ var myFunction = function() {
         
         <section>
           <!-- _S9SLIDE_ -->
-<h2 id="arrays">Arrays</h2>
+<h2 id="logical-and-mathematical-operators">Logical and Mathematical operators</h2>
 
+<p>These are the same as C#.</p>
+
+<h3 id="logical">Logical</h3>
 <ul>
-  <li>
-    <p>Arrays in JS are way more useful than the arrays we’re used to.</p>
-  </li>
-  <li>
-    <p>They’re <strong>mutable</strong>, which means you can alter them.</p>
-  </li>
-  <li>
-    <p>There are two ways to declare an array:</p>
-  </li>
+  <li><code>&amp;&amp;</code></li>
+  <li><code>||</code></li>
+  <li><code>!</code></li>
 </ul>
+
+<h3 id="mathematical">Mathematical</h3>
+<ul>
+  <li><code>+</code></li>
+  <li><code>-</code></li>
+  <li><code>/</code></li>
+  <li><code>*</code></li>
+  <li><code>%</code></li>
+  <li><code>++</code></li>
+  <li><code>--</code></li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="commenting">Commenting</h2>
+
+<p>You can comment things out in JS also. You can use <code>//</code> for inline commenting and <code>/*  */</code> for commenting blocks of code.</p>
+
+<pre><code class="language-javascript">var name = 'Instructor'; // This is a name
+
+/*
+Here is a bunch
+of stuff that I
+want to comment
+out because it
+isn't actually
+relevant to our
+code.
+*/
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h1 id="arrays">Arrays</h1>
+
+<p>Arrays in JS are way more useful than the arrays we’re used to. They’re mutable, which means you can alter them. There are two ways to declare an Array:</p>
 
 <pre><code class="language-javascript">var myFavoriteFruits = ['bananas', 'oranges', 'papaya', 'mango', 'pineapple'];
 var myEmptyArray = new Array(5);
 </code></pre>
-<p>Similar to what we’re used to, these arrays are also zero-indexed and have a built-in <strong>length</strong> property.</p>
 
-<ul>
-  <li>Let’s use an array as well as some of the other tools we have in our Tuscany Villa website.</li>
-</ul>
+<p>When we print these to the console we get:</p>
 
+<p><img src="./resources/arrays.png" alt="arrays" style="margin: 0 auto; width: 100%;" /></p>
 
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_  -->
-
-<ul>
-  <li>Replace the code at line 160 of your index.html with the following code:</li>
-</ul>
-
-<pre><code class="language-HTML">&lt;div class="col-4 square bg text" id="villachoice"&gt;
-</code></pre>
-
-<ul>
-  <li>Insert the following code at line 167 of your index.html by inserting a blank line:</li>
-</ul>
-
-<pre><code class="language-HTML">&lt;div class="col-4 square bg text" id="villaswap" style="display:none"&gt;
-    &lt;div class="content"&gt;
-        &lt;p class="lochead"&gt;Available Villas&lt;/p&gt;
-        &lt;p class="locp" id="villout"&gt;&lt;/p&gt;
-        &lt;input id="buttonloc" type="submit" value="Return" onmouseover="overBtn(this)" onmouseout="outBtn(this)" onclick="SwapDivsWithClick('villachoice', 'villaswap');"&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
+<p>Similar to what we’re used to, these arrays are also zero-based and have a built in length property.</p>
 
 
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_  -->
-
-<ul>
-  <li>Paste the following code into your villaScript.js
-    <pre><code class="language-JavaScript">function GetVilla() {
-  var villaArray = new Array(0);
-   var userResponse = confirm('Would you like to check the availability of a Villa?');
-   while(userResponse) {
-      var villa = prompt('Please enter the name of a villa');
-      userResponse = confirm('Would you like to add another Villa?');
-      villaArray.push(villa);     
-   } 
-   var d = new Date();
-   var m = d.getMonth();   
-   var x = document.getElementById("villaswap");
-   if (m &gt; 0 &amp;&amp; m &lt; 4) {
-       x.getElementsByTagName('p')[1].innerText = villaArray[0];
-   } else if (m &gt; 3 &amp;&amp; m &lt; 7) {
-       x.getElementsByTagName('p')[1].innerText = villaArray[1];
-   } else if (m &gt; 6 &amp;&amp; m &lt; 10) {
-       x.getElementsByTagName('p')[1].innerText = villaArray[2];
-   } else if (m &gt; 9 &amp;&amp; m &lt; 13) {
-       x.getElementsByTagName('p')[1].innerText = villaArray[3];
-   } else {
-       x.getElementsByTagName('p')[1].innerText = 'Sorry we have no villas available';
-   }
-}
-</code></pre>
-    
 
         </section>
         
         <section>
           <!-- _S9SLIDE_ -->
 <h2 id="push-and-pop">Push and Pop</h2>
-  </li>
-  <li>As we have seen in our recent JS code, we can add and remove items to the end of our arrays using the <code>.push()</code> and <code>.pop()</code> methods.</li>
-</ul>
 
-<pre><code class="language-JavaScript">//This adds the value of the user input 'villa' to the end of our villaArray.
-villaArray.push(villa);     
+<p>We can add and remove items to the end of our arrays using the <code>.push()</code> and <code>.pop()</code> methods.</p>
 
-//This removes the last element from our villaArray
-villaArray.pop(villa);     
+<pre><code class="language-JavaScript">// This removes 'pineapple' from the
+// array and stores it in the variable
+// pineapple.
+var pineapple = myFavoriteFruits.pop();
+
+// This adds the value 'watermelon'
+// to the end of our array.
+// ['bananas', 'oranges', 'papaya', 'mango', 'watermelon']
+myFavoriteFruits.push('watermelon');
 </code></pre>
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_ -->
-<h2 id="have-you-had-enough-of-tuscany-villa">Have you had enough of Tuscany Villa?</h2>
-
-<ul>
-  <li>
-    <p>Let’s switch gears and build a fun application.</p>
-  </li>
-  <li>
-    <p>In this application, we will really expand out JavaScipt toolbox.</p>
-  </li>
-  <li>
-    <p>We are going to us the tools we have already learned HTML, CSS, and Bootstrap combined with JavaScript to build a personality quiz.</p>
-  </li>
-  <li>
-    <p>Let’s create a new blank ASP.NET empty website in Visual Studio.</p>
-  </li>
-  <li>
-    <p>Let’s name it <mark>PersonalityQuiz</mark></p>
-  </li>
-</ul>
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_  -->
-
-<ul>
-  <li>
-    <p>We will utilize pair programming to accomplish this task.</p>
-  </li>
-  <li>
-    <p>Create a blank <mark>site.css</mark> file.</p>
-  </li>
-  <li>
-    <p>Create a blank <mark>script.js</mark> file.</p>
-  </li>
-  <li>
-    <p>We should all be here.</p>
-  </li>
-</ul>
-<div class="fragment">
-<div style="text-align:center" class="img1"><img src="./resources/js14.png" /></div>
-
-</div>
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_  -->
-
-<ul>
-  <li>
-    <p>Lets start by creating the inital greetings box on the <mark>index.html</mark> page.</p>
-  </li>
-  <li>
-    <p>Enter the following code on your <mark>index.html</mark> file.</p>
-  </li>
-</ul>
-
-<pre><code class="language-HTML">&lt;div id="quizContainer"&gt;
-
-&lt;h1&gt;What kind of animal ?&lt;/h1&gt;
-
-&lt;div id="quizZone"&gt;
-
-    &lt;p&gt;Click &lt;strong&gt;Start Quiz&lt;/strong&gt; to find out!&lt;/p&gt;
-
-    &lt;button&gt;Start Quiz&lt;/button&gt;
-
-&lt;/div&gt;
-</code></pre>
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_  -->
-
-<ul>
-  <li>
-    <p>The object of this website is to ask the user five questions.</p>
-  </li>
-  <li>
-    <p>Based on the answers the user give, the website will choose the users spirit animal.</p>
-  </li>
-  <li>
-    <p>We will use no other HTML pages to accomplish this task.</p>
-  </li>
-  <li>
-    <p>When the user selects the <mark>Start Quiz</mark> button, the following MUST appear.</p>
-  </li>
-</ul>
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_  -->
-
-<ul>
-  <li>
-    <p>We are going to need to incorporate a Javascript solution to complete this application</p>
-  </li>
-  <li>
-    <p>Lets discuss some of the code we will use.</p>
-  </li>
-  <li>
-    <p>We are going to use Javascript to do the heavy lifting in our website.</p>
-  </li>
-  <li>
-    <p>Some of the things we are going use JS for are as follows:</p>
-    <ul>
-      <li>Define the questions and answers</li>
-      <li>Associate an answer with a pet</li>
-      <li>Keep track of the number of times a pet is chosen</li>
-      <li>Keep track of the index number for each question</li>
-      <li>Funtions that allow JS to perform all the necessary requirements.</li>
-    </ul>
-  </li>
-</ul>
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_  -->
-
-<ul>
-  <li>
-    <p>The first step in our process is to create some variables.</p>
-  </li>
-  <li>
-    <p>These variable will be used to keep track of the number of times a pet is chosen.</p>
-  </li>
-  <li>
-    <p>Copy and paste the following code in your <mark>script</mark> file:</p>
-  </li>
-</ul>
-
-<pre><code class="language-HTML">// This keeps track of the number of questions the student has answered that match each result
-// It will be reset each time the quiz starts
-const scoreKeeper = {
-    dog: 0,
-    cat: 0,
-    parrot: 0,
-    turtle: 0,
-};
-</code></pre>
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_ -->
-<h2 id="we-should-all-be-here-3">We should all be here</h2>
-
-<div style="text-align:center" class="img1"><img src="./resources/js17.png" /></div>
-
-<ul>
-  <li>
-    <p>Next we need to create a counter to keep track of the index number of the question we are on</p>
-  </li>
-  <li>
-    <p>Enter the following code in your <mark>script.js</mark> file.</p>
-  </li>
-</ul>
-
-<pre><code class="language-HTML">let currentQuestionIndex = 0;
-</code></pre>
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_  -->
-
-<ul>
-  <li>
-    <p>Our next task is to enter the questions, the answers to each question, and the animal chosen based on each choice.</p>
-  </li>
-  <li>
-    <p>Enter the following code in your <mark>script.js</mark> file.</p>
-  </li>
-</ul>
-
-<pre><code class="language-HTML">const questions = [
-    {
-        text: 'What are you most likely to be doing at a party?',
-        options: [
-            {
-                text: 'Playing games and making new friends',
-                point: 'dog',
-            },
-            {
-                text: 'Watching from a corner, hoping someone interesting shows up',
-                point: 'cat',
-            },
-            {
-                text: 'Partying! Dressed up, chatting it up, dancing... maybe a little loud',
-                point: 'parrot',
-            },
-            {
-                text: 'I would help set up beforehand and make sure everything goes smoothly',
-                point: 'turtle',
-            },
-        ],
-    }
-]
-</code></pre>
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_  -->
-
-<ul>
-  <li>
-    <p>Lets take a minute to discuss the structure of the previous code.</p>
-  </li>
-  <li>
-    <p>Questions can be added and modified freely.</p>
-  </li>
-  <li>
-    <p>Each question must have the same structure.</p>
-  </li>
-  <li>
-    <p>The whole <code>questions</code> variable is an array, with square brackets: []</p>
-  </li>
-  <li>
-    <p>Individual questions are objects, with curly braces: {}</p>
-  </li>
-  <li>
-    <p>The options/answers of each question are another array: []</p>
-  </li>
-  <li>
-    <p>Each option is its own object {} with two properties: text and point</p>
-  </li>
-</ul>
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_  -->
-
-<ul>
-  <li>
-    <p>We will come back later and add the remaining questions.</p>
-  </li>
-  <li>
-    <p>Lets create the JS functions which will allow our website to operate.</p>
-  </li>
-  <li>
-    <p>Our first function will start the quiz.</p>
-  </li>
-  <li>
-    <p>Enter the following code into your <mark>script.js</mark> file.</p>
-  </li>
-</ul>
-
-<pre><code class="language-HTML">function startQuiz() {
-
-    // This puts a message in the console
-    // Press Ctrl+Shift+I to open the console in Chrome
-    // (Google how to open the dev tools in your browser if you're not sure)
-    console.log('Quiz started!');
-
-    // Reset score
-    // This loops over each of the properties in the object
-    for (let result in scoreKeeper) {
-        // We are setting that property's value back to zero
-        scoreKeeper[result] = 0;
-    }
-
-    // Ask first question
-    // This function is defined below
-    // We are passing the first question in our questions array into this function
-    askQuestion(questions[0]);
-}
-</code></pre>
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_  -->
-
-<ul>
-  <li>
-    <p>Enter the following code into your <mark>script.js</mark> file.</p>
-  </li>
-  <li>
-    <p>The first part of this funtion is the Clear quiz zone.</p>
-  </li>
-  <li>
-    <p>First we get the element in the HTML by using its “id” value.</p>
-  </li>
-  <li>
-    <p>Next, while it still has a “first child element”, we remove that element.</p>
-  </li>
-  <li>
-    <p>This will continue until the parent is empty.</p>
-  </li>
-</ul>
-
-<pre><code class="language-HTML">// Display Question
-function askQuestion(question) {
-    let quizZone = document.getElementById('quizZone');
-    while (quizZone.firstChild) {
-        quizZone.removeChild(quizZone.firstChild);
-    }
-</code></pre>
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_  -->
-
-<ul>
-  <li>
-    <p>Enter the following code into your <mark>script.js</mark> file.</p>
-  </li>
-  <li>
-    <p>This next part of the function will render the question.</p>
-  </li>
-  <li>
-    <p>We will create HTML elements here and is basically the same as writing &lt;p&gt;My paragraph&lt;/p&gt; in HTML</p>
-  </li>
-</ul>
-
-<pre><code class="language-HTML">    let questionP = document.createElement('p');
-    questionP.innerText = question.text;
-    quizZone.appendChild(questionP);
-</code></pre>
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_  -->
-
-<ul>
-  <li>
-    <p>Enter the following code into your <mark>script.js</mark> file.</p>
-  </li>
-  <li>
-    <p>This next part of our function will create a box to hold answers.</p>
-  </li>
-  <li>
-    <p>These are more elements that we are creating from scratch.</p>
-  </li>
-</ul>
-
-<pre><code class="language-HTML">    let answerDiv = document.createElement('div');
-    answerDiv.setAttribute('id', 'quizAnswers');
-    quizZone.appendChild(answerDiv);
-</code></pre>
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_  -->
-
-<ul>
-  <li>
-    <p>Enter the following code into your <mark>script.js</mark> file.</p>
-  </li>
-  <li>
-    <p>The next part of our function render the answers choices for each question.</p>
-  </li>
-  <li>
-    <p>Lets discuss the operation of the forEach loop we see in this render section</p>
-
-    <ul>
-      <li>Here, we say:
-        <ul>
-          <li>take my question</li>
-          <li>take its ‘options’ property (an array)</li>
-          <li>for each element in that array, do a thing</li>
-          <li>and then, inside the forEach() parentheses, we describe that thing</li>
-          <li>option` is this individual option</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<pre><code class="language-HTML">question.options.forEach((option, i) =&gt; {
-
-// Create a list item for this option
-let optionDiv = document.createElement('div');
-optionDiv.setAttribute('class', 'quizOption');
-optionDiv.innerText = option.text;
-answerDiv.appendChild(optionDiv);
-// Add the index to the optionDiv so we can use it later
-optionDiv.index = i;
-
-// Attache event listeners
-// This says: when optionDiv is clicked, call the acceptAnswer function
-optionDiv.onclick = acceptAnswer;
-    });
-}
-</code></pre>
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_  -->
-
-<ul>
-  <li>
-    <p>Enter the following code into your <mark>script.js</mark> file.</p>
-  </li>
-  <li>
-    <p>This function will accept the answers from the user</p>
-    <pre><code class="language-HTML">function acceptAnswer(event) {
-  // Property we added ourselves
-  let selectedOptionIndex = event.target.index;
-  console.log({ selectedOptionIndex });
-
-  // Add point according to the question and option
-  let currentQuestion = questions[currentQuestionIndex];
-  let selectedOption = currentQuestion.options[selectedOptionIndex];
-  scoreKeeper[selectedOption.point]++;
-
-  console.log(JSON.stringify(scoreKeeper, null, 4));
-    
-  // Go to next question OR calculate result
-  currentQuestionIndex++;
-  if (currentQuestionIndex === questions.length) {
-      calculateResult();
-  }
-  else {
-      askQuestion(questions[currentQuestionIndex]);
-  }
-}
-</code></pre>
-  </li>
-</ul>
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_  -->
-
-<ul>
-  <li>
-    <p>Enter the following code into your <mark>script.js</mark> file.</p>
-  </li>
-  <li>
-    <p>This function will calculate the results based on each user answer</p>
-    <pre><code class="language-HTML">function calculateResult() {
-  // Add up points, taking the FIRST/HIGHEST score
-  let quizResult = '';
-
-  let possibleResults = Object.keys(scoreKeeper);
-
-  for (let i = 0; i &lt; possibleResults.length; i++) {
-      let thisPossibleResult = possibleResults[i];
-
-      if (!quizResult || scoreKeeper[quizResult] &lt; scoreKeeper[thisPossibleResult]) {
-          quizResult = thisPossibleResult;
-      }
-  }
-
-  // Display result
-  showResult(quizResult);
-}
-</code></pre>
-  </li>
-</ul>
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_  -->
-
-<ul>
-  <li>
-    <p>Enter the following code into your <mark>script.js</mark> file.</p>
-  </li>
-  <li>
-    <p>This function will display the results based on the score from calculateResult().</p>
-    <pre><code class="language-HTML">function showResult(result) {
-  // Hide the quizZone (the quiz is over)
-  let quizZoneDiv = document.getElementById('quizZone');
-  quizZoneDiv.style.display = 'none'; // hide it by adjusting its style (CSS) directly
-
-  // Find the hidden &lt;div&gt; that contains the results
-  let resultDiv = document.getElementById('answer-' + result);
-  resultDiv.classList.toggle('hide'); // un-hide it by removing the '.hide' class
-
-  // Show the 'Take Again' button
-  let takeAgainButton = document.querySelector('#takeAgain');
-  takeAgainButton.style.display = 'inline'; // Just a regular inline element that flows in the text, like a word or phrase
-}
-</code></pre>
-  </li>
-</ul>
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_  -->
-
-<ul>
-  <li>
-    <p>Now that we have completed the JS portion of our application, lets address the HTML page.</p>
-  </li>
-  <li>
-    <p>Enter the following code into your <mark>index.html</mark> file.</p>
-  </li>
-  <li>
-    <p>Add the following button in between the following lines of code</p>
-  </li>
-</ul>
-
-<pre><code class="language-HTML">&lt;h1&gt;What kind of animal ?&lt;/h1&gt;
-
-&lt;button id="takeAgain" style="display: none; float: right;" onclick="window.location.reload()"&gt;Take Again&lt;/button&gt;
-
-&lt;div id="quizZone"&gt;
-</code></pre>
-<ul>
-  <li>Add an <mark>onclick()</mark> to the <mark>Start Quiz</mark> button to call the function <mark>startQuiz()</mark>.</li>
-</ul>
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_  -->
-
-<ul>
-  <li>
-    <p>Lets enter the final results that will be displayed.</p>
-  </li>
-  <li>
-    <p>Enter the following code into your <mark>index.html</mark> file.</p>
-  </li>
-</ul>
-
-<pre><code class="language-HTML">&lt;div&gt;
-
-&lt;!-- The results below are hidden by CSS when the page loads.
-    When the quiz is finished, JavaScript will make the correct result visible.
---&gt;
-&lt;div id="answer-dog" class="answer dog hide"&gt;
-    &lt;h4&gt;You are a dog!&lt;/h4&gt;
-    &lt;p&gt;
-        &lt;img src="images/dog.jpg" /&gt;
-        Pros: active, friendly, fun
-        &lt;br&gt;
-        Cons: short attention span, really want to be liked, angry when hungry
-        &lt;/ul&gt;
-    &lt;/p&gt;
-&lt;/div&gt;
-</code></pre>
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_  -->
-
-<ul>
-  <li>Enter the following code into your <mark>index.html</mark> file.</li>
-</ul>
-
-<pre><code class="language-HTML">&lt;div id="answer-cat" class="answer cat hide"&gt;
-    &lt;h4&gt;You are a cat!&lt;/h4&gt;
-    &lt;p&gt;
-        &lt;img src="images/cat.jpg" /&gt;
-        Pros: know how to get what you want, know how to make people feel good
-        &lt;br&gt;
-        Cons: easy for your ego to get hurt, tend to be a loner, sometimes would rather scheme than just communicate about what you need
-    &lt;/p&gt;
-&lt;/div&gt;
-</code></pre>
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_  -->
-
-<ul>
-  <li>Enter the following code into your <mark>index.html</mark> file.</li>
-</ul>
-
-<pre><code class="language-HTML">&lt;div id="answer-parrot" class="answer parrot hide"&gt;
-    &lt;h4&gt;You are a parrot!&lt;/h4&gt;
-    &lt;p&gt;
-        &lt;img src="images/parrot.jpg" /&gt;
-        Pros: social, well-informed, great at fitting in
-        &lt;br&gt;
-        Cons: can be vain, sometimes speaks before thinking
-    &lt;/p&gt;
-&lt;/div&gt;
-</code></pre>
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_  -->
-
-<ul>
-  <li>Enter the following code into your <mark>index.html</mark> file.</li>
-</ul>
-
-<pre><code class="language-HTML">&lt;div id="answer-turtle" class="answer turtle hide"&gt;
-    &lt;h4&gt;You are a turtle!&lt;/h4&gt;
-    &lt;p&gt;
-        &lt;img src="images/turtle.jpg" /&gt;
-        Pros: good listener, resilient, dedicated and can see things through.
-        &lt;br&gt;
-        Cons: Quiet, guarded, enduring, sturdy
-    &lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
- &lt;/div&gt;
-</code></pre>
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_  -->
-
-<ul>
-  <li>Finally lets add the following code to your <mark>style.css</mark> file.</li>
-</ul>
-
-<pre><code class="language-C#">	body {
-		font-family: Calibri;
-		background: skyblue;
-	}
-
-	#quizContainer {
-		border-width: 5px;
-		border-style: solid;
-		border-color: #09f;
-		border-radius: 15px;
-		padding: 15px;
-		background: #fff;
-
-		min-width: 400px;
-		max-width: 800px;
-
-		/* causes this element to float in the middle of its parent */
-		margin: auto;
-
-		/* ONLY overrides margin-top ... other margins are same as declared above */
-		margin-top: 50px;
-	}
-
-
-
-&lt;!-- _S9SLIDE_  --&gt;
-
-
-
-- Add the following code to your &lt;mark&gt;style.css&lt;/mark&gt; file.
-
-```C#
-.quizOption {
-    cursor: pointer;
-    margin: 5px;
-    padding: 3px;
-    border: 1px solid #000;
-    border-radius: 5px;
-}
-
-.quizOption:hover {
-    color: #fff;
-    background: #333;
-}
-
-.answer {
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 1em;
-}
-</code></pre>
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_  -->
-
-<ul>
-  <li>Add the following code to your <mark>style.css</mark> file.</li>
-</ul>
-
-<pre><code class="language-C#">.answer p::after {
-    content: ' ';
-    display: block;
-    clear: both;
-}
-
-.answer img {
-    float: left;
-    width: 300px;
-    height: auto;
-    
-    margin: 0 1em 1em 0;
-}
-
-.hide {
-    display: none;
-}
-</code></pre>
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_  -->
-
-<ul>
-  <li>
-    <p>We have all the tools you need to construct a personality quiz.</p>
-  </li>
-  <li>
-    <p>Lets have some fun shall we!!</p>
-  </li>
-  <li>
-    <p>I want each team to make their own personality quiz.</p>
-  </li>
-  <li>
-    <p>You must do the following</p>
-
-    <ul>
-      <li>
-        <p>Design your own quiz with six questions and answers</p>
-      </li>
-      <li>
-        <p>Choose your own options</p>
-      </li>
-      <li>
-        <p>Choose your own results</p>
-      </li>
-      <li>
-        <p>Include images into your results</p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>Be sure to add a <mark>;</mark> at the end of the closing <mark>}</mark> in between questions.</p>
-  </li>
-</ul>
-
-
-
-        </section>
-        
-        <section>
-          <!-- _S9SLIDE_ -->
-<h2 id="lets-take-a-breather">Lets take a breather</h2>
-
-<ul>
-  <li>
-    <p>We have covered a lot of material I feel you will find very useful.</p>
-  </li>
-  <li>
-    <p>Likewise, the material we have covered should give you a good understanding of how to implement JS.</p>
-  </li>
-  <li>
-    <p>In the coming slides, I will present some other JS tools that you could use to enhance your skills.</p>
-  </li>
-  <li>
-    <p>Keep in mind there are many tools in JS, so what we have covered is not the end all, be all.</p>
-  </li>
-</ul>
-
 
 
         </section>
@@ -1679,23 +455,13 @@ optionDiv.onclick = acceptAnswer;
           <!-- _S9SLIDE_ -->
 <h2 id="splice">Splice</h2>
 
-<ul>
-  <li>
-    <p>The <strong>splice</strong> method allows you to remove any number of items from your array at any given location.</p>
-  </li>
-  <li>
-    <p>Splice accepts two parameters: <code>.splice(index, number of items to remove)</code></p>
-  </li>
-  <li>
-    <p>So, for example:</p>
-  </li>
-</ul>
+<p>The splice method allows you to remove any number of items from your array at any given location. Splice accepts two parameters <code>.splice(index, number of items to remove)</code>. So for example:</p>
 
 <pre><code class="language-javascript">// Current value of myFavoriteFruits
 // ['bananas', 'oranges', 'papaya', 'mango', 'watermelon']
-
-var myMostFavorite = myFavoriteFruits.splice(2, 2);
+//
 // This will store the array ['papaya', 'mango']
+var myMostFavorite = myFavoriteFruits.splice(2, 2);
 
 // It also makes our array have the value of
 // ['bananas', 'oranges', 'watermelon']
@@ -1709,14 +475,7 @@ var myMostFavorite = myFavoriteFruits.splice(2, 2);
           <!-- _S9SLIDE_ -->
 <h2 id="shift-and-unshift">Shift and Unshift</h2>
 
-<ul>
-  <li>
-    <p>Now you’re wondering, if I can add and remove to the end of my array, what if I want to add to the beginning?</p>
-  </li>
-  <li>
-    <p>We use the methods <code>.shift()</code> and <code>.unshift()</code>.</p>
-  </li>
-</ul>
+<p>Now you’re wondering, if I can add and remove to the end of my array, what if I want to add to the front? We use the methods <code>.shift()</code> and <code>.unshift()</code>.</p>
 
 <pre><code class="language-javascript">// Makes our array have the value of
 // ['blueberries', 'bananas', 'oranges', 'watermelon']
@@ -1734,23 +493,14 @@ var kingOfBerries = myFavoriteFruits.shift();
           <!-- _S9SLIDE_ -->
 <h2 id="assigning-values">Assigning Values</h2>
 
-<ul>
-  <li>
-    <p>There are a few different ways to add values to our array.</p>
-  </li>
-  <li>
-    <p>We can declare our array with values already inside:</p>
-  </li>
-</ul>
+<p>There are a few different ways to add values to our array. We can declare our array with values already inside:</p>
 
 <pre><code class="language-JavaScript">// This array has five values. Notice how
 // we can mix value types in JS arrays
 var numbers = [1.0, 2, 'three', 4, 'five'];
 </code></pre>
 
-<ul>
-  <li>We can also give values to specific indices in arrays:</li>
-</ul>
+<p>We can also give values to specific indices in arrays:</p>
 
 <pre><code class="language-JavaScript">var names = new Array(3);
 
@@ -1771,31 +521,13 @@ names['Brian'] = 'Brian';
           <!-- _S9SLIDE_ -->
 <h2 id="objects">Objects</h2>
 
-<ul>
-  <li>
-    <p>We have objects in JS the same as C#. They behave in a similar fashion.</p>
-  </li>
-  <li>
-    <p><strong>Methods and Properties vs. Functions and Variables:</strong></p>
+<p>We have objects in JS the same as C#. They behave in a similar fashion</p>
 
-    <ul>
-      <li>
-        <p>Functions and variables are the anonymous versions of methods and properties.</p>
-      </li>
-      <li>
-        <p>Once a variable is place inside of an object, it is a property of that object.</p>
-      </li>
-      <li>
-        <p>The same goes for functions and methods.</p>
-      </li>
-      <li>
-        <p>Let’s look at how to declare an object in JS and give it some properties and methods.</p>
-      </li>
-    </ul>
-  </li>
-</ul>
+<h3 id="methods-and-properties-vs-functions-and-variables">Methods and Properties vs. Functions and Variables</h3>
 
-<pre><code class="language-javascript">var Car = {
+<p>Functions and variables are the anonymous versions of methods and properties. Once a variable is placed inside of an object, it is a property of that object. The same goes for functions and methods. Let’s look at how to declare an object in JS and give it some properties and methods.</p>
+
+<pre><code class="language-javascript">var car = {
     color: 'green',
     hornSound: 'BEEEEP!',
     numOfWheels: 4,
@@ -1806,8 +538,30 @@ names['Brian'] = 'Brian';
 };
 
 // We can also add values like this
-Car.engine = 'V8';
+car.engine = 'V8';
 </code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="encapsulation">Encapsulation</h2>
+
+<p>We can use objects in JS to encapsulate our applications. We do this by making everything part of an object and containing all of our properties and methods inside of the object. This way we can avoid name collision inside of our global scope. This allows us to have only one global object, our application, which should be named uniquely so that no other plugins or libraries will use the same names as you.</p>
+
+<pre><code class="language-javascript">var MyApp = {
+    users: [],
+    userCount: users.length,
+
+    addAUser: function() {
+        // logic to add a user
+    }
+};
+</code></pre>
+
+<p>Now <code>MyApp</code> is the only thing that we are adding to our global scope, everything else is local to our application and can’t be accessed accidentally by our browser or any other JavaScript frameworks or libraries that may be in our document.</p>
 
 
 
@@ -1817,20 +571,7 @@ Car.engine = 'V8';
           <!-- _S9SLIDE_ -->
 <h2 id="dates-and-times">Dates and times</h2>
 
-<ul>
-  <li>
-    <p>We can access current times and dates on the user’s machine with JavaScript.</p>
-  </li>
-  <li>
-    <p>Make sure to note that times are based on the settings on the user’s machine, so we can’t be sure that our intended time or date will display.</p>
-  </li>
-  <li>
-    <p>We used two Date methods in our last JS entry: <code>new Date();</code> and <code>getMonth();</code></p>
-  </li>
-  <li>
-    <p>We reference a new date object like so:</p>
-  </li>
-</ul>
+<p>We can access current times and dates on the user’s machine with JavaScript. Make sure to note that times are based on the settings on the user’s machine so we can’t be sure that our intended time or date will display. We reference a new <code>Date</code> object like so:</p>
 
 <pre><code class="language-javascript">var date = new Date();
 
@@ -1842,14 +583,7 @@ date.getTime();
 date.getFullYear();
 </code></pre>
 
-<ul>
-  <li>
-    <p>There are many useful methods on the date object.</p>
-  </li>
-  <li>
-    <p>Read about them <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">here</a>. You can read about why we’re getting milliseconds since 1 January 1970 <a href="https://en.wikipedia.org/wiki/Unix_time">here</a>.</p>
-  </li>
-</ul>
+<p>There are many useful methods on the <code>Date</code> object. Read about them <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">here</a>. You can read about why we’re getting milliseconds since 1 January 1970 <a href="https://en.wikipedia.org/wiki/Unix_time">here</a>.</p>
 
 
 
@@ -1859,20 +593,7 @@ date.getFullYear();
           <!-- _S9SLIDE_ -->
 <h2 id="intervals">Intervals</h2>
 
-<ul>
-  <li>
-    <p>JavaScript has plenty of useful built-in methods for you to use.</p>
-  </li>
-  <li>
-    <p>Two of the most frequently used are <code>setInterval(time in milliseconds, function to execute)</code> and <code>setTimeout(time in milliseconds, function to execute)</code>.</p>
-  </li>
-  <li>
-    <p>These are used to delay operations from happening until a specified time.</p>
-  </li>
-  <li>
-    <p>In the case of <code>setInterval()</code>, we are setting up intervals for operations to be executed multiple times in increments set by the developer.</p>
-  </li>
-</ul>
+<p>JavaScript has plenty of useful built-in methods for you to use. Two of the most frequently used are <code>setInterval(time in milliseconds, function to execute)</code> and <code>setTimeout(time in milliseconds, function to execute)</code>. These are used to delay operations from happening until a specified time. In the case of <code>setInterval()</code>, we are setting up intervals for operations to be executed multiple times in increments set by the developer.</p>
 
 
         </section>
@@ -1884,8 +605,9 @@ date.getFullYear();
 
 <pre><code class="language-javascript">var i = 0;
 
-// This will call setInterval() and execute the anonymous function 
-// that we're passing into it.
+// This will call setInterval() and
+// execute the anonymous function
+// that we're passing it.
 var interval = setInterval(function() {
     i++;
     console.log(i);
@@ -1895,15 +617,14 @@ var interval = setInterval(function() {
     }
 }, 1000);
 
-// This will log to the console after 11 seconds.
+// This will log to the console
+// after 11 seconds.
 setTimeout(function() {
     console.log('This took 11 seconds');
 }, 11000);
 </code></pre>
 
-<ul>
-  <li>But, what is that function doing?</li>
-</ul>
+<p>But, what is that function doing?</p>
 
 
 
@@ -1913,25 +634,16 @@ setTimeout(function() {
           <!-- _S9SLIDE_ -->
 <h2 id="callbacks">Callbacks</h2>
 
-<ul>
-  <li>
-    <p>That anonymous function that we pass to <code>setInterval</code> is called a callback.</p>
-  </li>
-  <li>
-    <p>Callbacks are used to execute specific behavior with a value that has been passed to it. Let’s explore:</p>
-  </li>
-</ul>
+<p>That anonymous function that we pass to <code>setInterval</code> is called a callback. Callbacks are used to execute specific behavior with a value that has been passed to it. Let’s explore:</p>
 
 <pre><code class="language-javascript">var colors = ['red', 'green', 'blue', 'yellow'];
 var listAllColors = function(array, callbackFunction) {
     list = '';
-    for(var i = 0; i &lt; array.length; i++) {
-        if (!(i === array.length - 1)) {
-			list += array[i] + ', ';
-		} else {
-			list += array[i];
-		}
-        list += array[i] + ', ';
+    for (var i = 0; i &lt; array.length; i++) {
+        list += array[i];
+        if (i &lt; array.length -1) {
+            list += ', ';
+        }
     }
     callbackFunction(list);
 };
@@ -1958,20 +670,7 @@ listAllColors(colors, function(listOfColors) {
           <!-- _S9SLIDE_ -->
 <h2 id="dom-manipulation">DOM Manipulation</h2>
 
-<ul>
-  <li>
-    <p>Probably the biggest tool we have in JS is DOM manipulation.</p>
-  </li>
-  <li>
-    <p>This is what allows you to dynamically populate your page with elements based on data being updated.</p>
-  </li>
-  <li>
-    <p>Let’s look at some code to see how this works.</p>
-  </li>
-  <li>
-    <p>Let’s look at referencing DOM elements first:</p>
-  </li>
-</ul>
+<p>Probably the biggest tool we have in JS is DOM manipulation. This is what allows you to dynamically populate your page with elements based on data being updated. Let’s look at some code to see how this works. Let’s look at referencing DOM elements first:</p>
 
 <pre><code class="language-html">&lt;!-- index.html --&gt;
 &lt;body&gt;
@@ -1986,14 +685,31 @@ var title = document.getElementById('title');
 </code></pre>
 
 
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="accessing-attributes">Accessing Attributes</h2>
+
+<p>Let’s now look at what we can do with the element we’ve grabbed:</p>
+
+<pre><code class="language-javascript">var title = document.getElementById('title');
+// This will set the text inside of our #title to a new value
+title.innerText = 'This is dynamically set text.';
+
+// But what if we want to add HTML element?
+title.innerHTML = 'This is &lt;span&gt;dynamically&lt;/span&gt; set text!';
+</code></pre>
+<p>This allows you to put actual HTML elements into you string. We can now manipulate this span with CSS!</p>
+
+
         </section>
         
         <section>
           <!-- _S9SLIDE_  -->
 
-<ul>
-  <li>We can also work with attributes on the element (e.g. things like <code>href</code> or <code>type</code>).</li>
-</ul>
+<p>We can also work with attributes on the element (i.e. things like <code>href</code> or <code>type</code>).</p>
 
 <pre><code class="language-javascript">// This gives us a variable with the value
 // of the ID attribute.
@@ -2006,15 +722,12 @@ var titleId = title.getAttribute('id');
         <section>
           <!-- _S9SLIDE_  -->
 
-<ul>
-  <li>We can also see if an element has an attribute and, if so, examine what its value is.
-    <pre><code class="language-javascript">// This returns us a boolean value
+<p>We can also see if an element has an attribute and, if so, examine what its value is.</p>
+<pre><code class="language-javascript">// This returns us a boolean value
 // of false because our 'h1' element
 // doesn't have an 'href' value
 title.hasAttribute('href');
 </code></pre>
-  </li>
-</ul>
 
 
 
@@ -2024,12 +737,10 @@ title.hasAttribute('href');
           <!-- _S9SLIDE_ -->
 <h2 id="remove-elements">Remove Elements</h2>
 
-<ul>
-  <li>The same way we can manipulate elements, we can remove them:</li>
-</ul>
+<p>The same way we can manipulate elements, we can remove them:</p>
 
 <pre><code class="language-javascript">// The remove method is built in to
-// JavaScript and deletes an element for us.
+// javascript and deletes an element for us.
 title.remove();
 </code></pre>
 
@@ -2041,17 +752,7 @@ title.remove();
           <!-- _S9SLIDE_ -->
 <h2 id="query-selector">Query Selector</h2>
 
-<ul>
-  <li>
-    <p>So, we find ourselves selecting elements in a very clumsy way.</p>
-  </li>
-  <li>
-    <p>There seems to be a different way to find each element in JS.</p>
-  </li>
-  <li>
-    <p>Why not one way? BECAUSE THERE ARE TWO! <code>.querySelector('thing')</code> and <code>.querySelectorAll('things')</code></p>
-  </li>
-</ul>
+<p>So we find ourselves selecting elements in a very clumsy way. There seems to be a different way to find each element in JS. Why not one way? BECAUSE THERE ARE TWO! <code>.querySelector('thing')</code> and <code>.querySelectorAll('things')</code>.</p>
 
 <pre><code class="language-javascript">// This selects the first element of
 // its kind in the document.
@@ -2062,9 +763,7 @@ document.querySelector('h1');
 document.querySelectorAll('.content');
 </code></pre>
 
-<ul>
-  <li>This way, we can select elements more dynamically.</li>
-</ul>
+<p>This way we can select elements more dynamically.</p>
 
 
 
@@ -2074,14 +773,7 @@ document.querySelectorAll('.content');
           <!-- _S9SLIDE_ -->
 <h2 id="event-handlers">Event Handlers</h2>
 
-<ul>
-  <li>
-    <p>Event handlers are the way we deal with interactivity.</p>
-  </li>
-  <li>
-    <p>So, for example, you want to change the way your heading is sized when your user clicks on it, you can!</p>
-  </li>
-</ul>
+<p>Event handlers are the way we deal with interactivity. So, for example, you want to change the way your heading is sized when your user clicks on it, you can!</p>
 
 <pre><code class="language-javascript">var title = document.querySelector('#title');
 
@@ -2102,18 +794,7 @@ title.addEventListener('click', function() {
           <!-- _S9SLIDE_ -->
 <h2 id="practice">PRACTICE!</h2>
 
-<p>Clone the example project from <a href="https://github.com/WeCanCodeIT/javascript-example-project">here</a>. ENJOY!</p>
-<style type="text/css">
-.img:hover  {
-        transform: scale(3);
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    }
-.img1:hover  {
-    transform: scale(1.5);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-</style>
-
+<p>Clone the example project from <a href="https://github.com/WeCanCodeIT/cs-javascript-example-project">here</a>. ENJOY!</p>
 
         </section>
         
