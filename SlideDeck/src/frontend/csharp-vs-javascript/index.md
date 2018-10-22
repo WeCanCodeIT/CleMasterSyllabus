@@ -2,7 +2,7 @@ title: C# vs JavaScript
 subtitle: <em>"Who… run… Bartertown?"</em>
 theme: league
 
-# Java vs JavaScript
+# C# vs JavaScript
 
 ![](./resources/segue-blog-java-vs-javascript.png)
 
