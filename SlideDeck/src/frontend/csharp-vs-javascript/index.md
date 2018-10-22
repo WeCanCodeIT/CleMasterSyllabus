@@ -1,4 +1,4 @@
-title: Java vs JavaScript
+title: C# vs JavaScript
 subtitle: <em>"Who… run… Bartertown?"</em>
 theme: league
 
@@ -7,10 +7,11 @@ theme: league
 ![](./resources/segue-blog-java-vs-javascript.png)
 
 <p><q>Java is to Javascript as ham is to hamster.</q> ―Jeremy Keith</p>
+<p><q>C# is to Javascript as ham is to hamster.</q> ―Kyle McKee</p>
 
 # Differences
 
-Java                |vs |JavaScript
+C#                  |vs |JavaScript
 -------------------:|---|:---------
 compiled            ||interpreted (usually)
 write once, run (almost) anywhere||subject to differences in execution environments
@@ -32,10 +33,10 @@ classical inheritance - a class inherits from another class||prototypal (or prot
 
 # Writing to the console
 
-### Java
+### C#
 
-```Java
-System.out.println("my message");
+```csharp
+Console.WriteLine("my message");
 ```
 
 ### JavaScript
@@ -49,10 +50,10 @@ console.log("my message");
 - no type-checking or compilation: 'bad' code is executed
 - variables have no type
 
-### Java (statically typed)
+### C# (statically typed)
 
-```Java
-String number = "42";
+```csharp
+string number = "42";
 number = 42; // Error!
 ```
 
@@ -71,10 +72,10 @@ Names are more important than ever in a dynamic language.
 
 # Arrays
 
-### Java
+### C#
 
-```Java
-String[] menuItems = { "steak", "escargot", "tacos de pescado" };
+```csharp
+string[] menuItems = { "steak", "escargot", "tacos de pescado" };
 ```
 
 ### JavaScript
@@ -86,12 +87,13 @@ Square brackets, not curly brackets.
 
 ## Iterating by index
 
-### Java
+### C#
 
-```Java
-String[] menuItems = { "steak", "escargot", "tacos de pescado" };
-for(int idx = 0; idx < menuItems.length; idx++) {
-  System.out.println(menuItems[idx]);
+```csharp
+string[] menuItems = { "steak", "escargot", "tacos de pescado" };
+for (int i = 0; i < menuItems.Length; i++)
+{
+    Console.WriteLine(menuItems[i]);
 }
 ```
 
@@ -99,19 +101,20 @@ for(int idx = 0; idx < menuItems.length; idx++) {
 
 ```JavaScript
 var menuItems = [ "steak", "escargot", "tacos de pescado" ];
-for (var idx = 0; idx < menuItems.length; idx++) {
-  console.log(menuItems[idx]);
+for (var i = 0; i < menuItems.length; i++) {
+  console.log(menuItems[i]);
 }
 ```
 
 ## Iterating with forEach
 
-### Java
+### C#
 
-```Java 
-String[] menuItems = { "steak", "escargot", "tacos de pescado" };
-for(String item: menuItems) {
-  System.out.println(item);
+```csharp 
+string[] menuItems = { "steak", "escargot", "tacos de pescado" };
+foreach (string item in menuItems)
+{
+    Console.WriteLine(item);
 }
 ```
 
@@ -126,18 +129,18 @@ menuItems.forEach(function(element) {
 
 The function argument to `forEach` above is known as a *callback* function. JavaScript has a heavy focus on *functional* programming.
 
-Java's `Collection` interface has a similar `forEach` method (in version 8 and above) for functional programming.
+C#'s `List` class has a similar `ForEach` method that allows for a more functional style than the `foreach` keyword.
 
 # Functional Programming
 
-Java 8 introduced functional programming features, the most significant change in the language since Java 5.
+C# includes some functional programming features that you may have seen here and there.
 
-```Java
-List<String> menuItems
-  = Arrays.asList("steak", "escargot", "tacos de pescado");
-menuItems.forEach(System.out::println);
+```csharp
+List<string> menuItems
+  = new List<string>() { "steak", "escargot", "tacos de pescado" };
+menuItems.ForEach(Console.WriteLine);
 // or…
-menuItems.forEach(item -> System.out.println(item));
+menuItems.ForEach(item => Console.WriteLine(item));
 ```
 
 This is equivalent to the JavaScript from the previous slide:
@@ -147,6 +150,12 @@ var menuItems = [ "steak", "escargot", "tacos de pescado" ];
 menuItems.forEach(function(element) {
   console.log(element)
 });
+```
+
+Which could, similarly, be shortened to:
+```JavaScript
+var menuItems = [ "steak", "escargot", "tacos de pescado" ];
+menuItems.forEach(console.log);
 ```
 
 ## Functions are first-class citizens
@@ -199,15 +208,16 @@ Demo: Fido is always hungry, Bobo is never hungry.
 
 ## Also JSON - instead of Maps
 
-### Java
+### C#
 
-```Java
-Map<String, String> prices = new HashMap<String, String>();
-prices.put("steak", "34.95");
-prices.put("tacos de pescado", "19.95");
+```csharp
+Dictionary<string, string> prices = new Dictionary<string, string>();
+prices.Add("steak", "34.95");
+prices.Add("tacos de pescado", "19.95");
 
-for (Entry<String, String> entry : prices.entrySet()) {
-  System.out.println(entry.getKey() + ": " + entry.getValue());
+foreach (var kvp in prices)
+{
+    Console.WriteLine(kvp.Key + ": " + kvp.Value);
 }
 ```
 
@@ -226,7 +236,7 @@ for (var item in prices) {
 
 ## Also Also JSON
 
-JavaScript objects are a lot like maps. In our previous example, we were really iterating over the properties of a JavaScript object. Try this:
+JavaScript objects are a lot like `Dictionary`s. In our previous example, we were really iterating over the properties of a JavaScript object. Try this:
 
 ```JavaScript
 function VirtualPet() {}; // constructor
